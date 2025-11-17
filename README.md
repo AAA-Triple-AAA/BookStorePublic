@@ -12,3 +12,4 @@
 2. Move or copy [BookStore.MDF](./Resources/Database/BookStore.MDF) into the [./BookStoreUI/bin/Debug/net8.0-windows](./BookStoreUI/bin/Debug/net8.0-windows) directory.
 3. Open and run solution in Visual Studio or Rider IDE.
 4. [OPTIONAL] Add connection to database in Visual Studio, selecting BookStore.MDF in the [./BookStoreUI/bin/Debug/net8.0-windows](./BookStoreUI/bin/Debug/net8.0-windows) directory. 
+5. [OPTIONAL] Test the database connection by uncommenting the `DatabaseConnectionTest` method call in [Program.cs](./BookStoreUI/Program.cs).
