@@ -1,0 +1,41 @@
+﻿# Build outputs
+bin/
+obj/
+.config
+
+# Visual Studio
+.vs/
+*.suo
+*.user
+*.userosscache
+
+# Rider
+.idea/
+*.sln.iml
+
+# Build results
+Debug/
+Release/
+x64/
+x86/
+
+# Compiled files
+*.exe
+*.dll
+*.pdb
+
+# NuGet
+packages/
+*.nupkg
+
+# User-specific files
+*.csproj.user
+
+# Temporary files
+*.tmp
+*.log
+*~
+
+# Windows files
+Thumbs.db
+Desktop.ini
