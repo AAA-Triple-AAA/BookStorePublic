@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace BookStoreUI
 {
-    public partial class frmMaintenanceAuthor : Form
+    public partial class frmTitleMaintenance : Form
     {
-        public frmMaintenanceAuthor()
+        public frmTitleMaintenance()
         {
             InitializeComponent();
         }
