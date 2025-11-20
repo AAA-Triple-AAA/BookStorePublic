@@ -21,5 +21,21 @@ namespace BookStoreUI
         {
             this.Close();
         }
+
+        private void btnTitleMaintenance_Click(object sender, EventArgs e)
+        {
+            frmTitleMaintenance frm = new();
+            this.Hide();
+            frm.ShowDialog();
+            this.Show();
+        }
+
+        private void btnAuthorMaintenance_Click(object sender, EventArgs e)
+        {
+            frmAuthorMaintenance frm = new();
+            this.Hide();
+            frm.ShowDialog();
+            this.Show();
+        }
     }
 }
