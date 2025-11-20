@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            tlpFields = new TableLayoutPanel();
+            tlpTitle = new TableLayoutPanel();
             txtNotes = new TextBox();
             nudYtdSales = new NumericUpDown();
             nudRoyalty = new NumericUpDown();
@@ -51,56 +51,56 @@
             dtp = new DateTimePicker();
             btnSave = new Button();
             btnCancel = new Button();
-            tlpFields.SuspendLayout();
+            tlpTitle.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)nudYtdSales).BeginInit();
             ((System.ComponentModel.ISupportInitialize)nudRoyalty).BeginInit();
             ((System.ComponentModel.ISupportInitialize)nudAdvance).BeginInit();
             ((System.ComponentModel.ISupportInitialize)nudPrice).BeginInit();
             SuspendLayout();
             // 
-            // tlpFields
+            // tlpTitle
             // 
-            tlpFields.AutoSize = true;
-            tlpFields.ColumnCount = 2;
-            tlpFields.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 21.56863F));
-            tlpFields.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 78.43137F));
-            tlpFields.Controls.Add(txtNotes, 1, 8);
-            tlpFields.Controls.Add(nudYtdSales, 1, 7);
-            tlpFields.Controls.Add(nudRoyalty, 1, 6);
-            tlpFields.Controls.Add(nudAdvance, 1, 5);
-            tlpFields.Controls.Add(nudPrice, 1, 4);
-            tlpFields.Controls.Add(txtPubId, 1, 3);
-            tlpFields.Controls.Add(txtTitle, 1, 1);
-            tlpFields.Controls.Add(lblTitleid, 0, 0);
-            tlpFields.Controls.Add(lbltitle, 0, 1);
-            tlpFields.Controls.Add(lbltype, 0, 2);
-            tlpFields.Controls.Add(lblPub_id, 0, 3);
-            tlpFields.Controls.Add(lblPrice, 0, 4);
-            tlpFields.Controls.Add(lblAdvance, 0, 5);
-            tlpFields.Controls.Add(lblRoyalty, 0, 6);
-            tlpFields.Controls.Add(lblYtd_sales, 0, 7);
-            tlpFields.Controls.Add(lblPubdate, 0, 9);
-            tlpFields.Controls.Add(txtTitle_id, 1, 0);
-            tlpFields.Controls.Add(comboBox1, 1, 2);
-            tlpFields.Controls.Add(lblNotes, 0, 8);
-            tlpFields.Controls.Add(dtp, 1, 9);
-            tlpFields.Dock = DockStyle.Top;
-            tlpFields.Location = new Point(0, 0);
-            tlpFields.Name = "tlpFields";
-            tlpFields.RowCount = 10;
-            tlpFields.RowStyles.Add(new RowStyle(SizeType.Percent, 11.1111107F));
-            tlpFields.RowStyles.Add(new RowStyle(SizeType.Percent, 11.1111107F));
-            tlpFields.RowStyles.Add(new RowStyle(SizeType.Percent, 11.1111107F));
-            tlpFields.RowStyles.Add(new RowStyle(SizeType.Percent, 11.1111107F));
-            tlpFields.RowStyles.Add(new RowStyle(SizeType.Percent, 11.1111107F));
-            tlpFields.RowStyles.Add(new RowStyle(SizeType.Percent, 11.1111107F));
-            tlpFields.RowStyles.Add(new RowStyle(SizeType.Percent, 11.1111107F));
-            tlpFields.RowStyles.Add(new RowStyle(SizeType.Percent, 11.1111107F));
-            tlpFields.RowStyles.Add(new RowStyle(SizeType.Absolute, 80F));
-            tlpFields.RowStyles.Add(new RowStyle(SizeType.Percent, 11.1111107F));
-            tlpFields.RowStyles.Add(new RowStyle(SizeType.Absolute, 20F));
-            tlpFields.Size = new Size(800, 431);
-            tlpFields.TabIndex = 8;
+            tlpTitle.AutoSize = true;
+            tlpTitle.ColumnCount = 2;
+            tlpTitle.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 21.56863F));
+            tlpTitle.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 78.43137F));
+            tlpTitle.Controls.Add(txtNotes, 1, 8);
+            tlpTitle.Controls.Add(nudYtdSales, 1, 7);
+            tlpTitle.Controls.Add(nudRoyalty, 1, 6);
+            tlpTitle.Controls.Add(nudAdvance, 1, 5);
+            tlpTitle.Controls.Add(nudPrice, 1, 4);
+            tlpTitle.Controls.Add(txtPubId, 1, 3);
+            tlpTitle.Controls.Add(txtTitle, 1, 1);
+            tlpTitle.Controls.Add(lblTitleid, 0, 0);
+            tlpTitle.Controls.Add(lbltitle, 0, 1);
+            tlpTitle.Controls.Add(lbltype, 0, 2);
+            tlpTitle.Controls.Add(lblPub_id, 0, 3);
+            tlpTitle.Controls.Add(lblPrice, 0, 4);
+            tlpTitle.Controls.Add(lblAdvance, 0, 5);
+            tlpTitle.Controls.Add(lblRoyalty, 0, 6);
+            tlpTitle.Controls.Add(lblYtd_sales, 0, 7);
+            tlpTitle.Controls.Add(lblPubdate, 0, 9);
+            tlpTitle.Controls.Add(txtTitle_id, 1, 0);
+            tlpTitle.Controls.Add(comboBox1, 1, 2);
+            tlpTitle.Controls.Add(lblNotes, 0, 8);
+            tlpTitle.Controls.Add(dtp, 1, 9);
+            tlpTitle.Dock = DockStyle.Top;
+            tlpTitle.Location = new Point(0, 0);
+            tlpTitle.Name = "tlpTitle";
+            tlpTitle.RowCount = 10;
+            tlpTitle.RowStyles.Add(new RowStyle(SizeType.Percent, 11.1111107F));
+            tlpTitle.RowStyles.Add(new RowStyle(SizeType.Percent, 11.1111107F));
+            tlpTitle.RowStyles.Add(new RowStyle(SizeType.Percent, 11.1111107F));
+            tlpTitle.RowStyles.Add(new RowStyle(SizeType.Percent, 11.1111107F));
+            tlpTitle.RowStyles.Add(new RowStyle(SizeType.Percent, 11.1111107F));
+            tlpTitle.RowStyles.Add(new RowStyle(SizeType.Percent, 11.1111107F));
+            tlpTitle.RowStyles.Add(new RowStyle(SizeType.Percent, 11.1111107F));
+            tlpTitle.RowStyles.Add(new RowStyle(SizeType.Percent, 11.1111107F));
+            tlpTitle.RowStyles.Add(new RowStyle(SizeType.Absolute, 80F));
+            tlpTitle.RowStyles.Add(new RowStyle(SizeType.Percent, 11.1111107F));
+            tlpTitle.RowStyles.Add(new RowStyle(SizeType.Absolute, 20F));
+            tlpTitle.Size = new Size(800, 431);
+            tlpTitle.TabIndex = 8;
             // 
             // txtNotes
             // 
@@ -329,7 +329,7 @@
             ClientSize = new Size(800, 944);
             Controls.Add(btnCancel);
             Controls.Add(btnSave);
-            Controls.Add(tlpFields);
+            Controls.Add(tlpTitle);
             FormBorderStyle = FormBorderStyle.FixedDialog;
             MaximizeBox = false;
             MinimizeBox = false;
@@ -337,8 +337,8 @@
             ShowIcon = false;
             StartPosition = FormStartPosition.CenterParent;
             Text = "Add/Edit Title";
-            tlpFields.ResumeLayout(false);
-            tlpFields.PerformLayout();
+            tlpTitle.ResumeLayout(false);
+            tlpTitle.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)nudYtdSales).EndInit();
             ((System.ComponentModel.ISupportInitialize)nudRoyalty).EndInit();
             ((System.ComponentModel.ISupportInitialize)nudAdvance).EndInit();
@@ -349,7 +349,7 @@
 
         #endregion
 
-        private TableLayoutPanel tlpFields;
+        private TableLayoutPanel tlpTitle;
         private Label lblTitleid;
         private Label lbltitle;
         private Label lbltype;
