@@ -58,7 +58,7 @@
             // btbDeleteAuthor
             // 
             btbDeleteAuthor.Location = new Point(611, 463);
-            btbDeleteAuthor.Margin = new Padding(2, 2, 2, 2);
+            btbDeleteAuthor.Margin = new Padding(2);
             btbDeleteAuthor.Name = "btbDeleteAuthor";
             btbDeleteAuthor.Size = new Size(162, 57);
             btbDeleteAuthor.TabIndex = 15;
@@ -68,7 +68,7 @@
             // btnAddAuthor
             // 
             btnAddAuthor.Location = new Point(50, 463);
-            btnAddAuthor.Margin = new Padding(2, 2, 2, 2);
+            btnAddAuthor.Margin = new Padding(2);
             btnAddAuthor.Name = "btnAddAuthor";
             btnAddAuthor.Size = new Size(162, 57);
             btnAddAuthor.TabIndex = 13;
@@ -88,7 +88,7 @@
             // rbtDetails
             // 
             rbtDetails.Location = new Point(0, 0);
-            rbtDetails.Margin = new Padding(2, 2, 2, 2);
+            rbtDetails.Margin = new Padding(2);
             rbtDetails.Name = "rbtDetails";
             rbtDetails.Size = new Size(254, 342);
             rbtDetails.TabIndex = 0;
@@ -117,7 +117,7 @@
             // btbEditAuthor
             // 
             btbEditAuthor.Location = new Point(342, 463);
-            btbEditAuthor.Margin = new Padding(2, 2, 2, 2);
+            btbEditAuthor.Margin = new Padding(2);
             btbEditAuthor.Name = "btbEditAuthor";
             btbEditAuthor.Size = new Size(162, 57);
             btbEditAuthor.TabIndex = 14;
@@ -150,7 +150,7 @@
             dgvAuthor.DataSource = validatorBindingSource1;
             dgvAuthor.Dock = DockStyle.Fill;
             dgvAuthor.Location = new Point(0, 0);
-            dgvAuthor.Margin = new Padding(2, 2, 2, 2);
+            dgvAuthor.Margin = new Padding(2);
             dgvAuthor.MultiSelect = false;
             dgvAuthor.Name = "dgvAuthor";
             dgvAuthor.ReadOnly = true;
@@ -170,7 +170,7 @@
             // spcDetails
             // 
             spcDetails.Location = new Point(-1, 80);
-            spcDetails.Margin = new Padding(2, 2, 2, 2);
+            spcDetails.Margin = new Padding(2);
             spcDetails.Name = "spcDetails";
             // 
             // spcDetails.Panel1
@@ -192,7 +192,7 @@
             // btnSearch
             // 
             btnSearch.Location = new Point(372, 47);
-            btnSearch.Margin = new Padding(2, 2, 2, 2);
+            btnSearch.Margin = new Padding(2);
             btnSearch.Name = "btnSearch";
             btnSearch.Size = new Size(122, 20);
             btnSearch.TabIndex = 11;
@@ -212,7 +212,7 @@
             // txtSearch
             // 
             txtSearch.Location = new Point(71, 48);
-            txtSearch.Margin = new Padding(2, 2, 2, 2);
+            txtSearch.Margin = new Padding(2);
             txtSearch.Name = "txtSearch";
             txtSearch.Size = new Size(257, 23);
             txtSearch.TabIndex = 10;
@@ -230,7 +230,8 @@
             Controls.Add(btnSearch);
             Controls.Add(lblSearch);
             Controls.Add(txtSearch);
-            Margin = new Padding(2, 2, 2, 2);
+            FormBorderStyle = FormBorderStyle.FixedSingle;
+            Margin = new Padding(2);
             MaximizeBox = false;
             MinimizeBox = false;
             Name = "frmAuthorMaintenance";

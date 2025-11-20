@@ -62,6 +62,7 @@
             btnTitleMaintenance.TabIndex = 2;
             btnTitleMaintenance.Text = "Title Maintenance \r\n";
             btnTitleMaintenance.UseVisualStyleBackColor = true;
+            btnTitleMaintenance.Click += btnTitleMaintenance_Click;
             // 
             // btnAuthorMaintenance
             // 
@@ -72,6 +73,7 @@
             btnAuthorMaintenance.TabIndex = 3;
             btnAuthorMaintenance.Text = "Author Maintenance";
             btnAuthorMaintenance.UseVisualStyleBackColor = true;
+            btnAuthorMaintenance.Click += btnAuthorMaintenance_Click;
             // 
             // btnPublisherMaintenance
             // 

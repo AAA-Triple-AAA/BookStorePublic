@@ -58,7 +58,7 @@
             // btbDeleteTitle
             // 
             btbDeleteTitle.Location = new Point(611, 463);
-            btbDeleteTitle.Margin = new Padding(2, 2, 2, 2);
+            btbDeleteTitle.Margin = new Padding(2);
             btbDeleteTitle.Name = "btbDeleteTitle";
             btbDeleteTitle.Size = new Size(162, 57);
             btbDeleteTitle.TabIndex = 23;
@@ -68,7 +68,7 @@
             // btnAddTitle
             // 
             btnAddTitle.Location = new Point(50, 463);
-            btnAddTitle.Margin = new Padding(2, 2, 2, 2);
+            btnAddTitle.Margin = new Padding(2);
             btnAddTitle.Name = "btnAddTitle";
             btnAddTitle.Size = new Size(162, 57);
             btnAddTitle.TabIndex = 21;
@@ -88,7 +88,7 @@
             // btbEditTitle
             // 
             btbEditTitle.Location = new Point(342, 463);
-            btbEditTitle.Margin = new Padding(2, 2, 2, 2);
+            btbEditTitle.Margin = new Padding(2);
             btbEditTitle.Name = "btbEditTitle";
             btbEditTitle.Size = new Size(162, 57);
             btbEditTitle.TabIndex = 22;
@@ -98,7 +98,7 @@
             // btnSearch
             // 
             btnSearch.Location = new Point(372, 47);
-            btnSearch.Margin = new Padding(2, 2, 2, 2);
+            btnSearch.Margin = new Padding(2);
             btnSearch.Name = "btnSearch";
             btnSearch.Size = new Size(122, 20);
             btnSearch.TabIndex = 19;
@@ -112,7 +112,7 @@
             // spcDetails
             // 
             spcDetails.Location = new Point(-1, 80);
-            spcDetails.Margin = new Padding(2, 2, 2, 2);
+            spcDetails.Margin = new Padding(2);
             spcDetails.Name = "spcDetails";
             // 
             // spcDetails.Panel1
@@ -137,7 +137,7 @@
             dgvTitle.DataSource = validatorBindingSource1;
             dgvTitle.Dock = DockStyle.Fill;
             dgvTitle.Location = new Point(0, 0);
-            dgvTitle.Margin = new Padding(2, 2, 2, 2);
+            dgvTitle.Margin = new Padding(2);
             dgvTitle.MultiSelect = false;
             dgvTitle.Name = "dgvTitle";
             dgvTitle.ReadOnly = true;
@@ -193,7 +193,7 @@
             // rbtDetails
             // 
             rbtDetails.Location = new Point(0, 0);
-            rbtDetails.Margin = new Padding(2, 2, 2, 2);
+            rbtDetails.Margin = new Padding(2);
             rbtDetails.Name = "rbtDetails";
             rbtDetails.Size = new Size(254, 342);
             rbtDetails.TabIndex = 0;
@@ -212,7 +212,7 @@
             // txtSearch
             // 
             txtSearch.Location = new Point(71, 48);
-            txtSearch.Margin = new Padding(2, 2, 2, 2);
+            txtSearch.Margin = new Padding(2);
             txtSearch.Name = "txtSearch";
             txtSearch.Size = new Size(257, 23);
             txtSearch.TabIndex = 18;
@@ -230,7 +230,8 @@
             Controls.Add(spcDetails);
             Controls.Add(lblSearch);
             Controls.Add(txtSearch);
-            Margin = new Padding(2, 2, 2, 2);
+            FormBorderStyle = FormBorderStyle.FixedSingle;
+            Margin = new Padding(2);
             MaximizeBox = false;
             MinimizeBox = false;
             Name = "frmTitleMaintenance";
