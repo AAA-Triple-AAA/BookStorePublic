@@ -16,5 +16,17 @@ namespace BookStoreUI.PublisherMaintenanceForms
         {
             InitializeComponent();
         }
+
+        private void btnAddPublisher_Click(object sender, EventArgs e)
+        {
+            var frm = new frmPublisherDetail { IsAdd = true };
+            frm.ShowDialog();
+        }
+
+        private void btbEditPublisher_Click(object sender, EventArgs e)
+        {
+            var frm = new frmPublisherDetail { IsAdd = false };
+            frm.ShowDialog();
+        }
     }
 }

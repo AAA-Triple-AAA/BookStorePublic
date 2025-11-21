@@ -12,9 +12,16 @@ namespace BookStoreUI.PublisherMaintenanceForms
 {
     public partial class frmPublisherDetail : Form
     {
+        public bool IsAdd = false;
+
         public frmPublisherDetail()
         {
             InitializeComponent();
+        }
+
+        private void frmPublisherDetail_Load(object sender, EventArgs e)
+        {
+            this.Text = IsAdd ? @"Add Publisher" : @"Edit Publisher";
         }
     }
 }
