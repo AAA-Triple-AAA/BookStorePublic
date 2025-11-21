@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using BookStoreUI.EmployeeMaintenanceForms;
 
 namespace BookStoreUI
 {
@@ -33,6 +34,14 @@ namespace BookStoreUI
         private void btnAuthorMaintenance_Click(object sender, EventArgs e)
         {
             frmAuthorMaintenance frm = new();
+            this.Hide();
+            frm.ShowDialog();
+            this.Show();
+        }
+
+        private void btnEmployeeMaintenance_Click(object sender, EventArgs e)
+        {
+            frmEmployeeMaintenance frm = new();
             this.Hide();
             frm.ShowDialog();
             this.Show();

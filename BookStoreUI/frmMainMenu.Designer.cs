@@ -104,6 +104,7 @@
             btnEmployeeMaintenance.TabIndex = 6;
             btnEmployeeMaintenance.Text = "Employee Maintenance";
             btnEmployeeMaintenance.UseVisualStyleBackColor = true;
+            btnEmployeeMaintenance.Click += btnEmployeeMaintenance_Click;
             // 
             // btnReports
             // 

@@ -16,5 +16,17 @@ namespace BookStoreUI.EmployeeMaintenanceForms
         {
             InitializeComponent();
         }
+
+        private void btnAddEmployee_Click(object sender, EventArgs e)
+        {
+            var frm = new frmEmployeeDetail { IsAdd = true };
+            frm.ShowDialog();
+        }
+
+        private void btbEditEmployee_Click(object sender, EventArgs e)
+        {
+            var frm = new frmEmployeeDetail { IsAdd = false };
+            frm.ShowDialog();
+        }
     }
 }

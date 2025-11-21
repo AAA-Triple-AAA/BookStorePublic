@@ -12,9 +12,16 @@ namespace BookStoreUI.EmployeeMaintenanceForms
 {
     public partial class frmEmployeeDetail : Form
     {
+        public bool IsAdd = false;
+
         public frmEmployeeDetail()
         {
             InitializeComponent();
+        }
+
+        private void frmEmployeeDetail_Load(object sender, EventArgs e)
+        {
+            this.Text = IsAdd ? @"Add Employee" : @"Edit Employee";
         }
     }
 }
