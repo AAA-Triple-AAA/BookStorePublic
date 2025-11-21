@@ -1,6 +1,6 @@
 ﻿namespace BookStoreUI.AuthorMaintenanceForms
 {
-    partial class fromAuthorDeatail
+    partial class frmAuthorDetail
     {
         /// <summary>
         /// Required designer variable.
@@ -294,7 +294,7 @@
             FormBorderStyle = FormBorderStyle.FixedDialog;
             MaximizeBox = false;
             MinimizeBox = false;
-            Name = "fromAuthorDeatail";
+            Name = "frmAuthorDetail";
             ShowIcon = false;
             StartPosition = FormStartPosition.CenterParent;
             Text = "Add/Edit Author";
