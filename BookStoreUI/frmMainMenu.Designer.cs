@@ -95,6 +95,7 @@
             btnStoreMaintenance.TabIndex = 5;
             btnStoreMaintenance.Text = "Store Maintenance ";
             btnStoreMaintenance.UseVisualStyleBackColor = true;
+            btnStoreMaintenance.Click += btnStoreMaintenance_Click;
             // 
             // btnEmployeeMaintenance
             // 

@@ -1,4 +1,7 @@
-﻿using System;
+﻿using BookStoreUI.EmployeeMaintenanceForms;
+using BookStoreUI.PublisherMaintenanceForms;
+using BookStoreUI.StoreMaintenanceForms;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -7,8 +10,6 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using BookStoreUI.EmployeeMaintenanceForms;
-using BookStoreUI.PublisherMaintenanceForms;
 
 namespace BookStoreUI
 {
@@ -51,6 +52,14 @@ namespace BookStoreUI
         private void btnPublisherMaintenance_Click(object sender, EventArgs e)
         {
             frmPublisherMaintenance frm = new();
+            this.Hide();
+            frm.ShowDialog();
+            this.Show();
+        }
+
+        private void btnStoreMaintenance_Click(object sender, EventArgs e)
+        {
+            frmStoreMaintenance frm = new();
             this.Hide();
             frm.ShowDialog();
             this.Show();

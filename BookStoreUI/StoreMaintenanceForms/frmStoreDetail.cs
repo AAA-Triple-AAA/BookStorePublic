@@ -10,11 +10,18 @@ using System.Windows.Forms;
 
 namespace BookStoreUI.StoreMaintenanceForms
 {
-    public partial class frnStoreDetail : Form
+    public partial class frmStoreDetail : Form
     {
-        public frnStoreDetail()
+        public bool IsAdd = false;
+
+        public frmStoreDetail()
         {
             InitializeComponent();
+        }
+
+        private void frnStoreDetail_Load(object sender, EventArgs e)
+        {
+            this.Text = IsAdd ? @"Add Store" : @"Edit Store";
         }
     }
 }
