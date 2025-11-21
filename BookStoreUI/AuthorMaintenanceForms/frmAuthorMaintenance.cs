@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using BookStoreUI.AuthorMaintenanceForms;
 
 namespace BookStoreUI
 {
@@ -15,6 +16,19 @@ namespace BookStoreUI
         public frmAuthorMaintenance()
         {
             InitializeComponent();
+        }
+
+        private void btnAddAuthor_Click(object sender, EventArgs e)
+        {
+            var frmAuthorDetail = new frmAuthorDetail { IsAdd = true }
+            ;
+            frmAuthorDetail.ShowDialog();
+        }
+
+        private void btbEditAuthor_Click(object sender, EventArgs e)
+        {
+            var frmAuthorDetail = new frmAuthorDetail { IsAdd = false };
+            frmAuthorDetail.ShowDialog();
         }
     }
 }
