@@ -247,7 +247,7 @@
         private Label lblSearch;
         private DataGridViewTextBoxColumn columnTitle_id;
         private SplitContainer spcDetails;
-        private DataGridView dgvTitle;
+        private DataGridView dgvPublisher;
         private BindingSource validatorBindingSource;
         private Button btnAddPublisher;
         private Label lblDetails;

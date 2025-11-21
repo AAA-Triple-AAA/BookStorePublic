@@ -250,8 +250,8 @@
         private BindingSource validatorBindingSource1;
         private RichTextBox rbtDetails;
         private Label lblSearch;
-        private Button btbDeleteAuthor;
-        private Button btnAddAuthor;
+        private Button btbDeleteEmployee;
+        private Button btnAddEmployee;
         private Label lblDetails;
         private Button btbEditEmployee;
         private DataGridViewTextBoxColumn columnemp_id;
