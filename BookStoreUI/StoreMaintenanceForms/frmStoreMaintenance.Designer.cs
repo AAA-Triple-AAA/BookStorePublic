@@ -40,11 +40,11 @@
             columnCity = new DataGridViewTextBoxColumn();
             columnState = new DataGridViewTextBoxColumn();
             validatorBindingSource1 = new BindingSource(components);
-            rbtDetails = new RichTextBox();
+            rtbDetails = new RichTextBox();
             btnAddStore = new Button();
-            btbEditStore = new Button();
+            btnEditStore = new Button();
             btnSearch = new Button();
-            btbDeleteStore = new Button();
+            btnDeleteStore = new Button();
             lblDetails = new Label();
             ((System.ComponentModel.ISupportInitialize)validatorBindingSource).BeginInit();
             ((System.ComponentModel.ISupportInitialize)spcDetails).BeginInit();
@@ -80,7 +80,7 @@
             // 
             // spcDetails.Panel2
             // 
-            spcDetails.Panel2.Controls.Add(rbtDetails);
+            spcDetails.Panel2.Controls.Add(rtbDetails);
             spcDetails.Size = new Size(828, 340);
             spcDetails.SplitterDistance = 571;
             spcDetails.SplitterWidth = 3;
@@ -149,14 +149,14 @@
             // 
             validatorBindingSource1.DataSource = typeof(BookStoreBO.Validator);
             // 
-            // rbtDetails
+            // rtbDetails
             // 
-            rbtDetails.Location = new Point(0, 0);
-            rbtDetails.Margin = new Padding(2);
-            rbtDetails.Name = "rbtDetails";
-            rbtDetails.Size = new Size(254, 342);
-            rbtDetails.TabIndex = 0;
-            rbtDetails.Text = "";
+            rtbDetails.Location = new Point(0, 0);
+            rtbDetails.Margin = new Padding(2);
+            rtbDetails.Name = "rtbDetails";
+            rtbDetails.Size = new Size(254, 342);
+            rtbDetails.TabIndex = 0;
+            rtbDetails.Text = "";
             // 
             // btnAddStore
             // 
@@ -169,16 +169,16 @@
             btnAddStore.UseVisualStyleBackColor = true;
             btnAddStore.Click += btnAddStore_Click;
             // 
-            // btbEditStore
+            // btnEditStore
             // 
-            btbEditStore.Location = new Point(168, 435);
-            btbEditStore.Margin = new Padding(2);
-            btbEditStore.Name = "btbEditStore";
-            btbEditStore.Size = new Size(153, 34);
-            btbEditStore.TabIndex = 4;
-            btbEditStore.Text = "Edit Selected Store";
-            btbEditStore.UseVisualStyleBackColor = true;
-            btbEditStore.Click += btbEditStore_Click;
+            btnEditStore.Location = new Point(168, 435);
+            btnEditStore.Margin = new Padding(2);
+            btnEditStore.Name = "btnEditStore";
+            btnEditStore.Size = new Size(153, 34);
+            btnEditStore.TabIndex = 4;
+            btnEditStore.Text = "Edit Selected Store";
+            btnEditStore.UseVisualStyleBackColor = true;
+            btnEditStore.Click += btbEditStore_Click;
             // 
             // btnSearch
             // 
@@ -191,15 +191,15 @@
             btnSearch.UseVisualStyleBackColor = true;
             btnSearch.Click += btnSearch_Click;
             // 
-            // btbDeleteStore
+            // btnDeleteStore
             // 
-            btbDeleteStore.Location = new Point(325, 435);
-            btbDeleteStore.Margin = new Padding(2);
-            btbDeleteStore.Name = "btbDeleteStore";
-            btbDeleteStore.Size = new Size(153, 34);
-            btbDeleteStore.TabIndex = 5;
-            btbDeleteStore.Text = "Delete Selected Store";
-            btbDeleteStore.UseVisualStyleBackColor = true;
+            btnDeleteStore.Location = new Point(325, 435);
+            btnDeleteStore.Margin = new Padding(2);
+            btnDeleteStore.Name = "btnDeleteStore";
+            btnDeleteStore.Size = new Size(153, 34);
+            btnDeleteStore.TabIndex = 5;
+            btnDeleteStore.Text = "Delete Selected Store";
+            btnDeleteStore.UseVisualStyleBackColor = true;
             // 
             // lblDetails
             // 
@@ -219,9 +219,9 @@
             Controls.Add(txtSearch);
             Controls.Add(spcDetails);
             Controls.Add(btnAddStore);
-            Controls.Add(btbEditStore);
+            Controls.Add(btnEditStore);
             Controls.Add(btnSearch);
-            Controls.Add(btbDeleteStore);
+            Controls.Add(btnDeleteStore);
             Controls.Add(lblDetails);
             FormBorderStyle = FormBorderStyle.FixedSingle;
             Icon = (Icon)resources.GetObject("$this.Icon");
@@ -249,11 +249,11 @@
         private SplitContainer spcDetails;
         private DataGridView dgvStore;
         private BindingSource validatorBindingSource1;
-        private RichTextBox rbtDetails;
+        private RichTextBox rtbDetails;
         private Button btnAddStore;
-        private Button btbEditStore;
+        private Button btnEditStore;
         private Button btnSearch;
-        private Button btbDeleteStore;
+        private Button btnDeleteStore;
         private Label lblDetails;
         private DataGridViewTextBoxColumn columnStore_id;
         private DataGridViewTextBoxColumn columnStore_name;

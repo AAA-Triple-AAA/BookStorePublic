@@ -22,11 +22,11 @@ namespace BookStoreUI.EmployeeMaintenanceForms
 
         private void ClearForm()
         {
-            txtEmp_id.Clear();
-            txtFname.Clear();
-            txtminit.Clear();
-            txtLname.Clear();
-            nudJob_id.Value = 1;
+            txtEmpId.Clear();
+            txtFirstName.Clear();
+            txtMidInitial.Clear();
+            txtLastName.Clear();
+            nudJobId.Value = 1;
             nudJobLevel.Value = 10;
             mtbPubId.Clear();
             dtpHireDate.Value = DateTime.Now;
@@ -34,14 +34,14 @@ namespace BookStoreUI.EmployeeMaintenanceForms
 
         private bool ValidateInput()
         {
-            var errMsg = Validator.IsPresent(txtEmp_id.Text, "Employee ID");
-            errMsg += Validator.IsPresent(txtFname.Text, "First Name");
-            errMsg += Validator.IsPresent(txtminit.Text, "Middle Initial");
-            errMsg += Validator.IsWithinLength(txtminit.Text, "Middle Initial", 0, 1);
-            errMsg += Validator.IsPresent(txtLname.Text, "Last Name");
-            errMsg += Validator.IsPresent(nudJob_id.Text, "Job ID");
+            var errMsg = Validator.IsPresent(txtEmpId.Text, "Employee ID");
+            errMsg += Validator.IsPresent(txtFirstName.Text, "First Name");
+            errMsg += Validator.IsPresent(txtMidInitial.Text, "Middle Initial");
+            errMsg += Validator.IsWithinLength(txtMidInitial.Text, "Middle Initial", 0, 1);
+            errMsg += Validator.IsPresent(txtLastName.Text, "Last Name");
+            errMsg += Validator.IsPresent(nudJobId.Text, "Job ID");
             errMsg += Validator.IsPresent(nudJobLevel.Text, "Job Level");
-            errMsg += Validator.IsPresent(txtLname.Text, "Last Name");
+            errMsg += Validator.IsPresent(txtLastName.Text, "Last Name");
             errMsg += Validator.IsMaskCompleted(mtbPubId.MaskCompleted, "Publisher ID");
 
             if (errMsg == "") return true;

@@ -22,8 +22,8 @@ namespace BookStoreUI.PublisherMaintenanceForms
 
         private void ClearForm()
         {
-            mtbPub_id.Clear();
-            txtPub_name.Clear();
+            mtbPubId.Clear();
+            txtPubName.Clear();
             txtCity.Clear();
             txtState.Clear();
             txtCountry.Clear();
@@ -31,8 +31,8 @@ namespace BookStoreUI.PublisherMaintenanceForms
 
         private bool ValidateInput()
         {
-            var errMsg = Validator.IsMaskCompleted(mtbPub_id.MaskCompleted, "Publisher ID");
-            errMsg += Validator.IsPresent(txtPub_name.Text, "Publisher Name");
+            var errMsg = Validator.IsMaskCompleted(mtbPubId.MaskCompleted, "Publisher ID");
+            errMsg += Validator.IsPresent(txtPubName.Text, "Publisher Name");
             errMsg += Validator.IsPresent(txtCity.Text, "City");
             errMsg += Validator.IsPresent(txtState.Text, "State");
             errMsg += Validator.IsPresent(txtCountry.Text, "Country");

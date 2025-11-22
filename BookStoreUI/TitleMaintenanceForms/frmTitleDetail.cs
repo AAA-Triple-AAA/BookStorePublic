@@ -22,7 +22,7 @@ namespace BookStoreUI
 
         private bool ValidateInput()
         {
-            var errMsg = Validator.IsPresent(txtTitle_id.Text, "Title ID");
+            var errMsg = Validator.IsPresent(txtTitleId.Text, "Title ID");
             errMsg += Validator.IsPresent(txtTitle.Text, "Title");
             errMsg += Validator.IsSelected(cboType.SelectedIndex, "Type");
             errMsg += Validator.IsPresent(txtPubId.Text, "Publisher ID");
@@ -35,7 +35,7 @@ namespace BookStoreUI
 
         private void ClearForm()
         {
-            txtTitle_id.Clear();
+            txtTitleId.Clear();
             txtTitle.Clear();
             cboType.SelectedIndex = -1;
             txtPubId.Clear();

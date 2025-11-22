@@ -32,7 +32,7 @@
             lblStartDate = new Label();
             lblEndDate = new Label();
             dtpStartDate = new DateTimePicker();
-            dateTimePicker1 = new DateTimePicker();
+            dtpEndDate = new DateTimePicker();
             btnGenerateReport = new Button();
             dgvSales = new DataGridView();
             columnnord_num = new DataGridViewTextBoxColumn();
@@ -82,17 +82,17 @@
             dtpStartDate.TabIndex = 1;
             dtpStartDate.Value = new DateTime(2025, 11, 20, 0, 0, 0, 0);
             // 
-            // dateTimePicker1
+            // dtpEndDate
             // 
-            dateTimePicker1.CustomFormat = "yyyy/MM/dd";
-            dateTimePicker1.Format = DateTimePickerFormat.Custom;
-            dateTimePicker1.Location = new Point(76, 39);
-            dateTimePicker1.Margin = new Padding(2);
-            dateTimePicker1.MaxDate = new DateTime(2025, 11, 20, 0, 0, 0, 0);
-            dateTimePicker1.Name = "dateTimePicker1";
-            dateTimePicker1.Size = new Size(99, 23);
-            dateTimePicker1.TabIndex = 2;
-            dateTimePicker1.Value = new DateTime(2025, 11, 20, 0, 0, 0, 0);
+            dtpEndDate.CustomFormat = "yyyy/MM/dd";
+            dtpEndDate.Format = DateTimePickerFormat.Custom;
+            dtpEndDate.Location = new Point(76, 39);
+            dtpEndDate.Margin = new Padding(2);
+            dtpEndDate.MaxDate = new DateTime(2025, 11, 20, 0, 0, 0, 0);
+            dtpEndDate.Name = "dtpEndDate";
+            dtpEndDate.Size = new Size(99, 23);
+            dtpEndDate.TabIndex = 2;
+            dtpEndDate.Value = new DateTime(2025, 11, 20, 0, 0, 0, 0);
             // 
             // btnGenerateReport
             // 
@@ -221,7 +221,7 @@
             Controls.Add(lblTotalValue);
             Controls.Add(dgvSales);
             Controls.Add(btnGenerateReport);
-            Controls.Add(dateTimePicker1);
+            Controls.Add(dtpEndDate);
             Controls.Add(dtpStartDate);
             Controls.Add(lblEndDate);
             Controls.Add(lblStartDate);
@@ -244,7 +244,7 @@
         private Label lblStartDate;
         private Label lblEndDate;
         private DateTimePicker dtpStartDate;
-        private DateTimePicker dateTimePicker1;
+        private DateTimePicker dtpEndDate;
         private Button btnGenerateReport;
         private DataGridView dgvSales;
         private BindingSource validatorBindingSource;

@@ -31,7 +31,7 @@
             components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmPublisherMaintenance));
             txtSearch = new TextBox();
-            rbtDetails = new RichTextBox();
+            rtbDetails = new RichTextBox();
             validatorBindingSource1 = new BindingSource(components);
             spcDetails = new SplitContainer();
             dgvPublisher = new DataGridView();
@@ -43,9 +43,9 @@
             validatorBindingSource = new BindingSource(components);
             btnAddPublisher = new Button();
             lblDetails = new Label();
-            btbEditPublisher = new Button();
+            btnEditPublisher = new Button();
             btnSearch = new Button();
-            btbDeletePublisher = new Button();
+            btnDeletePublisher = new Button();
             ((System.ComponentModel.ISupportInitialize)validatorBindingSource1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)spcDetails).BeginInit();
             spcDetails.Panel1.SuspendLayout();
@@ -64,14 +64,14 @@
             txtSearch.Size = new Size(257, 23);
             txtSearch.TabIndex = 1;
             // 
-            // rbtDetails
+            // rtbDetails
             // 
-            rbtDetails.Location = new Point(0, 0);
-            rbtDetails.Margin = new Padding(2);
-            rbtDetails.Name = "rbtDetails";
-            rbtDetails.Size = new Size(254, 342);
-            rbtDetails.TabIndex = 0;
-            rbtDetails.Text = "";
+            rtbDetails.Location = new Point(0, 0);
+            rtbDetails.Margin = new Padding(2);
+            rtbDetails.Name = "rtbDetails";
+            rtbDetails.Size = new Size(254, 342);
+            rtbDetails.TabIndex = 0;
+            rtbDetails.Text = "";
             // 
             // validatorBindingSource1
             // 
@@ -89,7 +89,7 @@
             // 
             // spcDetails.Panel2
             // 
-            spcDetails.Panel2.Controls.Add(rbtDetails);
+            spcDetails.Panel2.Controls.Add(rtbDetails);
             spcDetails.Size = new Size(828, 340);
             spcDetails.SplitterDistance = 571;
             spcDetails.SplitterWidth = 3;
@@ -179,16 +179,16 @@
             lblDetails.TabIndex = 25;
             lblDetails.Text = "Details";
             // 
-            // btbEditPublisher
+            // btnEditPublisher
             // 
-            btbEditPublisher.Location = new Point(168, 437);
-            btbEditPublisher.Margin = new Padding(2);
-            btbEditPublisher.Name = "btbEditPublisher";
-            btbEditPublisher.Size = new Size(153, 34);
-            btbEditPublisher.TabIndex = 4;
-            btbEditPublisher.Text = "Edit Selected Publisher";
-            btbEditPublisher.UseVisualStyleBackColor = true;
-            btbEditPublisher.Click += btbEditPublisher_Click;
+            btnEditPublisher.Location = new Point(168, 437);
+            btnEditPublisher.Margin = new Padding(2);
+            btnEditPublisher.Name = "btnEditPublisher";
+            btnEditPublisher.Size = new Size(153, 34);
+            btnEditPublisher.TabIndex = 4;
+            btnEditPublisher.Text = "Edit Selected Publisher";
+            btnEditPublisher.UseVisualStyleBackColor = true;
+            btnEditPublisher.Click += btbEditPublisher_Click;
             // 
             // btnSearch
             // 
@@ -201,15 +201,15 @@
             btnSearch.UseVisualStyleBackColor = true;
             btnSearch.Click += btnSearch_Click;
             // 
-            // btbDeletePublisher
+            // btnDeletePublisher
             // 
-            btbDeletePublisher.Location = new Point(325, 437);
-            btbDeletePublisher.Margin = new Padding(2);
-            btbDeletePublisher.Name = "btbDeletePublisher";
-            btbDeletePublisher.Size = new Size(153, 34);
-            btbDeletePublisher.TabIndex = 5;
-            btbDeletePublisher.Text = "Delete Selected Publisher";
-            btbDeletePublisher.UseVisualStyleBackColor = true;
+            btnDeletePublisher.Location = new Point(325, 437);
+            btnDeletePublisher.Margin = new Padding(2);
+            btnDeletePublisher.Name = "btnDeletePublisher";
+            btnDeletePublisher.Size = new Size(153, 34);
+            btnDeletePublisher.TabIndex = 5;
+            btnDeletePublisher.Text = "Delete Selected Publisher";
+            btnDeletePublisher.UseVisualStyleBackColor = true;
             // 
             // frmPublisherMaintenance
             // 
@@ -220,9 +220,9 @@
             Controls.Add(spcDetails);
             Controls.Add(btnAddPublisher);
             Controls.Add(lblDetails);
-            Controls.Add(btbEditPublisher);
+            Controls.Add(btnEditPublisher);
             Controls.Add(btnSearch);
-            Controls.Add(btbDeletePublisher);
+            Controls.Add(btnDeletePublisher);
             FormBorderStyle = FormBorderStyle.FixedSingle;
             Icon = (Icon)resources.GetObject("$this.Icon");
             Margin = new Padding(2);
@@ -245,7 +245,7 @@
         #endregion
 
         private TextBox txtSearch;
-        private RichTextBox rbtDetails;
+        private RichTextBox rtbDetails;
         private BindingSource validatorBindingSource1;
         private DataGridViewTextBoxColumn columnPrice;
         private DataGridViewTextBoxColumn columnType;
@@ -256,9 +256,9 @@
         private BindingSource validatorBindingSource;
         private Button btnAddPublisher;
         private Label lblDetails;
-        private Button btbEditPublisher;
+        private Button btnEditPublisher;
         private Button btnSearch;
-        private Button btbDeletePublisher;
+        private Button btnDeletePublisher;
         private DataGridViewTextBoxColumn columnPub_id;
         private DataGridViewTextBoxColumn columnPub_name;
         private DataGridViewTextBoxColumn columnCity;

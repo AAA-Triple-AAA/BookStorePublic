@@ -22,9 +22,9 @@ namespace BookStoreUI.StoreMaintenanceForms
 
         private void ClearForm()
         {
-            mtbstor_id.Clear();
-            txtStor_name.Clear();
-            txtStor_address.Clear();
+            mtbStoreId.Clear();
+            txtStoreName.Clear();
+            txtStoreAddress.Clear();
             txtCity.Clear();
             txtState.Clear();
             mtbZip.Clear();
@@ -32,9 +32,9 @@ namespace BookStoreUI.StoreMaintenanceForms
 
         private bool ValidateInput()
         {
-            var errMsg = Validator.IsMaskCompleted(mtbstor_id.MaskCompleted, "Store ID");
-            errMsg += Validator.IsPresent(txtStor_name.Text, "Store Name");
-            errMsg += Validator.IsPresent(txtStor_address.Text, "Store Address");
+            var errMsg = Validator.IsMaskCompleted(mtbStoreId.MaskCompleted, "Store ID");
+            errMsg += Validator.IsPresent(txtStoreName.Text, "Store Name");
+            errMsg += Validator.IsPresent(txtStoreAddress.Text, "Store Address");
             errMsg += Validator.IsPresent(txtCity.Text, "City");
             errMsg += Validator.IsPresent(txtState.Text, "State");
             errMsg += Validator.IsWithinLength(txtState.Text, "State", 2, 2);

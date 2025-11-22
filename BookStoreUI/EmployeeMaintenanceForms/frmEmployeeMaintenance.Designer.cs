@@ -41,11 +41,11 @@
             columnAu_lname = new DataGridViewTextBoxColumn();
             columnJob_id = new DataGridViewTextBoxColumn();
             validatorBindingSource1 = new BindingSource(components);
-            rbtDetails = new RichTextBox();
-            btbDeleteEmployee = new Button();
+            rtbDetails = new RichTextBox();
+            btnDeleteEmployee = new Button();
             btnAddEmployee = new Button();
             lblDetails = new Label();
-            btbEditEmployee = new Button();
+            btnEditEmployee = new Button();
             ((System.ComponentModel.ISupportInitialize)validatorBindingSource).BeginInit();
             ((System.ComponentModel.ISupportInitialize)spcDetails).BeginInit();
             spcDetails.Panel1.SuspendLayout();
@@ -91,7 +91,7 @@
             // 
             // spcDetails.Panel2
             // 
-            spcDetails.Panel2.Controls.Add(rbtDetails);
+            spcDetails.Panel2.Controls.Add(rtbDetails);
             spcDetails.Size = new Size(828, 340);
             spcDetails.SplitterDistance = 571;
             spcDetails.SplitterWidth = 3;
@@ -160,24 +160,24 @@
             // 
             validatorBindingSource1.DataSource = typeof(BookStoreBO.Validator);
             // 
-            // rbtDetails
+            // rtbDetails
             // 
-            rbtDetails.Location = new Point(0, 0);
-            rbtDetails.Margin = new Padding(2);
-            rbtDetails.Name = "rbtDetails";
-            rbtDetails.Size = new Size(254, 342);
-            rbtDetails.TabIndex = 0;
-            rbtDetails.Text = "";
+            rtbDetails.Location = new Point(0, 0);
+            rtbDetails.Margin = new Padding(2);
+            rtbDetails.Name = "rtbDetails";
+            rtbDetails.Size = new Size(254, 342);
+            rtbDetails.TabIndex = 0;
+            rtbDetails.Text = "";
             // 
-            // btbDeleteEmployee
+            // btnDeleteEmployee
             // 
-            btbDeleteEmployee.Location = new Point(325, 436);
-            btbDeleteEmployee.Margin = new Padding(2);
-            btbDeleteEmployee.Name = "btbDeleteEmployee";
-            btbDeleteEmployee.Size = new Size(153, 34);
-            btbDeleteEmployee.TabIndex = 5;
-            btbDeleteEmployee.Text = "Delete Selected Employee";
-            btbDeleteEmployee.UseVisualStyleBackColor = true;
+            btnDeleteEmployee.Location = new Point(325, 436);
+            btnDeleteEmployee.Margin = new Padding(2);
+            btnDeleteEmployee.Name = "btnDeleteEmployee";
+            btnDeleteEmployee.Size = new Size(153, 34);
+            btnDeleteEmployee.TabIndex = 5;
+            btnDeleteEmployee.Text = "Delete Selected Employee";
+            btnDeleteEmployee.UseVisualStyleBackColor = true;
             // 
             // btnAddEmployee
             // 
@@ -200,16 +200,16 @@
             lblDetails.TabIndex = 17;
             lblDetails.Text = "Details";
             // 
-            // btbEditEmployee
+            // btnEditEmployee
             // 
-            btbEditEmployee.Location = new Point(168, 436);
-            btbEditEmployee.Margin = new Padding(2);
-            btbEditEmployee.Name = "btbEditEmployee";
-            btbEditEmployee.Size = new Size(153, 34);
-            btbEditEmployee.TabIndex = 4;
-            btbEditEmployee.Text = "Edit Selected Employee";
-            btbEditEmployee.UseVisualStyleBackColor = true;
-            btbEditEmployee.Click += btbEditEmployee_Click;
+            btnEditEmployee.Location = new Point(168, 436);
+            btnEditEmployee.Margin = new Padding(2);
+            btnEditEmployee.Name = "btnEditEmployee";
+            btnEditEmployee.Size = new Size(153, 34);
+            btnEditEmployee.TabIndex = 4;
+            btnEditEmployee.Text = "Edit Selected Employee";
+            btnEditEmployee.UseVisualStyleBackColor = true;
+            btnEditEmployee.Click += btbEditEmployee_Click;
             // 
             // frmEmployeeMaintenance
             // 
@@ -219,10 +219,10 @@
             Controls.Add(btnSearch);
             Controls.Add(txtSearch);
             Controls.Add(spcDetails);
-            Controls.Add(btbDeleteEmployee);
+            Controls.Add(btnDeleteEmployee);
             Controls.Add(btnAddEmployee);
             Controls.Add(lblDetails);
-            Controls.Add(btbEditEmployee);
+            Controls.Add(btnEditEmployee);
             FormBorderStyle = FormBorderStyle.FixedSingle;
             Icon = (Icon)resources.GetObject("$this.Icon");
             Margin = new Padding(2);
@@ -254,11 +254,11 @@
         private DataGridViewTextBoxColumn columnphone;
         private DataGridViewTextBoxColumn columnAdress;
         private BindingSource validatorBindingSource1;
-        private RichTextBox rbtDetails;
-        private Button btbDeleteEmployee;
+        private RichTextBox rtbDetails;
+        private Button btnDeleteEmployee;
         private Button btnAddEmployee;
         private Label lblDetails;
-        private Button btbEditEmployee;
+        private Button btnEditEmployee;
         private DataGridViewTextBoxColumn columnemp_id;
         private DataGridViewTextBoxColumn columnFname;
         private DataGridViewTextBoxColumn columnMinit;
