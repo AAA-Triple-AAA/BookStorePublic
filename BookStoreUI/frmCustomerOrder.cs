@@ -18,6 +18,18 @@ namespace BookStoreUI
             InitializeComponent();
         }
 
+        private bool ValidateInput()
+        {
+            var errMsg = Validator.IsSelected(cboStore.SelectedIndex, "Store");
+            errMsg += Validator.IsSelected(cboEmployee.SelectedIndex, "Employee");
+            errMsg += Validator.IsPresent(txtCustomerName.Text, "Customer Name");
+
+            if (errMsg == "") return true;
+
+            MessageBox.Show(errMsg);
+            return false;
+        }
+
         private void btnSearch_Click(object sender, EventArgs e)
         {
             var errMsg = Validator.IsSearchEntryPresent(txtSearchTitle.Text, "Title");

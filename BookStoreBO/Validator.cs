@@ -17,5 +17,13 @@
                 msg += name + " is a required field.\n";
             return msg;
         }
+
+        public static string IsSelected(int selectedIndex, string name)
+        {
+            var msg = "";
+            if (selectedIndex == -1)
+                msg += name + " is a required field.\n";
+            return msg;
+        }
     }
 }
