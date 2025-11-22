@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmTitleMaintenance));
             btbDeleteTitle = new Button();
             btnAddTitle = new Button();
             lblDetails = new Label();
@@ -37,14 +38,14 @@
             validatorBindingSource = new BindingSource(components);
             spcDetails = new SplitContainer();
             dgvTitle = new DataGridView();
-            validatorBindingSource1 = new BindingSource(components);
-            rbtDetails = new RichTextBox();
-            txtSearch = new TextBox();
             columnTitle_id = new DataGridViewTextBoxColumn();
             columnTitle = new DataGridViewTextBoxColumn();
             columnType = new DataGridViewTextBoxColumn();
             columnPub_id = new DataGridViewTextBoxColumn();
             columnPrice = new DataGridViewTextBoxColumn();
+            validatorBindingSource1 = new BindingSource(components);
+            rbtDetails = new RichTextBox();
+            txtSearch = new TextBox();
             ((System.ComponentModel.ISupportInitialize)validatorBindingSource).BeginInit();
             ((System.ComponentModel.ISupportInitialize)spcDetails).BeginInit();
             spcDetails.Panel1.SuspendLayout();
@@ -147,28 +148,6 @@
             dgvTitle.Size = new Size(572, 340);
             dgvTitle.TabIndex = 0;
             // 
-            // validatorBindingSource1
-            // 
-            validatorBindingSource1.DataSource = typeof(BookStoreBO.Validator);
-            // 
-            // rbtDetails
-            // 
-            rbtDetails.Location = new Point(0, 0);
-            rbtDetails.Margin = new Padding(2);
-            rbtDetails.Name = "rbtDetails";
-            rbtDetails.Size = new Size(254, 342);
-            rbtDetails.TabIndex = 0;
-            rbtDetails.Text = "";
-            // 
-            // txtSearch
-            // 
-            txtSearch.Location = new Point(11, 27);
-            txtSearch.Margin = new Padding(2);
-            txtSearch.Name = "txtSearch";
-            txtSearch.PlaceholderText = "Search";
-            txtSearch.Size = new Size(257, 23);
-            txtSearch.TabIndex = 1;
-            // 
             // columnTitle_id
             // 
             columnTitle_id.HeaderText = "Title ID";
@@ -209,6 +188,28 @@
             columnPrice.ReadOnly = true;
             columnPrice.Width = 150;
             // 
+            // validatorBindingSource1
+            // 
+            validatorBindingSource1.DataSource = typeof(BookStoreBO.Validator);
+            // 
+            // rbtDetails
+            // 
+            rbtDetails.Location = new Point(0, 0);
+            rbtDetails.Margin = new Padding(2);
+            rbtDetails.Name = "rbtDetails";
+            rbtDetails.Size = new Size(254, 342);
+            rbtDetails.TabIndex = 0;
+            rbtDetails.Text = "";
+            // 
+            // txtSearch
+            // 
+            txtSearch.Location = new Point(11, 27);
+            txtSearch.Margin = new Padding(2);
+            txtSearch.Name = "txtSearch";
+            txtSearch.PlaceholderText = "Search";
+            txtSearch.Size = new Size(257, 23);
+            txtSearch.TabIndex = 1;
+            // 
             // frmTitleMaintenance
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -222,6 +223,7 @@
             Controls.Add(spcDetails);
             Controls.Add(txtSearch);
             FormBorderStyle = FormBorderStyle.FixedSingle;
+            Icon = (Icon)resources.GetObject("$this.Icon");
             Margin = new Padding(2);
             MaximizeBox = false;
             MinimizeBox = false;

@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmStoreMaintenance));
             validatorBindingSource = new BindingSource(components);
             txtSearch = new TextBox();
             spcDetails = new SplitContainer();
@@ -209,7 +210,7 @@
             lblDetails.TabIndex = 33;
             lblDetails.Text = "Details";
             // 
-            // frmStoreMainenance
+            // frmStoreMaintenance
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
@@ -222,10 +223,11 @@
             Controls.Add(btbDeleteStore);
             Controls.Add(lblDetails);
             FormBorderStyle = FormBorderStyle.FixedSingle;
+            Icon = (Icon)resources.GetObject("$this.Icon");
             Margin = new Padding(2);
             MaximizeBox = false;
             MinimizeBox = false;
-            Name = "frmStoreMainenance";
+            Name = "frmStoreMaintenance";
             StartPosition = FormStartPosition.CenterParent;
             Text = "Store Mainenance";
             ((System.ComponentModel.ISupportInitialize)validatorBindingSource).EndInit();

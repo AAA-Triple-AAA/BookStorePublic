@@ -168,6 +168,7 @@
             Controls.Add(grpMainMenuOptions);
             Controls.Add(btnExit);
             FormBorderStyle = FormBorderStyle.FixedSingle;
+            Icon = (Icon)resources.GetObject("$this.Icon");
             Margin = new Padding(2);
             MaximizeBox = false;
             Name = "frmMainMenu";

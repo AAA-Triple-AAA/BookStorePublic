@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmEmployeeMaintenance));
             btnSearch = new Button();
             txtSearch = new TextBox();
             validatorBindingSource = new BindingSource(components);
@@ -222,6 +223,7 @@
             Controls.Add(lblDetails);
             Controls.Add(btbEditEmployee);
             FormBorderStyle = FormBorderStyle.FixedSingle;
+            Icon = (Icon)resources.GetObject("$this.Icon");
             Margin = new Padding(2);
             MaximizeBox = false;
             MinimizeBox = false;

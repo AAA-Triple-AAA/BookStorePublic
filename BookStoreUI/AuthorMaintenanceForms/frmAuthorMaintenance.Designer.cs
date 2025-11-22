@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmAuthorMaintenance));
             btbDeleteAuthor = new Button();
             btnAddAuthor = new Button();
             lblDetails = new Label();
@@ -222,6 +223,7 @@
             Controls.Add(btnSearch);
             Controls.Add(txtSearch);
             FormBorderStyle = FormBorderStyle.FixedSingle;
+            Icon = (Icon)resources.GetObject("$this.Icon");
             Margin = new Padding(2);
             MaximizeBox = false;
             MinimizeBox = false;

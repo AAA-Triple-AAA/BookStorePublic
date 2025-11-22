@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmPublisherMaintenance));
             txtSearch = new TextBox();
             rbtDetails = new RichTextBox();
             validatorBindingSource1 = new BindingSource(components);
@@ -222,6 +223,7 @@
             Controls.Add(btnSearch);
             Controls.Add(btbDeletePublisher);
             FormBorderStyle = FormBorderStyle.FixedSingle;
+            Icon = (Icon)resources.GetObject("$this.Icon");
             Margin = new Padding(2);
             MaximizeBox = false;
             MinimizeBox = false;
