@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using BookStoreBO;
 
 namespace BookStoreUI.EmployeeMaintenanceForms
 {
@@ -27,6 +28,20 @@ namespace BookStoreUI.EmployeeMaintenanceForms
         {
             var frm = new frmEmployeeDetail { IsAdd = false };
             frm.ShowDialog();
+        }
+
+        private void btnSearch_Click(object sender, EventArgs e)
+        {
+            var errMsg = Validator.IsSearchEntryPresent(txtSearch.Text, "Employee");
+
+            if (errMsg == "")
+            {
+                // TODO: SEARCH LOGIC
+            }
+            else
+            {
+                MessageBox.Show(errMsg);
+            }
         }
     }
 }

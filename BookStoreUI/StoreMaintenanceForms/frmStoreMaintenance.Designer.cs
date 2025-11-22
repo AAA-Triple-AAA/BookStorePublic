@@ -189,6 +189,7 @@
             btnSearch.TabIndex = 2;
             btnSearch.Text = "Search by Store";
             btnSearch.UseVisualStyleBackColor = true;
+            btnSearch.Click += btnSearch_Click;
             // 
             // btbDeleteStore
             // 

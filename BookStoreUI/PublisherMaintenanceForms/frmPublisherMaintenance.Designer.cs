@@ -199,6 +199,7 @@
             btnSearch.TabIndex = 2;
             btnSearch.Text = "Search by Publisher";
             btnSearch.UseVisualStyleBackColor = true;
+            btnSearch.Click += btnSearch_Click;
             // 
             // btbDeletePublisher
             // 

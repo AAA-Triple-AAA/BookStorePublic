@@ -200,6 +200,7 @@
             btnSearch.TabIndex = 11;
             btnSearch.Text = "Search by Author";
             btnSearch.UseVisualStyleBackColor = true;
+            btnSearch.Click += btnSearch_Click;
             // 
             // txtSearch
             // 
