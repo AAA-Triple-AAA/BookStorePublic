@@ -48,7 +48,7 @@
             txtTitle_id = new TextBox();
             cboType = new ComboBox();
             lblNotes = new Label();
-            dtp = new DateTimePicker();
+            dtpPubDate = new DateTimePicker();
             btnSave = new Button();
             btnCancel = new Button();
             tlpTitle.SuspendLayout();
@@ -82,7 +82,7 @@
             tlpTitle.Controls.Add(txtTitle_id, 1, 0);
             tlpTitle.Controls.Add(cboType, 1, 2);
             tlpTitle.Controls.Add(lblNotes, 0, 8);
-            tlpTitle.Controls.Add(dtp, 1, 9);
+            tlpTitle.Controls.Add(dtpPubDate, 1, 9);
             tlpTitle.Dock = DockStyle.Top;
             tlpTitle.Location = new Point(0, 0);
             tlpTitle.Margin = new Padding(2);
@@ -316,18 +316,18 @@
             lblNotes.TabIndex = 16;
             lblNotes.Text = "Notes";
             // 
-            // dtp
+            // dtpPubDate
             // 
-            dtp.Anchor = AnchorStyles.Left;
-            dtp.CustomFormat = "yyyy/MM/dd";
-            dtp.Format = DateTimePickerFormat.Custom;
-            dtp.Location = new Point(72, 355);
-            dtp.Margin = new Padding(2);
-            dtp.MaxDate = new DateTime(2025, 11, 19, 0, 0, 0, 0);
-            dtp.Name = "dtp";
-            dtp.Size = new Size(211, 23);
-            dtp.TabIndex = 26;
-            dtp.Value = new DateTime(2025, 11, 19, 0, 0, 0, 0);
+            dtpPubDate.Anchor = AnchorStyles.Left;
+            dtpPubDate.CustomFormat = "yyyy/MM/dd";
+            dtpPubDate.Format = DateTimePickerFormat.Custom;
+            dtpPubDate.Location = new Point(72, 355);
+            dtpPubDate.Margin = new Padding(2);
+            dtpPubDate.MaxDate = new DateTime(2025, 11, 19, 0, 0, 0, 0);
+            dtpPubDate.Name = "dtpPubDate";
+            dtpPubDate.Size = new Size(211, 23);
+            dtpPubDate.TabIndex = 26;
+            dtpPubDate.Value = new DateTime(2025, 11, 19, 0, 0, 0, 0);
             // 
             // btnSave
             // 
@@ -402,7 +402,7 @@
         private NumericUpDown nudAdvance;
         private NumericUpDown nudYtdSales;
         private TextBox txtNotes;
-        private DateTimePicker dtp;
+        private DateTimePicker dtpPubDate;
         private Button btnSave;
         private Button btnCancel;
     }

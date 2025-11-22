@@ -20,6 +20,18 @@ namespace BookStoreUI.EmployeeMaintenanceForms
             InitializeComponent();
         }
 
+        private void ClearForm()
+        {
+            txtEmp_id.Clear();
+            txtFname.Clear();
+            txtminit.Clear();
+            txtLname.Clear();
+            nudJob_id.Value = 1;
+            nudJobLevel.Value = 10;
+            mtbPubId.Clear();
+            dtpHireDate.Value = DateTime.Now;
+        }
+
         private bool ValidateInput()
         {
             var errMsg = Validator.IsPresent(txtEmp_id.Text, "Employee ID");

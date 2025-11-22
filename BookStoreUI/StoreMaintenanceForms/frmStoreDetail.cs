@@ -20,6 +20,16 @@ namespace BookStoreUI.StoreMaintenanceForms
             InitializeComponent();
         }
 
+        private void ClearForm()
+        {
+            mtbstor_id.Clear();
+            txtStor_name.Clear();
+            txtStor_address.Clear();
+            txtCity.Clear();
+            txtState.Clear();
+            mtbZip.Clear();
+        }
+
         private bool ValidateInput()
         {
             var errMsg = Validator.IsMaskCompleted(mtbstor_id.MaskCompleted, "Store ID");

@@ -20,6 +20,15 @@ namespace BookStoreUI.PublisherMaintenanceForms
             InitializeComponent();
         }
 
+        private void ClearForm()
+        {
+            mtbPub_id.Clear();
+            txtPub_name.Clear();
+            txtCity.Clear();
+            txtState.Clear();
+            txtCountry.Clear();
+        }
+
         private bool ValidateInput()
         {
             var errMsg = Validator.IsMaskCompleted(mtbPub_id.MaskCompleted, "Publisher ID");
