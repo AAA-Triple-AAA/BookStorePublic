@@ -22,7 +22,7 @@ namespace BookStoreUI
 
         private bool ValidateInput()
         {
-            var errMsg = Validator.IsPresent(txtTitle_id.Text, "Title ID");
+            var errMsg = Validator.IsPresent(txtTitleId.Text, "Title ID");
             errMsg += Validator.IsPresent(txtTitle.Text, "Title");
             errMsg += Validator.IsSelected(cboType.SelectedIndex, "Type");
             errMsg += Validator.IsPresent(txtPubId.Text, "Publisher ID");
@@ -31,6 +31,20 @@ namespace BookStoreUI
 
             MessageBox.Show(errMsg);
             return false;
+        }
+
+        private void ClearForm()
+        {
+            txtTitleId.Clear();
+            txtTitle.Clear();
+            cboType.SelectedIndex = -1;
+            txtPubId.Clear();
+            nudPrice.Value = 0.0m;
+            nudAdvance.Value = 0.0m;
+            nudRoyalty.Value = 0;
+            nudYtdSales.Value = 0;
+            txtNotes.Clear();
+            dtpPubDate.Value = DateTime.Now;
         }
 
         private void frmTitleDetail_Load(object sender, EventArgs e)

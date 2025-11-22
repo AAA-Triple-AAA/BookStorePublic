@@ -29,18 +29,18 @@
         private void InitializeComponent()
         {
             btnCancel = new Button();
-            txtStor_name = new TextBox();
-            lblStore_id = new Label();
-            lblStor_name = new Label();
-            lblstore_address = new Label();
+            txtStoreName = new TextBox();
+            lblStoreId = new Label();
+            lblStoreName = new Label();
+            lblStoreAddress = new Label();
             lblState = new Label();
             txtState = new TextBox();
             btnSave = new Button();
             tlpAuthor = new TableLayoutPanel();
             txtCity = new TextBox();
-            txtStor_address = new TextBox();
+            txtStoreAddress = new TextBox();
             lblCity = new Label();
-            mtbstor_id = new MaskedTextBox();
+            mtbStoreId = new MaskedTextBox();
             lblZip = new Label();
             mtbZip = new MaskedTextBox();
             tlpAuthor.SuspendLayout();
@@ -58,48 +58,48 @@
             btnCancel.Text = "Cancel";
             btnCancel.UseVisualStyleBackColor = true;
             // 
-            // txtStor_name
+            // txtStoreName
             // 
-            txtStor_name.Anchor = AnchorStyles.Left | AnchorStyles.Right;
-            txtStor_name.Location = new Point(72, 62);
-            txtStor_name.Margin = new Padding(2);
-            txtStor_name.MaxLength = 40;
-            txtStor_name.Name = "txtStor_name";
-            txtStor_name.Size = new Size(254, 23);
-            txtStor_name.TabIndex = 3;
+            txtStoreName.Anchor = AnchorStyles.Left | AnchorStyles.Right;
+            txtStoreName.Location = new Point(72, 62);
+            txtStoreName.Margin = new Padding(2);
+            txtStoreName.MaxLength = 40;
+            txtStoreName.Name = "txtStoreName";
+            txtStoreName.Size = new Size(254, 23);
+            txtStoreName.TabIndex = 3;
             // 
-            // lblStore_id
+            // lblStoreId
             // 
-            lblStore_id.Anchor = AnchorStyles.Right;
-            lblStore_id.AutoSize = true;
-            lblStore_id.Location = new Point(20, 17);
-            lblStore_id.Margin = new Padding(2, 0, 2, 0);
-            lblStore_id.Name = "lblStore_id";
-            lblStore_id.Size = new Size(48, 15);
-            lblStore_id.TabIndex = 0;
-            lblStore_id.Text = "Store ID";
+            lblStoreId.Anchor = AnchorStyles.Right;
+            lblStoreId.AutoSize = true;
+            lblStoreId.Location = new Point(20, 17);
+            lblStoreId.Margin = new Padding(2, 0, 2, 0);
+            lblStoreId.Name = "lblStoreId";
+            lblStoreId.Size = new Size(48, 15);
+            lblStoreId.TabIndex = 0;
+            lblStoreId.Text = "Store ID";
             // 
-            // lblStor_name
+            // lblStoreName
             // 
-            lblStor_name.Anchor = AnchorStyles.Right;
-            lblStor_name.AutoSize = true;
-            lblStor_name.Location = new Point(29, 58);
-            lblStor_name.Margin = new Padding(2, 0, 2, 0);
-            lblStor_name.Name = "lblStor_name";
-            lblStor_name.Size = new Size(39, 30);
-            lblStor_name.TabIndex = 2;
-            lblStor_name.Text = "Store Name";
+            lblStoreName.Anchor = AnchorStyles.Right;
+            lblStoreName.AutoSize = true;
+            lblStoreName.Location = new Point(29, 58);
+            lblStoreName.Margin = new Padding(2, 0, 2, 0);
+            lblStoreName.Name = "lblStoreName";
+            lblStoreName.Size = new Size(39, 30);
+            lblStoreName.TabIndex = 2;
+            lblStoreName.Text = "Store Name";
             // 
-            // lblstore_address
+            // lblStoreAddress
             // 
-            lblstore_address.Anchor = AnchorStyles.Right;
-            lblstore_address.AutoSize = true;
-            lblstore_address.Location = new Point(19, 107);
-            lblstore_address.Margin = new Padding(2, 0, 2, 0);
-            lblstore_address.Name = "lblstore_address";
-            lblstore_address.Size = new Size(49, 30);
-            lblstore_address.TabIndex = 4;
-            lblstore_address.Text = "Store Address";
+            lblStoreAddress.Anchor = AnchorStyles.Right;
+            lblStoreAddress.AutoSize = true;
+            lblStoreAddress.Location = new Point(19, 107);
+            lblStoreAddress.Margin = new Padding(2, 0, 2, 0);
+            lblStoreAddress.Name = "lblStoreAddress";
+            lblStoreAddress.Size = new Size(49, 30);
+            lblStoreAddress.TabIndex = 4;
+            lblStoreAddress.Text = "Store Address";
             // 
             // lblState
             // 
@@ -140,15 +140,15 @@
             tlpAuthor.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 21.56863F));
             tlpAuthor.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 78.43137F));
             tlpAuthor.Controls.Add(txtCity, 1, 3);
-            tlpAuthor.Controls.Add(txtStor_address, 1, 2);
+            tlpAuthor.Controls.Add(txtStoreAddress, 1, 2);
             tlpAuthor.Controls.Add(lblCity, 0, 3);
-            tlpAuthor.Controls.Add(txtStor_name, 1, 1);
-            tlpAuthor.Controls.Add(lblStore_id, 0, 0);
-            tlpAuthor.Controls.Add(lblStor_name, 0, 1);
-            tlpAuthor.Controls.Add(lblstore_address, 0, 2);
+            tlpAuthor.Controls.Add(txtStoreName, 1, 1);
+            tlpAuthor.Controls.Add(lblStoreId, 0, 0);
+            tlpAuthor.Controls.Add(lblStoreName, 0, 1);
+            tlpAuthor.Controls.Add(lblStoreAddress, 0, 2);
             tlpAuthor.Controls.Add(lblState, 0, 4);
             tlpAuthor.Controls.Add(txtState, 1, 4);
-            tlpAuthor.Controls.Add(mtbstor_id, 1, 0);
+            tlpAuthor.Controls.Add(mtbStoreId, 1, 0);
             tlpAuthor.Controls.Add(lblZip, 0, 5);
             tlpAuthor.Controls.Add(mtbZip, 1, 5);
             tlpAuthor.Dock = DockStyle.Top;
@@ -176,15 +176,15 @@
             txtCity.Size = new Size(254, 23);
             txtCity.TabIndex = 7;
             // 
-            // txtStor_address
+            // txtStoreAddress
             // 
-            txtStor_address.Anchor = AnchorStyles.Left | AnchorStyles.Right;
-            txtStor_address.Location = new Point(72, 111);
-            txtStor_address.Margin = new Padding(2);
-            txtStor_address.MaxLength = 40;
-            txtStor_address.Name = "txtStor_address";
-            txtStor_address.Size = new Size(254, 23);
-            txtStor_address.TabIndex = 5;
+            txtStoreAddress.Anchor = AnchorStyles.Left | AnchorStyles.Right;
+            txtStoreAddress.Location = new Point(72, 111);
+            txtStoreAddress.Margin = new Padding(2);
+            txtStoreAddress.MaxLength = 40;
+            txtStoreAddress.Name = "txtStoreAddress";
+            txtStoreAddress.Size = new Size(254, 23);
+            txtStoreAddress.TabIndex = 5;
             // 
             // lblCity
             // 
@@ -197,17 +197,17 @@
             lblCity.TabIndex = 6;
             lblCity.Text = "City";
             // 
-            // mtbstor_id
+            // mtbStoreId
             // 
-            mtbstor_id.Anchor = AnchorStyles.Left;
-            mtbstor_id.HidePromptOnLeave = true;
-            mtbstor_id.Location = new Point(72, 13);
-            mtbstor_id.Margin = new Padding(2);
-            mtbstor_id.Mask = "0000";
-            mtbstor_id.Name = "mtbstor_id";
-            mtbstor_id.ResetOnSpace = false;
-            mtbstor_id.Size = new Size(43, 23);
-            mtbstor_id.TabIndex = 1;
+            mtbStoreId.Anchor = AnchorStyles.Left;
+            mtbStoreId.HidePromptOnLeave = true;
+            mtbStoreId.Location = new Point(72, 13);
+            mtbStoreId.Margin = new Padding(2);
+            mtbStoreId.Mask = "0000";
+            mtbStoreId.Name = "mtbStoreId";
+            mtbStoreId.ResetOnSpace = false;
+            mtbStoreId.Size = new Size(43, 23);
+            mtbStoreId.TabIndex = 1;
             // 
             // lblZip
             // 
@@ -232,7 +232,7 @@
             mtbZip.Size = new Size(43, 23);
             mtbZip.TabIndex = 11;
             // 
-            // frnStoreDetail
+            // frmStoreDetail
             // 
             AcceptButton = btnSave;
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -244,10 +244,10 @@
             Controls.Add(tlpAuthor);
             FormBorderStyle = FormBorderStyle.FixedSingle;
             Margin = new Padding(2);
-            Name = "frnStoreDetail";
+            Name = "frmStoreDetail";
             ShowIcon = false;
             StartPosition = FormStartPosition.CenterParent;
-            Text = "Author Detail";
+            Text = "Add/Edit Store";
             Load += frnStoreDetail_Load;
             tlpAuthor.ResumeLayout(false);
             tlpAuthor.PerformLayout();
@@ -257,18 +257,18 @@
         #endregion
 
         private Button btnCancel;
-        private TextBox txtStor_name;
-        private Label lblStore_id;
-        private Label lblStor_name;
-        private Label lblstore_address;
+        private TextBox txtStoreName;
+        private Label lblStoreId;
+        private Label lblStoreName;
+        private Label lblStoreAddress;
         private Label lblState;
         private TextBox txtState;
         private Button btnSave;
         private TableLayoutPanel tlpAuthor;
         private TextBox txtCity;
-        private TextBox txtStor_address;
+        private TextBox txtStoreAddress;
         private Label lblCity;
-        private MaskedTextBox mtbstor_id;
+        private MaskedTextBox mtbStoreId;
         private Label lblZip;
         private MaskedTextBox mtbZip;
     }

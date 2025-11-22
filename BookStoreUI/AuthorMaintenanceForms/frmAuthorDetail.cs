@@ -20,6 +20,19 @@ namespace BookStoreUI.AuthorMaintenanceForms
             InitializeComponent();
         }
 
+        private void ClearForm()
+        {
+            mtbAuthorId.Clear();
+            txtLastName.Clear();
+            txtFirstName.Clear();
+            mtbPhone.Clear();
+            txtAddress.Clear();
+            txtCity.Clear();
+            txtState.Clear();
+            mtbZip.Clear();
+            chkContract.CheckState = CheckState.Unchecked;
+        }
+
         private bool ValidateInput()
         {
             var errMsg = Validator.IsMaskCompleted(mtbAuthorId.MaskCompleted, "Author ID");

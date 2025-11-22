@@ -36,19 +36,19 @@
             nudPrice = new NumericUpDown();
             txtPubId = new TextBox();
             txtTitle = new TextBox();
-            lblTitleid = new Label();
-            lbltitle = new Label();
-            lbltype = new Label();
-            lblPub_id = new Label();
+            lblTitleId = new Label();
+            lblTitle = new Label();
+            lblType = new Label();
+            lblPubId = new Label();
             lblPrice = new Label();
             lblAdvance = new Label();
             lblRoyalty = new Label();
-            lblYtd_sales = new Label();
-            lblPubdate = new Label();
-            txtTitle_id = new TextBox();
+            lblYtdSales = new Label();
+            lblPubDate = new Label();
+            txtTitleId = new TextBox();
             cboType = new ComboBox();
             lblNotes = new Label();
-            dtp = new DateTimePicker();
+            dtpPubDate = new DateTimePicker();
             btnSave = new Button();
             btnCancel = new Button();
             tlpTitle.SuspendLayout();
@@ -70,19 +70,19 @@
             tlpTitle.Controls.Add(nudPrice, 1, 4);
             tlpTitle.Controls.Add(txtPubId, 1, 3);
             tlpTitle.Controls.Add(txtTitle, 1, 1);
-            tlpTitle.Controls.Add(lblTitleid, 0, 0);
-            tlpTitle.Controls.Add(lbltitle, 0, 1);
-            tlpTitle.Controls.Add(lbltype, 0, 2);
-            tlpTitle.Controls.Add(lblPub_id, 0, 3);
+            tlpTitle.Controls.Add(lblTitleId, 0, 0);
+            tlpTitle.Controls.Add(lblTitle, 0, 1);
+            tlpTitle.Controls.Add(lblType, 0, 2);
+            tlpTitle.Controls.Add(lblPubId, 0, 3);
             tlpTitle.Controls.Add(lblPrice, 0, 4);
             tlpTitle.Controls.Add(lblAdvance, 0, 5);
             tlpTitle.Controls.Add(lblRoyalty, 0, 6);
-            tlpTitle.Controls.Add(lblYtd_sales, 0, 7);
-            tlpTitle.Controls.Add(lblPubdate, 0, 9);
-            tlpTitle.Controls.Add(txtTitle_id, 1, 0);
+            tlpTitle.Controls.Add(lblYtdSales, 0, 7);
+            tlpTitle.Controls.Add(lblPubDate, 0, 9);
+            tlpTitle.Controls.Add(txtTitleId, 1, 0);
             tlpTitle.Controls.Add(cboType, 1, 2);
             tlpTitle.Controls.Add(lblNotes, 0, 8);
-            tlpTitle.Controls.Add(dtp, 1, 9);
+            tlpTitle.Controls.Add(dtpPubDate, 1, 9);
             tlpTitle.Dock = DockStyle.Top;
             tlpTitle.Location = new Point(0, 0);
             tlpTitle.Margin = new Padding(2);
@@ -184,49 +184,49 @@
             txtTitle.Size = new Size(254, 23);
             txtTitle.TabIndex = 3;
             // 
-            // lblTitleid
+            // lblTitleId
             // 
-            lblTitleid.Anchor = AnchorStyles.Right;
-            lblTitleid.AutoSize = true;
-            lblTitleid.Location = new Point(24, 11);
-            lblTitleid.Margin = new Padding(2, 0, 2, 0);
-            lblTitleid.Name = "lblTitleid";
-            lblTitleid.Size = new Size(44, 15);
-            lblTitleid.TabIndex = 0;
-            lblTitleid.Text = "Title ID";
+            lblTitleId.Anchor = AnchorStyles.Right;
+            lblTitleId.AutoSize = true;
+            lblTitleId.Location = new Point(24, 11);
+            lblTitleId.Margin = new Padding(2, 0, 2, 0);
+            lblTitleId.Name = "lblTitleId";
+            lblTitleId.Size = new Size(44, 15);
+            lblTitleId.TabIndex = 0;
+            lblTitleId.Text = "Title ID";
             // 
-            // lbltitle
+            // lblTitle
             // 
-            lbltitle.Anchor = AnchorStyles.Right;
-            lbltitle.AutoSize = true;
-            lbltitle.Location = new Point(38, 48);
-            lbltitle.Margin = new Padding(2, 0, 2, 0);
-            lbltitle.Name = "lbltitle";
-            lbltitle.Size = new Size(30, 15);
-            lbltitle.TabIndex = 2;
-            lbltitle.Text = "Title";
+            lblTitle.Anchor = AnchorStyles.Right;
+            lblTitle.AutoSize = true;
+            lblTitle.Location = new Point(38, 48);
+            lblTitle.Margin = new Padding(2, 0, 2, 0);
+            lblTitle.Name = "lblTitle";
+            lblTitle.Size = new Size(30, 15);
+            lblTitle.TabIndex = 2;
+            lblTitle.Text = "Title";
             // 
-            // lbltype
+            // lblType
             // 
-            lbltype.Anchor = AnchorStyles.Right;
-            lbltype.AutoSize = true;
-            lbltype.Location = new Point(36, 85);
-            lbltype.Margin = new Padding(2, 0, 2, 0);
-            lbltype.Name = "lbltype";
-            lbltype.Size = new Size(32, 15);
-            lbltype.TabIndex = 4;
-            lbltype.Text = "Type";
+            lblType.Anchor = AnchorStyles.Right;
+            lblType.AutoSize = true;
+            lblType.Location = new Point(36, 85);
+            lblType.Margin = new Padding(2, 0, 2, 0);
+            lblType.Name = "lblType";
+            lblType.Size = new Size(32, 15);
+            lblType.TabIndex = 4;
+            lblType.Text = "Type";
             // 
-            // lblPub_id
+            // lblPubId
             // 
-            lblPub_id.Anchor = AnchorStyles.Right;
-            lblPub_id.AutoSize = true;
-            lblPub_id.Location = new Point(23, 122);
-            lblPub_id.Margin = new Padding(2, 0, 2, 0);
-            lblPub_id.Name = "lblPub_id";
-            lblPub_id.Size = new Size(45, 15);
-            lblPub_id.TabIndex = 6;
-            lblPub_id.Text = "Pub. ID";
+            lblPubId.Anchor = AnchorStyles.Right;
+            lblPubId.AutoSize = true;
+            lblPubId.Location = new Point(23, 122);
+            lblPubId.Margin = new Padding(2, 0, 2, 0);
+            lblPubId.Name = "lblPubId";
+            lblPubId.Size = new Size(45, 15);
+            lblPubId.TabIndex = 6;
+            lblPubId.Text = "Pub. ID";
             // 
             // lblPrice
             // 
@@ -261,37 +261,37 @@
             lblRoyalty.TabIndex = 12;
             lblRoyalty.Text = "Royalty";
             // 
-            // lblYtd_sales
+            // lblYtdSales
             // 
-            lblYtd_sales.Anchor = AnchorStyles.Right;
-            lblYtd_sales.AutoSize = true;
-            lblYtd_sales.Location = new Point(10, 270);
-            lblYtd_sales.Margin = new Padding(2, 0, 2, 0);
-            lblYtd_sales.Name = "lblYtd_sales";
-            lblYtd_sales.Size = new Size(58, 15);
-            lblYtd_sales.TabIndex = 14;
-            lblYtd_sales.Text = "YTD Sales";
+            lblYtdSales.Anchor = AnchorStyles.Right;
+            lblYtdSales.AutoSize = true;
+            lblYtdSales.Location = new Point(10, 270);
+            lblYtdSales.Margin = new Padding(2, 0, 2, 0);
+            lblYtdSales.Name = "lblYtdSales";
+            lblYtdSales.Size = new Size(58, 15);
+            lblYtdSales.TabIndex = 14;
+            lblYtdSales.Text = "YTD Sales";
             // 
-            // lblPubdate
+            // lblPubDate
             // 
-            lblPubdate.Anchor = AnchorStyles.Right;
-            lblPubdate.AutoSize = true;
-            lblPubdate.Location = new Point(10, 359);
-            lblPubdate.Margin = new Padding(2, 0, 2, 0);
-            lblPubdate.Name = "lblPubdate";
-            lblPubdate.Size = new Size(58, 15);
-            lblPubdate.TabIndex = 9;
-            lblPubdate.Text = "Pub. Date";
+            lblPubDate.Anchor = AnchorStyles.Right;
+            lblPubDate.AutoSize = true;
+            lblPubDate.Location = new Point(10, 359);
+            lblPubDate.Margin = new Padding(2, 0, 2, 0);
+            lblPubDate.Name = "lblPubDate";
+            lblPubDate.Size = new Size(58, 15);
+            lblPubDate.TabIndex = 9;
+            lblPubDate.Text = "Pub. Date";
             // 
-            // txtTitle_id
+            // txtTitleId
             // 
-            txtTitle_id.Anchor = AnchorStyles.Left | AnchorStyles.Right;
-            txtTitle_id.Location = new Point(72, 7);
-            txtTitle_id.Margin = new Padding(2);
-            txtTitle_id.MaxLength = 6;
-            txtTitle_id.Name = "txtTitle_id";
-            txtTitle_id.Size = new Size(254, 23);
-            txtTitle_id.TabIndex = 1;
+            txtTitleId.Anchor = AnchorStyles.Left | AnchorStyles.Right;
+            txtTitleId.Location = new Point(72, 7);
+            txtTitleId.Margin = new Padding(2);
+            txtTitleId.MaxLength = 6;
+            txtTitleId.Name = "txtTitleId";
+            txtTitleId.Size = new Size(254, 23);
+            txtTitleId.TabIndex = 1;
             // 
             // cboType
             // 
@@ -316,18 +316,18 @@
             lblNotes.TabIndex = 16;
             lblNotes.Text = "Notes";
             // 
-            // dtp
+            // dtpPubDate
             // 
-            dtp.Anchor = AnchorStyles.Left;
-            dtp.CustomFormat = "yyyy/MM/dd";
-            dtp.Format = DateTimePickerFormat.Custom;
-            dtp.Location = new Point(72, 355);
-            dtp.Margin = new Padding(2);
-            dtp.MaxDate = new DateTime(2025, 11, 19, 0, 0, 0, 0);
-            dtp.Name = "dtp";
-            dtp.Size = new Size(211, 23);
-            dtp.TabIndex = 26;
-            dtp.Value = new DateTime(2025, 11, 19, 0, 0, 0, 0);
+            dtpPubDate.Anchor = AnchorStyles.Left;
+            dtpPubDate.CustomFormat = "yyyy/MM/dd";
+            dtpPubDate.Format = DateTimePickerFormat.Custom;
+            dtpPubDate.Location = new Point(72, 355);
+            dtpPubDate.Margin = new Padding(2);
+            dtpPubDate.MaxDate = new DateTime(2025, 11, 19, 0, 0, 0, 0);
+            dtpPubDate.Name = "dtpPubDate";
+            dtpPubDate.Size = new Size(126, 23);
+            dtpPubDate.TabIndex = 26;
+            dtpPubDate.Value = new DateTime(2025, 11, 19, 0, 0, 0, 0);
             // 
             // btnSave
             // 
@@ -383,26 +383,26 @@
         #endregion
 
         private TableLayoutPanel tlpTitle;
-        private Label lblTitleid;
-        private Label lbltitle;
-        private Label lbltype;
-        private Label lblPub_id;
+        private Label lblTitleId;
+        private Label lblTitle;
+        private Label lblType;
+        private Label lblPubId;
         private Label lblPrice;
         private Label lblAdvance;
         private Label lblRoyalty;
-        private Label lblYtd_sales;
+        private Label lblYtdSales;
         private Label lblNotes;
-        private Label lblPubdate;
+        private Label lblPubDate;
         private TextBox txtPubId;
         private TextBox txtTitle;
-        private TextBox txtTitle_id;
+        private TextBox txtTitleId;
         private ComboBox cboType;
         private NumericUpDown nudPrice;
         private NumericUpDown nudRoyalty;
         private NumericUpDown nudAdvance;
         private NumericUpDown nudYtdSales;
         private TextBox txtNotes;
-        private DateTimePicker dtp;
+        private DateTimePicker dtpPubDate;
         private Button btnSave;
         private Button btnCancel;
     }

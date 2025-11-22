@@ -30,9 +30,9 @@
         {
             tlpAuthor = new TableLayoutPanel();
             txtCity = new TextBox();
-            lblAu_fname = new Label();
+            lblFirstName = new Label();
             lblPhone = new Label();
-            lblAu_lname = new Label();
+            lblLastName = new Label();
             lblAddress = new Label();
             lblCity = new Label();
             lblState = new Label();
@@ -46,7 +46,7 @@
             mtbZip = new MaskedTextBox();
             chkContract = new CheckBox();
             txtState = new TextBox();
-            lblAu_id = new Label();
+            lblAuthorId = new Label();
             btnSave = new Button();
             btnCancel = new Button();
             tlpAuthor.SuspendLayout();
@@ -59,9 +59,9 @@
             tlpAuthor.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 20F));
             tlpAuthor.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 80F));
             tlpAuthor.Controls.Add(txtCity, 1, 5);
-            tlpAuthor.Controls.Add(lblAu_fname, 0, 2);
+            tlpAuthor.Controls.Add(lblFirstName, 0, 2);
             tlpAuthor.Controls.Add(lblPhone, 0, 3);
-            tlpAuthor.Controls.Add(lblAu_lname, 0, 1);
+            tlpAuthor.Controls.Add(lblLastName, 0, 1);
             tlpAuthor.Controls.Add(lblAddress, 0, 4);
             tlpAuthor.Controls.Add(lblCity, 0, 5);
             tlpAuthor.Controls.Add(lblState, 0, 6);
@@ -75,7 +75,7 @@
             tlpAuthor.Controls.Add(mtbZip, 1, 7);
             tlpAuthor.Controls.Add(chkContract, 1, 8);
             tlpAuthor.Controls.Add(txtState, 1, 6);
-            tlpAuthor.Controls.Add(lblAu_id, 0, 0);
+            tlpAuthor.Controls.Add(lblAuthorId, 0, 0);
             tlpAuthor.Dock = DockStyle.Top;
             tlpAuthor.Location = new Point(0, 0);
             tlpAuthor.Margin = new Padding(2);
@@ -104,16 +104,16 @@
             txtCity.Size = new Size(259, 23);
             txtCity.TabIndex = 10;
             // 
-            // lblAu_fname
+            // lblFirstName
             // 
-            lblAu_fname.Anchor = AnchorStyles.Right;
-            lblAu_fname.AutoSize = true;
-            lblAu_fname.Location = new Point(24, 90);
-            lblAu_fname.Margin = new Padding(2, 0, 2, 0);
-            lblAu_fname.Name = "lblAu_fname";
-            lblAu_fname.Size = new Size(39, 30);
-            lblAu_fname.TabIndex = 4;
-            lblAu_fname.Text = "First Name";
+            lblFirstName.Anchor = AnchorStyles.Right;
+            lblFirstName.AutoSize = true;
+            lblFirstName.Location = new Point(24, 90);
+            lblFirstName.Margin = new Padding(2, 0, 2, 0);
+            lblFirstName.Name = "lblFirstName";
+            lblFirstName.Size = new Size(39, 30);
+            lblFirstName.TabIndex = 4;
+            lblFirstName.Text = "First Name";
             // 
             // lblPhone
             // 
@@ -126,16 +126,16 @@
             lblPhone.TabIndex = 5;
             lblPhone.Text = "Phone";
             // 
-            // lblAu_lname
+            // lblLastName
             // 
-            lblAu_lname.Anchor = AnchorStyles.Right;
-            lblAu_lname.AutoSize = true;
-            lblAu_lname.Location = new Point(24, 48);
-            lblAu_lname.Margin = new Padding(2, 0, 2, 0);
-            lblAu_lname.Name = "lblAu_lname";
-            lblAu_lname.Size = new Size(39, 30);
-            lblAu_lname.TabIndex = 2;
-            lblAu_lname.Text = "Last Name";
+            lblLastName.Anchor = AnchorStyles.Right;
+            lblLastName.AutoSize = true;
+            lblLastName.Location = new Point(24, 48);
+            lblLastName.Margin = new Padding(2, 0, 2, 0);
+            lblLastName.Name = "lblLastName";
+            lblLastName.Size = new Size(39, 30);
+            lblLastName.TabIndex = 2;
+            lblLastName.Text = "Last Name";
             // 
             // lblAddress
             // 
@@ -282,16 +282,16 @@
             txtState.Size = new Size(106, 23);
             txtState.TabIndex = 12;
             // 
-            // lblAu_id
+            // lblAuthorId
             // 
-            lblAu_id.Anchor = AnchorStyles.Right;
-            lblAu_id.AutoSize = true;
-            lblAu_id.Location = new Point(5, 13);
-            lblAu_id.Margin = new Padding(2, 0, 2, 0);
-            lblAu_id.Name = "lblAu_id";
-            lblAu_id.Size = new Size(58, 15);
-            lblAu_id.TabIndex = 0;
-            lblAu_id.Text = "Author ID";
+            lblAuthorId.Anchor = AnchorStyles.Right;
+            lblAuthorId.AutoSize = true;
+            lblAuthorId.Location = new Point(5, 13);
+            lblAuthorId.Margin = new Padding(2, 0, 2, 0);
+            lblAuthorId.Name = "lblAuthorId";
+            lblAuthorId.Size = new Size(58, 15);
+            lblAuthorId.TabIndex = 0;
+            lblAuthorId.Text = "Author ID";
             // 
             // btnSave
             // 
@@ -343,10 +343,10 @@
         #endregion
 
         private TableLayoutPanel tlpAuthor;
-        private Label lblAu_id;
-        private Label lblAu_fname;
+        private Label lblAuthorId;
+        private Label lblFirstName;
         private Label lblPhone;
-        private Label lblAu_lname;
+        private Label lblLastName;
         private Label lblAddress;
         private Label lblCity;
         private Label lblState;

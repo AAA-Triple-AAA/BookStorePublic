@@ -30,9 +30,9 @@
         {
             btnCancel = new Button();
             txtCountry = new TextBox();
-            txtPub_name = new TextBox();
-            lblPub_id = new Label();
-            lblPub_name = new Label();
+            txtPubName = new TextBox();
+            lblPubId = new Label();
+            lblPubName = new Label();
             lblCity = new Label();
             lblCountry = new Label();
             btnSave = new Button();
@@ -40,7 +40,7 @@
             txtState = new TextBox();
             txtCity = new TextBox();
             lblState = new Label();
-            mtbPub_id = new MaskedTextBox();
+            mtbPubId = new MaskedTextBox();
             tlpPublisher.SuspendLayout();
             SuspendLayout();
             // 
@@ -68,37 +68,37 @@
             txtCountry.TabIndex = 13;
             txtCountry.Text = "USA";
             // 
-            // txtPub_name
+            // txtPubName
             // 
-            txtPub_name.Anchor = AnchorStyles.Left | AnchorStyles.Right;
-            txtPub_name.Location = new Point(72, 62);
-            txtPub_name.Margin = new Padding(2);
-            txtPub_name.MaxLength = 40;
-            txtPub_name.Name = "txtPub_name";
-            txtPub_name.Size = new Size(254, 23);
-            txtPub_name.TabIndex = 3;
+            txtPubName.Anchor = AnchorStyles.Left | AnchorStyles.Right;
+            txtPubName.Location = new Point(72, 62);
+            txtPubName.Margin = new Padding(2);
+            txtPubName.MaxLength = 40;
+            txtPubName.Name = "txtPubName";
+            txtPubName.Size = new Size(254, 23);
+            txtPubName.TabIndex = 3;
             // 
-            // lblPub_id
+            // lblPubId
             // 
-            lblPub_id.Anchor = AnchorStyles.Right;
-            lblPub_id.AutoSize = true;
-            lblPub_id.Location = new Point(23, 17);
-            lblPub_id.Margin = new Padding(2, 0, 2, 0);
-            lblPub_id.Name = "lblPub_id";
-            lblPub_id.Size = new Size(45, 15);
-            lblPub_id.TabIndex = 0;
-            lblPub_id.Text = "Pub. ID";
+            lblPubId.Anchor = AnchorStyles.Right;
+            lblPubId.AutoSize = true;
+            lblPubId.Location = new Point(23, 17);
+            lblPubId.Margin = new Padding(2, 0, 2, 0);
+            lblPubId.Name = "lblPubId";
+            lblPubId.Size = new Size(45, 15);
+            lblPubId.TabIndex = 0;
+            lblPubId.Text = "Pub. ID";
             // 
-            // lblPub_name
+            // lblPubName
             // 
-            lblPub_name.Anchor = AnchorStyles.Right;
-            lblPub_name.AutoSize = true;
-            lblPub_name.Location = new Point(2, 66);
-            lblPub_name.Margin = new Padding(2, 0, 2, 0);
-            lblPub_name.Name = "lblPub_name";
-            lblPub_name.Size = new Size(66, 15);
-            lblPub_name.TabIndex = 2;
-            lblPub_name.Text = "Pub. Name";
+            lblPubName.Anchor = AnchorStyles.Right;
+            lblPubName.AutoSize = true;
+            lblPubName.Location = new Point(2, 66);
+            lblPubName.Margin = new Padding(2, 0, 2, 0);
+            lblPubName.Name = "lblPubName";
+            lblPubName.Size = new Size(66, 15);
+            lblPubName.TabIndex = 2;
+            lblPubName.Text = "Pub. Name";
             // 
             // lblCity
             // 
@@ -142,13 +142,13 @@
             tlpPublisher.Controls.Add(txtState, 1, 3);
             tlpPublisher.Controls.Add(txtCity, 1, 2);
             tlpPublisher.Controls.Add(lblState, 0, 3);
-            tlpPublisher.Controls.Add(txtPub_name, 1, 1);
-            tlpPublisher.Controls.Add(lblPub_id, 0, 0);
-            tlpPublisher.Controls.Add(lblPub_name, 0, 1);
+            tlpPublisher.Controls.Add(txtPubName, 1, 1);
+            tlpPublisher.Controls.Add(lblPubId, 0, 0);
+            tlpPublisher.Controls.Add(lblPubName, 0, 1);
             tlpPublisher.Controls.Add(lblCity, 0, 2);
             tlpPublisher.Controls.Add(lblCountry, 0, 4);
             tlpPublisher.Controls.Add(txtCountry, 1, 4);
-            tlpPublisher.Controls.Add(mtbPub_id, 1, 0);
+            tlpPublisher.Controls.Add(mtbPubId, 1, 0);
             tlpPublisher.Dock = DockStyle.Top;
             tlpPublisher.Location = new Point(0, 0);
             tlpPublisher.Margin = new Padding(2);
@@ -194,17 +194,17 @@
             lblState.TabIndex = 6;
             lblState.Text = "State";
             // 
-            // mtbPub_id
+            // mtbPubId
             // 
-            mtbPub_id.Anchor = AnchorStyles.Left;
-            mtbPub_id.HidePromptOnLeave = true;
-            mtbPub_id.Location = new Point(72, 13);
-            mtbPub_id.Margin = new Padding(2);
-            mtbPub_id.Mask = "0000";
-            mtbPub_id.Name = "mtbPub_id";
-            mtbPub_id.ResetOnSpace = false;
-            mtbPub_id.Size = new Size(43, 23);
-            mtbPub_id.TabIndex = 1;
+            mtbPubId.Anchor = AnchorStyles.Left;
+            mtbPubId.HidePromptOnLeave = true;
+            mtbPubId.Location = new Point(72, 13);
+            mtbPubId.Margin = new Padding(2);
+            mtbPubId.Mask = "0000";
+            mtbPubId.Name = "mtbPubId";
+            mtbPubId.ResetOnSpace = false;
+            mtbPubId.Size = new Size(43, 23);
+            mtbPubId.TabIndex = 1;
             // 
             // frmPublisherDetail
             // 
@@ -234,15 +234,15 @@
 
         private Button btnCancel;
         private TextBox txtCountry;
-        private TextBox txtPub_name;
-        private Label lblPub_id;
-        private Label lblPub_name;
+        private TextBox txtPubName;
+        private Label lblPubId;
+        private Label lblPubName;
         private Label lblCity;
         private Label lblCountry;
         private Button btnSave;
         private TableLayoutPanel tlpPublisher;
         private Label lblState;
-        private MaskedTextBox mtbPub_id;
+        private MaskedTextBox mtbPubId;
         private TextBox txtCity;
         private TextBox txtState;
     }

@@ -53,7 +53,7 @@
             lblTotal = new Label();
             lblTax = new Label();
             lblSubtotal = new Label();
-            lblPrintExport = new Button();
+            btnPrintExport = new Button();
             btnClose = new Button();
             ((System.ComponentModel.ISupportInitialize)validatorBindingSource).BeginInit();
             ((System.ComponentModel.ISupportInitialize)validatorBindingSource1).BeginInit();
@@ -74,7 +74,7 @@
             // 
             txtOrderNumber.BorderStyle = BorderStyle.FixedSingle;
             txtOrderNumber.Location = new Point(95, 6);
-            txtOrderNumber.Margin = new Padding(2, 2, 2, 2);
+            txtOrderNumber.Margin = new Padding(2);
             txtOrderNumber.Name = "txtOrderNumber";
             txtOrderNumber.ReadOnly = true;
             txtOrderNumber.Size = new Size(106, 23);
@@ -94,7 +94,7 @@
             // 
             txtStore.BorderStyle = BorderStyle.FixedSingle;
             txtStore.Location = new Point(95, 33);
-            txtStore.Margin = new Padding(2, 2, 2, 2);
+            txtStore.Margin = new Padding(2);
             txtStore.Name = "txtStore";
             txtStore.ReadOnly = true;
             txtStore.Size = new Size(106, 23);
@@ -114,7 +114,7 @@
             // 
             txtEmployee.BorderStyle = BorderStyle.FixedSingle;
             txtEmployee.Location = new Point(95, 60);
-            txtEmployee.Margin = new Padding(2, 2, 2, 2);
+            txtEmployee.Margin = new Padding(2);
             txtEmployee.Name = "txtEmployee";
             txtEmployee.ReadOnly = true;
             txtEmployee.Size = new Size(106, 23);
@@ -134,7 +134,7 @@
             // 
             txtCustomer.BorderStyle = BorderStyle.FixedSingle;
             txtCustomer.Location = new Point(95, 87);
-            txtCustomer.Margin = new Padding(2, 2, 2, 2);
+            txtCustomer.Margin = new Padding(2);
             txtCustomer.Name = "txtCustomer";
             txtCustomer.ReadOnly = true;
             txtCustomer.Size = new Size(106, 23);
@@ -154,7 +154,7 @@
             // 
             txtOrderDate.BorderStyle = BorderStyle.FixedSingle;
             txtOrderDate.Location = new Point(95, 114);
-            txtOrderDate.Margin = new Padding(2, 2, 2, 2);
+            txtOrderDate.Margin = new Padding(2);
             txtOrderDate.Name = "txtOrderDate";
             txtOrderDate.ReadOnly = true;
             txtOrderDate.Size = new Size(106, 23);
@@ -178,7 +178,7 @@
             dgvCart.Columns.AddRange(new DataGridViewColumn[] { columntitle, columnQty, columnPrice, columnDiscount, columnLineTotal });
             dgvCart.DataSource = validatorBindingSource1;
             dgvCart.Location = new Point(11, 151);
-            dgvCart.Margin = new Padding(2, 2, 2, 2);
+            dgvCart.Margin = new Padding(2);
             dgvCart.MultiSelect = false;
             dgvCart.Name = "dgvCart";
             dgvCart.ReadOnly = true;
@@ -231,7 +231,7 @@
             // 
             txtTotal.Font = new Font("Segoe UI", 9F);
             txtTotal.Location = new Point(439, 73);
-            txtTotal.Margin = new Padding(2, 2, 2, 2);
+            txtTotal.Margin = new Padding(2);
             txtTotal.Name = "txtTotal";
             txtTotal.ReadOnly = true;
             txtTotal.Size = new Size(106, 23);
@@ -241,7 +241,7 @@
             // txtTax
             // 
             txtTax.Location = new Point(316, 73);
-            txtTax.Margin = new Padding(2, 2, 2, 2);
+            txtTax.Margin = new Padding(2);
             txtTax.Name = "txtTax";
             txtTax.ReadOnly = true;
             txtTax.Size = new Size(106, 23);
@@ -251,7 +251,7 @@
             // txtSubtotal
             // 
             txtSubtotal.Location = new Point(316, 46);
-            txtSubtotal.Margin = new Padding(2, 2, 2, 2);
+            txtSubtotal.Margin = new Padding(2);
             txtSubtotal.Name = "txtSubtotal";
             txtSubtotal.ReadOnly = true;
             txtSubtotal.Size = new Size(106, 23);
@@ -289,20 +289,20 @@
             lblSubtotal.TabIndex = 27;
             lblSubtotal.Text = "Subtotal:";
             // 
-            // lblPrintExport
+            // btnPrintExport
             // 
-            lblPrintExport.Location = new Point(316, 106);
-            lblPrintExport.Margin = new Padding(2, 2, 2, 2);
-            lblPrintExport.Name = "lblPrintExport";
-            lblPrintExport.Size = new Size(106, 31);
-            lblPrintExport.TabIndex = 33;
-            lblPrintExport.Text = "Print/Export";
-            lblPrintExport.UseVisualStyleBackColor = true;
+            btnPrintExport.Location = new Point(316, 106);
+            btnPrintExport.Margin = new Padding(2);
+            btnPrintExport.Name = "btnPrintExport";
+            btnPrintExport.Size = new Size(106, 31);
+            btnPrintExport.TabIndex = 33;
+            btnPrintExport.Text = "Print/Export";
+            btnPrintExport.UseVisualStyleBackColor = true;
             // 
             // btnClose
             // 
             btnClose.Location = new Point(439, 106);
-            btnClose.Margin = new Padding(2, 2, 2, 2);
+            btnClose.Margin = new Padding(2);
             btnClose.Name = "btnClose";
             btnClose.Size = new Size(106, 31);
             btnClose.TabIndex = 34;
@@ -316,7 +316,7 @@
             CancelButton = btnClose;
             ClientSize = new Size(570, 378);
             Controls.Add(btnClose);
-            Controls.Add(lblPrintExport);
+            Controls.Add(btnPrintExport);
             Controls.Add(txtTotal);
             Controls.Add(txtTax);
             Controls.Add(txtSubtotal);
@@ -335,7 +335,7 @@
             Controls.Add(txtOrderNumber);
             Controls.Add(lblOrderNumber);
             FormBorderStyle = FormBorderStyle.FixedDialog;
-            Margin = new Padding(2, 2, 2, 2);
+            Margin = new Padding(2);
             MaximizeBox = false;
             MinimizeBox = false;
             Name = "frmOrderSummaryInvoice";
@@ -375,7 +375,7 @@
         private Label lblTotal;
         private Label lblTax;
         private Label lblSubtotal;
-        private Button lblPrintExport;
+        private Button btnPrintExport;
         private Button btnClose;
     }
 }
