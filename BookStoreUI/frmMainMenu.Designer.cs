@@ -52,6 +52,7 @@
             btnCustomerOrder.TabIndex = 1;
             btnCustomerOrder.Text = "Customer Order (Shopping Cart)";
             btnCustomerOrder.UseVisualStyleBackColor = true;
+            btnCustomerOrder.Click += btnCustomerOrder_Click;
             // 
             // btnTitleMaintenance
             // 
