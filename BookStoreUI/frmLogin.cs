@@ -1,3 +1,5 @@
+using BookStoreBO;
+
 namespace BookStoreUI;
 
 public partial class frmLogin : Form
@@ -9,8 +11,19 @@ public partial class frmLogin : Form
 
     private bool ValidateInput(string username, string password)
     {
-        // TODO: IMPLEMENT FUNCTION
-        // Must ensure valid input was entered by user in text boxes
+        var errMsg = Validator.IsPresent(txtUsername.Text, "Username");
+        errMsg += Validator.IsPresent(txtPassword.Text, "Password");
+
+        if (errMsg == "")
+        {
+            // TODO: SEARCH LOGIC
+        }
+        else
+        {
+            MessageBox.Show(errMsg);
+            return false;
+        }
+
         return true;
     }
 
@@ -23,8 +36,8 @@ public partial class frmLogin : Form
 
     private void btnLogin_Click(object sender, EventArgs e)
     {
-        string username = txtUsername.Text;
-        string password = txtPassword.Text;
+        var username = txtUsername.Text;
+        var password = txtPassword.Text;
 
         // TODO: IMPLEMENT PROPER VERIFICATION
         if (!ValidateInput(username, password)) return;

@@ -106,6 +106,7 @@
             btnSearch.TabIndex = 2;
             btnSearch.Text = "Search by Title";
             btnSearch.UseVisualStyleBackColor = true;
+            btnSearch.Click += btnSearch_Click;
             // 
             // validatorBindingSource
             // 

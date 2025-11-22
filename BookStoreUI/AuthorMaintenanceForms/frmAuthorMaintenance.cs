@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using BookStoreBO;
 using BookStoreUI.AuthorMaintenanceForms;
 
 namespace BookStoreUI
@@ -29,6 +30,20 @@ namespace BookStoreUI
         {
             var frmAuthorDetail = new frmAuthorDetail { IsAdd = false };
             frmAuthorDetail.ShowDialog();
+        }
+
+        private void btnSearch_Click(object sender, EventArgs e)
+        {
+            var errMsg = Validator.IsSearchEntryPresent(txtSearch.Text, "Author");
+
+            if (errMsg == "")
+            {
+                // TODO: SEARCH LOGIC
+            }
+            else
+            {
+                MessageBox.Show(errMsg);
+            }
         }
     }
 }
