@@ -60,7 +60,6 @@
             // 
             // tlpTitle
             // 
-            tlpTitle.AutoSize = true;
             tlpTitle.ColumnCount = 2;
             tlpTitle.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 21.56863F));
             tlpTitle.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 78.43137F));
@@ -86,6 +85,7 @@
             tlpTitle.Controls.Add(dtp, 1, 9);
             tlpTitle.Dock = DockStyle.Top;
             tlpTitle.Location = new Point(0, 0);
+            tlpTitle.Margin = new Padding(2, 2, 2, 2);
             tlpTitle.Name = "tlpTitle";
             tlpTitle.RowCount = 10;
             tlpTitle.RowStyles.Add(new RowStyle(SizeType.Percent, 11.1111107F));
@@ -96,42 +96,45 @@
             tlpTitle.RowStyles.Add(new RowStyle(SizeType.Percent, 11.1111107F));
             tlpTitle.RowStyles.Add(new RowStyle(SizeType.Percent, 11.1111107F));
             tlpTitle.RowStyles.Add(new RowStyle(SizeType.Percent, 11.1111107F));
-            tlpTitle.RowStyles.Add(new RowStyle(SizeType.Absolute, 80F));
+            tlpTitle.RowStyles.Add(new RowStyle(SizeType.Absolute, 48F));
             tlpTitle.RowStyles.Add(new RowStyle(SizeType.Percent, 11.1111107F));
-            tlpTitle.RowStyles.Add(new RowStyle(SizeType.Absolute, 20F));
-            tlpTitle.Size = new Size(800, 431);
+            tlpTitle.RowStyles.Add(new RowStyle(SizeType.Absolute, 12F));
+            tlpTitle.Size = new Size(328, 389);
             tlpTitle.TabIndex = 8;
             // 
             // txtNotes
             // 
             txtNotes.Anchor = AnchorStyles.Left | AnchorStyles.Right;
             txtNotes.CharacterCasing = CharacterCasing.Upper;
-            txtNotes.Location = new Point(175, 307);
+            txtNotes.Location = new Point(72, 298);
+            txtNotes.Margin = new Padding(2, 2, 2, 2);
             txtNotes.MaxLength = 4;
             txtNotes.Multiline = true;
             txtNotes.Name = "txtNotes";
             txtNotes.ScrollBars = ScrollBars.Vertical;
-            txtNotes.Size = new Size(622, 74);
-            txtNotes.TabIndex = 25;
+            txtNotes.Size = new Size(254, 44);
+            txtNotes.TabIndex = 17;
             // 
             // nudYtdSales
             // 
             nudYtdSales.Anchor = AnchorStyles.Left;
             nudYtdSales.Increment = new decimal(new int[] { 100, 0, 0, 0 });
-            nudYtdSales.Location = new Point(175, 269);
+            nudYtdSales.Location = new Point(72, 266);
+            nudYtdSales.Margin = new Padding(2, 2, 2, 2);
             nudYtdSales.Maximum = new decimal(new int[] { 100000000, 0, 0, 0 });
             nudYtdSales.Name = "nudYtdSales";
-            nudYtdSales.Size = new Size(180, 31);
-            nudYtdSales.TabIndex = 24;
+            nudYtdSales.Size = new Size(126, 23);
+            nudYtdSales.TabIndex = 15;
             nudYtdSales.ThousandsSeparator = true;
             // 
             // nudRoyalty
             // 
             nudRoyalty.Anchor = AnchorStyles.Left;
             nudRoyalty.Increment = new decimal(new int[] { 100, 0, 0, 0 });
-            nudRoyalty.Location = new Point(175, 231);
+            nudRoyalty.Location = new Point(72, 229);
+            nudRoyalty.Margin = new Padding(2, 2, 2, 2);
             nudRoyalty.Name = "nudRoyalty";
-            nudRoyalty.Size = new Size(180, 31);
+            nudRoyalty.Size = new Size(126, 23);
             nudRoyalty.TabIndex = 23;
             nudRoyalty.ThousandsSeparator = true;
             // 
@@ -140,132 +143,155 @@
             nudAdvance.Anchor = AnchorStyles.Left;
             nudAdvance.DecimalPlaces = 2;
             nudAdvance.Increment = new decimal(new int[] { 100, 0, 0, 0 });
-            nudAdvance.Location = new Point(175, 193);
+            nudAdvance.Location = new Point(72, 192);
+            nudAdvance.Margin = new Padding(2, 2, 2, 2);
             nudAdvance.Maximum = new decimal(new int[] { 1000000, 0, 0, 0 });
             nudAdvance.Name = "nudAdvance";
-            nudAdvance.Size = new Size(180, 31);
-            nudAdvance.TabIndex = 22;
+            nudAdvance.Size = new Size(126, 23);
+            nudAdvance.TabIndex = 11;
             nudAdvance.ThousandsSeparator = true;
             // 
             // nudPrice
             // 
             nudPrice.Anchor = AnchorStyles.Left;
             nudPrice.DecimalPlaces = 2;
-            nudPrice.Location = new Point(175, 155);
+            nudPrice.Location = new Point(72, 155);
+            nudPrice.Margin = new Padding(2, 2, 2, 2);
             nudPrice.Maximum = new decimal(new int[] { 1000000, 0, 0, 0 });
             nudPrice.Name = "nudPrice";
-            nudPrice.Size = new Size(180, 31);
-            nudPrice.TabIndex = 21;
+            nudPrice.Size = new Size(126, 23);
+            nudPrice.TabIndex = 9;
             nudPrice.ThousandsSeparator = true;
             // 
             // txtPubId
             // 
             txtPubId.Anchor = AnchorStyles.Left | AnchorStyles.Right;
             txtPubId.CharacterCasing = CharacterCasing.Upper;
-            txtPubId.Location = new Point(175, 117);
+            txtPubId.Location = new Point(72, 118);
+            txtPubId.Margin = new Padding(2, 2, 2, 2);
             txtPubId.MaxLength = 4;
             txtPubId.Name = "txtPubId";
-            txtPubId.Size = new Size(622, 31);
-            txtPubId.TabIndex = 13;
+            txtPubId.Size = new Size(254, 23);
+            txtPubId.TabIndex = 7;
             // 
             // txtTitle
             // 
             txtTitle.Anchor = AnchorStyles.Left | AnchorStyles.Right;
-            txtTitle.Location = new Point(175, 41);
+            txtTitle.Location = new Point(72, 44);
+            txtTitle.Margin = new Padding(2, 2, 2, 2);
             txtTitle.MaxLength = 80;
             txtTitle.Name = "txtTitle";
-            txtTitle.Size = new Size(622, 31);
-            txtTitle.TabIndex = 11;
+            txtTitle.Size = new Size(254, 23);
+            txtTitle.TabIndex = 3;
             // 
             // lblTitleid
             // 
+            lblTitleid.Anchor = AnchorStyles.Right;
             lblTitleid.AutoSize = true;
-            lblTitleid.Location = new Point(3, 0);
+            lblTitleid.Location = new Point(24, 11);
+            lblTitleid.Margin = new Padding(2, 0, 2, 0);
             lblTitleid.Name = "lblTitleid";
-            lblTitleid.Size = new Size(63, 25);
+            lblTitleid.Size = new Size(44, 15);
             lblTitleid.TabIndex = 0;
-            lblTitleid.Text = "title_id";
+            lblTitleid.Text = "Title ID";
             // 
             // lbltitle
             // 
+            lbltitle.Anchor = AnchorStyles.Right;
             lbltitle.AutoSize = true;
-            lbltitle.Location = new Point(3, 38);
+            lbltitle.Location = new Point(38, 48);
+            lbltitle.Margin = new Padding(2, 0, 2, 0);
             lbltitle.Name = "lbltitle";
-            lbltitle.Size = new Size(41, 25);
-            lbltitle.TabIndex = 1;
-            lbltitle.Text = "title";
+            lbltitle.Size = new Size(30, 15);
+            lbltitle.TabIndex = 2;
+            lbltitle.Text = "Title";
             // 
             // lbltype
             // 
+            lbltype.Anchor = AnchorStyles.Right;
             lbltype.AutoSize = true;
-            lbltype.Location = new Point(3, 76);
+            lbltype.Location = new Point(36, 85);
+            lbltype.Margin = new Padding(2, 0, 2, 0);
             lbltype.Name = "lbltype";
-            lbltype.Size = new Size(47, 25);
-            lbltype.TabIndex = 2;
-            lbltype.Text = "type";
+            lbltype.Size = new Size(32, 15);
+            lbltype.TabIndex = 4;
+            lbltype.Text = "Type";
             // 
             // lblPub_id
             // 
+            lblPub_id.Anchor = AnchorStyles.Right;
             lblPub_id.AutoSize = true;
-            lblPub_id.Location = new Point(3, 114);
+            lblPub_id.Location = new Point(23, 122);
+            lblPub_id.Margin = new Padding(2, 0, 2, 0);
             lblPub_id.Name = "lblPub_id";
-            lblPub_id.Size = new Size(66, 25);
-            lblPub_id.TabIndex = 3;
-            lblPub_id.Text = "pub_id";
+            lblPub_id.Size = new Size(45, 15);
+            lblPub_id.TabIndex = 6;
+            lblPub_id.Text = "Pub. ID";
             // 
             // lblPrice
             // 
+            lblPrice.Anchor = AnchorStyles.Right;
             lblPrice.AutoSize = true;
-            lblPrice.Location = new Point(3, 152);
+            lblPrice.Location = new Point(35, 159);
+            lblPrice.Margin = new Padding(2, 0, 2, 0);
             lblPrice.Name = "lblPrice";
-            lblPrice.Size = new Size(50, 25);
-            lblPrice.TabIndex = 4;
-            lblPrice.Text = "price";
+            lblPrice.Size = new Size(33, 15);
+            lblPrice.TabIndex = 8;
+            lblPrice.Text = "Price";
             // 
             // lblAdvance
             // 
+            lblAdvance.Anchor = AnchorStyles.Right;
             lblAdvance.AutoSize = true;
-            lblAdvance.Location = new Point(3, 190);
+            lblAdvance.Location = new Point(15, 196);
+            lblAdvance.Margin = new Padding(2, 0, 2, 0);
             lblAdvance.Name = "lblAdvance";
-            lblAdvance.Size = new Size(77, 25);
-            lblAdvance.TabIndex = 5;
-            lblAdvance.Text = "advance";
+            lblAdvance.Size = new Size(53, 15);
+            lblAdvance.TabIndex = 10;
+            lblAdvance.Text = "Advance";
             // 
             // lblRoyalty
             // 
+            lblRoyalty.Anchor = AnchorStyles.Right;
             lblRoyalty.AutoSize = true;
-            lblRoyalty.Location = new Point(3, 228);
+            lblRoyalty.Location = new Point(22, 233);
+            lblRoyalty.Margin = new Padding(2, 0, 2, 0);
             lblRoyalty.Name = "lblRoyalty";
-            lblRoyalty.Size = new Size(66, 25);
-            lblRoyalty.TabIndex = 6;
-            lblRoyalty.Text = "royalty";
+            lblRoyalty.Size = new Size(46, 15);
+            lblRoyalty.TabIndex = 12;
+            lblRoyalty.Text = "Royalty";
             // 
             // lblYtd_sales
             // 
+            lblYtd_sales.Anchor = AnchorStyles.Right;
             lblYtd_sales.AutoSize = true;
-            lblYtd_sales.Location = new Point(3, 266);
+            lblYtd_sales.Location = new Point(10, 270);
+            lblYtd_sales.Margin = new Padding(2, 0, 2, 0);
             lblYtd_sales.Name = "lblYtd_sales";
-            lblYtd_sales.Size = new Size(83, 25);
-            lblYtd_sales.TabIndex = 7;
-            lblYtd_sales.Text = "ytd_sales";
+            lblYtd_sales.Size = new Size(58, 15);
+            lblYtd_sales.TabIndex = 14;
+            lblYtd_sales.Text = "YTD Sales";
             // 
             // lblPubdate
             // 
+            lblPubdate.Anchor = AnchorStyles.Right;
             lblPubdate.AutoSize = true;
-            lblPubdate.Location = new Point(3, 384);
+            lblPubdate.Location = new Point(10, 359);
+            lblPubdate.Margin = new Padding(2, 0, 2, 0);
             lblPubdate.Name = "lblPubdate";
-            lblPubdate.Size = new Size(79, 25);
+            lblPubdate.Size = new Size(58, 15);
             lblPubdate.TabIndex = 9;
-            lblPubdate.Text = "pubdate";
+            lblPubdate.Text = "Pub. Date";
             // 
             // txtTitle_id
             // 
             txtTitle_id.Anchor = AnchorStyles.Left | AnchorStyles.Right;
-            txtTitle_id.Location = new Point(175, 3);
+            txtTitle_id.Location = new Point(72, 7);
+            txtTitle_id.Margin = new Padding(2, 2, 2, 2);
             txtTitle_id.MaxLength = 6;
             txtTitle_id.Name = "txtTitle_id";
-            txtTitle_id.Size = new Size(622, 31);
-            txtTitle_id.TabIndex = 10;
+            txtTitle_id.Size = new Size(254, 23);
+            txtTitle_id.TabIndex = 1;
             // 
             // comboBox1
             // 
@@ -273,38 +299,43 @@
             comboBox1.DropDownStyle = ComboBoxStyle.DropDownList;
             comboBox1.FormattingEnabled = true;
             comboBox1.Items.AddRange(new object[] { "Technical", "Business", "Psychology", "Popular_Comp", "UNDECIDED" });
-            comboBox1.Location = new Point(175, 79);
+            comboBox1.Location = new Point(72, 81);
+            comboBox1.Margin = new Padding(2, 2, 2, 2);
             comboBox1.Name = "comboBox1";
-            comboBox1.Size = new Size(622, 33);
+            comboBox1.Size = new Size(254, 23);
             comboBox1.TabIndex = 20;
             // 
             // lblNotes
             // 
+            lblNotes.Anchor = AnchorStyles.Right;
             lblNotes.AutoSize = true;
-            lblNotes.Location = new Point(3, 304);
+            lblNotes.Location = new Point(30, 312);
+            lblNotes.Margin = new Padding(2, 0, 2, 0);
             lblNotes.Name = "lblNotes";
-            lblNotes.Size = new Size(56, 25);
-            lblNotes.TabIndex = 8;
-            lblNotes.Text = "notes";
+            lblNotes.Size = new Size(38, 15);
+            lblNotes.TabIndex = 16;
+            lblNotes.Text = "Notes";
             // 
             // dtp
             // 
             dtp.Anchor = AnchorStyles.Left;
             dtp.CustomFormat = "yyyy/MM/dd";
             dtp.Format = DateTimePickerFormat.Custom;
-            dtp.Location = new Point(175, 392);
+            dtp.Location = new Point(72, 355);
+            dtp.Margin = new Padding(2, 2, 2, 2);
             dtp.MaxDate = new DateTime(2025, 11, 19, 0, 0, 0, 0);
             dtp.Name = "dtp";
-            dtp.Size = new Size(300, 31);
+            dtp.Size = new Size(211, 23);
             dtp.TabIndex = 26;
             dtp.Value = new DateTime(2025, 11, 19, 0, 0, 0, 0);
             // 
             // btnSave
             // 
             btnSave.Anchor = AnchorStyles.Bottom;
-            btnSave.Location = new Point(65, 689);
+            btnSave.Location = new Point(11, 393);
+            btnSave.Margin = new Padding(2, 2, 2, 2);
             btnSave.Name = "btnSave";
-            btnSave.Size = new Size(227, 128);
+            btnSave.Size = new Size(98, 28);
             btnSave.TabIndex = 9;
             btnSave.Text = "Save";
             btnSave.UseVisualStyleBackColor = true;
@@ -313,9 +344,10 @@
             // 
             btnCancel.Anchor = AnchorStyles.Bottom;
             btnCancel.DialogResult = DialogResult.Cancel;
-            btnCancel.Location = new Point(443, 689);
+            btnCancel.Location = new Point(219, 393);
+            btnCancel.Margin = new Padding(2, 2, 2, 2);
             btnCancel.Name = "btnCancel";
-            btnCancel.Size = new Size(227, 128);
+            btnCancel.Size = new Size(98, 28);
             btnCancel.TabIndex = 10;
             btnCancel.Text = "Cancel";
             btnCancel.UseVisualStyleBackColor = true;
@@ -323,20 +355,22 @@
             // frmTitleDetail
             // 
             AcceptButton = btnSave;
-            AutoScaleDimensions = new SizeF(10F, 25F);
+            AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             CancelButton = btnCancel;
-            ClientSize = new Size(800, 944);
+            ClientSize = new Size(328, 432);
             Controls.Add(btnCancel);
             Controls.Add(btnSave);
             Controls.Add(tlpTitle);
             FormBorderStyle = FormBorderStyle.FixedDialog;
+            Margin = new Padding(2, 2, 2, 2);
             MaximizeBox = false;
             MinimizeBox = false;
             Name = "frmTitleDetail";
             ShowIcon = false;
             StartPosition = FormStartPosition.CenterParent;
             Text = "Add/Edit Title";
+            Load += frmTitleDetail_Load;
             tlpTitle.ResumeLayout(false);
             tlpTitle.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)nudYtdSales).EndInit();
@@ -344,7 +378,6 @@
             ((System.ComponentModel.ISupportInitialize)nudAdvance).EndInit();
             ((System.ComponentModel.ISupportInitialize)nudPrice).EndInit();
             ResumeLayout(false);
-            PerformLayout();
         }
 
         #endregion

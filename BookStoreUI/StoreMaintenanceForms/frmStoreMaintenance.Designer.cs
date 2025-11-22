@@ -1,6 +1,6 @@
 ﻿namespace BookStoreUI.StoreMaintenanceForms
 {
-    partial class frmStoreMainenance
+    partial class frmStoreMaintenance
     {
         /// <summary>
         /// Required designer variable.
@@ -29,11 +29,16 @@
         private void InitializeComponent()
         {
             components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmStoreMaintenance));
             validatorBindingSource = new BindingSource(components);
             txtSearch = new TextBox();
-            lblSearch = new Label();
             spcDetails = new SplitContainer();
             dgvStore = new DataGridView();
+            columnStore_id = new DataGridViewTextBoxColumn();
+            columnStore_name = new DataGridViewTextBoxColumn();
+            columnStoreAddress = new DataGridViewTextBoxColumn();
+            columnCity = new DataGridViewTextBoxColumn();
+            columnState = new DataGridViewTextBoxColumn();
             validatorBindingSource1 = new BindingSource(components);
             rbtDetails = new RichTextBox();
             btnAddStore = new Button();
@@ -41,11 +46,6 @@
             btnSearch = new Button();
             btbDeleteStore = new Button();
             lblDetails = new Label();
-            columnStore_id = new DataGridViewTextBoxColumn();
-            columnStore_name = new DataGridViewTextBoxColumn();
-            columnStoreAddress = new DataGridViewTextBoxColumn();
-            columnCity = new DataGridViewTextBoxColumn();
-            columnState = new DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)validatorBindingSource).BeginInit();
             ((System.ComponentModel.ISupportInitialize)spcDetails).BeginInit();
             spcDetails.Panel1.SuspendLayout();
@@ -61,23 +61,17 @@
             // 
             // txtSearch
             // 
-            txtSearch.Location = new Point(100, 80);
+            txtSearch.Location = new Point(11, 25);
+            txtSearch.Margin = new Padding(2);
             txtSearch.Name = "txtSearch";
-            txtSearch.Size = new Size(365, 31);
-            txtSearch.TabIndex = 34;
-            // 
-            // lblSearch
-            // 
-            lblSearch.AutoSize = true;
-            lblSearch.Location = new Point(13, 80);
-            lblSearch.Name = "lblSearch";
-            lblSearch.Size = new Size(68, 25);
-            lblSearch.TabIndex = 32;
-            lblSearch.Text = "Search:";
+            txtSearch.PlaceholderText = "Search";
+            txtSearch.Size = new Size(257, 23);
+            txtSearch.TabIndex = 1;
             // 
             // spcDetails
             // 
-            spcDetails.Location = new Point(-2, 133);
+            spcDetails.Location = new Point(-1, 80);
+            spcDetails.Margin = new Padding(2);
             spcDetails.Name = "spcDetails";
             // 
             // spcDetails.Panel1
@@ -87,8 +81,9 @@
             // spcDetails.Panel2
             // 
             spcDetails.Panel2.Controls.Add(rbtDetails);
-            spcDetails.Size = new Size(1183, 567);
-            spcDetails.SplitterDistance = 817;
+            spcDetails.Size = new Size(828, 340);
+            spcDetails.SplitterDistance = 571;
+            spcDetails.SplitterWidth = 3;
             spcDetails.TabIndex = 36;
             // 
             // dgvStore
@@ -101,13 +96,54 @@
             dgvStore.DataSource = validatorBindingSource1;
             dgvStore.Dock = DockStyle.Fill;
             dgvStore.Location = new Point(0, 0);
+            dgvStore.Margin = new Padding(2);
             dgvStore.MultiSelect = false;
             dgvStore.Name = "dgvStore";
             dgvStore.ReadOnly = true;
             dgvStore.RowHeadersWidth = 62;
             dgvStore.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            dgvStore.Size = new Size(817, 567);
+            dgvStore.Size = new Size(571, 340);
             dgvStore.TabIndex = 0;
+            // 
+            // columnStore_id
+            // 
+            columnStore_id.HeaderText = "Store ID";
+            columnStore_id.MinimumWidth = 8;
+            columnStore_id.Name = "columnStore_id";
+            columnStore_id.ReadOnly = true;
+            columnStore_id.Width = 150;
+            // 
+            // columnStore_name
+            // 
+            columnStore_name.HeaderText = "Name";
+            columnStore_name.MinimumWidth = 8;
+            columnStore_name.Name = "columnStore_name";
+            columnStore_name.ReadOnly = true;
+            columnStore_name.Width = 150;
+            // 
+            // columnStoreAddress
+            // 
+            columnStoreAddress.HeaderText = "Address";
+            columnStoreAddress.MinimumWidth = 8;
+            columnStoreAddress.Name = "columnStoreAddress";
+            columnStoreAddress.ReadOnly = true;
+            columnStoreAddress.Width = 150;
+            // 
+            // columnCity
+            // 
+            columnCity.HeaderText = "City";
+            columnCity.MinimumWidth = 8;
+            columnCity.Name = "columnCity";
+            columnCity.ReadOnly = true;
+            columnCity.Width = 150;
+            // 
+            // columnState
+            // 
+            columnState.HeaderText = "State";
+            columnState.MinimumWidth = 8;
+            columnState.Name = "columnState";
+            columnState.ReadOnly = true;
+            columnState.Width = 150;
             // 
             // validatorBindingSource1
             // 
@@ -116,103 +152,70 @@
             // rbtDetails
             // 
             rbtDetails.Location = new Point(0, 0);
+            rbtDetails.Margin = new Padding(2);
             rbtDetails.Name = "rbtDetails";
-            rbtDetails.Size = new Size(361, 567);
+            rbtDetails.Size = new Size(254, 342);
             rbtDetails.TabIndex = 0;
             rbtDetails.Text = "";
             // 
             // btnAddStore
             // 
-            btnAddStore.Location = new Point(70, 772);
+            btnAddStore.Location = new Point(11, 435);
+            btnAddStore.Margin = new Padding(2);
             btnAddStore.Name = "btnAddStore";
-            btnAddStore.Size = new Size(231, 95);
-            btnAddStore.TabIndex = 37;
+            btnAddStore.Size = new Size(153, 34);
+            btnAddStore.TabIndex = 3;
             btnAddStore.Text = "Add a New Store";
             btnAddStore.UseVisualStyleBackColor = true;
+            btnAddStore.Click += btnAddStore_Click;
             // 
             // btbEditStore
             // 
-            btbEditStore.Location = new Point(488, 772);
+            btbEditStore.Location = new Point(168, 435);
+            btbEditStore.Margin = new Padding(2);
             btbEditStore.Name = "btbEditStore";
-            btbEditStore.Size = new Size(231, 95);
-            btbEditStore.TabIndex = 38;
+            btbEditStore.Size = new Size(153, 34);
+            btbEditStore.TabIndex = 4;
             btbEditStore.Text = "Edit Selected Store";
             btbEditStore.UseVisualStyleBackColor = true;
+            btbEditStore.Click += btbEditStore_Click;
             // 
             // btnSearch
             // 
-            btnSearch.Location = new Point(530, 78);
+            btnSearch.Location = new Point(272, 25);
+            btnSearch.Margin = new Padding(2);
             btnSearch.Name = "btnSearch";
-            btnSearch.Size = new Size(174, 33);
-            btnSearch.TabIndex = 35;
+            btnSearch.Size = new Size(122, 23);
+            btnSearch.TabIndex = 2;
             btnSearch.Text = "Search by Store";
             btnSearch.UseVisualStyleBackColor = true;
             // 
             // btbDeleteStore
             // 
-            btbDeleteStore.Location = new Point(872, 772);
+            btbDeleteStore.Location = new Point(325, 435);
+            btbDeleteStore.Margin = new Padding(2);
             btbDeleteStore.Name = "btbDeleteStore";
-            btbDeleteStore.Size = new Size(231, 95);
-            btbDeleteStore.TabIndex = 39;
+            btbDeleteStore.Size = new Size(153, 34);
+            btbDeleteStore.TabIndex = 5;
             btbDeleteStore.Text = "Delete Selected Store";
             btbDeleteStore.UseVisualStyleBackColor = true;
             // 
             // lblDetails
             // 
             lblDetails.AutoSize = true;
-            lblDetails.Location = new Point(960, 105);
+            lblDetails.Location = new Point(672, 63);
+            lblDetails.Margin = new Padding(2, 0, 2, 0);
             lblDetails.Name = "lblDetails";
-            lblDetails.Size = new Size(65, 25);
+            lblDetails.Size = new Size(42, 15);
             lblDetails.TabIndex = 33;
             lblDetails.Text = "Details";
             // 
-            // columnStore_id
+            // frmStoreMaintenance
             // 
-            columnStore_id.HeaderText = "stor_id";
-            columnStore_id.MinimumWidth = 8;
-            columnStore_id.Name = "columnStore_id";
-            columnStore_id.ReadOnly = true;
-            columnStore_id.Width = 150;
-            // 
-            // columnStore_name
-            // 
-            columnStore_name.HeaderText = "store_name";
-            columnStore_name.MinimumWidth = 8;
-            columnStore_name.Name = "columnStore_name";
-            columnStore_name.ReadOnly = true;
-            columnStore_name.Width = 150;
-            // 
-            // columnStoreAddress
-            // 
-            columnStoreAddress.HeaderText = "store_address";
-            columnStoreAddress.MinimumWidth = 8;
-            columnStoreAddress.Name = "columnStoreAddress";
-            columnStoreAddress.ReadOnly = true;
-            columnStoreAddress.Width = 150;
-            // 
-            // columnCity
-            // 
-            columnCity.HeaderText = "city";
-            columnCity.MinimumWidth = 8;
-            columnCity.Name = "columnCity";
-            columnCity.ReadOnly = true;
-            columnCity.Width = 150;
-            // 
-            // columnState
-            // 
-            columnState.HeaderText = "state";
-            columnState.MinimumWidth = 8;
-            columnState.Name = "columnState";
-            columnState.ReadOnly = true;
-            columnState.Width = 150;
-            // 
-            // frmStoreMainenance
-            // 
-            AutoScaleDimensions = new SizeF(10F, 25F);
+            AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1178, 944);
+            ClientSize = new Size(825, 490);
             Controls.Add(txtSearch);
-            Controls.Add(lblSearch);
             Controls.Add(spcDetails);
             Controls.Add(btnAddStore);
             Controls.Add(btbEditStore);
@@ -220,9 +223,11 @@
             Controls.Add(btbDeleteStore);
             Controls.Add(lblDetails);
             FormBorderStyle = FormBorderStyle.FixedSingle;
+            Icon = (Icon)resources.GetObject("$this.Icon");
+            Margin = new Padding(2);
             MaximizeBox = false;
             MinimizeBox = false;
-            Name = "frmStoreMainenance";
+            Name = "frmStoreMaintenance";
             StartPosition = FormStartPosition.CenterParent;
             Text = "Store Mainenance";
             ((System.ComponentModel.ISupportInitialize)validatorBindingSource).EndInit();
@@ -240,14 +245,8 @@
 
         private BindingSource validatorBindingSource;
         private TextBox txtSearch;
-        private Label lblSearch;
         private SplitContainer spcDetails;
         private DataGridView dgvStore;
-        private DataGridViewTextBoxColumn columnStore_id;
-        private DataGridViewTextBoxColumn columnStore_name;
-        private DataGridViewTextBoxColumn columnStoreAddress;
-        private DataGridViewTextBoxColumn columnCity;
-        private DataGridViewTextBoxColumn columnState;
         private BindingSource validatorBindingSource1;
         private RichTextBox rbtDetails;
         private Button btnAddStore;
@@ -255,5 +254,10 @@
         private Button btnSearch;
         private Button btbDeleteStore;
         private Label lblDetails;
+        private DataGridViewTextBoxColumn columnStore_id;
+        private DataGridViewTextBoxColumn columnStore_name;
+        private DataGridViewTextBoxColumn columnStoreAddress;
+        private DataGridViewTextBoxColumn columnCity;
+        private DataGridViewTextBoxColumn columnState;
     }
 }

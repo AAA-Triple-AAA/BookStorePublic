@@ -29,44 +29,47 @@
         private void InitializeComponent()
         {
             components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmPublisherMaintenance));
             txtSearch = new TextBox();
             rbtDetails = new RichTextBox();
             validatorBindingSource1 = new BindingSource(components);
-            lblSearch = new Label();
             spcDetails = new SplitContainer();
-            this.dgvPublisher = new DataGridView();
+            dgvPublisher = new DataGridView();
+            columnPub_id = new DataGridViewTextBoxColumn();
+            columnPub_name = new DataGridViewTextBoxColumn();
+            columnCity = new DataGridViewTextBoxColumn();
+            columnState = new DataGridViewTextBoxColumn();
+            columnCountry = new DataGridViewTextBoxColumn();
             validatorBindingSource = new BindingSource(components);
             btnAddPublisher = new Button();
             lblDetails = new Label();
             btbEditPublisher = new Button();
             btnSearch = new Button();
             btbDeletePublisher = new Button();
-            columnPub_id = new DataGridViewTextBoxColumn();
-            columnPub_name = new DataGridViewTextBoxColumn();
-            columnCity = new DataGridViewTextBoxColumn();
-            columnState = new DataGridViewTextBoxColumn();
-            columnCountry = new DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)validatorBindingSource1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)spcDetails).BeginInit();
             spcDetails.Panel1.SuspendLayout();
             spcDetails.Panel2.SuspendLayout();
             spcDetails.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)this.dgvPublisher).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)dgvPublisher).BeginInit();
             ((System.ComponentModel.ISupportInitialize)validatorBindingSource).BeginInit();
             SuspendLayout();
             // 
             // txtSearch
             // 
-            txtSearch.Location = new Point(100, 80);
+            txtSearch.Location = new Point(11, 24);
+            txtSearch.Margin = new Padding(2);
             txtSearch.Name = "txtSearch";
-            txtSearch.Size = new Size(365, 31);
-            txtSearch.TabIndex = 26;
+            txtSearch.PlaceholderText = "Search";
+            txtSearch.Size = new Size(257, 23);
+            txtSearch.TabIndex = 1;
             // 
             // rbtDetails
             // 
             rbtDetails.Location = new Point(0, 0);
+            rbtDetails.Margin = new Padding(2);
             rbtDetails.Name = "rbtDetails";
-            rbtDetails.Size = new Size(361, 567);
+            rbtDetails.Size = new Size(254, 342);
             rbtDetails.TabIndex = 0;
             rbtDetails.Text = "";
             // 
@@ -74,101 +77,46 @@
             // 
             validatorBindingSource1.DataSource = typeof(BookStoreBO.Validator);
             // 
-            // lblSearch
-            // 
-            lblSearch.AutoSize = true;
-            lblSearch.Location = new Point(13, 80);
-            lblSearch.Name = "lblSearch";
-            lblSearch.Size = new Size(68, 25);
-            lblSearch.TabIndex = 24;
-            lblSearch.Text = "Search:";
-            // 
             // spcDetails
             // 
-            spcDetails.Location = new Point(-2, 133);
+            spcDetails.Location = new Point(-1, 80);
+            spcDetails.Margin = new Padding(2);
             spcDetails.Name = "spcDetails";
             // 
             // spcDetails.Panel1
             // 
-            spcDetails.Panel1.Controls.Add(this.dgvPublisher);
+            spcDetails.Panel1.Controls.Add(dgvPublisher);
             // 
             // spcDetails.Panel2
             // 
             spcDetails.Panel2.Controls.Add(rbtDetails);
-            spcDetails.Size = new Size(1183, 567);
-            spcDetails.SplitterDistance = 817;
+            spcDetails.Size = new Size(828, 340);
+            spcDetails.SplitterDistance = 571;
+            spcDetails.SplitterWidth = 3;
             spcDetails.TabIndex = 28;
             // 
             // dgvPublisher
             // 
-            this.dgvPublisher.AllowUserToAddRows = false;
-            this.dgvPublisher.AllowUserToOrderColumns = true;
-            this.dgvPublisher.AutoGenerateColumns = false;
-            this.dgvPublisher.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvPublisher.Columns.AddRange(new DataGridViewColumn[] { columnPub_id, columnPub_name, columnCity, columnState, columnCountry });
-            this.dgvPublisher.DataSource = validatorBindingSource1;
-            this.dgvPublisher.Dock = DockStyle.Fill;
-            this.dgvPublisher.Location = new Point(0, 0);
-            this.dgvPublisher.MultiSelect = false;
-            this.dgvPublisher.Name = "dgvPublisher";
-            this.dgvPublisher.ReadOnly = true;
-            this.dgvPublisher.RowHeadersWidth = 62;
-            this.dgvPublisher.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            this.dgvPublisher.Size = new Size(817, 567);
-            this.dgvPublisher.TabIndex = 0;
-            // 
-            // validatorBindingSource
-            // 
-            validatorBindingSource.DataSource = typeof(BookStoreBO.Validator);
-            // 
-            // btnAddPublisher
-            // 
-            btnAddPublisher.Location = new Point(70, 772);
-            btnAddPublisher.Name = "btnAddPublisher";
-            btnAddPublisher.Size = new Size(231, 95);
-            btnAddPublisher.TabIndex = 29;
-            btnAddPublisher.Text = "Add a New Publisher";
-            btnAddPublisher.UseVisualStyleBackColor = true;
-            // 
-            // lblDetails
-            // 
-            lblDetails.AutoSize = true;
-            lblDetails.Location = new Point(960, 105);
-            lblDetails.Name = "lblDetails";
-            lblDetails.Size = new Size(65, 25);
-            lblDetails.TabIndex = 25;
-            lblDetails.Text = "Details";
-            // 
-            // btbEditPublisher
-            // 
-            btbEditPublisher.Location = new Point(488, 772);
-            btbEditPublisher.Name = "btbEditPublisher";
-            btbEditPublisher.Size = new Size(231, 95);
-            btbEditPublisher.TabIndex = 30;
-            btbEditPublisher.Text = "Edit Selected Publisher";
-            btbEditPublisher.UseVisualStyleBackColor = true;
-            // 
-            // btnSearch
-            // 
-            btnSearch.Location = new Point(530, 78);
-            btnSearch.Name = "btnSearch";
-            btnSearch.Size = new Size(174, 33);
-            btnSearch.TabIndex = 27;
-            btnSearch.Text = "Search by Publisher";
-            btnSearch.UseVisualStyleBackColor = true;
-            // 
-            // btbDeletePublisher
-            // 
-            btbDeletePublisher.Location = new Point(872, 772);
-            btbDeletePublisher.Name = "btbDeletePublisher";
-            btbDeletePublisher.Size = new Size(231, 95);
-            btbDeletePublisher.TabIndex = 31;
-            btbDeletePublisher.Text = "Delete Selected Publisher";
-            btbDeletePublisher.UseVisualStyleBackColor = true;
+            dgvPublisher.AllowUserToAddRows = false;
+            dgvPublisher.AllowUserToOrderColumns = true;
+            dgvPublisher.AutoGenerateColumns = false;
+            dgvPublisher.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dgvPublisher.Columns.AddRange(new DataGridViewColumn[] { columnPub_id, columnPub_name, columnCity, columnState, columnCountry });
+            dgvPublisher.DataSource = validatorBindingSource1;
+            dgvPublisher.Dock = DockStyle.Fill;
+            dgvPublisher.Location = new Point(0, 0);
+            dgvPublisher.Margin = new Padding(2);
+            dgvPublisher.MultiSelect = false;
+            dgvPublisher.Name = "dgvPublisher";
+            dgvPublisher.ReadOnly = true;
+            dgvPublisher.RowHeadersWidth = 62;
+            dgvPublisher.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            dgvPublisher.Size = new Size(571, 340);
+            dgvPublisher.TabIndex = 0;
             // 
             // columnPub_id
             // 
-            columnPub_id.HeaderText = "pub_id";
+            columnPub_id.HeaderText = "Pub. ID";
             columnPub_id.MinimumWidth = 8;
             columnPub_id.Name = "columnPub_id";
             columnPub_id.ReadOnly = true;
@@ -176,7 +124,7 @@
             // 
             // columnPub_name
             // 
-            columnPub_name.HeaderText = "pub_name";
+            columnPub_name.HeaderText = "Name";
             columnPub_name.MinimumWidth = 8;
             columnPub_name.Name = "columnPub_name";
             columnPub_name.ReadOnly = true;
@@ -184,7 +132,7 @@
             // 
             // columnCity
             // 
-            columnCity.HeaderText = "city";
+            columnCity.HeaderText = "City";
             columnCity.MinimumWidth = 8;
             columnCity.Name = "columnCity";
             columnCity.ReadOnly = true;
@@ -192,7 +140,7 @@
             // 
             // columnState
             // 
-            columnState.HeaderText = "state";
+            columnState.HeaderText = "State";
             columnState.MinimumWidth = 8;
             columnState.Name = "columnState";
             columnState.ReadOnly = true;
@@ -200,19 +148,74 @@
             // 
             // columnCountry
             // 
-            columnCountry.HeaderText = "country";
+            columnCountry.HeaderText = "Country";
             columnCountry.MinimumWidth = 8;
             columnCountry.Name = "columnCountry";
             columnCountry.ReadOnly = true;
             columnCountry.Width = 150;
             // 
+            // validatorBindingSource
+            // 
+            validatorBindingSource.DataSource = typeof(BookStoreBO.Validator);
+            // 
+            // btnAddPublisher
+            // 
+            btnAddPublisher.Location = new Point(11, 437);
+            btnAddPublisher.Margin = new Padding(2);
+            btnAddPublisher.Name = "btnAddPublisher";
+            btnAddPublisher.Size = new Size(153, 34);
+            btnAddPublisher.TabIndex = 3;
+            btnAddPublisher.Text = "Add a New Publisher";
+            btnAddPublisher.UseVisualStyleBackColor = true;
+            btnAddPublisher.Click += btnAddPublisher_Click;
+            // 
+            // lblDetails
+            // 
+            lblDetails.AutoSize = true;
+            lblDetails.Location = new Point(672, 63);
+            lblDetails.Margin = new Padding(2, 0, 2, 0);
+            lblDetails.Name = "lblDetails";
+            lblDetails.Size = new Size(42, 15);
+            lblDetails.TabIndex = 25;
+            lblDetails.Text = "Details";
+            // 
+            // btbEditPublisher
+            // 
+            btbEditPublisher.Location = new Point(168, 437);
+            btbEditPublisher.Margin = new Padding(2);
+            btbEditPublisher.Name = "btbEditPublisher";
+            btbEditPublisher.Size = new Size(153, 34);
+            btbEditPublisher.TabIndex = 4;
+            btbEditPublisher.Text = "Edit Selected Publisher";
+            btbEditPublisher.UseVisualStyleBackColor = true;
+            btbEditPublisher.Click += btbEditPublisher_Click;
+            // 
+            // btnSearch
+            // 
+            btnSearch.Location = new Point(272, 24);
+            btnSearch.Margin = new Padding(2);
+            btnSearch.Name = "btnSearch";
+            btnSearch.Size = new Size(122, 23);
+            btnSearch.TabIndex = 2;
+            btnSearch.Text = "Search by Publisher";
+            btnSearch.UseVisualStyleBackColor = true;
+            // 
+            // btbDeletePublisher
+            // 
+            btbDeletePublisher.Location = new Point(325, 437);
+            btbDeletePublisher.Margin = new Padding(2);
+            btbDeletePublisher.Name = "btbDeletePublisher";
+            btbDeletePublisher.Size = new Size(153, 34);
+            btbDeletePublisher.TabIndex = 5;
+            btbDeletePublisher.Text = "Delete Selected Publisher";
+            btbDeletePublisher.UseVisualStyleBackColor = true;
+            // 
             // frmPublisherMaintenance
             // 
-            AutoScaleDimensions = new SizeF(10F, 25F);
+            AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1178, 944);
+            ClientSize = new Size(825, 490);
             Controls.Add(txtSearch);
-            Controls.Add(lblSearch);
             Controls.Add(spcDetails);
             Controls.Add(btnAddPublisher);
             Controls.Add(lblDetails);
@@ -220,6 +223,8 @@
             Controls.Add(btnSearch);
             Controls.Add(btbDeletePublisher);
             FormBorderStyle = FormBorderStyle.FixedSingle;
+            Icon = (Icon)resources.GetObject("$this.Icon");
+            Margin = new Padding(2);
             MaximizeBox = false;
             MinimizeBox = false;
             Name = "frmPublisherMaintenance";
@@ -230,7 +235,7 @@
             spcDetails.Panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)spcDetails).EndInit();
             spcDetails.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)this.dgvPublisher).EndInit();
+            ((System.ComponentModel.ISupportInitialize)dgvPublisher).EndInit();
             ((System.ComponentModel.ISupportInitialize)validatorBindingSource).EndInit();
             ResumeLayout(false);
             PerformLayout();
@@ -244,7 +249,6 @@
         private DataGridViewTextBoxColumn columnPrice;
         private DataGridViewTextBoxColumn columnType;
         private DataGridViewTextBoxColumn columnTitle;
-        private Label lblSearch;
         private DataGridViewTextBoxColumn columnTitle_id;
         private SplitContainer spcDetails;
         private DataGridView dgvPublisher;

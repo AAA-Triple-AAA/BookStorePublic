@@ -1,4 +1,7 @@
-﻿using System;
+﻿using BookStoreUI.EmployeeMaintenanceForms;
+using BookStoreUI.PublisherMaintenanceForms;
+using BookStoreUI.StoreMaintenanceForms;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -33,6 +36,46 @@ namespace BookStoreUI
         private void btnAuthorMaintenance_Click(object sender, EventArgs e)
         {
             frmAuthorMaintenance frm = new();
+            this.Hide();
+            frm.ShowDialog();
+            this.Show();
+        }
+
+        private void btnEmployeeMaintenance_Click(object sender, EventArgs e)
+        {
+            frmEmployeeMaintenance frm = new();
+            this.Hide();
+            frm.ShowDialog();
+            this.Show();
+        }
+
+        private void btnPublisherMaintenance_Click(object sender, EventArgs e)
+        {
+            frmPublisherMaintenance frm = new();
+            this.Hide();
+            frm.ShowDialog();
+            this.Show();
+        }
+
+        private void btnStoreMaintenance_Click(object sender, EventArgs e)
+        {
+            frmStoreMaintenance frm = new();
+            this.Hide();
+            frm.ShowDialog();
+            this.Show();
+        }
+
+        private void btnReports_Click(object sender, EventArgs e)
+        {
+            frmSalesReport frm = new();
+            this.Hide();
+            frm.ShowDialog();
+            this.Show();
+        }
+
+        private void btnCustomerOrder_Click(object sender, EventArgs e)
+        {
+            frmCustomerOrder frm = new();
             this.Hide();
             frm.ShowDialog();
             this.Show();

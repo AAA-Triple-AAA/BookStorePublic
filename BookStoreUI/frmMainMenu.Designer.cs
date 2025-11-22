@@ -52,6 +52,7 @@
             btnCustomerOrder.TabIndex = 1;
             btnCustomerOrder.Text = "Customer Order (Shopping Cart)";
             btnCustomerOrder.UseVisualStyleBackColor = true;
+            btnCustomerOrder.Click += btnCustomerOrder_Click;
             // 
             // btnTitleMaintenance
             // 
@@ -84,6 +85,7 @@
             btnPublisherMaintenance.TabIndex = 4;
             btnPublisherMaintenance.Text = "Publisher Maintenance";
             btnPublisherMaintenance.UseVisualStyleBackColor = true;
+            btnPublisherMaintenance.Click += btnPublisherMaintenance_Click;
             // 
             // btnStoreMaintenance
             // 
@@ -94,6 +96,7 @@
             btnStoreMaintenance.TabIndex = 5;
             btnStoreMaintenance.Text = "Store Maintenance ";
             btnStoreMaintenance.UseVisualStyleBackColor = true;
+            btnStoreMaintenance.Click += btnStoreMaintenance_Click;
             // 
             // btnEmployeeMaintenance
             // 
@@ -104,6 +107,7 @@
             btnEmployeeMaintenance.TabIndex = 6;
             btnEmployeeMaintenance.Text = "Employee Maintenance";
             btnEmployeeMaintenance.UseVisualStyleBackColor = true;
+            btnEmployeeMaintenance.Click += btnEmployeeMaintenance_Click;
             // 
             // btnReports
             // 
@@ -114,6 +118,7 @@
             btnReports.TabIndex = 7;
             btnReports.Text = "Reports";
             btnReports.UseVisualStyleBackColor = true;
+            btnReports.Click += btnReports_Click;
             // 
             // btnExit
             // 
@@ -163,6 +168,7 @@
             Controls.Add(grpMainMenuOptions);
             Controls.Add(btnExit);
             FormBorderStyle = FormBorderStyle.FixedSingle;
+            Icon = (Icon)resources.GetObject("$this.Icon");
             Margin = new Padding(2);
             MaximizeBox = false;
             Name = "frmMainMenu";

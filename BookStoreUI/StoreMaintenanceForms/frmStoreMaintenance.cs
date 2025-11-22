@@ -8,24 +8,24 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace BookStoreUI
+namespace BookStoreUI.StoreMaintenanceForms
 {
-    public partial class frmTitleMaintenance : Form
+    public partial class frmStoreMaintenance : Form
     {
-        public frmTitleMaintenance()
+        public frmStoreMaintenance()
         {
             InitializeComponent();
         }
 
-        private void btnAddTitle_Click(object sender, EventArgs e)
+        private void btnAddStore_Click(object sender, EventArgs e)
         {
-            var frm = new frmTitleDetail { IsAdd = true };
+            var frm = new frmStoreDetail { IsAdd = true };
             frm.ShowDialog();
         }
 
-        private void btbEditTitle_Click(object sender, EventArgs e)
+        private void btbEditStore_Click(object sender, EventArgs e)
         {
-            var frm = new frmTitleDetail { IsAdd = false };
+            var frm = new frmStoreDetail { IsAdd = true };
             frm.ShowDialog();
         }
     }

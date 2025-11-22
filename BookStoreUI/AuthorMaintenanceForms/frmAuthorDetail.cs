@@ -8,20 +8,22 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace BookStoreUI
+namespace BookStoreUI.AuthorMaintenanceForms
 {
-    public partial class frmTitleDetail : Form
+    public partial class frmAuthorDetail : Form
     {
         public bool IsAdd = false;
 
-        public frmTitleDetail()
+        public frmAuthorDetail()
         {
             InitializeComponent();
         }
 
-        private void frmTitleDetail_Load(object sender, EventArgs e)
+        private void frmAuthorDetail_Load(object sender, EventArgs e)
         {
-            this.Text = IsAdd ? @"Add Title" : @"Edit Title";
+            // TODO: IMPLEMENT FUNCTION
+            // Hande form load stuff
+            this.Text = IsAdd ? @"Add Author" : @"Edit Author";
         }
     }
 }
