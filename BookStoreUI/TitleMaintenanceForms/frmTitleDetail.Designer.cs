@@ -46,7 +46,7 @@
             lblYtd_sales = new Label();
             lblPubdate = new Label();
             txtTitle_id = new TextBox();
-            comboBox1 = new ComboBox();
+            cboType = new ComboBox();
             lblNotes = new Label();
             dtp = new DateTimePicker();
             btnSave = new Button();
@@ -80,12 +80,12 @@
             tlpTitle.Controls.Add(lblYtd_sales, 0, 7);
             tlpTitle.Controls.Add(lblPubdate, 0, 9);
             tlpTitle.Controls.Add(txtTitle_id, 1, 0);
-            tlpTitle.Controls.Add(comboBox1, 1, 2);
+            tlpTitle.Controls.Add(cboType, 1, 2);
             tlpTitle.Controls.Add(lblNotes, 0, 8);
             tlpTitle.Controls.Add(dtp, 1, 9);
             tlpTitle.Dock = DockStyle.Top;
             tlpTitle.Location = new Point(0, 0);
-            tlpTitle.Margin = new Padding(2, 2, 2, 2);
+            tlpTitle.Margin = new Padding(2);
             tlpTitle.Name = "tlpTitle";
             tlpTitle.RowCount = 10;
             tlpTitle.RowStyles.Add(new RowStyle(SizeType.Percent, 11.1111107F));
@@ -107,7 +107,7 @@
             txtNotes.Anchor = AnchorStyles.Left | AnchorStyles.Right;
             txtNotes.CharacterCasing = CharacterCasing.Upper;
             txtNotes.Location = new Point(72, 298);
-            txtNotes.Margin = new Padding(2, 2, 2, 2);
+            txtNotes.Margin = new Padding(2);
             txtNotes.MaxLength = 4;
             txtNotes.Multiline = true;
             txtNotes.Name = "txtNotes";
@@ -120,7 +120,7 @@
             nudYtdSales.Anchor = AnchorStyles.Left;
             nudYtdSales.Increment = new decimal(new int[] { 100, 0, 0, 0 });
             nudYtdSales.Location = new Point(72, 266);
-            nudYtdSales.Margin = new Padding(2, 2, 2, 2);
+            nudYtdSales.Margin = new Padding(2);
             nudYtdSales.Maximum = new decimal(new int[] { 100000000, 0, 0, 0 });
             nudYtdSales.Name = "nudYtdSales";
             nudYtdSales.Size = new Size(126, 23);
@@ -132,7 +132,7 @@
             nudRoyalty.Anchor = AnchorStyles.Left;
             nudRoyalty.Increment = new decimal(new int[] { 100, 0, 0, 0 });
             nudRoyalty.Location = new Point(72, 229);
-            nudRoyalty.Margin = new Padding(2, 2, 2, 2);
+            nudRoyalty.Margin = new Padding(2);
             nudRoyalty.Name = "nudRoyalty";
             nudRoyalty.Size = new Size(126, 23);
             nudRoyalty.TabIndex = 23;
@@ -144,7 +144,7 @@
             nudAdvance.DecimalPlaces = 2;
             nudAdvance.Increment = new decimal(new int[] { 100, 0, 0, 0 });
             nudAdvance.Location = new Point(72, 192);
-            nudAdvance.Margin = new Padding(2, 2, 2, 2);
+            nudAdvance.Margin = new Padding(2);
             nudAdvance.Maximum = new decimal(new int[] { 1000000, 0, 0, 0 });
             nudAdvance.Name = "nudAdvance";
             nudAdvance.Size = new Size(126, 23);
@@ -156,7 +156,7 @@
             nudPrice.Anchor = AnchorStyles.Left;
             nudPrice.DecimalPlaces = 2;
             nudPrice.Location = new Point(72, 155);
-            nudPrice.Margin = new Padding(2, 2, 2, 2);
+            nudPrice.Margin = new Padding(2);
             nudPrice.Maximum = new decimal(new int[] { 1000000, 0, 0, 0 });
             nudPrice.Name = "nudPrice";
             nudPrice.Size = new Size(126, 23);
@@ -168,7 +168,7 @@
             txtPubId.Anchor = AnchorStyles.Left | AnchorStyles.Right;
             txtPubId.CharacterCasing = CharacterCasing.Upper;
             txtPubId.Location = new Point(72, 118);
-            txtPubId.Margin = new Padding(2, 2, 2, 2);
+            txtPubId.Margin = new Padding(2);
             txtPubId.MaxLength = 4;
             txtPubId.Name = "txtPubId";
             txtPubId.Size = new Size(254, 23);
@@ -178,7 +178,7 @@
             // 
             txtTitle.Anchor = AnchorStyles.Left | AnchorStyles.Right;
             txtTitle.Location = new Point(72, 44);
-            txtTitle.Margin = new Padding(2, 2, 2, 2);
+            txtTitle.Margin = new Padding(2);
             txtTitle.MaxLength = 80;
             txtTitle.Name = "txtTitle";
             txtTitle.Size = new Size(254, 23);
@@ -287,23 +287,23 @@
             // 
             txtTitle_id.Anchor = AnchorStyles.Left | AnchorStyles.Right;
             txtTitle_id.Location = new Point(72, 7);
-            txtTitle_id.Margin = new Padding(2, 2, 2, 2);
+            txtTitle_id.Margin = new Padding(2);
             txtTitle_id.MaxLength = 6;
             txtTitle_id.Name = "txtTitle_id";
             txtTitle_id.Size = new Size(254, 23);
             txtTitle_id.TabIndex = 1;
             // 
-            // comboBox1
+            // cboType
             // 
-            comboBox1.Anchor = AnchorStyles.Left | AnchorStyles.Right;
-            comboBox1.DropDownStyle = ComboBoxStyle.DropDownList;
-            comboBox1.FormattingEnabled = true;
-            comboBox1.Items.AddRange(new object[] { "Technical", "Business", "Psychology", "Popular_Comp", "UNDECIDED" });
-            comboBox1.Location = new Point(72, 81);
-            comboBox1.Margin = new Padding(2, 2, 2, 2);
-            comboBox1.Name = "comboBox1";
-            comboBox1.Size = new Size(254, 23);
-            comboBox1.TabIndex = 20;
+            cboType.Anchor = AnchorStyles.Left | AnchorStyles.Right;
+            cboType.DropDownStyle = ComboBoxStyle.DropDownList;
+            cboType.FormattingEnabled = true;
+            cboType.Items.AddRange(new object[] { "Technical", "Business", "Psychology", "Popular_Comp", "UNDECIDED" });
+            cboType.Location = new Point(72, 81);
+            cboType.Margin = new Padding(2);
+            cboType.Name = "cboType";
+            cboType.Size = new Size(254, 23);
+            cboType.TabIndex = 20;
             // 
             // lblNotes
             // 
@@ -322,7 +322,7 @@
             dtp.CustomFormat = "yyyy/MM/dd";
             dtp.Format = DateTimePickerFormat.Custom;
             dtp.Location = new Point(72, 355);
-            dtp.Margin = new Padding(2, 2, 2, 2);
+            dtp.Margin = new Padding(2);
             dtp.MaxDate = new DateTime(2025, 11, 19, 0, 0, 0, 0);
             dtp.Name = "dtp";
             dtp.Size = new Size(211, 23);
@@ -333,7 +333,7 @@
             // 
             btnSave.Anchor = AnchorStyles.Bottom;
             btnSave.Location = new Point(11, 393);
-            btnSave.Margin = new Padding(2, 2, 2, 2);
+            btnSave.Margin = new Padding(2);
             btnSave.Name = "btnSave";
             btnSave.Size = new Size(98, 28);
             btnSave.TabIndex = 9;
@@ -345,7 +345,7 @@
             btnCancel.Anchor = AnchorStyles.Bottom;
             btnCancel.DialogResult = DialogResult.Cancel;
             btnCancel.Location = new Point(219, 393);
-            btnCancel.Margin = new Padding(2, 2, 2, 2);
+            btnCancel.Margin = new Padding(2);
             btnCancel.Name = "btnCancel";
             btnCancel.Size = new Size(98, 28);
             btnCancel.TabIndex = 10;
@@ -363,7 +363,7 @@
             Controls.Add(btnSave);
             Controls.Add(tlpTitle);
             FormBorderStyle = FormBorderStyle.FixedDialog;
-            Margin = new Padding(2, 2, 2, 2);
+            Margin = new Padding(2);
             MaximizeBox = false;
             MinimizeBox = false;
             Name = "frmTitleDetail";
@@ -396,7 +396,7 @@
         private TextBox txtPubId;
         private TextBox txtTitle;
         private TextBox txtTitle_id;
-        private ComboBox comboBox1;
+        private ComboBox cboType;
         private NumericUpDown nudPrice;
         private NumericUpDown nudRoyalty;
         private NumericUpDown nudAdvance;

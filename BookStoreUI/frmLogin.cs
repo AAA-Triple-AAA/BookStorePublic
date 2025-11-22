@@ -21,6 +21,7 @@ public partial class frmLogin : Form
         else
         {
             MessageBox.Show(errMsg);
+            return false;
         }
 
         return true;

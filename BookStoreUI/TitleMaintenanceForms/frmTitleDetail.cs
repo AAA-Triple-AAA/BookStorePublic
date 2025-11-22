@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using BookStoreBO;
 
 namespace BookStoreUI
 {
@@ -17,6 +18,19 @@ namespace BookStoreUI
         public frmTitleDetail()
         {
             InitializeComponent();
+        }
+
+        private bool ValidateInput()
+        {
+            var errMsg = Validator.IsPresent(txtTitle_id.Text, "Title ID");
+            errMsg += Validator.IsPresent(txtTitle.Text, "Title");
+            errMsg += Validator.IsSelected(cboType.SelectedIndex, "Type");
+            errMsg += Validator.IsPresent(txtPubId.Text, "Publisher ID");
+
+            if (errMsg == "") return true;
+
+            MessageBox.Show(errMsg);
+            return false;
         }
 
         private void frmTitleDetail_Load(object sender, EventArgs e)
