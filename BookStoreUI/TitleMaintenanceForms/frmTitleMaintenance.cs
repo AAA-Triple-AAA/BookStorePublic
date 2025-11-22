@@ -16,5 +16,17 @@ namespace BookStoreUI
         {
             InitializeComponent();
         }
+
+        private void btnAddTitle_Click(object sender, EventArgs e)
+        {
+            var frm = new frmTitleDetail { IsAdd = true };
+            frm.ShowDialog();
+        }
+
+        private void btbEditTitle_Click(object sender, EventArgs e)
+        {
+            var frm = new frmTitleDetail { IsAdd = false };
+            frm.ShowDialog();
+        }
     }
 }

@@ -12,9 +12,16 @@ namespace BookStoreUI
 {
     public partial class frmTitleDetail : Form
     {
+        public bool IsAdd = false;
+
         public frmTitleDetail()
         {
             InitializeComponent();
+        }
+
+        private void frmTitleDetail_Load(object sender, EventArgs e)
+        {
+            this.Text = IsAdd ? @"Add Title" : @"Edit Title";
         }
     }
 }
