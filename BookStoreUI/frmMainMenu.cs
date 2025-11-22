@@ -64,5 +64,13 @@ namespace BookStoreUI
             frm.ShowDialog();
             this.Show();
         }
+
+        private void btnReports_Click(object sender, EventArgs e)
+        {
+            frmSalesReport frm = new();
+            this.Hide();
+            frm.ShowDialog();
+            this.Show();
+        }
     }
 }

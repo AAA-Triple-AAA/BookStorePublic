@@ -117,6 +117,7 @@
             btnReports.TabIndex = 7;
             btnReports.Text = "Reports";
             btnReports.UseVisualStyleBackColor = true;
+            btnReports.Click += btnReports_Click;
             // 
             // btnExit
             // 
