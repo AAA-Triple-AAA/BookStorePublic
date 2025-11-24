@@ -50,10 +50,9 @@
             // 
             btnCancel.Anchor = AnchorStyles.Bottom;
             btnCancel.DialogResult = DialogResult.Cancel;
-            btnCancel.Location = new Point(219, 393);
-            btnCancel.Margin = new Padding(2);
+            btnCancel.Location = new Point(313, 655);
             btnCancel.Name = "btnCancel";
-            btnCancel.Size = new Size(98, 28);
+            btnCancel.Size = new Size(140, 47);
             btnCancel.TabIndex = 13;
             btnCancel.Text = "Cancel";
             btnCancel.UseVisualStyleBackColor = true;
@@ -61,21 +60,19 @@
             // txtStoreName
             // 
             txtStoreName.Anchor = AnchorStyles.Left | AnchorStyles.Right;
-            txtStoreName.Location = new Point(72, 62);
-            txtStoreName.Margin = new Padding(2);
+            txtStoreName.Location = new Point(104, 107);
             txtStoreName.MaxLength = 40;
             txtStoreName.Name = "txtStoreName";
-            txtStoreName.Size = new Size(254, 23);
+            txtStoreName.Size = new Size(362, 31);
             txtStoreName.TabIndex = 3;
             // 
             // lblStoreId
             // 
             lblStoreId.Anchor = AnchorStyles.Right;
             lblStoreId.AutoSize = true;
-            lblStoreId.Location = new Point(20, 17);
-            lblStoreId.Margin = new Padding(2, 0, 2, 0);
+            lblStoreId.Location = new Point(22, 28);
             lblStoreId.Name = "lblStoreId";
-            lblStoreId.Size = new Size(48, 15);
+            lblStoreId.Size = new Size(76, 25);
             lblStoreId.TabIndex = 0;
             lblStoreId.Text = "Store ID";
             // 
@@ -83,10 +80,9 @@
             // 
             lblStoreName.Anchor = AnchorStyles.Right;
             lblStoreName.AutoSize = true;
-            lblStoreName.Location = new Point(29, 58);
-            lblStoreName.Margin = new Padding(2, 0, 2, 0);
+            lblStoreName.Location = new Point(39, 98);
             lblStoreName.Name = "lblStoreName";
-            lblStoreName.Size = new Size(39, 30);
+            lblStoreName.Size = new Size(59, 50);
             lblStoreName.TabIndex = 2;
             lblStoreName.Text = "Store Name";
             // 
@@ -94,10 +90,9 @@
             // 
             lblStoreAddress.Anchor = AnchorStyles.Right;
             lblStoreAddress.AutoSize = true;
-            lblStoreAddress.Location = new Point(19, 107);
-            lblStoreAddress.Margin = new Padding(2, 0, 2, 0);
+            lblStoreAddress.Location = new Point(21, 180);
             lblStoreAddress.Name = "lblStoreAddress";
-            lblStoreAddress.Size = new Size(49, 30);
+            lblStoreAddress.Size = new Size(77, 50);
             lblStoreAddress.TabIndex = 4;
             lblStoreAddress.Text = "Store Address";
             // 
@@ -105,10 +100,9 @@
             // 
             lblState.Anchor = AnchorStyles.Right;
             lblState.AutoSize = true;
-            lblState.Location = new Point(35, 213);
-            lblState.Margin = new Padding(2, 0, 2, 0);
+            lblState.Location = new Point(47, 356);
             lblState.Name = "lblState";
-            lblState.Size = new Size(33, 15);
+            lblState.Size = new Size(51, 25);
             lblState.TabIndex = 8;
             lblState.Text = "State";
             // 
@@ -116,23 +110,22 @@
             // 
             txtState.Anchor = AnchorStyles.Left;
             txtState.CharacterCasing = CharacterCasing.Upper;
-            txtState.Location = new Point(72, 209);
-            txtState.Margin = new Padding(2);
+            txtState.Location = new Point(104, 353);
             txtState.MaxLength = 2;
             txtState.Name = "txtState";
-            txtState.Size = new Size(43, 23);
+            txtState.Size = new Size(60, 31);
             txtState.TabIndex = 9;
             // 
             // btnSave
             // 
             btnSave.Anchor = AnchorStyles.Bottom;
-            btnSave.Location = new Point(11, 393);
-            btnSave.Margin = new Padding(2);
+            btnSave.Location = new Point(16, 655);
             btnSave.Name = "btnSave";
-            btnSave.Size = new Size(98, 28);
+            btnSave.Size = new Size(140, 47);
             btnSave.TabIndex = 12;
             btnSave.Text = "Save";
             btnSave.UseVisualStyleBackColor = true;
+            btnSave.Click += btnSave_Click;
             // 
             // tlpAuthor
             // 
@@ -153,7 +146,6 @@
             tlpAuthor.Controls.Add(mtbZip, 1, 5);
             tlpAuthor.Dock = DockStyle.Top;
             tlpAuthor.Location = new Point(0, 0);
-            tlpAuthor.Margin = new Padding(2);
             tlpAuthor.Name = "tlpAuthor";
             tlpAuthor.RowCount = 6;
             tlpAuthor.RowStyles.Add(new RowStyle(SizeType.Percent, 16.666666F));
@@ -162,38 +154,35 @@
             tlpAuthor.RowStyles.Add(new RowStyle(SizeType.Percent, 16.666666F));
             tlpAuthor.RowStyles.Add(new RowStyle(SizeType.Percent, 16.666666F));
             tlpAuthor.RowStyles.Add(new RowStyle(SizeType.Percent, 16.666666F));
-            tlpAuthor.Size = new Size(328, 295);
+            tlpAuthor.Size = new Size(469, 492);
             tlpAuthor.TabIndex = 14;
             // 
             // txtCity
             // 
             txtCity.Anchor = AnchorStyles.Left | AnchorStyles.Right;
             txtCity.CharacterCasing = CharacterCasing.Upper;
-            txtCity.Location = new Point(72, 160);
-            txtCity.Margin = new Padding(2);
+            txtCity.Location = new Point(104, 271);
             txtCity.MaxLength = 20;
             txtCity.Name = "txtCity";
-            txtCity.Size = new Size(254, 23);
+            txtCity.Size = new Size(362, 31);
             txtCity.TabIndex = 7;
             // 
             // txtStoreAddress
             // 
             txtStoreAddress.Anchor = AnchorStyles.Left | AnchorStyles.Right;
-            txtStoreAddress.Location = new Point(72, 111);
-            txtStoreAddress.Margin = new Padding(2);
+            txtStoreAddress.Location = new Point(104, 189);
             txtStoreAddress.MaxLength = 40;
             txtStoreAddress.Name = "txtStoreAddress";
-            txtStoreAddress.Size = new Size(254, 23);
+            txtStoreAddress.Size = new Size(362, 31);
             txtStoreAddress.TabIndex = 5;
             // 
             // lblCity
             // 
             lblCity.Anchor = AnchorStyles.Right;
             lblCity.AutoSize = true;
-            lblCity.Location = new Point(40, 164);
-            lblCity.Margin = new Padding(2, 0, 2, 0);
+            lblCity.Location = new Point(56, 274);
             lblCity.Name = "lblCity";
-            lblCity.Size = new Size(28, 15);
+            lblCity.Size = new Size(42, 25);
             lblCity.TabIndex = 6;
             lblCity.Text = "City";
             // 
@@ -201,22 +190,20 @@
             // 
             mtbStoreId.Anchor = AnchorStyles.Left;
             mtbStoreId.HidePromptOnLeave = true;
-            mtbStoreId.Location = new Point(72, 13);
-            mtbStoreId.Margin = new Padding(2);
+            mtbStoreId.Location = new Point(104, 25);
             mtbStoreId.Mask = "0000";
             mtbStoreId.Name = "mtbStoreId";
             mtbStoreId.ResetOnSpace = false;
-            mtbStoreId.Size = new Size(43, 23);
+            mtbStoreId.Size = new Size(60, 31);
             mtbStoreId.TabIndex = 1;
             // 
             // lblZip
             // 
             lblZip.Anchor = AnchorStyles.Right;
             lblZip.AutoSize = true;
-            lblZip.Location = new Point(44, 262);
-            lblZip.Margin = new Padding(2, 0, 2, 0);
+            lblZip.Location = new Point(61, 438);
             lblZip.Name = "lblZip";
-            lblZip.Size = new Size(24, 15);
+            lblZip.Size = new Size(37, 25);
             lblZip.TabIndex = 10;
             lblZip.Text = "Zip";
             // 
@@ -224,26 +211,24 @@
             // 
             mtbZip.Anchor = AnchorStyles.Left;
             mtbZip.HidePromptOnLeave = true;
-            mtbZip.Location = new Point(72, 258);
-            mtbZip.Margin = new Padding(2);
+            mtbZip.Location = new Point(104, 435);
             mtbZip.Mask = "00000";
             mtbZip.Name = "mtbZip";
             mtbZip.ResetOnSpace = false;
-            mtbZip.Size = new Size(43, 23);
+            mtbZip.Size = new Size(60, 31);
             mtbZip.TabIndex = 11;
             // 
             // frmStoreDetail
             // 
             AcceptButton = btnSave;
-            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
             CancelButton = btnCancel;
-            ClientSize = new Size(328, 432);
+            ClientSize = new Size(469, 720);
             Controls.Add(btnCancel);
             Controls.Add(btnSave);
             Controls.Add(tlpAuthor);
             FormBorderStyle = FormBorderStyle.FixedSingle;
-            Margin = new Padding(2);
             Name = "frmStoreDetail";
             ShowIcon = false;
             StartPosition = FormStartPosition.CenterParent;

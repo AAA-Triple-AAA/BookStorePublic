@@ -28,27 +28,74 @@ namespace BookStoreUI.StoreMaintenanceForms
             txtCity.Clear();
             txtState.Clear();
             mtbZip.Clear();
+
+            mtbStoreId.Focus();
         }
+
 
         private bool ValidateInput()
         {
-            var errMsg = Validator.IsMaskCompleted(mtbStoreId.MaskCompleted, "Store ID");
-            errMsg += Validator.IsPresent(txtStoreName.Text, "Store Name");
-            errMsg += Validator.IsPresent(txtStoreAddress.Text, "Store Address");
-            errMsg += Validator.IsPresent(txtCity.Text, "City");
-            errMsg += Validator.IsPresent(txtState.Text, "State");
-            errMsg += Validator.IsWithinLength(txtState.Text, "State", 2, 2);
+            string errMsg = "";
+
+
+            string storeName = txtStoreName.Text.Trim();
+            string storeAddress = txtStoreAddress.Text.Trim();
+            string city = txtCity.Text.Trim();
+            string state = txtState.Text.Trim();
+
+
+            errMsg += Validator.IsMaskCompleted(mtbStoreId.MaskCompleted, "Store ID");
+
+
+            errMsg += Validator.IsPresent(storeName, "Store Name");
+            errMsg += Validator.IsWithinLength(storeName, "Store Name", 1, 40);
+
+
+            errMsg += Validator.IsPresent(storeAddress, "Store Address");
+            errMsg += Validator.IsWithinLength(storeAddress, "Store Address", 1, 40);
+
+
+            errMsg += Validator.IsPresent(city, "City");
+            errMsg += Validator.IsWithinLength(city, "City", 1, 20);
+
+
+            errMsg += Validator.IsPresent(state, "State");
+            errMsg += Validator.IsWithinLength(state, "State", 2, 2);
+
+
             errMsg += Validator.IsMaskCompleted(mtbZip.MaskCompleted, "Zip");
 
-            if (errMsg == "") return true;
 
-            MessageBox.Show(errMsg);
+            if (errMsg == "")
+                return true;
+
+            MessageBox.Show(
+                errMsg,
+                "Validation Error",
+                MessageBoxButtons.OK,
+                MessageBoxIcon.Error);
+
             return false;
         }
+
 
         private void frnStoreDetail_Load(object sender, EventArgs e)
         {
             this.Text = IsAdd ? @"Add Store" : @"Edit Store";
+        }
+
+        private void btnSave_Click(object sender, EventArgs e)
+        {
+            if (!ValidateInput())
+                return;   
+
+            MessageBox.Show(
+                "Store information saved successfully.",
+                "Saved",
+                MessageBoxButtons.OK,
+                MessageBoxIcon.Information);
+
+            ClearForm();
         }
     }
 }
