@@ -7,20 +7,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-<<<<<<< Updated upstream
-=======
+
 using BookStoreBO;
 using System.Text.RegularExpressions;
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
->>>>>>> Stashed changes
-=======
->>>>>>> Stashed changes
-=======
->>>>>>> Stashed changes
-=======
->>>>>>> Stashed changes
+
 
 namespace BookStoreUI.EmployeeMaintenanceForms
 {
@@ -30,8 +20,7 @@ namespace BookStoreUI.EmployeeMaintenanceForms
         {
             InitializeComponent();
         }
-<<<<<<< Updated upstream
-=======
+
 
         private void ClearForm()
         {
@@ -142,15 +131,6 @@ namespace BookStoreUI.EmployeeMaintenanceForms
             txtEmpId.Focus();
         }
 
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
->>>>>>> Stashed changes
-=======
->>>>>>> Stashed changes
-=======
->>>>>>> Stashed changes
-=======
->>>>>>> Stashed changes
+
     }
 }
