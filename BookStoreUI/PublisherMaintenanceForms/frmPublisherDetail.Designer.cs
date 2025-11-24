@@ -50,6 +50,7 @@
             btnCancel.DialogResult = DialogResult.Cancel;
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
             btnCancel.Location = new Point(460, 544);
             btnCancel.Name = "btnCancel";
             btnCancel.Size = new Size(227, 128);
@@ -57,6 +58,10 @@
 =======
             btnCancel.Location = new Point(313, 655);
             btnCancel.Name = "btnCancel";
+=======
+            btnCancel.Location = new Point(313, 655);
+            btnCancel.Name = "btnCancel";
+>>>>>>> Stashed changes
 =======
             btnCancel.Location = new Point(313, 655);
             btnCancel.Name = "btnCancel";
@@ -73,10 +78,17 @@
             txtCountry.CharacterCasing = CharacterCasing.Upper;
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
             txtCountry.Location = new Point(175, 160);
             txtCountry.MaxLength = 30;
             txtCountry.Name = "txtCountry";
             txtCountry.Size = new Size(624, 31);
+=======
+            txtCountry.Location = new Point(104, 354);
+            txtCountry.MaxLength = 30;
+            txtCountry.Name = "txtCountry";
+            txtCountry.Size = new Size(362, 31);
+>>>>>>> Stashed changes
 =======
             txtCountry.Location = new Point(104, 354);
             txtCountry.MaxLength = 30;
@@ -153,6 +165,7 @@
             lblCity.AutoSize = true;
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
             lblCity.Location = new Point(3, 78);
             lblCity.Name = "lblCity";
             lblCity.Size = new Size(39, 25);
@@ -161,6 +174,10 @@
 =======
             lblCity.Location = new Point(56, 192);
             lblCity.Name = "lblCity";
+=======
+            lblCity.Location = new Point(56, 192);
+            lblCity.Name = "lblCity";
+>>>>>>> Stashed changes
 =======
             lblCity.Location = new Point(56, 192);
             lblCity.Name = "lblCity";
@@ -175,6 +192,7 @@
             lblCountry.AutoSize = true;
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
             lblCountry.Location = new Point(3, 156);
             lblCountry.Name = "lblCountry";
             lblCountry.Size = new Size(72, 25);
@@ -183,6 +201,10 @@
 =======
             lblCountry.Location = new Point(23, 357);
             lblCountry.Name = "lblCountry";
+=======
+            lblCountry.Location = new Point(23, 357);
+            lblCountry.Name = "lblCountry";
+>>>>>>> Stashed changes
 =======
             lblCountry.Location = new Point(23, 357);
             lblCountry.Name = "lblCountry";
@@ -197,6 +219,7 @@
             btnSave.Anchor = AnchorStyles.Bottom;
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
             btnSave.Location = new Point(82, 544);
             btnSave.Name = "btnSave";
             btnSave.Size = new Size(227, 128);
@@ -204,6 +227,10 @@
 =======
             btnSave.Location = new Point(24, 655);
             btnSave.Name = "btnSave";
+=======
+            btnSave.Location = new Point(24, 655);
+            btnSave.Name = "btnSave";
+>>>>>>> Stashed changes
 =======
             btnSave.Location = new Point(24, 655);
             btnSave.Name = "btnSave";
@@ -239,6 +266,9 @@
             tlpPublisher.Dock = DockStyle.Top;
             tlpPublisher.Location = new Point(0, 0);
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes
 =======
 >>>>>>> Stashed changes
@@ -251,7 +281,11 @@
             tlpPublisher.RowStyles.Add(new RowStyle(SizeType.Percent, 20F));
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
             tlpPublisher.Size = new Size(802, 195);
+=======
+            tlpPublisher.Size = new Size(469, 412);
+>>>>>>> Stashed changes
 =======
             tlpPublisher.Size = new Size(469, 412);
 >>>>>>> Stashed changes
@@ -294,6 +328,7 @@
             txtCity.Anchor = AnchorStyles.Left | AnchorStyles.Right;
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
             txtCity.Location = new Point(175, 82);
             txtCity.MaxLength = 20;
             txtCity.Name = "txtCity";
@@ -303,6 +338,11 @@
             txtCity.Location = new Point(104, 189);
             txtCity.MaxLength = 20;
             txtCity.Name = "txtCity";
+=======
+            txtCity.Location = new Point(104, 189);
+            txtCity.MaxLength = 20;
+            txtCity.Name = "txtCity";
+>>>>>>> Stashed changes
 =======
             txtCity.Location = new Point(104, 189);
             txtCity.MaxLength = 20;
@@ -350,7 +390,11 @@
             CancelButton = btnCancel;
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
             ClientSize = new Size(800, 944);
+=======
+            ClientSize = new Size(469, 720);
+>>>>>>> Stashed changes
 =======
             ClientSize = new Size(469, 720);
 >>>>>>> Stashed changes

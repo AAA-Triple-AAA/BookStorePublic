@@ -76,6 +76,10 @@ namespace BookStoreUI.AuthorMaintenanceForms
 
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
+=======
+            // Final check
+>>>>>>> Stashed changes
 =======
             // Final check
 >>>>>>> Stashed changes
@@ -108,9 +112,12 @@ namespace BookStoreUI.AuthorMaintenanceForms
         {
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
             if (!ValidateInput())
                 return;  // stop if there are validation errors
 =======
+=======
+>>>>>>> Stashed changes
 =======
 >>>>>>> Stashed changes
             
@@ -127,6 +134,9 @@ namespace BookStoreUI.AuthorMaintenanceForms
             ClearForm();
             mtbAuthorId.Focus();
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes
 =======
 >>>>>>> Stashed changes
