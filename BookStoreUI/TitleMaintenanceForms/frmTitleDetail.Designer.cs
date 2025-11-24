@@ -99,14 +99,14 @@
             tlpTitle.RowStyles.Add(new RowStyle(SizeType.Absolute, 80F));
             tlpTitle.RowStyles.Add(new RowStyle(SizeType.Percent, 11.1111107F));
             tlpTitle.RowStyles.Add(new RowStyle(SizeType.Absolute, 20F));
-            tlpTitle.Size = new Size(469, 648);
+            tlpTitle.Size = new Size(469, 431);
             tlpTitle.TabIndex = 0;
             // 
             // txtNotes
             // 
             txtNotes.Anchor = AnchorStyles.Left | AnchorStyles.Right;
             txtNotes.CharacterCasing = CharacterCasing.Upper;
-            txtNotes.Location = new Point(104, 508);
+            txtNotes.Location = new Point(104, 308);
             txtNotes.MaxLength = 4;
             txtNotes.Multiline = true;
             txtNotes.Name = "txtNotes";
@@ -117,7 +117,7 @@
             // nudYtdSales
             // 
             nudYtdSales.Anchor = AnchorStyles.Left;
-            nudYtdSales.Location = new Point(104, 457);
+            nudYtdSales.Location = new Point(104, 269);
             nudYtdSales.Maximum = new decimal(new int[] { 100000000, 0, 0, 0 });
             nudYtdSales.Name = "nudYtdSales";
             nudYtdSales.Size = new Size(180, 31);
@@ -127,7 +127,7 @@
             // nudRoyalty
             // 
             nudRoyalty.Anchor = AnchorStyles.Left;
-            nudRoyalty.Location = new Point(104, 394);
+            nudRoyalty.Location = new Point(104, 231);
             nudRoyalty.Name = "nudRoyalty";
             nudRoyalty.Size = new Size(180, 31);
             nudRoyalty.TabIndex = 13;
@@ -137,7 +137,7 @@
             // 
             nudAdvance.Anchor = AnchorStyles.Left;
             nudAdvance.DecimalPlaces = 2;
-            nudAdvance.Location = new Point(104, 331);
+            nudAdvance.Location = new Point(104, 193);
             nudAdvance.Maximum = new decimal(new int[] { 1000000, 0, 0, 0 });
             nudAdvance.Name = "nudAdvance";
             nudAdvance.Size = new Size(180, 31);
@@ -148,7 +148,7 @@
             // 
             nudPrice.Anchor = AnchorStyles.Left;
             nudPrice.DecimalPlaces = 2;
-            nudPrice.Location = new Point(104, 268);
+            nudPrice.Location = new Point(104, 155);
             nudPrice.Maximum = new decimal(new int[] { 1000000, 0, 0, 0 });
             nudPrice.Name = "nudPrice";
             nudPrice.Size = new Size(180, 31);
@@ -159,7 +159,7 @@
             // 
             txtPubId.Anchor = AnchorStyles.Left | AnchorStyles.Right;
             txtPubId.CharacterCasing = CharacterCasing.Upper;
-            txtPubId.Location = new Point(104, 205);
+            txtPubId.Location = new Point(104, 117);
             txtPubId.MaxLength = 4;
             txtPubId.Name = "txtPubId";
             txtPubId.Size = new Size(362, 31);
@@ -168,7 +168,7 @@
             // txtTitle
             // 
             txtTitle.Anchor = AnchorStyles.Left | AnchorStyles.Right;
-            txtTitle.Location = new Point(104, 79);
+            txtTitle.Location = new Point(104, 41);
             txtTitle.MaxLength = 80;
             txtTitle.Name = "txtTitle";
             txtTitle.Size = new Size(362, 31);
@@ -178,7 +178,7 @@
             // 
             lblTitleId.Anchor = AnchorStyles.Right;
             lblTitleId.AutoSize = true;
-            lblTitleId.Location = new Point(31, 19);
+            lblTitleId.Location = new Point(31, 6);
             lblTitleId.Name = "lblTitleId";
             lblTitleId.Size = new Size(67, 25);
             lblTitleId.TabIndex = 0;
@@ -188,7 +188,7 @@
             // 
             lblTitle.Anchor = AnchorStyles.Right;
             lblTitle.AutoSize = true;
-            lblTitle.Location = new Point(54, 82);
+            lblTitle.Location = new Point(54, 44);
             lblTitle.Name = "lblTitle";
             lblTitle.Size = new Size(44, 25);
             lblTitle.TabIndex = 2;
@@ -198,7 +198,7 @@
             // 
             lblType.Anchor = AnchorStyles.Right;
             lblType.AutoSize = true;
-            lblType.Location = new Point(49, 145);
+            lblType.Location = new Point(49, 82);
             lblType.Name = "lblType";
             lblType.Size = new Size(49, 25);
             lblType.TabIndex = 4;
@@ -208,7 +208,7 @@
             // 
             lblPubId.Anchor = AnchorStyles.Right;
             lblPubId.AutoSize = true;
-            lblPubId.Location = new Point(28, 208);
+            lblPubId.Location = new Point(28, 120);
             lblPubId.Name = "lblPubId";
             lblPubId.Size = new Size(70, 25);
             lblPubId.TabIndex = 6;
@@ -218,7 +218,7 @@
             // 
             lblPrice.Anchor = AnchorStyles.Right;
             lblPrice.AutoSize = true;
-            lblPrice.Location = new Point(49, 271);
+            lblPrice.Location = new Point(49, 158);
             lblPrice.Name = "lblPrice";
             lblPrice.Size = new Size(49, 25);
             lblPrice.TabIndex = 8;
@@ -228,7 +228,7 @@
             // 
             lblAdvance.Anchor = AnchorStyles.Right;
             lblAdvance.AutoSize = true;
-            lblAdvance.Location = new Point(18, 334);
+            lblAdvance.Location = new Point(18, 196);
             lblAdvance.Name = "lblAdvance";
             lblAdvance.Size = new Size(80, 25);
             lblAdvance.TabIndex = 10;
@@ -238,7 +238,7 @@
             // 
             lblRoyalty.Anchor = AnchorStyles.Right;
             lblRoyalty.AutoSize = true;
-            lblRoyalty.Location = new Point(28, 397);
+            lblRoyalty.Location = new Point(28, 234);
             lblRoyalty.Name = "lblRoyalty";
             lblRoyalty.Size = new Size(70, 25);
             lblRoyalty.TabIndex = 12;
@@ -248,7 +248,7 @@
             // 
             lblYtdSales.Anchor = AnchorStyles.Right;
             lblYtdSales.AutoSize = true;
-            lblYtdSales.Location = new Point(9, 460);
+            lblYtdSales.Location = new Point(9, 272);
             lblYtdSales.Name = "lblYtdSales";
             lblYtdSales.Size = new Size(89, 25);
             lblYtdSales.TabIndex = 14;
@@ -258,7 +258,7 @@
             // 
             lblPubDate.Anchor = AnchorStyles.Right;
             lblPubDate.AutoSize = true;
-            lblPubDate.Location = new Point(9, 603);
+            lblPubDate.Location = new Point(9, 395);
             lblPubDate.Name = "lblPubDate";
             lblPubDate.Size = new Size(89, 25);
             lblPubDate.TabIndex = 18;
@@ -267,7 +267,7 @@
             // txtTitleId
             // 
             txtTitleId.Anchor = AnchorStyles.Left | AnchorStyles.Right;
-            txtTitleId.Location = new Point(104, 16);
+            txtTitleId.Location = new Point(104, 3);
             txtTitleId.MaxLength = 6;
             txtTitleId.Name = "txtTitleId";
             txtTitleId.Size = new Size(362, 31);
@@ -279,7 +279,7 @@
             cboType.DropDownStyle = ComboBoxStyle.DropDownList;
             cboType.FormattingEnabled = true;
             cboType.Items.AddRange(new object[] { "Technical", "Business", "Psychology", "Popular_Comp", "UNDECIDED" });
-            cboType.Location = new Point(104, 141);
+            cboType.Location = new Point(104, 79);
             cboType.Name = "cboType";
             cboType.Size = new Size(362, 33);
             cboType.TabIndex = 5;
@@ -288,7 +288,7 @@
             // 
             lblNotes.Anchor = AnchorStyles.Right;
             lblNotes.AutoSize = true;
-            lblNotes.Location = new Point(39, 531);
+            lblNotes.Location = new Point(39, 331);
             lblNotes.Name = "lblNotes";
             lblNotes.Size = new Size(59, 25);
             lblNotes.TabIndex = 16;
@@ -299,7 +299,7 @@
             dtpPubDate.Anchor = AnchorStyles.Left;
             dtpPubDate.CustomFormat = "yyyy/MM/dd";
             dtpPubDate.Format = DateTimePickerFormat.Custom;
-            dtpPubDate.Location = new Point(104, 600);
+            dtpPubDate.Location = new Point(104, 392);
             dtpPubDate.MaxDate = new DateTime(2030, 1, 1, 0, 0, 0, 0);
             dtpPubDate.Name = "dtpPubDate";
             dtpPubDate.Size = new Size(178, 31);

@@ -9,10 +9,12 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using BookStoreBO;
 
+
 namespace BookStoreUI.PublisherMaintenanceForms
 {
     public partial class frmPublisherMaintenance : Form
     {
+        public bool IsAdd = false;
         public frmPublisherMaintenance()
         {
             InitializeComponent();

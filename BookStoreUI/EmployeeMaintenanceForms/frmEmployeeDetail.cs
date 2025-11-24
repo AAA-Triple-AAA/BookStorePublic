@@ -16,6 +16,7 @@ namespace BookStoreUI.EmployeeMaintenanceForms
 {
     public partial class frmEmployeeDetail : Form
     {
+        public bool IsAdd = false;  
         public frmEmployeeDetail()
         {
             InitializeComponent();

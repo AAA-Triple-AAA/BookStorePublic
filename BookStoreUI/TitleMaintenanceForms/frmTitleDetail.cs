@@ -7,11 +7,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using BookStoreBO;
 
 namespace BookStoreUI
 {
     public partial class frmTitleDetail : Form
     {
+        public bool IsAdd = false;
         public frmTitleDetail()
         {
             InitializeComponent();

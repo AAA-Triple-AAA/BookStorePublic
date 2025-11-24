@@ -8,11 +8,13 @@ using System.Text;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using BookStoreBO;
 
 namespace BookStoreUI.PublisherMaintenanceForms
 {
     public partial class frmPublisherDetail : Form
     {
+        public bool IsAdd = false;
         public frmPublisherDetail()
         {
             InitializeComponent();
