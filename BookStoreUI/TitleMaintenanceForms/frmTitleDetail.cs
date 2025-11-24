@@ -17,8 +17,6 @@ namespace BookStoreUI
             InitializeComponent();
             cboType.SelectedItem = "UNDECIDED";
         }
-<<<<<<< Updated upstream
-=======
 
         private bool ValidateInput()
         {
@@ -118,16 +116,5 @@ namespace BookStoreUI
 
             ClearForm();
         }
-
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
->>>>>>> Stashed changes
-=======
->>>>>>> Stashed changes
-=======
->>>>>>> Stashed changes
-=======
->>>>>>> Stashed changes
     }
 }

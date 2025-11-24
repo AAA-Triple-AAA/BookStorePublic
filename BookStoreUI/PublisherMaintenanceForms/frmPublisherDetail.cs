@@ -17,8 +17,7 @@ namespace BookStoreUI.PublisherMaintenanceForms
         {
             InitializeComponent();
         }
-<<<<<<< Updated upstream
-=======
+
 
         private void ClearForm()
         {
@@ -107,15 +106,6 @@ namespace BookStoreUI.PublisherMaintenanceForms
             ClearForm();
         }
 
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
->>>>>>> Stashed changes
-=======
->>>>>>> Stashed changes
-=======
->>>>>>> Stashed changes
-=======
->>>>>>> Stashed changes
+
     }
 }
