@@ -29,22 +29,22 @@
         private void InitializeComponent()
         {
             components = new System.ComponentModel.Container();
-            btbDeleteAuthor = new Button();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmAuthorMaintenance));
+            btnDeleteAuthor = new Button();
             btnAddAuthor = new Button();
             lblDetails = new Label();
-            rbtDetails = new RichTextBox();
+            rtbDetails = new RichTextBox();
             validatorBindingSource1 = new BindingSource(components);
-            columnAdress = new DataGridViewTextBoxColumn();
-            columnphone = new DataGridViewTextBoxColumn();
-            btbEditAuthor = new Button();
-            columnau_name = new DataGridViewTextBoxColumn();
-            columnau_id = new DataGridViewTextBoxColumn();
+            btnEditAuthor = new Button();
             dgvAuthor = new DataGridView();
+            columnau_id = new DataGridViewTextBoxColumn();
             columnAu_lname = new DataGridViewTextBoxColumn();
+            columnau_name = new DataGridViewTextBoxColumn();
+            columnphone = new DataGridViewTextBoxColumn();
+            columnAdress = new DataGridViewTextBoxColumn();
             spcDetails = new SplitContainer();
             validatorBindingSource = new BindingSource(components);
             btnSearch = new Button();
-            lblSearch = new Label();
             txtSearch = new TextBox();
             ((System.ComponentModel.ISupportInitialize)validatorBindingSource1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)dgvAuthor).BeginInit();
@@ -55,25 +55,26 @@
             ((System.ComponentModel.ISupportInitialize)validatorBindingSource).BeginInit();
             SuspendLayout();
             // 
-            // btbDeleteAuthor
+            // btnDeleteAuthor
             // 
-            btbDeleteAuthor.Location = new Point(611, 463);
-            btbDeleteAuthor.Margin = new Padding(2);
-            btbDeleteAuthor.Name = "btbDeleteAuthor";
-            btbDeleteAuthor.Size = new Size(162, 57);
-            btbDeleteAuthor.TabIndex = 15;
-            btbDeleteAuthor.Text = "Delete Selected Author";
-            btbDeleteAuthor.UseVisualStyleBackColor = true;
+            btnDeleteAuthor.Location = new Point(295, 435);
+            btnDeleteAuthor.Margin = new Padding(2);
+            btnDeleteAuthor.Name = "btnDeleteAuthor";
+            btnDeleteAuthor.Size = new Size(138, 34);
+            btnDeleteAuthor.TabIndex = 15;
+            btnDeleteAuthor.Text = "Delete Selected Author";
+            btnDeleteAuthor.UseVisualStyleBackColor = true;
             // 
             // btnAddAuthor
             // 
-            btnAddAuthor.Location = new Point(50, 463);
+            btnAddAuthor.Location = new Point(11, 435);
             btnAddAuthor.Margin = new Padding(2);
             btnAddAuthor.Name = "btnAddAuthor";
-            btnAddAuthor.Size = new Size(162, 57);
+            btnAddAuthor.Size = new Size(138, 34);
             btnAddAuthor.TabIndex = 13;
             btnAddAuthor.Text = "Add a New Author";
             btnAddAuthor.UseVisualStyleBackColor = true;
+            btnAddAuthor.Click += btnAddAuthor_Click;
             // 
             // lblDetails
             // 
@@ -85,60 +86,29 @@
             lblDetails.TabIndex = 9;
             lblDetails.Text = "Details";
             // 
-            // rbtDetails
+            // rtbDetails
             // 
-            rbtDetails.Location = new Point(0, 0);
-            rbtDetails.Margin = new Padding(2);
-            rbtDetails.Name = "rbtDetails";
-            rbtDetails.Size = new Size(254, 342);
-            rbtDetails.TabIndex = 0;
-            rbtDetails.Text = "";
+            rtbDetails.Location = new Point(0, 0);
+            rtbDetails.Margin = new Padding(2);
+            rtbDetails.Name = "rtbDetails";
+            rtbDetails.Size = new Size(254, 342);
+            rtbDetails.TabIndex = 0;
+            rtbDetails.Text = "";
             // 
             // validatorBindingSource1
             // 
             validatorBindingSource1.DataSource = typeof(BookStoreBO.Validator);
             // 
-            // columnAdress
+            // btnEditAuthor
             // 
-            columnAdress.HeaderText = "address";
-            columnAdress.MinimumWidth = 8;
-            columnAdress.Name = "columnAdress";
-            columnAdress.ReadOnly = true;
-            columnAdress.Width = 150;
-            // 
-            // columnphone
-            // 
-            columnphone.HeaderText = "phone";
-            columnphone.MinimumWidth = 8;
-            columnphone.Name = "columnphone";
-            columnphone.ReadOnly = true;
-            columnphone.Width = 150;
-            // 
-            // btbEditAuthor
-            // 
-            btbEditAuthor.Location = new Point(342, 463);
-            btbEditAuthor.Margin = new Padding(2);
-            btbEditAuthor.Name = "btbEditAuthor";
-            btbEditAuthor.Size = new Size(162, 57);
-            btbEditAuthor.TabIndex = 14;
-            btbEditAuthor.Text = "Edit Selected Author";
-            btbEditAuthor.UseVisualStyleBackColor = true;
-            // 
-            // columnau_name
-            // 
-            columnau_name.HeaderText = "au_fname";
-            columnau_name.MinimumWidth = 8;
-            columnau_name.Name = "columnau_name";
-            columnau_name.ReadOnly = true;
-            columnau_name.Width = 150;
-            // 
-            // columnau_id
-            // 
-            columnau_id.HeaderText = "au_id";
-            columnau_id.MinimumWidth = 8;
-            columnau_id.Name = "columnau_id";
-            columnau_id.ReadOnly = true;
-            columnau_id.Width = 150;
+            btnEditAuthor.Location = new Point(153, 435);
+            btnEditAuthor.Margin = new Padding(2);
+            btnEditAuthor.Name = "btnEditAuthor";
+            btnEditAuthor.Size = new Size(138, 34);
+            btnEditAuthor.TabIndex = 14;
+            btnEditAuthor.Text = "Edit Selected Author";
+            btnEditAuthor.UseVisualStyleBackColor = true;
+            btnEditAuthor.Click += btbEditAuthor_Click;
             // 
             // dgvAuthor
             // 
@@ -159,13 +129,45 @@
             dgvAuthor.Size = new Size(572, 340);
             dgvAuthor.TabIndex = 0;
             // 
+            // columnau_id
+            // 
+            columnau_id.HeaderText = "Author ID";
+            columnau_id.MinimumWidth = 8;
+            columnau_id.Name = "columnau_id";
+            columnau_id.ReadOnly = true;
+            columnau_id.Width = 150;
+            // 
             // columnAu_lname
             // 
-            columnAu_lname.HeaderText = "au_lname";
+            columnAu_lname.HeaderText = "Last Name";
             columnAu_lname.MinimumWidth = 8;
             columnAu_lname.Name = "columnAu_lname";
             columnAu_lname.ReadOnly = true;
             columnAu_lname.Width = 150;
+            // 
+            // columnau_name
+            // 
+            columnau_name.HeaderText = "First Name";
+            columnau_name.MinimumWidth = 8;
+            columnau_name.Name = "columnau_name";
+            columnau_name.ReadOnly = true;
+            columnau_name.Width = 150;
+            // 
+            // columnphone
+            // 
+            columnphone.HeaderText = "Phone";
+            columnphone.MinimumWidth = 8;
+            columnphone.Name = "columnphone";
+            columnphone.ReadOnly = true;
+            columnphone.Width = 150;
+            // 
+            // columnAdress
+            // 
+            columnAdress.HeaderText = "Address";
+            columnAdress.MinimumWidth = 8;
+            columnAdress.Name = "columnAdress";
+            columnAdress.ReadOnly = true;
+            columnAdress.Width = 150;
             // 
             // spcDetails
             // 
@@ -179,7 +181,7 @@
             // 
             // spcDetails.Panel2
             // 
-            spcDetails.Panel2.Controls.Add(rbtDetails);
+            spcDetails.Panel2.Controls.Add(rtbDetails);
             spcDetails.Size = new Size(828, 340);
             spcDetails.SplitterDistance = 572;
             spcDetails.SplitterWidth = 3;
@@ -191,29 +193,21 @@
             // 
             // btnSearch
             // 
-            btnSearch.Location = new Point(372, 47);
+            btnSearch.Location = new Point(272, 29);
             btnSearch.Margin = new Padding(2);
             btnSearch.Name = "btnSearch";
-            btnSearch.Size = new Size(122, 20);
+            btnSearch.Size = new Size(112, 23);
             btnSearch.TabIndex = 11;
             btnSearch.Text = "Search by Author";
             btnSearch.UseVisualStyleBackColor = true;
-            // 
-            // lblSearch
-            // 
-            lblSearch.AutoSize = true;
-            lblSearch.Location = new Point(10, 48);
-            lblSearch.Margin = new Padding(2, 0, 2, 0);
-            lblSearch.Name = "lblSearch";
-            lblSearch.Size = new Size(45, 15);
-            lblSearch.TabIndex = 8;
-            lblSearch.Text = "Search:";
+            btnSearch.Click += btnSearch_Click;
             // 
             // txtSearch
             // 
-            txtSearch.Location = new Point(71, 48);
+            txtSearch.Location = new Point(11, 30);
             txtSearch.Margin = new Padding(2);
             txtSearch.Name = "txtSearch";
+            txtSearch.PlaceholderText = "Search";
             txtSearch.Size = new Size(257, 23);
             txtSearch.TabIndex = 10;
             // 
@@ -221,16 +215,16 @@
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(825, 566);
+            ClientSize = new Size(825, 490);
             Controls.Add(spcDetails);
-            Controls.Add(btbDeleteAuthor);
+            Controls.Add(btnDeleteAuthor);
             Controls.Add(btnAddAuthor);
             Controls.Add(lblDetails);
-            Controls.Add(btbEditAuthor);
+            Controls.Add(btnEditAuthor);
             Controls.Add(btnSearch);
-            Controls.Add(lblSearch);
             Controls.Add(txtSearch);
             FormBorderStyle = FormBorderStyle.FixedSingle;
+            Icon = (Icon)resources.GetObject("$this.Icon");
             Margin = new Padding(2);
             MaximizeBox = false;
             MinimizeBox = false;
@@ -250,22 +244,21 @@
 
         #endregion
 
-        private Button btbDeleteAuthor;
+        private Button btnDeleteAuthor;
         private Button btnAddAuthor;
         private Label lblDetails;
-        private RichTextBox rbtDetails;
+        private RichTextBox rtbDetails;
         private BindingSource validatorBindingSource1;
-        private DataGridViewTextBoxColumn columnAdress;
-        private DataGridViewTextBoxColumn columnphone;
-        private Button btbEditAuthor;
-        private DataGridViewTextBoxColumn columnau_name;
-        private DataGridViewTextBoxColumn columnau_id;
+        private Button btnEditAuthor;
         private DataGridView dgvAuthor;
-        private DataGridViewTextBoxColumn columnAu_lname;
         private SplitContainer spcDetails;
         private BindingSource validatorBindingSource;
         private Button btnSearch;
-        private Label lblSearch;
         private TextBox txtSearch;
+        private DataGridViewTextBoxColumn columnau_id;
+        private DataGridViewTextBoxColumn columnAu_lname;
+        private DataGridViewTextBoxColumn columnau_name;
+        private DataGridViewTextBoxColumn columnphone;
+        private DataGridViewTextBoxColumn columnAdress;
     }
 }

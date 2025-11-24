@@ -29,10 +29,11 @@
         private void InitializeComponent()
         {
             components = new System.ComponentModel.Container();
-            btbDeleteTitle = new Button();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmTitleMaintenance));
+            btnDeleteTitle = new Button();
             btnAddTitle = new Button();
             lblDetails = new Label();
-            btbEditTitle = new Button();
+            btnEditTitle = new Button();
             btnSearch = new Button();
             validatorBindingSource = new BindingSource(components);
             spcDetails = new SplitContainer();
@@ -43,8 +44,7 @@
             columnPub_id = new DataGridViewTextBoxColumn();
             columnPrice = new DataGridViewTextBoxColumn();
             validatorBindingSource1 = new BindingSource(components);
-            rbtDetails = new RichTextBox();
-            lblSearch = new Label();
+            rtbDetails = new RichTextBox();
             txtSearch = new TextBox();
             ((System.ComponentModel.ISupportInitialize)validatorBindingSource).BeginInit();
             ((System.ComponentModel.ISupportInitialize)spcDetails).BeginInit();
@@ -55,25 +55,26 @@
             ((System.ComponentModel.ISupportInitialize)validatorBindingSource1).BeginInit();
             SuspendLayout();
             // 
-            // btbDeleteTitle
+            // btnDeleteTitle
             // 
-            btbDeleteTitle.Location = new Point(611, 463);
-            btbDeleteTitle.Margin = new Padding(2);
-            btbDeleteTitle.Name = "btbDeleteTitle";
-            btbDeleteTitle.Size = new Size(162, 57);
-            btbDeleteTitle.TabIndex = 23;
-            btbDeleteTitle.Text = "Delete Selected Title";
-            btbDeleteTitle.UseVisualStyleBackColor = true;
+            btnDeleteTitle.Location = new Point(324, 434);
+            btnDeleteTitle.Margin = new Padding(2);
+            btnDeleteTitle.Name = "btnDeleteTitle";
+            btnDeleteTitle.Size = new Size(153, 34);
+            btnDeleteTitle.TabIndex = 5;
+            btnDeleteTitle.Text = "Delete Selected Title";
+            btnDeleteTitle.UseVisualStyleBackColor = true;
             // 
             // btnAddTitle
             // 
-            btnAddTitle.Location = new Point(50, 463);
+            btnAddTitle.Location = new Point(10, 434);
             btnAddTitle.Margin = new Padding(2);
             btnAddTitle.Name = "btnAddTitle";
-            btnAddTitle.Size = new Size(162, 57);
-            btnAddTitle.TabIndex = 21;
+            btnAddTitle.Size = new Size(153, 34);
+            btnAddTitle.TabIndex = 3;
             btnAddTitle.Text = "Add a New Title";
             btnAddTitle.UseVisualStyleBackColor = true;
+            btnAddTitle.Click += btnAddTitle_Click;
             // 
             // lblDetails
             // 
@@ -85,25 +86,27 @@
             lblDetails.TabIndex = 17;
             lblDetails.Text = "Details";
             // 
-            // btbEditTitle
+            // btnEditTitle
             // 
-            btbEditTitle.Location = new Point(342, 463);
-            btbEditTitle.Margin = new Padding(2);
-            btbEditTitle.Name = "btbEditTitle";
-            btbEditTitle.Size = new Size(162, 57);
-            btbEditTitle.TabIndex = 22;
-            btbEditTitle.Text = "Edit Selected Title";
-            btbEditTitle.UseVisualStyleBackColor = true;
+            btnEditTitle.Location = new Point(167, 434);
+            btnEditTitle.Margin = new Padding(2);
+            btnEditTitle.Name = "btnEditTitle";
+            btnEditTitle.Size = new Size(153, 34);
+            btnEditTitle.TabIndex = 4;
+            btnEditTitle.Text = "Edit Selected Title";
+            btnEditTitle.UseVisualStyleBackColor = true;
+            btnEditTitle.Click += btbEditTitle_Click;
             // 
             // btnSearch
             // 
-            btnSearch.Location = new Point(372, 47);
+            btnSearch.Location = new Point(272, 27);
             btnSearch.Margin = new Padding(2);
             btnSearch.Name = "btnSearch";
-            btnSearch.Size = new Size(122, 20);
-            btnSearch.TabIndex = 19;
+            btnSearch.Size = new Size(122, 23);
+            btnSearch.TabIndex = 2;
             btnSearch.Text = "Search by Title";
             btnSearch.UseVisualStyleBackColor = true;
+            btnSearch.Click += btnSearch_Click;
             // 
             // validatorBindingSource
             // 
@@ -121,7 +124,7 @@
             // 
             // spcDetails.Panel2
             // 
-            spcDetails.Panel2.Controls.Add(rbtDetails);
+            spcDetails.Panel2.Controls.Add(rtbDetails);
             spcDetails.Size = new Size(828, 340);
             spcDetails.SplitterDistance = 572;
             spcDetails.SplitterWidth = 3;
@@ -148,7 +151,7 @@
             // 
             // columnTitle_id
             // 
-            columnTitle_id.HeaderText = "title_id";
+            columnTitle_id.HeaderText = "Title ID";
             columnTitle_id.MinimumWidth = 8;
             columnTitle_id.Name = "columnTitle_id";
             columnTitle_id.ReadOnly = true;
@@ -156,7 +159,7 @@
             // 
             // columnTitle
             // 
-            columnTitle.HeaderText = "title";
+            columnTitle.HeaderText = "Title";
             columnTitle.MinimumWidth = 8;
             columnTitle.Name = "columnTitle";
             columnTitle.ReadOnly = true;
@@ -164,7 +167,7 @@
             // 
             // columnType
             // 
-            columnType.HeaderText = "type";
+            columnType.HeaderText = "Type";
             columnType.MinimumWidth = 8;
             columnType.Name = "columnType";
             columnType.ReadOnly = true;
@@ -172,7 +175,7 @@
             // 
             // columnPub_id
             // 
-            columnPub_id.HeaderText = "pub_id";
+            columnPub_id.HeaderText = "Pub. ID";
             columnPub_id.MinimumWidth = 8;
             columnPub_id.Name = "columnPub_id";
             columnPub_id.ReadOnly = true;
@@ -180,7 +183,7 @@
             // 
             // columnPrice
             // 
-            columnPrice.HeaderText = "price";
+            columnPrice.HeaderText = "Price";
             columnPrice.MinimumWidth = 8;
             columnPrice.Name = "columnPrice";
             columnPrice.ReadOnly = true;
@@ -190,47 +193,38 @@
             // 
             validatorBindingSource1.DataSource = typeof(BookStoreBO.Validator);
             // 
-            // rbtDetails
+            // rtbDetails
             // 
-            rbtDetails.Location = new Point(0, 0);
-            rbtDetails.Margin = new Padding(2);
-            rbtDetails.Name = "rbtDetails";
-            rbtDetails.Size = new Size(254, 342);
-            rbtDetails.TabIndex = 0;
-            rbtDetails.Text = "";
-            // 
-            // lblSearch
-            // 
-            lblSearch.AutoSize = true;
-            lblSearch.Location = new Point(10, 48);
-            lblSearch.Margin = new Padding(2, 0, 2, 0);
-            lblSearch.Name = "lblSearch";
-            lblSearch.Size = new Size(45, 15);
-            lblSearch.TabIndex = 16;
-            lblSearch.Text = "Search:";
+            rtbDetails.Location = new Point(0, 0);
+            rtbDetails.Margin = new Padding(2);
+            rtbDetails.Name = "rtbDetails";
+            rtbDetails.Size = new Size(254, 342);
+            rtbDetails.TabIndex = 0;
+            rtbDetails.Text = "";
             // 
             // txtSearch
             // 
-            txtSearch.Location = new Point(71, 48);
+            txtSearch.Location = new Point(11, 27);
             txtSearch.Margin = new Padding(2);
             txtSearch.Name = "txtSearch";
+            txtSearch.PlaceholderText = "Search";
             txtSearch.Size = new Size(257, 23);
-            txtSearch.TabIndex = 18;
+            txtSearch.TabIndex = 1;
             // 
             // frmTitleMaintenance
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(825, 566);
-            Controls.Add(btbDeleteTitle);
+            ClientSize = new Size(825, 490);
+            Controls.Add(btnDeleteTitle);
             Controls.Add(btnAddTitle);
             Controls.Add(lblDetails);
-            Controls.Add(btbEditTitle);
+            Controls.Add(btnEditTitle);
             Controls.Add(btnSearch);
             Controls.Add(spcDetails);
-            Controls.Add(lblSearch);
             Controls.Add(txtSearch);
             FormBorderStyle = FormBorderStyle.FixedSingle;
+            Icon = (Icon)resources.GetObject("$this.Icon");
             Margin = new Padding(2);
             MaximizeBox = false;
             MinimizeBox = false;
@@ -250,17 +244,16 @@
 
         #endregion
 
-        private Button btbDeleteTitle;
+        private Button btnDeleteTitle;
         private Button btnAddTitle;
         private Label lblDetails;
-        private Button btbEditTitle;
+        private Button btnEditTitle;
         private Button btnSearch;
         private BindingSource validatorBindingSource;
         private SplitContainer spcDetails;
         private DataGridView dgvTitle;
         private BindingSource validatorBindingSource1;
-        private RichTextBox rbtDetails;
-        private Label lblSearch;
+        private RichTextBox rtbDetails;
         private TextBox txtSearch;
         private DataGridViewTextBoxColumn columnTitle_id;
         private DataGridViewTextBoxColumn columnTitle;

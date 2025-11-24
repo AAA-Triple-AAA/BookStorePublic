@@ -9,30 +9,30 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using BookStoreBO;
 
-namespace BookStoreUI.EmployeeMaintenanceForms
+namespace BookStoreUI.StoreMaintenanceForms
 {
-    public partial class frmEmployeeMaintenance : Form
+    public partial class frmStoreMaintenance : Form
     {
-        public frmEmployeeMaintenance()
+        public frmStoreMaintenance()
         {
             InitializeComponent();
         }
 
-        private void btnAddEmployee_Click(object sender, EventArgs e)
+        private void btnAddStore_Click(object sender, EventArgs e)
         {
-            var frm = new frmEmployeeDetail { IsAdd = true };
+            var frm = new frmStoreDetail { IsAdd = true };
             frm.ShowDialog();
         }
 
-        private void btbEditEmployee_Click(object sender, EventArgs e)
+        private void btbEditStore_Click(object sender, EventArgs e)
         {
-            var frm = new frmEmployeeDetail { IsAdd = false };
+            var frm = new frmStoreDetail { IsAdd = true };
             frm.ShowDialog();
         }
 
         private void btnSearch_Click(object sender, EventArgs e)
         {
-            var errMsg = Validator.IsSearchEntryPresent(txtSearch.Text, "Employee");
+            var errMsg = Validator.IsSearchEntryPresent(txtSearch.Text, "Store");
 
             if (errMsg == "")
             {
