@@ -13,6 +13,7 @@ namespace BookStoreUI
 {
     public partial class frmTitleMaintenance : Form
     {
+        public bool IsAdd = false;
         public frmTitleMaintenance()
         {
             InitializeComponent();
