@@ -35,15 +35,49 @@ namespace BookStoreUI.AuthorMaintenanceForms
 
         private bool ValidateInput()
         {
-            var errMsg = Validator.IsMaskCompleted(mtbAuthorId.MaskCompleted, "Author ID");
-            errMsg += Validator.IsPresent(txtLastName.Text, "Last Name");
-            errMsg += Validator.IsPresent(txtFirstName.Text, "First Name");
+            string errMsg = "";
+
+            // Grab trimmed values
+            string lastName = txtLastName.Text.Trim();
+            string firstName = txtFirstName.Text.Trim();
+            string address = txtAddress.Text.Trim();
+            string city = txtCity.Text.Trim();
+            string state = txtState.Text.Trim();
+
+            //We decided to write a masked box here even though the database accepts any character
+            //type, because we think the masked box aligns better with the purpose of the information
+            //we want to process. Although the default value, UNKNOWN, cannot be used.
+            errMsg += Validator.IsMaskCompleted(mtbAuthorId.MaskCompleted, "Author ID");
+
+         
+            errMsg += Validator.IsPresent(lastName, "Last Name");
+            errMsg += Validator.IsWithinLength(lastName, "Last Name", 1, 40);
+
+         
+            errMsg += Validator.IsPresent(firstName, "First Name");
+            errMsg += Validator.IsWithinLength(firstName, "First Name", 1, 20);
+
+           
             errMsg += Validator.IsMaskCompleted(mtbPhone.MaskCompleted, "Phone");
-            errMsg += Validator.IsPresent(txtAddress.Text, "Address");
-            errMsg += Validator.IsPresent(txtCity.Text, "City");
-            errMsg += Validator.IsPresent(txtState.Text, "State");
+
+       
+            errMsg += Validator.IsPresent(address, "Address");
+            errMsg += Validator.IsWithinLength(address, "Address", 1, 40);
+
+         
+            errMsg += Validator.IsPresent(city, "City");
+            errMsg += Validator.IsWithinLength(city, "City", 1, 20);
+
+            errMsg += Validator.IsPresent(state, "State");
+            errMsg += Validator.IsWithinLength(state, "State", 2, 2);
+
+          
             errMsg += Validator.IsMaskCompleted(mtbZip.MaskCompleted, "Zip");
 
+<<<<<<< Updated upstream
+=======
+            // Final check
+>>>>>>> Stashed changes
             if (errMsg != "")
             {
                 MessageBox.Show(
@@ -58,6 +92,7 @@ namespace BookStoreUI.AuthorMaintenanceForms
             return true;
         }
 
+
         private void frmAuthorDetail_Load(object sender, EventArgs e)
         {
             // TODO: IMPLEMENT FUNCTION
@@ -67,8 +102,26 @@ namespace BookStoreUI.AuthorMaintenanceForms
 
         private void btnSave_Click(object sender, EventArgs e)
         {
+<<<<<<< Updated upstream
             if (!ValidateInput())
                 return;  // stop if there are validation errors
+=======
+            
+            if (!ValidateInput())
+                return;    // if there are errors, the message box is already shown
+
+            MessageBox.Show(
+                "Author information saved successfully.",
+                "Saved",
+                MessageBoxButtons.OK,
+                MessageBoxIcon.Information);
+
+           
+            ClearForm();
+            mtbAuthorId.Focus();
+>>>>>>> Stashed changes
         }
+
+
     }
 }

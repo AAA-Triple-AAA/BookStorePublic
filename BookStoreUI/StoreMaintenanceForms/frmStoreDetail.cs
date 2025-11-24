@@ -5,60 +5,54 @@ using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Text;
-using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using BookStoreBO;
 
-namespace BookStoreUI.PublisherMaintenanceForms
+namespace BookStoreUI.StoreMaintenanceForms
 {
-    public partial class frmPublisherDetail : Form
+    public partial class frmStoreDetail : Form
     {
-        public frmPublisherDetail()
+        public bool IsAdd = false;
+
+        public frmStoreDetail()
         {
             InitializeComponent();
         }
-<<<<<<< Updated upstream
-=======
 
         private void ClearForm()
         {
-            mtbPubId.Clear();
-            txtPubName.Clear();
+            mtbStoreId.Clear();
+            txtStoreName.Clear();
+            txtStoreAddress.Clear();
             txtCity.Clear();
             txtState.Clear();
-            txtCountry.Clear();
+            mtbZip.Clear();
+
+            mtbStoreId.Focus();
         }
+
 
         private bool ValidateInput()
         {
             string errMsg = "";
 
 
-            string pubName = txtPubName.Text.Trim();
+            string storeName = txtStoreName.Text.Trim();
+            string storeAddress = txtStoreAddress.Text.Trim();
             string city = txtCity.Text.Trim();
             string state = txtState.Text.Trim();
-            string country = txtCountry.Text.Trim();
 
 
-            errMsg += Validator.IsMaskCompleted(mtbPubId.MaskCompleted, "Publisher ID");
+            errMsg += Validator.IsMaskCompleted(mtbStoreId.MaskCompleted, "Store ID");
 
 
-            if (mtbPubId.MaskCompleted)
-            {
-                string pubId = mtbPubId.Text.Trim();
+            errMsg += Validator.IsPresent(storeName, "Store Name");
+            errMsg += Validator.IsWithinLength(storeName, "Store Name", 1, 40);
 
 
-                var regex = new Regex(@"^(1756|1622|0877|0736|1389|99[0-9]{2})$");
-
-                if (!regex.IsMatch(pubId))
-                {
-                    errMsg += "Publisher ID must be 1756, 1622, 0877, 0736, 1389, or start with 99.\n";
-                }
-            }
-
-
-            errMsg += Validator.IsPresent(pubName, "Publisher Name");
-            errMsg += Validator.IsWithinLength(pubName, "Publisher Name", 1, 40);
+            errMsg += Validator.IsPresent(storeAddress, "Store Address");
+            errMsg += Validator.IsWithinLength(storeAddress, "Store Address", 1, 40);
 
 
             errMsg += Validator.IsPresent(city, "City");
@@ -69,8 +63,7 @@ namespace BookStoreUI.PublisherMaintenanceForms
             errMsg += Validator.IsWithinLength(state, "State", 2, 2);
 
 
-            errMsg += Validator.IsPresent(country, "Country");
-            errMsg += Validator.IsWithinLength(country, "Country", 1, 30);
+            errMsg += Validator.IsMaskCompleted(mtbZip.MaskCompleted, "Zip");
 
 
             if (errMsg == "")
@@ -86,9 +79,9 @@ namespace BookStoreUI.PublisherMaintenanceForms
         }
 
 
-        private void frmPublisherDetail_Load(object sender, EventArgs e)
+        private void frnStoreDetail_Load(object sender, EventArgs e)
         {
-            this.Text = IsAdd ? @"Add Publisher" : @"Edit Publisher";
+            this.Text = IsAdd ? @"Add Store" : @"Edit Store";
         }
 
         private void btnSave_Click(object sender, EventArgs e)
@@ -96,17 +89,13 @@ namespace BookStoreUI.PublisherMaintenanceForms
             if (!ValidateInput())
                 return;   
 
-
-
             MessageBox.Show(
-                "Publisher information saved successfully.",
+                "Store information saved successfully.",
                 "Saved",
                 MessageBoxButtons.OK,
                 MessageBoxIcon.Information);
 
             ClearForm();
         }
-
->>>>>>> Stashed changes
     }
 }
