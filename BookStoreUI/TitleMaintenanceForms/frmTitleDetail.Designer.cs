@@ -102,7 +102,11 @@
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
             tlpTitle.Size = new Size(800, 431);
+=======
+            tlpTitle.Size = new Size(469, 648);
+>>>>>>> Stashed changes
 =======
             tlpTitle.Size = new Size(469, 648);
 >>>>>>> Stashed changes
@@ -121,7 +125,11 @@
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
             txtNotes.Location = new Point(175, 307);
+=======
+            txtNotes.Location = new Point(104, 508);
+>>>>>>> Stashed changes
 =======
             txtNotes.Location = new Point(104, 508);
 >>>>>>> Stashed changes
@@ -138,9 +146,12 @@
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
             txtNotes.Size = new Size(622, 74);
             txtNotes.TabIndex = 25;
 =======
+=======
+>>>>>>> Stashed changes
 =======
 >>>>>>> Stashed changes
 =======
@@ -152,6 +163,7 @@
             // nudYtdSales
             // 
             nudYtdSales.Anchor = AnchorStyles.Left;
+<<<<<<< Updated upstream
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
@@ -178,6 +190,12 @@
             nudYtdSales.Name = "nudYtdSales";
             nudYtdSales.Size = new Size(180, 31);
 >>>>>>> Stashed changes
+=======
+            nudYtdSales.Location = new Point(104, 457);
+            nudYtdSales.Maximum = new decimal(new int[] { 100000000, 0, 0, 0 });
+            nudYtdSales.Name = "nudYtdSales";
+            nudYtdSales.Size = new Size(180, 31);
+>>>>>>> Stashed changes
             nudYtdSales.TabIndex = 15;
 >>>>>>> Stashed changes
             nudYtdSales.ThousandsSeparator = true;
@@ -188,8 +206,12 @@
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
             nudRoyalty.Increment = new decimal(new int[] { 100, 0, 0, 0 });
             nudRoyalty.Location = new Point(175, 231);
+=======
+            nudRoyalty.Location = new Point(104, 394);
+>>>>>>> Stashed changes
 =======
             nudRoyalty.Location = new Point(104, 394);
 >>>>>>> Stashed changes
@@ -208,6 +230,7 @@
             // 
             nudAdvance.Anchor = AnchorStyles.Left;
             nudAdvance.DecimalPlaces = 2;
+<<<<<<< Updated upstream
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
@@ -234,6 +257,12 @@
             nudAdvance.Name = "nudAdvance";
             nudAdvance.Size = new Size(180, 31);
 >>>>>>> Stashed changes
+=======
+            nudAdvance.Location = new Point(104, 331);
+            nudAdvance.Maximum = new decimal(new int[] { 1000000, 0, 0, 0 });
+            nudAdvance.Name = "nudAdvance";
+            nudAdvance.Size = new Size(180, 31);
+>>>>>>> Stashed changes
             nudAdvance.TabIndex = 11;
 >>>>>>> Stashed changes
             nudAdvance.ThousandsSeparator = true;
@@ -242,6 +271,7 @@
             // 
             nudPrice.Anchor = AnchorStyles.Left;
             nudPrice.DecimalPlaces = 2;
+<<<<<<< Updated upstream
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
@@ -267,6 +297,12 @@
             nudPrice.Name = "nudPrice";
             nudPrice.Size = new Size(180, 31);
 >>>>>>> Stashed changes
+=======
+            nudPrice.Location = new Point(104, 268);
+            nudPrice.Maximum = new decimal(new int[] { 1000000, 0, 0, 0 });
+            nudPrice.Name = "nudPrice";
+            nudPrice.Size = new Size(180, 31);
+>>>>>>> Stashed changes
             nudPrice.TabIndex = 9;
 >>>>>>> Stashed changes
             nudPrice.ThousandsSeparator = true;
@@ -275,6 +311,7 @@
             // 
             txtPubId.Anchor = AnchorStyles.Left | AnchorStyles.Right;
             txtPubId.CharacterCasing = CharacterCasing.Upper;
+<<<<<<< Updated upstream
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
@@ -297,6 +334,11 @@
             txtPubId.MaxLength = 4;
             txtPubId.Name = "txtPubId";
 >>>>>>> Stashed changes
+=======
+            txtPubId.Location = new Point(104, 205);
+            txtPubId.MaxLength = 4;
+            txtPubId.Name = "txtPubId";
+>>>>>>> Stashed changes
             txtPubId.Size = new Size(362, 31);
             txtPubId.TabIndex = 7;
 >>>>>>> Stashed changes
@@ -304,6 +346,7 @@
             // txtTitle
             // 
             txtTitle.Anchor = AnchorStyles.Left | AnchorStyles.Right;
+<<<<<<< Updated upstream
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
@@ -316,6 +359,11 @@
             txtTitle.Location = new Point(104, 79);
             txtTitle.MaxLength = 80;
             txtTitle.Name = "txtTitle";
+=======
+            txtTitle.Location = new Point(104, 79);
+            txtTitle.MaxLength = 80;
+            txtTitle.Name = "txtTitle";
+>>>>>>> Stashed changes
 =======
             txtTitle.Location = new Point(104, 79);
             txtTitle.MaxLength = 80;
@@ -412,6 +460,7 @@
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
             lblPrice.Location = new Point(3, 152);
             lblPrice.Name = "lblPrice";
             lblPrice.Size = new Size(50, 25);
@@ -420,6 +469,10 @@
 =======
             lblPrice.Location = new Point(49, 271);
             lblPrice.Name = "lblPrice";
+=======
+            lblPrice.Location = new Point(49, 271);
+            lblPrice.Name = "lblPrice";
+>>>>>>> Stashed changes
 =======
             lblPrice.Location = new Point(49, 271);
             lblPrice.Name = "lblPrice";
@@ -439,6 +492,7 @@
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
             lblAdvance.Location = new Point(3, 190);
             lblAdvance.Name = "lblAdvance";
             lblAdvance.Size = new Size(77, 25);
@@ -447,6 +501,10 @@
 =======
             lblAdvance.Location = new Point(18, 334);
             lblAdvance.Name = "lblAdvance";
+=======
+            lblAdvance.Location = new Point(18, 334);
+            lblAdvance.Name = "lblAdvance";
+>>>>>>> Stashed changes
 =======
             lblAdvance.Location = new Point(18, 334);
             lblAdvance.Name = "lblAdvance";
@@ -466,6 +524,7 @@
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
             lblRoyalty.Location = new Point(3, 228);
             lblRoyalty.Name = "lblRoyalty";
             lblRoyalty.Size = new Size(66, 25);
@@ -474,6 +533,10 @@
 =======
             lblRoyalty.Location = new Point(28, 397);
             lblRoyalty.Name = "lblRoyalty";
+=======
+            lblRoyalty.Location = new Point(28, 397);
+            lblRoyalty.Name = "lblRoyalty";
+>>>>>>> Stashed changes
 =======
             lblRoyalty.Location = new Point(28, 397);
             lblRoyalty.Name = "lblRoyalty";
@@ -571,6 +634,7 @@
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
             lblNotes.Location = new Point(3, 304);
             lblNotes.Name = "lblNotes";
             lblNotes.Size = new Size(56, 25);
@@ -579,6 +643,10 @@
 =======
             lblNotes.Location = new Point(39, 531);
             lblNotes.Name = "lblNotes";
+=======
+            lblNotes.Location = new Point(39, 531);
+            lblNotes.Name = "lblNotes";
+>>>>>>> Stashed changes
 =======
             lblNotes.Location = new Point(39, 531);
             lblNotes.Name = "lblNotes";
@@ -622,9 +690,15 @@
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
             btnSave.Location = new Point(65, 689);
             btnSave.Name = "btnSave";
             btnSave.Size = new Size(227, 128);
+=======
+            btnSave.Location = new Point(16, 655);
+            btnSave.Name = "btnSave";
+            btnSave.Size = new Size(140, 47);
+>>>>>>> Stashed changes
 =======
             btnSave.Location = new Point(16, 655);
             btnSave.Name = "btnSave";
@@ -652,9 +726,15 @@
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
             btnCancel.Location = new Point(443, 689);
             btnCancel.Name = "btnCancel";
             btnCancel.Size = new Size(227, 128);
+=======
+            btnCancel.Location = new Point(313, 655);
+            btnCancel.Name = "btnCancel";
+            btnCancel.Size = new Size(140, 47);
+>>>>>>> Stashed changes
 =======
             btnCancel.Location = new Point(313, 655);
             btnCancel.Name = "btnCancel";
@@ -683,7 +763,11 @@
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
             ClientSize = new Size(800, 944);
+=======
+            ClientSize = new Size(469, 720);
+>>>>>>> Stashed changes
 =======
             ClientSize = new Size(469, 720);
 >>>>>>> Stashed changes

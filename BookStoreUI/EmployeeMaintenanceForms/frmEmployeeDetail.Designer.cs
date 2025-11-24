@@ -58,9 +58,15 @@
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
             btnCancel.Location = new Point(494, 788);
             btnCancel.Name = "btnCancel";
             btnCancel.Size = new Size(173, 99);
+=======
+            btnCancel.Location = new Point(313, 655);
+            btnCancel.Name = "btnCancel";
+            btnCancel.Size = new Size(140, 47);
+>>>>>>> Stashed changes
 =======
             btnCancel.Location = new Point(313, 655);
             btnCancel.Name = "btnCancel";
@@ -308,7 +314,11 @@
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
             tlpEmployee.Size = new Size(800, 641);
+=======
+            tlpEmployee.Size = new Size(469, 642);
+>>>>>>> Stashed changes
 =======
             tlpEmployee.Size = new Size(469, 642);
 >>>>>>> Stashed changes
@@ -326,6 +336,7 @@
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
             nudJobLevel.Location = new Point(163, 424);
             nudJobLevel.Maximum = new decimal(new int[] { 255, 0, 0, 0 });
             nudJobLevel.Name = "nudJobLevel";
@@ -336,6 +347,12 @@
             nudJobLevel.Maximum = new decimal(new int[] { 255, 0, 0, 0 });
             nudJobLevel.Name = "nudJobLevel";
             nudJobLevel.Size = new Size(80, 31);
+=======
+            nudJobLevel.Location = new Point(96, 424);
+            nudJobLevel.Maximum = new decimal(new int[] { 255, 0, 0, 0 });
+            nudJobLevel.Name = "nudJobLevel";
+            nudJobLevel.Size = new Size(80, 31);
+>>>>>>> Stashed changes
 =======
             nudJobLevel.Location = new Point(96, 424);
             nudJobLevel.Maximum = new decimal(new int[] { 255, 0, 0, 0 });
@@ -421,6 +438,7 @@
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
             mtbPubId.Location = new Point(163, 504);
             mtbPubId.Mask = "0000";
             mtbPubId.Name = "mtbPubId";
@@ -460,12 +478,21 @@
             mtbPubId.TabIndex = 13;
             mtbPubId.Text = "9952";
 >>>>>>> Stashed changes
+=======
+            mtbPubId.Location = new Point(96, 504);
+            mtbPubId.Mask = "0000";
+            mtbPubId.Name = "mtbPubId";
+            mtbPubId.Size = new Size(80, 31);
+            mtbPubId.TabIndex = 13;
+            mtbPubId.Text = "9952";
+>>>>>>> Stashed changes
             // 
             // dtpHireDate
             // 
             dtpHireDate.Anchor = AnchorStyles.Left;
             dtpHireDate.CustomFormat = "yyyy/MM/dd";
             dtpHireDate.Format = DateTimePickerFormat.Custom;
+<<<<<<< Updated upstream
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
@@ -485,6 +512,11 @@
             dtpHireDate.Location = new Point(96, 585);
             dtpHireDate.MaxDate = new DateTime(2030, 1, 1, 0, 0, 0, 0);
             dtpHireDate.Name = "dtpHireDate";
+=======
+            dtpHireDate.Location = new Point(96, 585);
+            dtpHireDate.MaxDate = new DateTime(2030, 1, 1, 0, 0, 0, 0);
+            dtpHireDate.Name = "dtpHireDate";
+>>>>>>> Stashed changes
 =======
             dtpHireDate.Location = new Point(96, 585);
             dtpHireDate.MaxDate = new DateTime(2030, 1, 1, 0, 0, 0, 0);
@@ -519,6 +551,9 @@
             ClientSize = new Size(469, 720);
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes
 =======
 >>>>>>> Stashed changes
