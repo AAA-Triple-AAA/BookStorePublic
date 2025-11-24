@@ -11,6 +11,9 @@ using System.Windows.Forms;
 =======
 using BookStoreBO;
 using System.Text.RegularExpressions;
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes
 
 namespace BookStoreUI.EmployeeMaintenanceForms
@@ -133,6 +136,9 @@ namespace BookStoreUI.EmployeeMaintenanceForms
             txtEmpId.Focus();
         }
 
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes
     }
 }

@@ -119,6 +119,9 @@ namespace BookStoreUI
             ClearForm();
         }
 
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes
     }
 }

@@ -56,9 +56,15 @@
             // 
             btnCancel.DialogResult = DialogResult.Cancel;
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
             btnCancel.Location = new Point(494, 788);
             btnCancel.Name = "btnCancel";
             btnCancel.Size = new Size(173, 99);
+=======
+            btnCancel.Location = new Point(313, 655);
+            btnCancel.Name = "btnCancel";
+            btnCancel.Size = new Size(140, 47);
+>>>>>>> Stashed changes
 =======
             btnCancel.Location = new Point(313, 655);
             btnCancel.Name = "btnCancel";
@@ -294,7 +300,11 @@
             tlpEmployee.RowStyles.Add(new RowStyle(SizeType.Percent, 12.499999F));
             tlpEmployee.RowStyles.Add(new RowStyle(SizeType.Absolute, 20F));
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
             tlpEmployee.Size = new Size(800, 641);
+=======
+            tlpEmployee.Size = new Size(469, 642);
+>>>>>>> Stashed changes
 =======
             tlpEmployee.Size = new Size(469, 642);
 >>>>>>> Stashed changes
@@ -303,6 +313,7 @@
             // nudJobLevel
             // 
             nudJobLevel.Anchor = AnchorStyles.Left;
+<<<<<<< Updated upstream
 <<<<<<< Updated upstream
             nudJobLevel.Location = new Point(163, 424);
             nudJobLevel.Maximum = new decimal(new int[] { 255, 0, 0, 0 });
@@ -314,6 +325,12 @@
             nudJobLevel.Maximum = new decimal(new int[] { 255, 0, 0, 0 });
             nudJobLevel.Name = "nudJobLevel";
             nudJobLevel.Size = new Size(80, 31);
+=======
+            nudJobLevel.Location = new Point(96, 424);
+            nudJobLevel.Maximum = new decimal(new int[] { 255, 0, 0, 0 });
+            nudJobLevel.Name = "nudJobLevel";
+            nudJobLevel.Size = new Size(80, 31);
+>>>>>>> Stashed changes
             nudJobLevel.TabIndex = 11;
 >>>>>>> Stashed changes
             nudJobLevel.Value = new decimal(new int[] { 10, 0, 0, 0 });
@@ -385,6 +402,7 @@
             mtbPubId.Anchor = AnchorStyles.Left;
             mtbPubId.HidePromptOnLeave = true;
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
             mtbPubId.Location = new Point(163, 504);
             mtbPubId.Mask = "0000";
             mtbPubId.Name = "mtbPubId";
@@ -408,12 +426,21 @@
             mtbPubId.TabIndex = 13;
             mtbPubId.Text = "9952";
 >>>>>>> Stashed changes
+=======
+            mtbPubId.Location = new Point(96, 504);
+            mtbPubId.Mask = "0000";
+            mtbPubId.Name = "mtbPubId";
+            mtbPubId.Size = new Size(80, 31);
+            mtbPubId.TabIndex = 13;
+            mtbPubId.Text = "9952";
+>>>>>>> Stashed changes
             // 
             // dtpHireDate
             // 
             dtpHireDate.Anchor = AnchorStyles.Left;
             dtpHireDate.CustomFormat = "yyyy/MM/dd";
             dtpHireDate.Format = DateTimePickerFormat.Custom;
+<<<<<<< Updated upstream
 <<<<<<< Updated upstream
             dtpHireDate.Location = new Point(163, 577);
             dtpHireDate.MaxDate = new DateTime(2025, 11, 20, 14, 20, 7, 0);
@@ -431,6 +458,11 @@
             dtpHireDate.Location = new Point(96, 585);
             dtpHireDate.MaxDate = new DateTime(2030, 1, 1, 0, 0, 0, 0);
             dtpHireDate.Name = "dtpHireDate";
+=======
+            dtpHireDate.Location = new Point(96, 585);
+            dtpHireDate.MaxDate = new DateTime(2030, 1, 1, 0, 0, 0, 0);
+            dtpHireDate.Name = "dtpHireDate";
+>>>>>>> Stashed changes
             dtpHireDate.Size = new Size(163, 31);
             dtpHireDate.TabIndex = 15;
             dtpHireDate.Value = new DateTime(2025, 11, 20, 0, 0, 0, 0);
@@ -453,6 +485,9 @@
             AutoScaleMode = AutoScaleMode.Font;
             CancelButton = btnCancel;
             ClientSize = new Size(469, 720);
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes
             Controls.Add(btnCancel);
             Controls.Add(tlpEmployee);

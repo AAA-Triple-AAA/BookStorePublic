@@ -107,6 +107,9 @@ namespace BookStoreUI.PublisherMaintenanceForms
             ClearForm();
         }
 
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes
     }
 }

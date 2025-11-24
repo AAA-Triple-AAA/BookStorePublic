@@ -75,6 +75,10 @@ namespace BookStoreUI.AuthorMaintenanceForms
             errMsg += Validator.IsMaskCompleted(mtbZip.MaskCompleted, "Zip");
 
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
+=======
+            // Final check
+>>>>>>> Stashed changes
 =======
             // Final check
 >>>>>>> Stashed changes
@@ -103,9 +107,12 @@ namespace BookStoreUI.AuthorMaintenanceForms
         private void btnSave_Click(object sender, EventArgs e)
         {
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
             if (!ValidateInput())
                 return;  // stop if there are validation errors
 =======
+=======
+>>>>>>> Stashed changes
             
             if (!ValidateInput())
                 return;    // if there are errors, the message box is already shown
@@ -119,6 +126,9 @@ namespace BookStoreUI.AuthorMaintenanceForms
            
             ClearForm();
             mtbAuthorId.Focus();
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes
         }
 
