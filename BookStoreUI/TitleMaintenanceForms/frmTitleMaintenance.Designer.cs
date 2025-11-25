@@ -38,14 +38,14 @@
             validatorBindingSource = new BindingSource(components);
             spcDetails = new SplitContainer();
             dgvTitle = new DataGridView();
-            columnTitle_id = new DataGridViewTextBoxColumn();
+            validatorBindingSource1 = new BindingSource(components);
+            rtbDetails = new RichTextBox();
+            txtSearch = new TextBox();
+            columnTitleId = new DataGridViewTextBoxColumn();
             columnTitle = new DataGridViewTextBoxColumn();
             columnType = new DataGridViewTextBoxColumn();
             columnPub_id = new DataGridViewTextBoxColumn();
             columnPrice = new DataGridViewTextBoxColumn();
-            validatorBindingSource1 = new BindingSource(components);
-            rtbDetails = new RichTextBox();
-            txtSearch = new TextBox();
             ((System.ComponentModel.ISupportInitialize)validatorBindingSource).BeginInit();
             ((System.ComponentModel.ISupportInitialize)spcDetails).BeginInit();
             spcDetails.Panel1.SuspendLayout();
@@ -136,7 +136,7 @@
             dgvTitle.AllowUserToOrderColumns = true;
             dgvTitle.AutoGenerateColumns = false;
             dgvTitle.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dgvTitle.Columns.AddRange(new DataGridViewColumn[] { columnTitle_id, columnTitle, columnType, columnPub_id, columnPrice });
+            dgvTitle.Columns.AddRange(new DataGridViewColumn[] { columnTitleId, columnTitle, columnType, columnPub_id, columnPrice });
             dgvTitle.DataSource = validatorBindingSource1;
             dgvTitle.Dock = DockStyle.Fill;
             dgvTitle.Location = new Point(0, 0);
@@ -148,46 +148,6 @@
             dgvTitle.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             dgvTitle.Size = new Size(572, 340);
             dgvTitle.TabIndex = 0;
-            // 
-            // columnTitle_id
-            // 
-            columnTitle_id.HeaderText = "Title ID";
-            columnTitle_id.MinimumWidth = 8;
-            columnTitle_id.Name = "columnTitle_id";
-            columnTitle_id.ReadOnly = true;
-            columnTitle_id.Width = 150;
-            // 
-            // columnTitle
-            // 
-            columnTitle.HeaderText = "Title";
-            columnTitle.MinimumWidth = 8;
-            columnTitle.Name = "columnTitle";
-            columnTitle.ReadOnly = true;
-            columnTitle.Width = 150;
-            // 
-            // columnType
-            // 
-            columnType.HeaderText = "Type";
-            columnType.MinimumWidth = 8;
-            columnType.Name = "columnType";
-            columnType.ReadOnly = true;
-            columnType.Width = 150;
-            // 
-            // columnPub_id
-            // 
-            columnPub_id.HeaderText = "Pub. ID";
-            columnPub_id.MinimumWidth = 8;
-            columnPub_id.Name = "columnPub_id";
-            columnPub_id.ReadOnly = true;
-            columnPub_id.Width = 150;
-            // 
-            // columnPrice
-            // 
-            columnPrice.HeaderText = "Price";
-            columnPrice.MinimumWidth = 8;
-            columnPrice.Name = "columnPrice";
-            columnPrice.ReadOnly = true;
-            columnPrice.Width = 150;
             // 
             // validatorBindingSource1
             // 
@@ -210,6 +170,51 @@
             txtSearch.PlaceholderText = "Search";
             txtSearch.Size = new Size(257, 23);
             txtSearch.TabIndex = 1;
+            // 
+            // columnTitleId
+            // 
+            columnTitleId.DataPropertyName = "TitleId";
+            columnTitleId.HeaderText = "Title ID";
+            columnTitleId.MinimumWidth = 8;
+            columnTitleId.Name = "columnTitleId";
+            columnTitleId.ReadOnly = true;
+            columnTitleId.Width = 150;
+            // 
+            // columnTitle
+            // 
+            columnTitle.DataPropertyName = "Title1";
+            columnTitle.HeaderText = "Title";
+            columnTitle.MinimumWidth = 8;
+            columnTitle.Name = "columnTitle";
+            columnTitle.ReadOnly = true;
+            columnTitle.Width = 150;
+            // 
+            // columnType
+            // 
+            columnType.DataPropertyName = "Type";
+            columnType.HeaderText = "Type";
+            columnType.MinimumWidth = 8;
+            columnType.Name = "columnType";
+            columnType.ReadOnly = true;
+            columnType.Width = 150;
+            // 
+            // columnPub_id
+            // 
+            columnPub_id.DataPropertyName = "PubId";
+            columnPub_id.HeaderText = "Pub. ID";
+            columnPub_id.MinimumWidth = 8;
+            columnPub_id.Name = "columnPub_id";
+            columnPub_id.ReadOnly = true;
+            columnPub_id.Width = 150;
+            // 
+            // columnPrice
+            // 
+            columnPrice.DataPropertyName = "Price";
+            columnPrice.HeaderText = "Price";
+            columnPrice.MinimumWidth = 8;
+            columnPrice.Name = "columnPrice";
+            columnPrice.ReadOnly = true;
+            columnPrice.Width = 150;
             // 
             // frmTitleMaintenance
             // 
@@ -255,7 +260,7 @@
         private BindingSource validatorBindingSource1;
         private RichTextBox rtbDetails;
         private TextBox txtSearch;
-        private DataGridViewTextBoxColumn columnTitle_id;
+        private DataGridViewTextBoxColumn columnTitleId;
         private DataGridViewTextBoxColumn columnTitle;
         private DataGridViewTextBoxColumn columnType;
         private DataGridViewTextBoxColumn columnPub_id;

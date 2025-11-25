@@ -34,11 +34,6 @@
             txtSearch = new TextBox();
             spcDetails = new SplitContainer();
             dgvStore = new DataGridView();
-            columnStore_id = new DataGridViewTextBoxColumn();
-            columnStore_name = new DataGridViewTextBoxColumn();
-            columnStoreAddress = new DataGridViewTextBoxColumn();
-            columnCity = new DataGridViewTextBoxColumn();
-            columnState = new DataGridViewTextBoxColumn();
             validatorBindingSource1 = new BindingSource(components);
             rtbDetails = new RichTextBox();
             btnAddStore = new Button();
@@ -46,6 +41,11 @@
             btnSearch = new Button();
             btnDeleteStore = new Button();
             lblDetails = new Label();
+            columnStorId = new DataGridViewTextBoxColumn();
+            columnStorName = new DataGridViewTextBoxColumn();
+            columnStorAddress = new DataGridViewTextBoxColumn();
+            columnCity = new DataGridViewTextBoxColumn();
+            columnState = new DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)validatorBindingSource).BeginInit();
             ((System.ComponentModel.ISupportInitialize)spcDetails).BeginInit();
             spcDetails.Panel1.SuspendLayout();
@@ -92,7 +92,7 @@
             dgvStore.AllowUserToOrderColumns = true;
             dgvStore.AutoGenerateColumns = false;
             dgvStore.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dgvStore.Columns.AddRange(new DataGridViewColumn[] { columnStore_id, columnStore_name, columnStoreAddress, columnCity, columnState });
+            dgvStore.Columns.AddRange(new DataGridViewColumn[] { columnStorId, columnStorName, columnStorAddress, columnCity, columnState });
             dgvStore.DataSource = validatorBindingSource1;
             dgvStore.Dock = DockStyle.Fill;
             dgvStore.Location = new Point(0, 0);
@@ -104,46 +104,6 @@
             dgvStore.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             dgvStore.Size = new Size(571, 340);
             dgvStore.TabIndex = 0;
-            // 
-            // columnStore_id
-            // 
-            columnStore_id.HeaderText = "Store ID";
-            columnStore_id.MinimumWidth = 8;
-            columnStore_id.Name = "columnStore_id";
-            columnStore_id.ReadOnly = true;
-            columnStore_id.Width = 150;
-            // 
-            // columnStore_name
-            // 
-            columnStore_name.HeaderText = "Name";
-            columnStore_name.MinimumWidth = 8;
-            columnStore_name.Name = "columnStore_name";
-            columnStore_name.ReadOnly = true;
-            columnStore_name.Width = 150;
-            // 
-            // columnStoreAddress
-            // 
-            columnStoreAddress.HeaderText = "Address";
-            columnStoreAddress.MinimumWidth = 8;
-            columnStoreAddress.Name = "columnStoreAddress";
-            columnStoreAddress.ReadOnly = true;
-            columnStoreAddress.Width = 150;
-            // 
-            // columnCity
-            // 
-            columnCity.HeaderText = "City";
-            columnCity.MinimumWidth = 8;
-            columnCity.Name = "columnCity";
-            columnCity.ReadOnly = true;
-            columnCity.Width = 150;
-            // 
-            // columnState
-            // 
-            columnState.HeaderText = "State";
-            columnState.MinimumWidth = 8;
-            columnState.Name = "columnState";
-            columnState.ReadOnly = true;
-            columnState.Width = 150;
             // 
             // validatorBindingSource1
             // 
@@ -211,6 +171,51 @@
             lblDetails.TabIndex = 33;
             lblDetails.Text = "Details";
             // 
+            // columnStorId
+            // 
+            columnStorId.DataPropertyName = "StorId";
+            columnStorId.HeaderText = "Store ID";
+            columnStorId.MinimumWidth = 8;
+            columnStorId.Name = "columnStorId";
+            columnStorId.ReadOnly = true;
+            columnStorId.Width = 150;
+            // 
+            // columnStorName
+            // 
+            columnStorName.DataPropertyName = "StorName";
+            columnStorName.HeaderText = "Name";
+            columnStorName.MinimumWidth = 8;
+            columnStorName.Name = "columnStorName";
+            columnStorName.ReadOnly = true;
+            columnStorName.Width = 150;
+            // 
+            // columnStorAddress
+            // 
+            columnStorAddress.DataPropertyName = "StorAddress";
+            columnStorAddress.HeaderText = "Address";
+            columnStorAddress.MinimumWidth = 8;
+            columnStorAddress.Name = "columnStorAddress";
+            columnStorAddress.ReadOnly = true;
+            columnStorAddress.Width = 150;
+            // 
+            // columnCity
+            // 
+            columnCity.DataPropertyName = "City";
+            columnCity.HeaderText = "City";
+            columnCity.MinimumWidth = 8;
+            columnCity.Name = "columnCity";
+            columnCity.ReadOnly = true;
+            columnCity.Width = 150;
+            // 
+            // columnState
+            // 
+            columnState.DataPropertyName = "State";
+            columnState.HeaderText = "State";
+            columnState.MinimumWidth = 8;
+            columnState.Name = "columnState";
+            columnState.ReadOnly = true;
+            columnState.Width = 150;
+            // 
             // frmStoreMaintenance
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -255,9 +260,9 @@
         private Button btnSearch;
         private Button btnDeleteStore;
         private Label lblDetails;
-        private DataGridViewTextBoxColumn columnStore_id;
-        private DataGridViewTextBoxColumn columnStore_name;
-        private DataGridViewTextBoxColumn columnStoreAddress;
+        private DataGridViewTextBoxColumn columnStorId;
+        private DataGridViewTextBoxColumn columnStorName;
+        private DataGridViewTextBoxColumn columnStorAddress;
         private DataGridViewTextBoxColumn columnCity;
         private DataGridViewTextBoxColumn columnState;
     }

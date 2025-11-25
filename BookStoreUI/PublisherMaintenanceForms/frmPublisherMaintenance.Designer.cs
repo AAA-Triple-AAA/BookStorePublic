@@ -35,17 +35,17 @@
             validatorBindingSource1 = new BindingSource(components);
             spcDetails = new SplitContainer();
             dgvPublisher = new DataGridView();
-            columnPub_id = new DataGridViewTextBoxColumn();
-            columnPub_name = new DataGridViewTextBoxColumn();
-            columnCity = new DataGridViewTextBoxColumn();
-            columnState = new DataGridViewTextBoxColumn();
-            columnCountry = new DataGridViewTextBoxColumn();
             validatorBindingSource = new BindingSource(components);
             btnAddPublisher = new Button();
             lblDetails = new Label();
             btnEditPublisher = new Button();
             btnSearch = new Button();
             btnDeletePublisher = new Button();
+            columnPubId = new DataGridViewTextBoxColumn();
+            columnPubName = new DataGridViewTextBoxColumn();
+            columnCity = new DataGridViewTextBoxColumn();
+            columnState = new DataGridViewTextBoxColumn();
+            columnCountry = new DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)validatorBindingSource1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)spcDetails).BeginInit();
             spcDetails.Panel1.SuspendLayout();
@@ -101,7 +101,7 @@
             dgvPublisher.AllowUserToOrderColumns = true;
             dgvPublisher.AutoGenerateColumns = false;
             dgvPublisher.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dgvPublisher.Columns.AddRange(new DataGridViewColumn[] { columnPub_id, columnPub_name, columnCity, columnState, columnCountry });
+            dgvPublisher.Columns.AddRange(new DataGridViewColumn[] { columnPubId, columnPubName, columnCity, columnState, columnCountry });
             dgvPublisher.DataSource = validatorBindingSource1;
             dgvPublisher.Dock = DockStyle.Fill;
             dgvPublisher.Location = new Point(0, 0);
@@ -113,46 +113,6 @@
             dgvPublisher.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             dgvPublisher.Size = new Size(571, 340);
             dgvPublisher.TabIndex = 0;
-            // 
-            // columnPub_id
-            // 
-            columnPub_id.HeaderText = "Pub. ID";
-            columnPub_id.MinimumWidth = 8;
-            columnPub_id.Name = "columnPub_id";
-            columnPub_id.ReadOnly = true;
-            columnPub_id.Width = 150;
-            // 
-            // columnPub_name
-            // 
-            columnPub_name.HeaderText = "Name";
-            columnPub_name.MinimumWidth = 8;
-            columnPub_name.Name = "columnPub_name";
-            columnPub_name.ReadOnly = true;
-            columnPub_name.Width = 150;
-            // 
-            // columnCity
-            // 
-            columnCity.HeaderText = "City";
-            columnCity.MinimumWidth = 8;
-            columnCity.Name = "columnCity";
-            columnCity.ReadOnly = true;
-            columnCity.Width = 150;
-            // 
-            // columnState
-            // 
-            columnState.HeaderText = "State";
-            columnState.MinimumWidth = 8;
-            columnState.Name = "columnState";
-            columnState.ReadOnly = true;
-            columnState.Width = 150;
-            // 
-            // columnCountry
-            // 
-            columnCountry.HeaderText = "Country";
-            columnCountry.MinimumWidth = 8;
-            columnCountry.Name = "columnCountry";
-            columnCountry.ReadOnly = true;
-            columnCountry.Width = 150;
             // 
             // validatorBindingSource
             // 
@@ -211,6 +171,51 @@
             btnDeletePublisher.Text = "Delete Selected Publisher";
             btnDeletePublisher.UseVisualStyleBackColor = true;
             // 
+            // columnPubId
+            // 
+            columnPubId.DataPropertyName = "PubId";
+            columnPubId.HeaderText = "Pub. ID";
+            columnPubId.MinimumWidth = 8;
+            columnPubId.Name = "columnPubId";
+            columnPubId.ReadOnly = true;
+            columnPubId.Width = 150;
+            // 
+            // columnPubName
+            // 
+            columnPubName.DataPropertyName = "PubName";
+            columnPubName.HeaderText = "Name";
+            columnPubName.MinimumWidth = 8;
+            columnPubName.Name = "columnPubName";
+            columnPubName.ReadOnly = true;
+            columnPubName.Width = 150;
+            // 
+            // columnCity
+            // 
+            columnCity.DataPropertyName = "City";
+            columnCity.HeaderText = "City";
+            columnCity.MinimumWidth = 8;
+            columnCity.Name = "columnCity";
+            columnCity.ReadOnly = true;
+            columnCity.Width = 150;
+            // 
+            // columnState
+            // 
+            columnState.DataPropertyName = "State";
+            columnState.HeaderText = "State";
+            columnState.MinimumWidth = 8;
+            columnState.Name = "columnState";
+            columnState.ReadOnly = true;
+            columnState.Width = 150;
+            // 
+            // columnCountry
+            // 
+            columnCountry.DataPropertyName = "Country";
+            columnCountry.HeaderText = "Country";
+            columnCountry.MinimumWidth = 8;
+            columnCountry.Name = "columnCountry";
+            columnCountry.ReadOnly = true;
+            columnCountry.Width = 150;
+            // 
             // frmPublisherMaintenance
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -259,8 +264,8 @@
         private Button btnEditPublisher;
         private Button btnSearch;
         private Button btnDeletePublisher;
-        private DataGridViewTextBoxColumn columnPub_id;
-        private DataGridViewTextBoxColumn columnPub_name;
+        private DataGridViewTextBoxColumn columnPubId;
+        private DataGridViewTextBoxColumn columnPubName;
         private DataGridViewTextBoxColumn columnCity;
         private DataGridViewTextBoxColumn columnState;
         private DataGridViewTextBoxColumn columnCountry;

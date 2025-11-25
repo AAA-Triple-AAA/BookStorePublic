@@ -35,17 +35,17 @@
             validatorBindingSource = new BindingSource(components);
             spcDetails = new SplitContainer();
             dgvEmployee = new DataGridView();
-            columnemp_id = new DataGridViewTextBoxColumn();
-            columnFname = new DataGridViewTextBoxColumn();
-            columnMinit = new DataGridViewTextBoxColumn();
-            columnAu_lname = new DataGridViewTextBoxColumn();
-            columnJob_id = new DataGridViewTextBoxColumn();
             validatorBindingSource1 = new BindingSource(components);
             rtbDetails = new RichTextBox();
             btnDeleteEmployee = new Button();
             btnAddEmployee = new Button();
             lblDetails = new Label();
             btnEditEmployee = new Button();
+            columnEmpId = new DataGridViewTextBoxColumn();
+            columnFname = new DataGridViewTextBoxColumn();
+            columnMinit = new DataGridViewTextBoxColumn();
+            columnLname = new DataGridViewTextBoxColumn();
+            columnJobId = new DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)validatorBindingSource).BeginInit();
             ((System.ComponentModel.ISupportInitialize)spcDetails).BeginInit();
             spcDetails.Panel1.SuspendLayout();
@@ -103,7 +103,7 @@
             dgvEmployee.AllowUserToOrderColumns = true;
             dgvEmployee.AutoGenerateColumns = false;
             dgvEmployee.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dgvEmployee.Columns.AddRange(new DataGridViewColumn[] { columnemp_id, columnFname, columnMinit, columnAu_lname, columnJob_id });
+            dgvEmployee.Columns.AddRange(new DataGridViewColumn[] { columnEmpId, columnFname, columnMinit, columnLname, columnJobId });
             dgvEmployee.DataSource = validatorBindingSource1;
             dgvEmployee.Dock = DockStyle.Fill;
             dgvEmployee.Location = new Point(0, 0);
@@ -115,46 +115,6 @@
             dgvEmployee.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             dgvEmployee.Size = new Size(571, 340);
             dgvEmployee.TabIndex = 0;
-            // 
-            // columnemp_id
-            // 
-            columnemp_id.HeaderText = "Employee ID";
-            columnemp_id.MinimumWidth = 8;
-            columnemp_id.Name = "columnemp_id";
-            columnemp_id.ReadOnly = true;
-            columnemp_id.Width = 150;
-            // 
-            // columnFname
-            // 
-            columnFname.HeaderText = "First Name";
-            columnFname.MinimumWidth = 8;
-            columnFname.Name = "columnFname";
-            columnFname.ReadOnly = true;
-            columnFname.Width = 150;
-            // 
-            // columnMinit
-            // 
-            columnMinit.HeaderText = "Middle Initial";
-            columnMinit.MinimumWidth = 8;
-            columnMinit.Name = "columnMinit";
-            columnMinit.ReadOnly = true;
-            columnMinit.Width = 150;
-            // 
-            // columnAu_lname
-            // 
-            columnAu_lname.HeaderText = "Last Name";
-            columnAu_lname.MinimumWidth = 8;
-            columnAu_lname.Name = "columnAu_lname";
-            columnAu_lname.ReadOnly = true;
-            columnAu_lname.Width = 150;
-            // 
-            // columnJob_id
-            // 
-            columnJob_id.HeaderText = "Job ID";
-            columnJob_id.MinimumWidth = 8;
-            columnJob_id.Name = "columnJob_id";
-            columnJob_id.ReadOnly = true;
-            columnJob_id.Width = 150;
             // 
             // validatorBindingSource1
             // 
@@ -211,6 +171,51 @@
             btnEditEmployee.UseVisualStyleBackColor = true;
             btnEditEmployee.Click += btbEditEmployee_Click;
             // 
+            // columnEmpId
+            // 
+            columnEmpId.DataPropertyName = "EmpId";
+            columnEmpId.HeaderText = "Employee ID";
+            columnEmpId.MinimumWidth = 8;
+            columnEmpId.Name = "columnEmpId";
+            columnEmpId.ReadOnly = true;
+            columnEmpId.Width = 150;
+            // 
+            // columnFname
+            // 
+            columnFname.DataPropertyName = "Fname";
+            columnFname.HeaderText = "First Name";
+            columnFname.MinimumWidth = 8;
+            columnFname.Name = "columnFname";
+            columnFname.ReadOnly = true;
+            columnFname.Width = 150;
+            // 
+            // columnMinit
+            // 
+            columnMinit.DataPropertyName = "Minit";
+            columnMinit.HeaderText = "Middle Initial";
+            columnMinit.MinimumWidth = 8;
+            columnMinit.Name = "columnMinit";
+            columnMinit.ReadOnly = true;
+            columnMinit.Width = 150;
+            // 
+            // columnLname
+            // 
+            columnLname.DataPropertyName = "Lname";
+            columnLname.HeaderText = "Last Name";
+            columnLname.MinimumWidth = 8;
+            columnLname.Name = "columnLname";
+            columnLname.ReadOnly = true;
+            columnLname.Width = 150;
+            // 
+            // columnJobId
+            // 
+            columnJobId.DataPropertyName = "JobId";
+            columnJobId.HeaderText = "Job ID";
+            columnJobId.MinimumWidth = 8;
+            columnJobId.Name = "columnJobId";
+            columnJobId.ReadOnly = true;
+            columnJobId.Width = 150;
+            // 
             // frmEmployeeMaintenance
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -259,10 +264,10 @@
         private Button btnAddEmployee;
         private Label lblDetails;
         private Button btnEditEmployee;
-        private DataGridViewTextBoxColumn columnemp_id;
+        private DataGridViewTextBoxColumn columnEmpId;
         private DataGridViewTextBoxColumn columnFname;
         private DataGridViewTextBoxColumn columnMinit;
-        private DataGridViewTextBoxColumn columnAu_lname;
-        private DataGridViewTextBoxColumn columnJob_id;
+        private DataGridViewTextBoxColumn columnLname;
+        private DataGridViewTextBoxColumn columnJobId;
     }
 }
