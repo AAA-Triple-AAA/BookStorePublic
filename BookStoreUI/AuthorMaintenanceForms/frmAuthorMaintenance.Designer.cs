@@ -37,15 +37,15 @@
             validatorBindingSource1 = new BindingSource(components);
             btnEditAuthor = new Button();
             dgvAuthor = new DataGridView();
-            columnau_id = new DataGridViewTextBoxColumn();
-            columnAu_lname = new DataGridViewTextBoxColumn();
-            columnau_name = new DataGridViewTextBoxColumn();
-            columnphone = new DataGridViewTextBoxColumn();
-            columnAdress = new DataGridViewTextBoxColumn();
             spcDetails = new SplitContainer();
             validatorBindingSource = new BindingSource(components);
             btnSearch = new Button();
             txtSearch = new TextBox();
+            columnAuId = new DataGridViewTextBoxColumn();
+            columnAuLName = new DataGridViewTextBoxColumn();
+            columnAuFname = new DataGridViewTextBoxColumn();
+            columnphone = new DataGridViewTextBoxColumn();
+            columnAddress = new DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)validatorBindingSource1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)dgvAuthor).BeginInit();
             ((System.ComponentModel.ISupportInitialize)spcDetails).BeginInit();
@@ -116,7 +116,7 @@
             dgvAuthor.AllowUserToOrderColumns = true;
             dgvAuthor.AutoGenerateColumns = false;
             dgvAuthor.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dgvAuthor.Columns.AddRange(new DataGridViewColumn[] { columnau_id, columnAu_lname, columnau_name, columnphone, columnAdress });
+            dgvAuthor.Columns.AddRange(new DataGridViewColumn[] { columnAuId, columnAuLName, columnAuFname, columnphone, columnAddress });
             dgvAuthor.DataSource = validatorBindingSource1;
             dgvAuthor.Dock = DockStyle.Fill;
             dgvAuthor.Location = new Point(0, 0);
@@ -128,46 +128,6 @@
             dgvAuthor.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             dgvAuthor.Size = new Size(572, 340);
             dgvAuthor.TabIndex = 0;
-            // 
-            // columnau_id
-            // 
-            columnau_id.HeaderText = "Author ID";
-            columnau_id.MinimumWidth = 8;
-            columnau_id.Name = "columnau_id";
-            columnau_id.ReadOnly = true;
-            columnau_id.Width = 150;
-            // 
-            // columnAu_lname
-            // 
-            columnAu_lname.HeaderText = "Last Name";
-            columnAu_lname.MinimumWidth = 8;
-            columnAu_lname.Name = "columnAu_lname";
-            columnAu_lname.ReadOnly = true;
-            columnAu_lname.Width = 150;
-            // 
-            // columnau_name
-            // 
-            columnau_name.HeaderText = "First Name";
-            columnau_name.MinimumWidth = 8;
-            columnau_name.Name = "columnau_name";
-            columnau_name.ReadOnly = true;
-            columnau_name.Width = 150;
-            // 
-            // columnphone
-            // 
-            columnphone.HeaderText = "Phone";
-            columnphone.MinimumWidth = 8;
-            columnphone.Name = "columnphone";
-            columnphone.ReadOnly = true;
-            columnphone.Width = 150;
-            // 
-            // columnAdress
-            // 
-            columnAdress.HeaderText = "Address";
-            columnAdress.MinimumWidth = 8;
-            columnAdress.Name = "columnAdress";
-            columnAdress.ReadOnly = true;
-            columnAdress.Width = 150;
             // 
             // spcDetails
             // 
@@ -210,6 +170,51 @@
             txtSearch.PlaceholderText = "Search";
             txtSearch.Size = new Size(257, 23);
             txtSearch.TabIndex = 10;
+            // 
+            // columnAuId
+            // 
+            columnAuId.DataPropertyName = "AuId";
+            columnAuId.HeaderText = "Author ID";
+            columnAuId.MinimumWidth = 8;
+            columnAuId.Name = "columnAuId";
+            columnAuId.ReadOnly = true;
+            columnAuId.Width = 150;
+            // 
+            // columnAuLName
+            // 
+            columnAuLName.DataPropertyName = "AuLname";
+            columnAuLName.HeaderText = "Last Name";
+            columnAuLName.MinimumWidth = 8;
+            columnAuLName.Name = "columnAuLName";
+            columnAuLName.ReadOnly = true;
+            columnAuLName.Width = 150;
+            // 
+            // columnAuFname
+            // 
+            columnAuFname.DataPropertyName = "AuFname";
+            columnAuFname.HeaderText = "First Name";
+            columnAuFname.MinimumWidth = 8;
+            columnAuFname.Name = "columnAuFname";
+            columnAuFname.ReadOnly = true;
+            columnAuFname.Width = 150;
+            // 
+            // columnphone
+            // 
+            columnphone.DataPropertyName = "Phone";
+            columnphone.HeaderText = "Phone";
+            columnphone.MinimumWidth = 8;
+            columnphone.Name = "columnphone";
+            columnphone.ReadOnly = true;
+            columnphone.Width = 150;
+            // 
+            // columnAddress
+            // 
+            columnAddress.DataPropertyName = "Address";
+            columnAddress.HeaderText = "Address";
+            columnAddress.MinimumWidth = 8;
+            columnAddress.Name = "columnAddress";
+            columnAddress.ReadOnly = true;
+            columnAddress.Width = 150;
             // 
             // frmAuthorMaintenance
             // 
@@ -255,10 +260,10 @@
         private BindingSource validatorBindingSource;
         private Button btnSearch;
         private TextBox txtSearch;
-        private DataGridViewTextBoxColumn columnau_id;
-        private DataGridViewTextBoxColumn columnAu_lname;
-        private DataGridViewTextBoxColumn columnau_name;
+        private DataGridViewTextBoxColumn columnAuId;
+        private DataGridViewTextBoxColumn columnAuLName;
+        private DataGridViewTextBoxColumn columnAuFname;
         private DataGridViewTextBoxColumn columnphone;
-        private DataGridViewTextBoxColumn columnAdress;
+        private DataGridViewTextBoxColumn columnAddress;
     }
 }
