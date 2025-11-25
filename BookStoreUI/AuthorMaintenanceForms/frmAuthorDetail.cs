@@ -50,6 +50,16 @@ namespace BookStoreUI.AuthorMaintenanceForms
             chkContract.CheckState = Author.Contract ? CheckState.Checked : CheckState.Unchecked;
         }
 
+        private bool ValidId(string authorId)
+        {
+            var author = _data.GetAuthor(authorId);
+
+            if (author == null) return true;
+
+            MessageBox.Show(@"Author ID already taken, please enter a unique ID.");
+            return false;
+        }
+
         private bool ValidateInput()
         {
             var errMsg = "";
@@ -120,22 +130,29 @@ namespace BookStoreUI.AuthorMaintenanceForms
                 mtbAuthorId.Enabled = false;
                 DisplayAuthorInformation();
             }
-            else
-            {
-
-            }
 
             this.Text = IsAdd ? @"Add Author" : @"Edit Author";
         }
 
         private void btnSave_Click(object sender, EventArgs e)
         {
+            // Stop if input is invalid
+            if (!ValidateInput()) return;
 
-            if (!ValidateInput())
-                return;  // stop if there are validation errors
-
+            // Change or create Author
             ApplyChanges();
-            _data.UpdateAuthor(Author!);
+
+            // Stop if Adding author with already taken id
+            if (IsAdd && !ValidId(Author!.AuId)) return;
+
+            if (IsAdd)
+            {
+                _data.AddAuthor(Author!);
+            }
+            else
+            {
+                _data.UpdateAuthor(Author!);
+            }
 
             MessageBox.Show(
                 @"Author information saved successfully.",
@@ -151,7 +168,6 @@ namespace BookStoreUI.AuthorMaintenanceForms
 
             mtbAuthorId.Focus();
             ClearForm();
-            
         }
     }
 }

@@ -52,6 +52,7 @@ namespace BookStoreUI
         {
             var frmAuthorDetail = new frmAuthorDetail { IsAdd = true };
             frmAuthorDetail.ShowDialog();
+            LoadData();
         }
 
         private void btbEditAuthor_Click(object sender, EventArgs e)

@@ -13,6 +13,12 @@ public partial class BookStoreDataAccess
 
     public Author? GetAuthor(string id) => Context.Authors.Find(id);
 
+    public void AddAuthor(Author author)
+    {
+        Context.Authors.Add(author);
+        Context.SaveChanges();
+    }
+
     public void UpdateAuthor(Author author)
     {
         Context.Authors.Update(author);
