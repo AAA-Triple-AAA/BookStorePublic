@@ -37,15 +37,15 @@
             validatorBindingSource1 = new BindingSource(components);
             btnEditAuthor = new Button();
             dgvAuthor = new DataGridView();
-            spcDetails = new SplitContainer();
-            validatorBindingSource = new BindingSource(components);
-            btnSearch = new Button();
-            txtSearch = new TextBox();
             columnAuId = new DataGridViewTextBoxColumn();
             columnAuLName = new DataGridViewTextBoxColumn();
             columnAuFname = new DataGridViewTextBoxColumn();
             columnphone = new DataGridViewTextBoxColumn();
             columnAddress = new DataGridViewTextBoxColumn();
+            spcDetails = new SplitContainer();
+            validatorBindingSource = new BindingSource(components);
+            btnSearch = new Button();
+            txtSearch = new TextBox();
             ((System.ComponentModel.ISupportInitialize)validatorBindingSource1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)dgvAuthor).BeginInit();
             ((System.ComponentModel.ISupportInitialize)spcDetails).BeginInit();
@@ -128,48 +128,7 @@
             dgvAuthor.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             dgvAuthor.Size = new Size(572, 340);
             dgvAuthor.TabIndex = 0;
-            // 
-            // spcDetails
-            // 
-            spcDetails.Location = new Point(-1, 80);
-            spcDetails.Margin = new Padding(2);
-            spcDetails.Name = "spcDetails";
-            // 
-            // spcDetails.Panel1
-            // 
-            spcDetails.Panel1.Controls.Add(dgvAuthor);
-            // 
-            // spcDetails.Panel2
-            // 
-            spcDetails.Panel2.Controls.Add(rtbDetails);
-            spcDetails.Size = new Size(828, 340);
-            spcDetails.SplitterDistance = 572;
-            spcDetails.SplitterWidth = 3;
-            spcDetails.TabIndex = 12;
-            // 
-            // validatorBindingSource
-            // 
-            validatorBindingSource.DataSource = typeof(BookStoreBO.Validator);
-            // 
-            // btnSearch
-            // 
-            btnSearch.Location = new Point(272, 29);
-            btnSearch.Margin = new Padding(2);
-            btnSearch.Name = "btnSearch";
-            btnSearch.Size = new Size(112, 23);
-            btnSearch.TabIndex = 11;
-            btnSearch.Text = "Search by Author";
-            btnSearch.UseVisualStyleBackColor = true;
-            btnSearch.Click += btnSearch_Click;
-            // 
-            // txtSearch
-            // 
-            txtSearch.Location = new Point(11, 30);
-            txtSearch.Margin = new Padding(2);
-            txtSearch.Name = "txtSearch";
-            txtSearch.PlaceholderText = "Search";
-            txtSearch.Size = new Size(257, 23);
-            txtSearch.TabIndex = 10;
+            dgvAuthor.SelectionChanged += dgvAuthor_SelectionChanged;
             // 
             // columnAuId
             // 
@@ -216,6 +175,48 @@
             columnAddress.ReadOnly = true;
             columnAddress.Width = 150;
             // 
+            // spcDetails
+            // 
+            spcDetails.Location = new Point(-1, 80);
+            spcDetails.Margin = new Padding(2);
+            spcDetails.Name = "spcDetails";
+            // 
+            // spcDetails.Panel1
+            // 
+            spcDetails.Panel1.Controls.Add(dgvAuthor);
+            // 
+            // spcDetails.Panel2
+            // 
+            spcDetails.Panel2.Controls.Add(rtbDetails);
+            spcDetails.Size = new Size(828, 340);
+            spcDetails.SplitterDistance = 572;
+            spcDetails.SplitterWidth = 3;
+            spcDetails.TabIndex = 12;
+            // 
+            // validatorBindingSource
+            // 
+            validatorBindingSource.DataSource = typeof(BookStoreBO.Validator);
+            // 
+            // btnSearch
+            // 
+            btnSearch.Location = new Point(272, 29);
+            btnSearch.Margin = new Padding(2);
+            btnSearch.Name = "btnSearch";
+            btnSearch.Size = new Size(112, 23);
+            btnSearch.TabIndex = 11;
+            btnSearch.Text = "Search by Author";
+            btnSearch.UseVisualStyleBackColor = true;
+            btnSearch.Click += btnSearch_Click;
+            // 
+            // txtSearch
+            // 
+            txtSearch.Location = new Point(11, 30);
+            txtSearch.Margin = new Padding(2);
+            txtSearch.Name = "txtSearch";
+            txtSearch.PlaceholderText = "Search";
+            txtSearch.Size = new Size(257, 23);
+            txtSearch.TabIndex = 10;
+            // 
             // frmAuthorMaintenance
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -236,6 +237,7 @@
             Name = "frmAuthorMaintenance";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Author Maintenance";
+            Load += frmAuthorMaintenance_Load;
             ((System.ComponentModel.ISupportInitialize)validatorBindingSource1).EndInit();
             ((System.ComponentModel.ISupportInitialize)dgvAuthor).EndInit();
             spcDetails.Panel1.ResumeLayout(false);

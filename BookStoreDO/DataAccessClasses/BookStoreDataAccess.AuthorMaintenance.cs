@@ -9,5 +9,7 @@ namespace BookStoreDO.DataAccessClasses;
 
 public partial class BookStoreDataAccess
 {
-}
+    public List<Author> GetAuthors() => Context.Authors.ToList();
 
+    public Author? GetAuthor(string id) => Context.Authors.Find(id);
+}
