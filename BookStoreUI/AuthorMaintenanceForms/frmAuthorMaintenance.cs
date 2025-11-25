@@ -41,6 +41,13 @@ namespace BookStoreUI
             rtbDetails.Text = sb.ToString();
         }
 
+        private void LoadData()
+        {
+            var authors = _data.GetAuthors();
+            dgvAuthor.DataSource = null;
+            dgvAuthor.DataSource = authors;
+        }
+
         private void btnAddAuthor_Click(object sender, EventArgs e)
         {
             var frmAuthorDetail = new frmAuthorDetail { IsAdd = true };
@@ -57,6 +64,7 @@ namespace BookStoreUI
 
             var frmAuthorDetail = new frmAuthorDetail { IsAdd = false, Author = _author };
             frmAuthorDetail.ShowDialog();
+            LoadData();
         }
 
         private void btnSearch_Click(object sender, EventArgs e)
@@ -75,11 +83,13 @@ namespace BookStoreUI
 
         private void frmAuthorMaintenance_Load(object sender, EventArgs e)
         {
-            dgvAuthor.DataSource = _data.GetAuthors();
+            LoadData();
         }
 
         private void dgvAuthor_SelectionChanged(object sender, EventArgs e)
         {
+            if (dgvAuthor.SelectedRows.Count == 0) return;
+
             var row = dgvAuthor.SelectedRows[0];
             var possibleAuthor = row.DataBoundItem;
 

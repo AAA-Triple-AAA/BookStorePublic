@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using BookStoreBO;
+using BookStoreDO.DataAccessClasses;
 using BookStoreDO.Models.DataLayer;
 
 namespace BookStoreUI.AuthorMaintenanceForms
@@ -15,7 +16,8 @@ namespace BookStoreUI.AuthorMaintenanceForms
     public partial class frmAuthorDetail : Form
     {
         public bool IsAdd = false;
-        public Author? Author { get; init; }
+        public Author? Author = null;
+        private BookStoreDataAccess _data = new();
 
         public frmAuthorDetail()
         {
@@ -68,27 +70,21 @@ namespace BookStoreUI.AuthorMaintenanceForms
             errMsg += Validator.IsPresent(lastName, "Last Name");
             errMsg += Validator.IsWithinLength(lastName, "Last Name", 1, 40);
 
-         
             errMsg += Validator.IsPresent(firstName, "First Name");
             errMsg += Validator.IsWithinLength(firstName, "First Name", 1, 20);
 
-           
             errMsg += Validator.IsMaskCompleted(mtbPhone.MaskCompleted, "Phone");
 
-       
             errMsg += Validator.IsPresent(address, "Address");
             errMsg += Validator.IsWithinLength(address, "Address", 1, 40);
 
-         
             errMsg += Validator.IsPresent(city, "City");
             errMsg += Validator.IsWithinLength(city, "City", 1, 20);
 
             errMsg += Validator.IsPresent(state, "State");
             errMsg += Validator.IsWithinLength(state, "State", 2, 2);
 
-          
             errMsg += Validator.IsMaskCompleted(mtbZip.MaskCompleted, "Zip");
-
 
             if (errMsg == "") return true;
 
@@ -101,6 +97,21 @@ namespace BookStoreUI.AuthorMaintenanceForms
             return false;
         }
 
+        private void ApplyChanges()
+        {
+            if (IsAdd) Author = new Author();
+
+            mtbAuthorId.TextMaskFormat = MaskFormat.IncludeLiterals;
+            Author!.AuId = mtbAuthorId.Text;
+            Author.AuLname = txtLastName.Text;
+            Author.AuFname = txtFirstName.Text;
+            Author.Phone = mtbPhone.Text;
+            Author.Address = txtAddress.Text;
+            Author.City = txtCity.Text;
+            Author.State = txtState.Text;
+            Author.Zip = mtbZip.Text;
+            Author.Contract = chkContract.CheckState == CheckState.Checked;
+        }
 
         private void frmAuthorDetail_Load(object sender, EventArgs e)
         {
@@ -123,6 +134,8 @@ namespace BookStoreUI.AuthorMaintenanceForms
             if (!ValidateInput())
                 return;  // stop if there are validation errors
 
+            ApplyChanges();
+            _data.UpdateAuthor(Author!);
 
             MessageBox.Show(
                 @"Author information saved successfully.",
@@ -130,8 +143,15 @@ namespace BookStoreUI.AuthorMaintenanceForms
                 MessageBoxButtons.OK,
                 MessageBoxIcon.Information);
 
-            ClearForm();
+            if (!IsAdd)
+            {
+                txtLastName.Focus();
+                return;
+            }
+
             mtbAuthorId.Focus();
+            ClearForm();
+            
         }
     }
 }
