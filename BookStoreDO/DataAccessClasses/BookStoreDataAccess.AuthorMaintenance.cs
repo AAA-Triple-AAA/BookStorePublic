@@ -24,4 +24,10 @@ public partial class BookStoreDataAccess
         Context.Authors.Update(author);
         Context.SaveChanges();
     }
+
+    public void DeleteAuthor(Author author)
+    {
+        Context.Authors.Remove(author);
+        Context.SaveChanges();
+    }
 }

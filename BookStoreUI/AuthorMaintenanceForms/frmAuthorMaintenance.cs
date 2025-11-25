@@ -100,5 +100,24 @@ namespace BookStoreUI
 
             SetRichTextBox(author);
         }
+
+        private void btnDeleteAuthor_Click(object sender, EventArgs e)
+        {
+            if (_author == null)
+            {
+                MessageBox.Show(@"Must select an author");
+                return;
+            }
+
+            var result = MessageBox.Show($@"Are you sure you want to delete {_author.AuLname}, {_author.AuFname}",
+                @"Delete Author",
+                MessageBoxButtons.YesNo,
+                MessageBoxIcon.Warning);
+
+            if (result != DialogResult.Yes) return;
+
+            _data.DeleteAuthor(_author);
+            LoadData();
+        }
     }
 }

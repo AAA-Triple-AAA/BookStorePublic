@@ -64,6 +64,7 @@
             btnDeleteAuthor.TabIndex = 15;
             btnDeleteAuthor.Text = "Delete Selected Author";
             btnDeleteAuthor.UseVisualStyleBackColor = true;
+            btnDeleteAuthor.Click += btnDeleteAuthor_Click;
             // 
             // btnAddAuthor
             // 
