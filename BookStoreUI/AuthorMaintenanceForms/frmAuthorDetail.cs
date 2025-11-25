@@ -8,12 +8,14 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using BookStoreBO;
+using BookStoreDO.Models.DataLayer;
 
 namespace BookStoreUI.AuthorMaintenanceForms
 {
     public partial class frmAuthorDetail : Form
     {
         public bool IsAdd = false;
+        public Author? Author { get; init; }
 
         public frmAuthorDetail()
         {
@@ -33,16 +35,29 @@ namespace BookStoreUI.AuthorMaintenanceForms
             chkContract.CheckState = CheckState.Unchecked;
         }
 
+        private void DisplayAuthorInformation()
+        {
+            mtbAuthorId.Text = Author!.AuId;
+            txtLastName.Text = Author.AuLname;
+            txtFirstName.Text = Author.AuFname;
+            mtbPhone.Text = Author.Phone;
+            txtAddress.Text = Author.Address;
+            txtCity.Text = Author.City;
+            txtState.Text = Author.State;
+            mtbZip.Text = Author.Zip;
+            chkContract.CheckState = Author.Contract ? CheckState.Checked : CheckState.Unchecked;
+        }
+
         private bool ValidateInput()
         {
-            string errMsg = "";
+            var errMsg = "";
 
             // Grab trimmed values
-            string lastName = txtLastName.Text.Trim();
-            string firstName = txtFirstName.Text.Trim();
-            string address = txtAddress.Text.Trim();
-            string city = txtCity.Text.Trim();
-            string state = txtState.Text.Trim();
+            var lastName = txtLastName.Text.Trim();
+            var firstName = txtFirstName.Text.Trim();
+            var address = txtAddress.Text.Trim();
+            var city = txtCity.Text.Trim();
+            var state = txtState.Text.Trim();
 
             //We decided to write a masked box here even though the database accepts any character
             //type, because we think the masked box aligns better with the purpose of the information
@@ -75,25 +90,30 @@ namespace BookStoreUI.AuthorMaintenanceForms
             errMsg += Validator.IsMaskCompleted(mtbZip.MaskCompleted, "Zip");
 
 
-            if (errMsg != "")
-            {
-                MessageBox.Show(
-                    errMsg,
-                    "Validation Error",
-                    MessageBoxButtons.OK,
-                    MessageBoxIcon.Error);
+            if (errMsg == "") return true;
 
-                return false;
-            }
+            MessageBox.Show(
+                errMsg,
+                @"Validation Error",
+                MessageBoxButtons.OK,
+                MessageBoxIcon.Error);
 
-            return true;
+            return false;
         }
 
 
         private void frmAuthorDetail_Load(object sender, EventArgs e)
         {
-            // TODO: IMPLEMENT FUNCTION
-            // Hande form load stuff
+            if (!IsAdd)
+            {
+                mtbAuthorId.Enabled = false;
+                DisplayAuthorInformation();
+            }
+            else
+            {
+
+            }
+
             this.Text = IsAdd ? @"Add Author" : @"Edit Author";
         }
 
@@ -103,22 +123,15 @@ namespace BookStoreUI.AuthorMaintenanceForms
             if (!ValidateInput())
                 return;  // stop if there are validation errors
 
-            
-            if (!ValidateInput())
-                return;    // if there are errors, the message box is already shown
 
             MessageBox.Show(
-                "Author information saved successfully.",
-                "Saved",
+                @"Author information saved successfully.",
+                @"Saved",
                 MessageBoxButtons.OK,
                 MessageBoxIcon.Information);
 
-           
             ClearForm();
             mtbAuthorId.Focus();
-
         }
-
-
     }
 }

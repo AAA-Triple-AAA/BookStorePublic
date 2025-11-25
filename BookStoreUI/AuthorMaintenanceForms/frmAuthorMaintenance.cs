@@ -18,7 +18,7 @@ namespace BookStoreUI
     {
         private readonly BookStoreDataAccess _data = new();
 
-        private Author? _author = null;
+        private Author? _author;
 
         public frmAuthorMaintenance()
         {
@@ -49,7 +49,13 @@ namespace BookStoreUI
 
         private void btbEditAuthor_Click(object sender, EventArgs e)
         {
-            var frmAuthorDetail = new frmAuthorDetail { IsAdd = false };
+            if (_author == null)
+            {
+                MessageBox.Show(@"Must select an author");
+                return;
+            }
+
+            var frmAuthorDetail = new frmAuthorDetail { IsAdd = false, Author = _author };
             frmAuthorDetail.ShowDialog();
         }
 
