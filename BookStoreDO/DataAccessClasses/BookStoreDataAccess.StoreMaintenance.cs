@@ -1,7 +1,4 @@
-﻿using BookStoreDO.Models.DataLayer;
-using Microsoft.Data.SqlClient;
-using Microsoft.EntityFrameworkCore;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -11,5 +8,4 @@ namespace BookStoreDO.DataAccessClasses;
 
 public partial class BookStoreDataAccess
 {
-    protected BookStoreContext Context = new();
 }
