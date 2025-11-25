@@ -41,7 +41,22 @@ public partial class BookStoreContext : DbContext
     public virtual DbSet<Titleview> Titleviews { get; set; }
 
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
-       => optionsBuilder.UseSqlServer(ConfigurationManager.ConnectionStrings["BookStore"].ConnectionString);
+    {
+        if (!optionsBuilder.IsConfigured)
+        {
+            // Try to read from config first (for your WinForms app)
+            var connFromConfig = ConfigurationManager
+                .ConnectionStrings["BookStore"]?
+                .ConnectionString;
+
+            var connString = string.IsNullOrWhiteSpace(connFromConfig)
+                ? "Server=(localdb)\\MSSQLLocalDB;Database=BookStore;Integrated Security=True;MultipleActiveResultSets=True;"
+                : connFromConfig;
+
+            optionsBuilder.UseSqlServer(connString);
+        }
+    }
+
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
