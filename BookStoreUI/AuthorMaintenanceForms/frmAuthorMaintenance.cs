@@ -74,7 +74,48 @@ namespace BookStoreUI
 
             if (errMsg == "")
             {
-                // TODO: SEARCH LOGIC
+                var searchText = txtSearch.Text.Trim().ToLower();
+
+                var allAuthors = _data.GetAuthors();
+
+                var match = false;
+
+                var sortedAuthors = allAuthors.OrderByDescending(a =>
+                    {
+                        var fullName = $"{a.AuFname.ToLower()} {a.AuLname.ToLower()}";
+                        var fullNameLastFirst = $"{a.AuLname.ToLower()} {a.AuFname.ToLower()} ";
+
+                        var result = a.AuLname.ToLower().Contains(searchText) ||
+                                      a.AuFname.ToLower().Contains(searchText) ||
+                                      a.AuId.ToString().Contains(searchText) ||
+                                      fullName.Contains(searchText) ||
+                                      fullNameLastFirst.Contains(searchText);
+
+                        if (!match) match = result;
+
+                        return result;
+                    })
+                    .ThenBy(a => a.AuId)
+                    .ToList();
+
+                // Load data grid view
+                dgvAuthor.DataSource = null; 
+                dgvAuthor.DataSource = sortedAuthors;
+
+                // Determine search query match
+                if (match)
+                {
+                    dgvAuthor.Rows[0].Selected = true;
+                }
+                else
+                {
+                    rtbDetails.Clear();
+                    _author = null;
+                    MessageBox.Show(@"No authors found matching your criteria.", @"Author not found", 
+                        MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
+
+                    LoadData();
+                }
             }
             else
             {
