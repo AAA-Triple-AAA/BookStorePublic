@@ -35,17 +35,17 @@
             validatorBindingSource1 = new BindingSource(components);
             spcDetails = new SplitContainer();
             dgvPublisher = new DataGridView();
-            columnPubId = new DataGridViewTextBoxColumn();
-            columnPubName = new DataGridViewTextBoxColumn();
-            columnCity = new DataGridViewTextBoxColumn();
-            columnState = new DataGridViewTextBoxColumn();
-            columnCountry = new DataGridViewTextBoxColumn();
             validatorBindingSource = new BindingSource(components);
             btnAddPublisher = new Button();
             lblDetails = new Label();
             btnEditPublisher = new Button();
             btnSearch = new Button();
             btnDeletePublisher = new Button();
+            columnPubId = new DataGridViewTextBoxColumn();
+            columnPubName = new DataGridViewTextBoxColumn();
+            columnCity = new DataGridViewTextBoxColumn();
+            columnState = new DataGridViewTextBoxColumn();
+            columnCountry = new DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)validatorBindingSource1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)spcDetails).BeginInit();
             spcDetails.Panel1.SuspendLayout();
@@ -114,6 +114,63 @@
             dgvPublisher.Size = new Size(571, 340);
             dgvPublisher.TabIndex = 0;
             // 
+            // validatorBindingSource
+            // 
+            validatorBindingSource.DataSource = typeof(BookStoreBO.Validator);
+            // 
+            // btnAddPublisher
+            // 
+            btnAddPublisher.Location = new Point(11, 437);
+            btnAddPublisher.Margin = new Padding(2);
+            btnAddPublisher.Name = "btnAddPublisher";
+            btnAddPublisher.Size = new Size(153, 34);
+            btnAddPublisher.TabIndex = 3;
+            btnAddPublisher.Text = "Add a New Publisher";
+            btnAddPublisher.UseVisualStyleBackColor = true;
+            btnAddPublisher.Click += btnAddPublisher_Click;
+            // 
+            // lblDetails
+            // 
+            lblDetails.AutoSize = true;
+            lblDetails.Location = new Point(672, 63);
+            lblDetails.Margin = new Padding(2, 0, 2, 0);
+            lblDetails.Name = "lblDetails";
+            lblDetails.Size = new Size(42, 15);
+            lblDetails.TabIndex = 25;
+            lblDetails.Text = "Details";
+            // 
+            // btnEditPublisher
+            // 
+            btnEditPublisher.Location = new Point(168, 437);
+            btnEditPublisher.Margin = new Padding(2);
+            btnEditPublisher.Name = "btnEditPublisher";
+            btnEditPublisher.Size = new Size(153, 34);
+            btnEditPublisher.TabIndex = 4;
+            btnEditPublisher.Text = "Edit Selected Publisher";
+            btnEditPublisher.UseVisualStyleBackColor = true;
+            btnEditPublisher.Click += btbEditPublisher_Click;
+            // 
+            // btnSearch
+            // 
+            btnSearch.Location = new Point(272, 24);
+            btnSearch.Margin = new Padding(2);
+            btnSearch.Name = "btnSearch";
+            btnSearch.Size = new Size(122, 23);
+            btnSearch.TabIndex = 2;
+            btnSearch.Text = "Search by Publisher";
+            btnSearch.UseVisualStyleBackColor = true;
+            btnSearch.Click += btnSearch_Click;
+            // 
+            // btnDeletePublisher
+            // 
+            btnDeletePublisher.Location = new Point(325, 437);
+            btnDeletePublisher.Margin = new Padding(2);
+            btnDeletePublisher.Name = "btnDeletePublisher";
+            btnDeletePublisher.Size = new Size(153, 34);
+            btnDeletePublisher.TabIndex = 5;
+            btnDeletePublisher.Text = "Delete Selected Publisher";
+            btnDeletePublisher.UseVisualStyleBackColor = true;
+            // 
             // columnPubId
             // 
             columnPubId.DataPropertyName = "PubId";
@@ -159,65 +216,6 @@
             columnCountry.ReadOnly = true;
             columnCountry.Width = 150;
             // 
-            // validatorBindingSource
-            // 
-            validatorBindingSource.DataSource = typeof(BookStoreBO.Validator);
-            // 
-            // btnAddPublisher
-            // 
-            btnAddPublisher.Location = new Point(11, 437);
-            btnAddPublisher.Margin = new Padding(2);
-            btnAddPublisher.Name = "btnAddPublisher";
-            btnAddPublisher.Size = new Size(153, 34);
-            btnAddPublisher.TabIndex = 3;
-            btnAddPublisher.Text = "Add a New Publisher";
-            btnAddPublisher.UseVisualStyleBackColor = true;
-            btnAddPublisher.Click += btnAddPublisher_Click;
-            // 
-            // lblDetails
-            // 
-            lblDetails.AutoSize = true;
-            lblDetails.Location = new Point(672, 63);
-            lblDetails.Margin = new Padding(2, 0, 2, 0);
-            lblDetails.Name = "lblDetails";
-            lblDetails.Size = new Size(42, 15);
-            lblDetails.TabIndex = 25;
-            lblDetails.Text = "Details";
-            // 
-            // btnEditPublisher
-            // 
-            btnEditPublisher.Location = new Point(168, 437);
-            btnEditPublisher.Margin = new Padding(2);
-            btnEditPublisher.Name = "btnEditPublisher";
-            btnEditPublisher.Size = new Size(153, 34);
-            btnEditPublisher.TabIndex = 4;
-            btnEditPublisher.Text = "Edit Selected Publisher";
-            btnEditPublisher.UseVisualStyleBackColor = true;
-            btnEditPublisher.Click += btnEditPublisher_Click
-;
-            // 
-            // btnSearch
-            // 
-            btnSearch.Location = new Point(272, 24);
-            btnSearch.Margin = new Padding(2);
-            btnSearch.Name = "btnSearch";
-            btnSearch.Size = new Size(122, 23);
-            btnSearch.TabIndex = 2;
-            btnSearch.Text = "Search by Publisher";
-            btnSearch.UseVisualStyleBackColor = true;
-            btnSearch.Click += btnSearch_Click;
-            // 
-            // btnDeletePublisher
-            // 
-            btnDeletePublisher.Location = new Point(325, 437);
-            btnDeletePublisher.Margin = new Padding(2);
-            btnDeletePublisher.Name = "btnDeletePublisher";
-            btnDeletePublisher.Size = new Size(153, 34);
-            btnDeletePublisher.TabIndex = 5;
-            btnDeletePublisher.Text = "Delete Selected Publisher";
-            btnDeletePublisher.UseVisualStyleBackColor = true;
-            btnDeletePublisher.Click += btnDeletePublisher_Click;
-            // 
             // frmPublisherMaintenance
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -238,7 +236,6 @@
             Name = "frmPublisherMaintenance";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Publisher Maintenance";
-            Load += frmPublisherMaintenance_Load;
             ((System.ComponentModel.ISupportInitialize)validatorBindingSource1).EndInit();
             spcDetails.Panel1.ResumeLayout(false);
             spcDetails.Panel2.ResumeLayout(false);

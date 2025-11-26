@@ -1,6 +1,4 @@
-﻿using BookStoreBO;
-using BookStoreBO.DTOs;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -10,18 +8,13 @@ using System.Text;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using BookStoreBO;         
-using BookStoreBO.DTOs;   
+using BookStoreBO;
 
 namespace BookStoreUI.PublisherMaintenanceForms
 {
-
     public partial class frmPublisherDetail : Form
     {
-        private readonly BookStoreDataAccess _dataAccess = new BookStoreDataAccess();
         public bool IsAdd = false;
-        public string PubId { get; set; }
-
         public frmPublisherDetail()
         {
             InitializeComponent();
@@ -93,89 +86,28 @@ namespace BookStoreUI.PublisherMaintenanceForms
             return false;
         }
 
-        private void LoadPublisherInfo()
-        {
-            if (string.IsNullOrWhiteSpace(PubId))
-                return;
-
-            var publisher = _dataAccess.GetPublisherById(PubId);
-            if (publisher == null)
-                return;
-
-            mtbPubId.Text = publisher.PubId;
-            txtPubName.Text = publisher.PubName;
-            txtCity.Text = publisher.City;
-            txtState.Text = publisher.State;
-            txtCountry.Text = publisher.Country;
-        }
 
         private void frmPublisherDetail_Load(object sender, EventArgs e)
         {
             this.Text = IsAdd ? @"Add Publisher" : @"Edit Publisher";
-
-            if (!IsAdd)
-            {
-                // we're editing: lock ID and load data
-                mtbPubId.Enabled = false;
-                LoadPublisherInfo();
-            }
-            else
-            {
-                // we're adding: unlock ID and clear fields
-                mtbPubId.Enabled = true;
-                ClearForm();
-            }
         }
-        
 
         private void btnSave_Click(object sender, EventArgs e)
         {
             if (!ValidateInput())
-                return;
+                return;   
 
-            var dto = new PublisherDTO
-            {
-                PubId = mtbPubId.Text.Trim(),
-                PubName = txtPubName.Text.Trim(),
-                City = txtCity.Text.Trim(),
-                State = txtState.Text.Trim(),
-                Country = txtCountry.Text.Trim()
-            };
 
-            try
-            {
-                if (IsAdd)
-                {
-                    _dataAccess.InsertPublisher(dto);
-                }
-                else
-                {
-                    _dataAccess.UpdatePublisher(dto);
-                }
 
-                MessageBox.Show(
-                    "Publisher information saved successfully.",
-                    "Saved",
-                    MessageBoxButtons.OK,
-                    MessageBoxIcon.Information);
+            MessageBox.Show(
+                "Publisher information saved successfully.",
+                "Saved",
+                MessageBoxButtons.OK,
+                MessageBoxIcon.Information);
 
-                this.DialogResult = DialogResult.OK;
-                this.Close();
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(
-                    ex.ToString(),
-                    "Error (full details)",
-                    MessageBoxButtons.OK,
-                    MessageBoxIcon.Error);
-            }
+            ClearForm();
         }
 
-        private void btnCancel_Click(object sender, EventArgs e)
-        {
-            this.DialogResult = DialogResult.Cancel;
-            this.Close();
-        }
+
     }
 }
