@@ -8,28 +8,64 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using BookStoreBO;
+using BookStoreDO.DataAccessClasses;
+using BookStoreDO.Models.DataLayer;
 using BookStoreUI.AuthorMaintenanceForms;
 
 namespace BookStoreUI
 {
     public partial class frmAuthorMaintenance : Form
     {
+        private readonly BookStoreDataAccess _data = new();
+
+        private Author? _author;
+
         public frmAuthorMaintenance()
         {
             InitializeComponent();
         }
 
+        private void SetRichTextBox(Author author)
+        {
+            StringBuilder sb = new();
+            sb.AppendLine($"ID: {author.AuId}");
+            sb.AppendLine($"Last Name: {author.AuLname}");
+            sb.AppendLine($"First Name: {author.AuFname}");
+            sb.AppendLine($"Phone: {author.Phone}");
+            sb.AppendLine($"Address: {author.Address}");
+            sb.AppendLine($"City: {author.City}");
+            sb.AppendLine($"State: {author.State}");
+            sb.AppendLine($"Zip: {author.Zip}");
+            sb.AppendLine($"HasContract: {author.Contract}");
+
+            rtbDetails.Text = sb.ToString();
+        }
+
+        private void LoadData()
+        {
+            var authors = _data.GetAuthors();
+            dgvAuthor.DataSource = null;
+            dgvAuthor.DataSource = authors;
+        }
+
         private void btnAddAuthor_Click(object sender, EventArgs e)
         {
-            var frmAuthorDetail = new frmAuthorDetail { IsAdd = true }
-            ;
+            var frmAuthorDetail = new frmAuthorDetail { IsAdd = true };
             frmAuthorDetail.ShowDialog();
+            LoadData();
         }
 
         private void btbEditAuthor_Click(object sender, EventArgs e)
         {
-            var frmAuthorDetail = new frmAuthorDetail { IsAdd = false };
+            if (_author == null)
+            {
+                MessageBox.Show(@"Must select an author");
+                return;
+            }
+
+            var frmAuthorDetail = new frmAuthorDetail { IsAdd = false, Author = _author };
             frmAuthorDetail.ShowDialog();
+            LoadData();
         }
 
         private void btnSearch_Click(object sender, EventArgs e)
@@ -38,12 +74,91 @@ namespace BookStoreUI
 
             if (errMsg == "")
             {
-                // TODO: SEARCH LOGIC
+                var searchText = txtSearch.Text.Trim().ToLower();
+
+                var allAuthors = _data.GetAuthors();
+
+                var match = false;
+
+                var sortedAuthors = allAuthors.OrderByDescending(a =>
+                    {
+                        var fullName = $"{a.AuFname.ToLower()} {a.AuLname.ToLower()}";
+                        var fullNameLastFirst = $"{a.AuLname.ToLower()} {a.AuFname.ToLower()} ";
+
+                        var result = a.AuLname.ToLower().Contains(searchText) ||
+                                      a.AuFname.ToLower().Contains(searchText) ||
+                                      a.AuId.ToString().Contains(searchText) ||
+                                      fullName.Contains(searchText) ||
+                                      fullNameLastFirst.Contains(searchText);
+
+                        if (!match) match = result;
+
+                        return result;
+                    })
+                    .ThenBy(a => a.AuId)
+                    .ToList();
+
+                // Load data grid view
+                dgvAuthor.DataSource = null; 
+                dgvAuthor.DataSource = sortedAuthors;
+
+                // Determine search query match
+                if (match)
+                {
+                    dgvAuthor.Rows[0].Selected = true;
+                }
+                else
+                {
+                    rtbDetails.Clear();
+                    _author = null;
+                    MessageBox.Show(@"No authors found matching your criteria.", @"Author not found", 
+                        MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
+
+                    LoadData();
+                }
             }
             else
             {
                 MessageBox.Show(errMsg);
             }
+        }
+
+        private void frmAuthorMaintenance_Load(object sender, EventArgs e)
+        {
+            LoadData();
+        }
+
+        private void dgvAuthor_SelectionChanged(object sender, EventArgs e)
+        {
+            if (dgvAuthor.SelectedRows.Count == 0) return;
+
+            var row = dgvAuthor.SelectedRows[0];
+            var possibleAuthor = row.DataBoundItem;
+
+            if (possibleAuthor is not Author author) return;
+
+            _author = author;
+
+            SetRichTextBox(author);
+        }
+
+        private void btnDeleteAuthor_Click(object sender, EventArgs e)
+        {
+            if (_author == null)
+            {
+                MessageBox.Show(@"Must select an author");
+                return;
+            }
+
+            var result = MessageBox.Show($@"Are you sure you want to delete {_author.AuLname}, {_author.AuFname}",
+                @"Delete Author",
+                MessageBoxButtons.YesNo,
+                MessageBoxIcon.Warning);
+
+            if (result != DialogResult.Yes) return;
+
+            _data.DeleteAuthor(_author);
+            LoadData();
         }
     }
 }

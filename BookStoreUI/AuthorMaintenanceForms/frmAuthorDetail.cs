@@ -8,12 +8,16 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using BookStoreBO;
+using BookStoreDO.DataAccessClasses;
+using BookStoreDO.Models.DataLayer;
 
 namespace BookStoreUI.AuthorMaintenanceForms
 {
     public partial class frmAuthorDetail : Form
     {
         public bool IsAdd = false;
+        public Author? Author = null;
+        private BookStoreDataAccess _data = new();
 
         public frmAuthorDetail()
         {
@@ -33,16 +37,39 @@ namespace BookStoreUI.AuthorMaintenanceForms
             chkContract.CheckState = CheckState.Unchecked;
         }
 
+        private void DisplayAuthorInformation()
+        {
+            mtbAuthorId.Text = Author!.AuId;
+            txtLastName.Text = Author.AuLname;
+            txtFirstName.Text = Author.AuFname;
+            mtbPhone.Text = Author.Phone;
+            txtAddress.Text = Author.Address;
+            txtCity.Text = Author.City;
+            txtState.Text = Author.State;
+            mtbZip.Text = Author.Zip;
+            chkContract.CheckState = Author.Contract ? CheckState.Checked : CheckState.Unchecked;
+        }
+
+        private bool ValidId(string authorId)
+        {
+            var author = _data.GetAuthor(authorId);
+
+            if (author == null) return true;
+
+            MessageBox.Show(@"Author ID already taken, please enter a unique ID.");
+            return false;
+        }
+
         private bool ValidateInput()
         {
-            string errMsg = "";
+            var errMsg = "";
 
             // Grab trimmed values
-            string lastName = txtLastName.Text.Trim();
-            string firstName = txtFirstName.Text.Trim();
-            string address = txtAddress.Text.Trim();
-            string city = txtCity.Text.Trim();
-            string state = txtState.Text.Trim();
+            var lastName = txtLastName.Text.Trim();
+            var firstName = txtFirstName.Text.Trim();
+            var address = txtAddress.Text.Trim();
+            var city = txtCity.Text.Trim();
+            var state = txtState.Text.Trim();
 
             //We decided to write a masked box here even though the database accepts any character
             //type, because we think the masked box aligns better with the purpose of the information
@@ -53,72 +80,94 @@ namespace BookStoreUI.AuthorMaintenanceForms
             errMsg += Validator.IsPresent(lastName, "Last Name");
             errMsg += Validator.IsWithinLength(lastName, "Last Name", 1, 40);
 
-         
             errMsg += Validator.IsPresent(firstName, "First Name");
             errMsg += Validator.IsWithinLength(firstName, "First Name", 1, 20);
 
-           
             errMsg += Validator.IsMaskCompleted(mtbPhone.MaskCompleted, "Phone");
 
-       
             errMsg += Validator.IsPresent(address, "Address");
             errMsg += Validator.IsWithinLength(address, "Address", 1, 40);
 
-         
             errMsg += Validator.IsPresent(city, "City");
             errMsg += Validator.IsWithinLength(city, "City", 1, 20);
 
             errMsg += Validator.IsPresent(state, "State");
             errMsg += Validator.IsWithinLength(state, "State", 2, 2);
 
-          
             errMsg += Validator.IsMaskCompleted(mtbZip.MaskCompleted, "Zip");
 
+            if (errMsg == "") return true;
 
-            if (errMsg != "")
-            {
-                MessageBox.Show(
-                    errMsg,
-                    "Validation Error",
-                    MessageBoxButtons.OK,
-                    MessageBoxIcon.Error);
+            MessageBox.Show(
+                errMsg,
+                @"Validation Error",
+                MessageBoxButtons.OK,
+                MessageBoxIcon.Error);
 
-                return false;
-            }
-
-            return true;
+            return false;
         }
 
+        private void ApplyChanges()
+        {
+            if (IsAdd) Author = new Author();
+
+            mtbAuthorId.TextMaskFormat = MaskFormat.IncludeLiterals;
+            Author!.AuId = mtbAuthorId.Text;
+            Author.AuLname = txtLastName.Text;
+            Author.AuFname = txtFirstName.Text;
+            Author.Phone = mtbPhone.Text;
+            Author.Address = txtAddress.Text;
+            Author.City = txtCity.Text;
+            Author.State = txtState.Text;
+            Author.Zip = mtbZip.Text;
+            Author.Contract = chkContract.CheckState == CheckState.Checked;
+        }
 
         private void frmAuthorDetail_Load(object sender, EventArgs e)
         {
-            // TODO: IMPLEMENT FUNCTION
-            // Hande form load stuff
+            if (!IsAdd)
+            {
+                mtbAuthorId.Enabled = false;
+                DisplayAuthorInformation();
+            }
+
             this.Text = IsAdd ? @"Add Author" : @"Edit Author";
         }
 
         private void btnSave_Click(object sender, EventArgs e)
         {
+            // Stop if input is invalid
+            if (!ValidateInput()) return;
 
-            if (!ValidateInput())
-                return;  // stop if there are validation errors
+            // Change or create Author
+            ApplyChanges();
 
-            
-            if (!ValidateInput())
-                return;    // if there are errors, the message box is already shown
+            // Stop if Adding author with already taken id
+            if (IsAdd && !ValidId(Author!.AuId)) return;
+
+            if (IsAdd)
+            {
+                _data.AddAuthor(Author!);
+            }
+            else
+            {
+                _data.UpdateAuthor(Author!);
+            }
 
             MessageBox.Show(
-                "Author information saved successfully.",
-                "Saved",
+                @"Author information saved successfully.",
+                @"Saved",
                 MessageBoxButtons.OK,
                 MessageBoxIcon.Information);
 
-           
-            ClearForm();
+            if (!IsAdd)
+            {
+                txtLastName.Focus();
+                return;
+            }
+
             mtbAuthorId.Focus();
-
+            ClearForm();
         }
-
-
     }
 }
