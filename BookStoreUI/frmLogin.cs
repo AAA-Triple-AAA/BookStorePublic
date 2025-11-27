@@ -1,58 +1,79 @@
-using BookStoreBO;
+using System;
+using System.Linq;
+using System.Windows.Forms;
+using BookStoreDO.DataAccessClasses;
+using BookStoreDO.Models.DataLayer;
 
-namespace BookStoreUI;
-
-public partial class frmLogin : Form
+namespace BookStoreUI
 {
-    public frmLogin()
+    public partial class frmLogin : Form
     {
-        InitializeComponent();
-    }
+        private readonly BookStoreDataAccess _data = new();
 
-    private bool ValidateInput(string username, string password)
-    {
-        var errMsg = Validator.IsPresent(txtUsername.Text, "Username");
-        errMsg += Validator.IsPresent(txtPassword.Text, "Password");
+        // Optional: in case you want to know later who logged in
+        public Employee? LoggedInEmployee { get; private set; }
 
-        if (errMsg == "")
+        public frmLogin()
         {
-            // TODO: SEARCH LOGIC
-        }
-        else
-        {
-            MessageBox.Show(errMsg);
-            return false;
+            InitializeComponent();
+            LoadEmployees();
         }
 
-        return true;
-    }
+        // Load employees when the form opens
+        private void frmLogin_Load(object sender, EventArgs e)
+        {
+            LoadEmployees();
+        }
 
-    private bool ValidateLogin(string username, string password)
-    {
-        // TODO: IMPLEMENT FUNCTION
-        // Must validate the credentials passed by the user
-        return true;
-    }
+        private void LoadEmployees()
+        {
+            var employees = _data.GetEmployees()
+                                 .OrderBy(e => e.Lname)
+                                 .ThenBy(e => e.Fname)
+                                 .ToList();
 
-    private void btnLogin_Click(object sender, EventArgs e)
-    {
-        var username = txtUsername.Text;
-        var password = txtPassword.Text;
+            // Simple version: show only the EmpId
+            cboEmployee.DataSource = employees;
+            cboEmployee.DisplayMember = "EmpId";   // what is seen in the list
+            cboEmployee.ValueMember = "EmpId";     // associated value
 
-        // TODO: IMPLEMENT PROPER VERIFICATION
-        if (!ValidateInput(username, password)) return;
-        if (!ValidateLogin(username, password)) return;
+            cboEmployee.SelectedIndex = -1; // nothing selected at the start
+        }
 
-        frmMainMenu frm = new();
-        frm.FormClosed += (s, args) => this.Close();
+        private bool ValidateInput()
+        {
+            if (cboEmployee.SelectedItem == null)
+            {
+                MessageBox.Show(
+                    "Please select an employee.",
+                    "Login",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Warning);
+                return false;
+            }
 
-        frm.Show();
+            return true;
+        }
 
-        this.Hide();
-    }
+        private void btnLogin_Click(object sender, EventArgs e)
+        {
+            if (!ValidateInput()) return;
 
-    private void btnExit_Click(object sender, EventArgs e)
-    {
-        this.Close();
+            // We obtain the selected employee
+            var selectedEmployee = (Employee)cboEmployee.SelectedItem;
+            LoggedInEmployee = selectedEmployee;
+
+            // We open the main menu
+            var frm = new frmMainMenu();
+            frm.FormClosed += (s, args) => this.Close(); // When the main program closes, everything closes
+
+            frm.Show();
+            this.Hide();
+        }
+
+        private void btnExit_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }

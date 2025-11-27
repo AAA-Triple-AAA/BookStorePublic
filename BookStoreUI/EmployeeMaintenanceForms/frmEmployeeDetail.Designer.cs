@@ -45,8 +45,8 @@
             txtEmpId = new TextBox();
             nudJobId = new NumericUpDown();
             mtbPubId = new MaskedTextBox();
-            btnSave = new Button();
             dtpHireDate = new DateTimePicker();
+            btnSave = new Button();
             tlpEmployee.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)nudJobLevel).BeginInit();
             ((System.ComponentModel.ISupportInitialize)nudJobId).BeginInit();
@@ -239,6 +239,7 @@
             nudJobId.Size = new Size(126, 31);
             nudJobId.TabIndex = 9;
             nudJobId.Value = new decimal(new int[] { 1, 0, 0, 0 });
+            nudJobId.ValueChanged += nudJobId_ValueChanged;
             // 
             // mtbPubId
             // 
@@ -291,6 +292,7 @@
             ShowIcon = false;
             StartPosition = FormStartPosition.CenterParent;
             Text = "Add/Edit Employee";
+            Load += frmEmployeeDetail_Load;
             tlpEmployee.ResumeLayout(false);
             tlpEmployee.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)nudJobLevel).EndInit();
