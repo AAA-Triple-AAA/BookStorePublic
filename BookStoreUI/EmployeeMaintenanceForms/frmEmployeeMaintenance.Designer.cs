@@ -35,17 +35,17 @@
             validatorBindingSource = new BindingSource(components);
             spcDetails = new SplitContainer();
             dgvEmployee = new DataGridView();
+            columnEmpId = new DataGridViewTextBoxColumn();
+            columnFname = new DataGridViewTextBoxColumn();
+            columnMinit = new DataGridViewTextBoxColumn();
+            columnLname = new DataGridViewTextBoxColumn();
+            columnJobId = new DataGridViewTextBoxColumn();
             validatorBindingSource1 = new BindingSource(components);
             rtbDetails = new RichTextBox();
             btnDeleteEmployee = new Button();
             btnAddEmployee = new Button();
             lblDetails = new Label();
             btnEditEmployee = new Button();
-            columnEmpId = new DataGridViewTextBoxColumn();
-            columnFname = new DataGridViewTextBoxColumn();
-            columnMinit = new DataGridViewTextBoxColumn();
-            columnLname = new DataGridViewTextBoxColumn();
-            columnJobId = new DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)validatorBindingSource).BeginInit();
             ((System.ComponentModel.ISupportInitialize)spcDetails).BeginInit();
             spcDetails.Panel1.SuspendLayout();
@@ -57,10 +57,9 @@
             // 
             // btnSearch
             // 
-            btnSearch.Location = new Point(272, 23);
-            btnSearch.Margin = new Padding(2);
+            btnSearch.Location = new Point(389, 38);
             btnSearch.Name = "btnSearch";
-            btnSearch.Size = new Size(128, 23);
+            btnSearch.Size = new Size(183, 38);
             btnSearch.TabIndex = 2;
             btnSearch.Text = "Search by Employee";
             btnSearch.UseVisualStyleBackColor = true;
@@ -68,11 +67,10 @@
             // 
             // txtSearch
             // 
-            txtSearch.Location = new Point(11, 23);
-            txtSearch.Margin = new Padding(2);
+            txtSearch.Location = new Point(16, 38);
             txtSearch.Name = "txtSearch";
             txtSearch.PlaceholderText = "Search";
-            txtSearch.Size = new Size(257, 23);
+            txtSearch.Size = new Size(365, 31);
             txtSearch.TabIndex = 1;
             // 
             // validatorBindingSource
@@ -81,8 +79,7 @@
             // 
             // spcDetails
             // 
-            spcDetails.Location = new Point(-1, 80);
-            spcDetails.Margin = new Padding(2);
+            spcDetails.Location = new Point(-1, 133);
             spcDetails.Name = "spcDetails";
             // 
             // spcDetails.Panel1
@@ -92,9 +89,8 @@
             // spcDetails.Panel2
             // 
             spcDetails.Panel2.Controls.Add(rtbDetails);
-            spcDetails.Size = new Size(828, 340);
-            spcDetails.SplitterDistance = 571;
-            spcDetails.SplitterWidth = 3;
+            spcDetails.Size = new Size(1183, 567);
+            spcDetails.SplitterDistance = 815;
             spcDetails.TabIndex = 20;
             // 
             // dgvEmployee
@@ -107,69 +103,14 @@
             dgvEmployee.DataSource = validatorBindingSource1;
             dgvEmployee.Dock = DockStyle.Fill;
             dgvEmployee.Location = new Point(0, 0);
-            dgvEmployee.Margin = new Padding(2);
             dgvEmployee.MultiSelect = false;
             dgvEmployee.Name = "dgvEmployee";
             dgvEmployee.ReadOnly = true;
             dgvEmployee.RowHeadersWidth = 62;
             dgvEmployee.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            dgvEmployee.Size = new Size(571, 340);
+            dgvEmployee.Size = new Size(815, 567);
             dgvEmployee.TabIndex = 0;
-            // 
-            // validatorBindingSource1
-            // 
-            validatorBindingSource1.DataSource = typeof(BookStoreBO.Validator);
-            // 
-            // rtbDetails
-            // 
-            rtbDetails.Location = new Point(0, 0);
-            rtbDetails.Margin = new Padding(2);
-            rtbDetails.Name = "rtbDetails";
-            rtbDetails.Size = new Size(254, 342);
-            rtbDetails.TabIndex = 0;
-            rtbDetails.Text = "";
-            // 
-            // btnDeleteEmployee
-            // 
-            btnDeleteEmployee.Location = new Point(325, 436);
-            btnDeleteEmployee.Margin = new Padding(2);
-            btnDeleteEmployee.Name = "btnDeleteEmployee";
-            btnDeleteEmployee.Size = new Size(153, 34);
-            btnDeleteEmployee.TabIndex = 5;
-            btnDeleteEmployee.Text = "Delete Selected Employee";
-            btnDeleteEmployee.UseVisualStyleBackColor = true;
-            // 
-            // btnAddEmployee
-            // 
-            btnAddEmployee.Location = new Point(11, 436);
-            btnAddEmployee.Margin = new Padding(2);
-            btnAddEmployee.Name = "btnAddEmployee";
-            btnAddEmployee.Size = new Size(153, 34);
-            btnAddEmployee.TabIndex = 3;
-            btnAddEmployee.Text = "Add a New Employee";
-            btnAddEmployee.UseVisualStyleBackColor = true;
-            btnAddEmployee.Click += btnAddEmployee_Click;
-            // 
-            // lblDetails
-            // 
-            lblDetails.AutoSize = true;
-            lblDetails.Location = new Point(672, 63);
-            lblDetails.Margin = new Padding(2, 0, 2, 0);
-            lblDetails.Name = "lblDetails";
-            lblDetails.Size = new Size(42, 15);
-            lblDetails.TabIndex = 17;
-            lblDetails.Text = "Details";
-            // 
-            // btnEditEmployee
-            // 
-            btnEditEmployee.Location = new Point(168, 436);
-            btnEditEmployee.Margin = new Padding(2);
-            btnEditEmployee.Name = "btnEditEmployee";
-            btnEditEmployee.Size = new Size(153, 34);
-            btnEditEmployee.TabIndex = 4;
-            btnEditEmployee.Text = "Edit Selected Employee";
-            btnEditEmployee.UseVisualStyleBackColor = true;
-            btnEditEmployee.Click += btbEditEmployee_Click;
+            dgvEmployee.SelectionChanged += dgvEmployee_SelectionChanged;
             // 
             // columnEmpId
             // 
@@ -216,11 +157,62 @@
             columnJobId.ReadOnly = true;
             columnJobId.Width = 150;
             // 
+            // validatorBindingSource1
+            // 
+            validatorBindingSource1.DataSource = typeof(BookStoreBO.Validator);
+            // 
+            // rtbDetails
+            // 
+            rtbDetails.Location = new Point(0, 0);
+            rtbDetails.Name = "rtbDetails";
+            rtbDetails.Size = new Size(361, 567);
+            rtbDetails.TabIndex = 0;
+            rtbDetails.Text = "";
+            // 
+            // btnDeleteEmployee
+            // 
+            btnDeleteEmployee.Location = new Point(464, 727);
+            btnDeleteEmployee.Name = "btnDeleteEmployee";
+            btnDeleteEmployee.Size = new Size(229, 57);
+            btnDeleteEmployee.TabIndex = 5;
+            btnDeleteEmployee.Text = "Delete Selected Employee";
+            btnDeleteEmployee.UseVisualStyleBackColor = true;
+            btnDeleteEmployee.Click += btnDeleteEmployee_Click;
+            // 
+            // btnAddEmployee
+            // 
+            btnAddEmployee.Location = new Point(16, 727);
+            btnAddEmployee.Name = "btnAddEmployee";
+            btnAddEmployee.Size = new Size(219, 57);
+            btnAddEmployee.TabIndex = 3;
+            btnAddEmployee.Text = "Add a New Employee";
+            btnAddEmployee.UseVisualStyleBackColor = true;
+            btnAddEmployee.Click += btnAddEmployee_Click;
+            // 
+            // lblDetails
+            // 
+            lblDetails.AutoSize = true;
+            lblDetails.Location = new Point(960, 105);
+            lblDetails.Name = "lblDetails";
+            lblDetails.Size = new Size(65, 25);
+            lblDetails.TabIndex = 17;
+            lblDetails.Text = "Details";
+            // 
+            // btnEditEmployee
+            // 
+            btnEditEmployee.Location = new Point(240, 727);
+            btnEditEmployee.Name = "btnEditEmployee";
+            btnEditEmployee.Size = new Size(219, 57);
+            btnEditEmployee.TabIndex = 4;
+            btnEditEmployee.Text = "Edit Selected Employee";
+            btnEditEmployee.UseVisualStyleBackColor = true;
+            btnEditEmployee.Click += btbEditEmployee_Click;
+            // 
             // frmEmployeeMaintenance
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(825, 490);
+            ClientSize = new Size(1179, 817);
             Controls.Add(btnSearch);
             Controls.Add(txtSearch);
             Controls.Add(spcDetails);
@@ -230,12 +222,12 @@
             Controls.Add(btnEditEmployee);
             FormBorderStyle = FormBorderStyle.FixedSingle;
             Icon = (Icon)resources.GetObject("$this.Icon");
-            Margin = new Padding(2);
             MaximizeBox = false;
             MinimizeBox = false;
             Name = "frmEmployeeMaintenance";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Employee Maintenance";
+            Load += frmEmployeeMaintenance_Load;
             ((System.ComponentModel.ISupportInitialize)validatorBindingSource).EndInit();
             spcDetails.Panel1.ResumeLayout(false);
             spcDetails.Panel2.ResumeLayout(false);

@@ -29,57 +29,26 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmLogin));
-            lblUsername = new Label();
-            txtUsername = new TextBox();
-            lblPassword = new Label();
-            txtPassword = new TextBox();
+            lblEmpID = new Label();
             btnLogin = new Button();
             btnExit = new Button();
+            cboEmployee = new ComboBox();
             SuspendLayout();
             // 
-            // lblUsername
+            // lblEmpID
             // 
-            lblUsername.AutoSize = true;
-            lblUsername.Location = new Point(41, 25);
-            lblUsername.Margin = new Padding(2, 0, 2, 0);
-            lblUsername.Name = "lblUsername";
-            lblUsername.Size = new Size(63, 15);
-            lblUsername.TabIndex = 0;
-            lblUsername.Text = "Username:";
-            // 
-            // txtUsername
-            // 
-            txtUsername.Location = new Point(108, 22);
-            txtUsername.Margin = new Padding(2);
-            txtUsername.Name = "txtUsername";
-            txtUsername.Size = new Size(162, 23);
-            txtUsername.TabIndex = 1;
-            // 
-            // lblPassword
-            // 
-            lblPassword.AutoSize = true;
-            lblPassword.Location = new Point(44, 65);
-            lblPassword.Margin = new Padding(2, 0, 2, 0);
-            lblPassword.Name = "lblPassword";
-            lblPassword.Size = new Size(60, 15);
-            lblPassword.TabIndex = 2;
-            lblPassword.Text = "Password:";
-            // 
-            // txtPassword
-            // 
-            txtPassword.Location = new Point(108, 62);
-            txtPassword.Margin = new Padding(2);
-            txtPassword.Name = "txtPassword";
-            txtPassword.Size = new Size(162, 23);
-            txtPassword.TabIndex = 3;
-            txtPassword.UseSystemPasswordChar = true;
+            lblEmpID.AutoSize = true;
+            lblEmpID.Location = new Point(63, 88);
+            lblEmpID.Name = "lblEmpID";
+            lblEmpID.Size = new Size(117, 25);
+            lblEmpID.TabIndex = 0;
+            lblEmpID.Text = "Employee ID:";
             // 
             // btnLogin
             // 
-            btnLogin.Location = new Point(44, 105);
-            btnLogin.Margin = new Padding(2);
+            btnLogin.Location = new Point(63, 175);
             btnLogin.Name = "btnLogin";
-            btnLogin.Size = new Size(97, 29);
+            btnLogin.Size = new Size(139, 48);
             btnLogin.TabIndex = 4;
             btnLogin.Text = "Login";
             btnLogin.UseVisualStyleBackColor = true;
@@ -87,31 +56,36 @@
             // 
             // btnExit
             // 
-            btnExit.Location = new Point(173, 105);
-            btnExit.Margin = new Padding(2);
+            btnExit.Location = new Point(247, 175);
             btnExit.Name = "btnExit";
-            btnExit.Size = new Size(97, 29);
+            btnExit.Size = new Size(139, 48);
             btnExit.TabIndex = 5;
             btnExit.Text = "Exit";
             btnExit.UseVisualStyleBackColor = true;
             btnExit.Click += btnExit_Click;
             // 
+            // cboEmployee
+            // 
+            cboEmployee.DropDownStyle = ComboBoxStyle.DropDownList;
+            cboEmployee.FormattingEnabled = true;
+            cboEmployee.Location = new Point(204, 85);
+            cboEmployee.Name = "cboEmployee";
+            cboEmployee.Size = new Size(182, 33);
+            cboEmployee.TabIndex = 6;
+            // 
             // frmLogin
             // 
             AcceptButton = btnLogin;
-            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
             CancelButton = btnExit;
-            ClientSize = new Size(323, 145);
+            ClientSize = new Size(461, 242);
+            Controls.Add(cboEmployee);
             Controls.Add(btnExit);
             Controls.Add(btnLogin);
-            Controls.Add(txtPassword);
-            Controls.Add(lblPassword);
-            Controls.Add(txtUsername);
-            Controls.Add(lblUsername);
+            Controls.Add(lblEmpID);
             FormBorderStyle = FormBorderStyle.FixedSingle;
             Icon = (Icon)resources.GetObject("$this.Icon");
-            Margin = new Padding(2);
             MaximizeBox = false;
             Name = "frmLogin";
             StartPosition = FormStartPosition.CenterScreen;
@@ -122,11 +96,9 @@
 
         #endregion
 
-        private Label lblUsername;
-        private TextBox txtUsername;
-        private Label lblPassword;
-        private TextBox txtPassword;
+        private Label lblEmpID;
         private Button btnLogin;
         private Button btnExit;
+        private ComboBox cboEmployee;
     }
 }
