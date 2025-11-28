@@ -35,17 +35,17 @@
             validatorBindingSource1 = new BindingSource(components);
             spcDetails = new SplitContainer();
             dgvPublisher = new DataGridView();
+            columnPubId = new DataGridViewTextBoxColumn();
+            columnPubName = new DataGridViewTextBoxColumn();
+            columnCity = new DataGridViewTextBoxColumn();
+            columnState = new DataGridViewTextBoxColumn();
+            columnCountry = new DataGridViewTextBoxColumn();
             validatorBindingSource = new BindingSource(components);
             btnAddPublisher = new Button();
             lblDetails = new Label();
             btnEditPublisher = new Button();
             btnSearch = new Button();
             btnDeletePublisher = new Button();
-            columnPubId = new DataGridViewTextBoxColumn();
-            columnPubName = new DataGridViewTextBoxColumn();
-            columnCity = new DataGridViewTextBoxColumn();
-            columnState = new DataGridViewTextBoxColumn();
-            columnCountry = new DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)validatorBindingSource1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)spcDetails).BeginInit();
             spcDetails.Panel1.SuspendLayout();
@@ -114,6 +114,51 @@
             dgvPublisher.Size = new Size(571, 340);
             dgvPublisher.TabIndex = 0;
             // 
+            // columnPubId
+            // 
+            columnPubId.DataPropertyName = "PubId";
+            columnPubId.HeaderText = "Pub. ID";
+            columnPubId.MinimumWidth = 8;
+            columnPubId.Name = "columnPubId";
+            columnPubId.ReadOnly = true;
+            columnPubId.Width = 150;
+            // 
+            // columnPubName
+            // 
+            columnPubName.DataPropertyName = "PubName";
+            columnPubName.HeaderText = "Name";
+            columnPubName.MinimumWidth = 8;
+            columnPubName.Name = "columnPubName";
+            columnPubName.ReadOnly = true;
+            columnPubName.Width = 150;
+            // 
+            // columnCity
+            // 
+            columnCity.DataPropertyName = "City";
+            columnCity.HeaderText = "City";
+            columnCity.MinimumWidth = 8;
+            columnCity.Name = "columnCity";
+            columnCity.ReadOnly = true;
+            columnCity.Width = 150;
+            // 
+            // columnState
+            // 
+            columnState.DataPropertyName = "State";
+            columnState.HeaderText = "State";
+            columnState.MinimumWidth = 8;
+            columnState.Name = "columnState";
+            columnState.ReadOnly = true;
+            columnState.Width = 150;
+            // 
+            // columnCountry
+            // 
+            columnCountry.DataPropertyName = "Country";
+            columnCountry.HeaderText = "Country";
+            columnCountry.MinimumWidth = 8;
+            columnCountry.Name = "columnCountry";
+            columnCountry.ReadOnly = true;
+            columnCountry.Width = 150;
+            // 
             // validatorBindingSource
             // 
             validatorBindingSource.DataSource = typeof(BookStoreBO.Validator);
@@ -170,51 +215,7 @@
             btnDeletePublisher.TabIndex = 5;
             btnDeletePublisher.Text = "Delete Selected Publisher";
             btnDeletePublisher.UseVisualStyleBackColor = true;
-            // 
-            // columnPubId
-            // 
-            columnPubId.DataPropertyName = "PubId";
-            columnPubId.HeaderText = "Pub. ID";
-            columnPubId.MinimumWidth = 8;
-            columnPubId.Name = "columnPubId";
-            columnPubId.ReadOnly = true;
-            columnPubId.Width = 150;
-            // 
-            // columnPubName
-            // 
-            columnPubName.DataPropertyName = "PubName";
-            columnPubName.HeaderText = "Name";
-            columnPubName.MinimumWidth = 8;
-            columnPubName.Name = "columnPubName";
-            columnPubName.ReadOnly = true;
-            columnPubName.Width = 150;
-            // 
-            // columnCity
-            // 
-            columnCity.DataPropertyName = "City";
-            columnCity.HeaderText = "City";
-            columnCity.MinimumWidth = 8;
-            columnCity.Name = "columnCity";
-            columnCity.ReadOnly = true;
-            columnCity.Width = 150;
-            // 
-            // columnState
-            // 
-            columnState.DataPropertyName = "State";
-            columnState.HeaderText = "State";
-            columnState.MinimumWidth = 8;
-            columnState.Name = "columnState";
-            columnState.ReadOnly = true;
-            columnState.Width = 150;
-            // 
-            // columnCountry
-            // 
-            columnCountry.DataPropertyName = "Country";
-            columnCountry.HeaderText = "Country";
-            columnCountry.MinimumWidth = 8;
-            columnCountry.Name = "columnCountry";
-            columnCountry.ReadOnly = true;
-            columnCountry.Width = 150;
+            btnDeletePublisher.Click += btnDeletePublisher_Click;
             // 
             // frmPublisherMaintenance
             // 
