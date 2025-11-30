@@ -243,10 +243,10 @@
         private TextBox txtSearch;
         private RichTextBox rtbDetails;
         private BindingSource validatorBindingSource1;
-        private DataGridViewTextBoxColumn columnPrice;
-        private DataGridViewTextBoxColumn columnType;
-        private DataGridViewTextBoxColumn columnTitle;
-        private DataGridViewTextBoxColumn columnTitle_id;
+        //private DataGridViewTextBoxColumn columnPrice;
+        //private DataGridViewTextBoxColumn columnType;
+        //private DataGridViewTextBoxColumn columnTitle;
+        //private DataGridViewTextBoxColumn columnTitle_id;
         private SplitContainer spcDetails;
         private DataGridView dgvPublisher;
         private BindingSource validatorBindingSource;

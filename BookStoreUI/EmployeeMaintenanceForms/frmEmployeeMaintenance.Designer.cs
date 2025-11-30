@@ -246,10 +246,10 @@
         private BindingSource validatorBindingSource;
         private SplitContainer spcDetails;
         private DataGridView dgvEmployee;
-        private DataGridViewTextBoxColumn columnau_id;
-        private DataGridViewTextBoxColumn columnau_name;
-        private DataGridViewTextBoxColumn columnphone;
-        private DataGridViewTextBoxColumn columnAdress;
+        //private DataGridViewTextBoxColumn columnau_id;
+        //private DataGridViewTextBoxColumn columnau_name;
+        //private DataGridViewTextBoxColumn columnphone;
+        //private DataGridViewTextBoxColumn columnAdress;
         private BindingSource validatorBindingSource1;
         private RichTextBox rtbDetails;
         private Button btnDeleteEmployee;
