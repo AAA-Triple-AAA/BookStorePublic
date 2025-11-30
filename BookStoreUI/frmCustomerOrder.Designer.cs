@@ -29,6 +29,10 @@
         private void InitializeComponent()
         {
             components = new System.ComponentModel.Container();
+            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle4 = new DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmCustomerOrder));
             lblStore = new Label();
             lblEmployee = new Label();
@@ -42,8 +46,8 @@
             btnSearch = new Button();
             dgvTitles = new DataGridView();
             columnTitle_id = new DataGridViewTextBoxColumn();
-            columnTitle = new DataGridViewTextBoxColumn();
             columnPrice = new DataGridViewTextBoxColumn();
+            columnTitle = new DataGridViewTextBoxColumn();
             validatorBindingSource = new BindingSource(components);
             lblQuantity = new Label();
             nudQuantity = new NumericUpDown();
@@ -67,6 +71,7 @@
             txtSubtotal = new TextBox();
             txtTax = new TextBox();
             txtTotal = new TextBox();
+            chkInitialCustomer = new CheckBox();
             ((System.ComponentModel.ISupportInitialize)dgvTitles).BeginInit();
             ((System.ComponentModel.ISupportInitialize)validatorBindingSource).BeginInit();
             ((System.ComponentModel.ISupportInitialize)nudQuantity).BeginInit();
@@ -77,40 +82,36 @@
             // lblStore
             // 
             lblStore.AutoSize = true;
-            lblStore.Location = new Point(11, 9);
-            lblStore.Margin = new Padding(2, 0, 2, 0);
+            lblStore.Location = new Point(16, 15);
             lblStore.Name = "lblStore";
-            lblStore.Size = new Size(37, 15);
+            lblStore.Size = new Size(57, 25);
             lblStore.TabIndex = 0;
             lblStore.Text = "Store:";
             // 
             // lblEmployee
             // 
             lblEmployee.AutoSize = true;
-            lblEmployee.Location = new Point(144, 9);
-            lblEmployee.Margin = new Padding(2, 0, 2, 0);
+            lblEmployee.Location = new Point(206, 15);
             lblEmployee.Name = "lblEmployee";
-            lblEmployee.Size = new Size(62, 15);
+            lblEmployee.Size = new Size(94, 25);
             lblEmployee.TabIndex = 2;
             lblEmployee.Text = "Employee:";
             // 
             // lblCustomerName
             // 
             lblCustomerName.AutoSize = true;
-            lblCustomerName.Location = new Point(277, 9);
-            lblCustomerName.Margin = new Padding(2, 0, 2, 0);
+            lblCustomerName.Location = new Point(396, 15);
             lblCustomerName.Name = "lblCustomerName";
-            lblCustomerName.Size = new Size(97, 15);
+            lblCustomerName.Size = new Size(145, 25);
             lblCustomerName.TabIndex = 4;
             lblCustomerName.Text = "Customer Name:";
             // 
             // lblOrderDate
             // 
             lblOrderDate.AutoSize = true;
-            lblOrderDate.Location = new Point(412, 9);
-            lblOrderDate.Margin = new Padding(2, 0, 2, 0);
+            lblOrderDate.Location = new Point(589, 15);
             lblOrderDate.Name = "lblOrderDate";
-            lblOrderDate.Size = new Size(67, 15);
+            lblOrderDate.Size = new Size(104, 25);
             lblOrderDate.TabIndex = 6;
             lblOrderDate.Text = "Order Date:";
             // 
@@ -118,58 +119,52 @@
             // 
             cboStore.DropDownStyle = ComboBoxStyle.DropDownList;
             cboStore.FormattingEnabled = true;
-            cboStore.Location = new Point(11, 26);
-            cboStore.Margin = new Padding(2);
+            cboStore.Location = new Point(16, 43);
             cboStore.Name = "cboStore";
-            cboStore.Size = new Size(129, 23);
+            cboStore.Size = new Size(183, 33);
             cboStore.TabIndex = 1;
             // 
             // cboEmployee
             // 
             cboEmployee.DropDownStyle = ComboBoxStyle.DropDownList;
             cboEmployee.FormattingEnabled = true;
-            cboEmployee.Location = new Point(144, 26);
-            cboEmployee.Margin = new Padding(2);
+            cboEmployee.Location = new Point(206, 43);
             cboEmployee.Name = "cboEmployee";
-            cboEmployee.Size = new Size(129, 23);
+            cboEmployee.Size = new Size(183, 33);
             cboEmployee.TabIndex = 3;
             // 
             // txtCustomerName
             // 
-            txtCustomerName.Location = new Point(277, 26);
-            txtCustomerName.Margin = new Padding(2);
+            txtCustomerName.Location = new Point(396, 43);
             txtCustomerName.MaxLength = 60;
             txtCustomerName.Name = "txtCustomerName";
-            txtCustomerName.Size = new Size(129, 23);
+            txtCustomerName.Size = new Size(183, 31);
             txtCustomerName.TabIndex = 5;
             // 
             // dtpOrderDate
             // 
             dtpOrderDate.CustomFormat = "yyyy/MM/dd";
             dtpOrderDate.Format = DateTimePickerFormat.Custom;
-            dtpOrderDate.Location = new Point(412, 26);
-            dtpOrderDate.Margin = new Padding(2);
-            dtpOrderDate.MaxDate = new DateTime(2025, 11, 20, 14, 42, 55, 0);
+            dtpOrderDate.Location = new Point(589, 43);
+            dtpOrderDate.MaxDate = new DateTime(2030, 1, 1, 0, 0, 0, 0);
             dtpOrderDate.Name = "dtpOrderDate";
-            dtpOrderDate.Size = new Size(129, 23);
+            dtpOrderDate.Size = new Size(183, 31);
             dtpOrderDate.TabIndex = 7;
             dtpOrderDate.Value = new DateTime(2025, 11, 20, 0, 0, 0, 0);
             // 
             // txtSearchTitle
             // 
-            txtSearchTitle.Location = new Point(11, 75);
-            txtSearchTitle.Margin = new Padding(2);
+            txtSearchTitle.Location = new Point(16, 125);
             txtSearchTitle.Name = "txtSearchTitle";
             txtSearchTitle.PlaceholderText = "Search by Title";
-            txtSearchTitle.Size = new Size(237, 23);
+            txtSearchTitle.Size = new Size(337, 31);
             txtSearchTitle.TabIndex = 8;
             // 
             // btnSearch
             // 
-            btnSearch.Location = new Point(252, 75);
-            btnSearch.Margin = new Padding(2);
+            btnSearch.Location = new Point(360, 125);
             btnSearch.Name = "btnSearch";
-            btnSearch.Size = new Size(101, 23);
+            btnSearch.Size = new Size(144, 38);
             btnSearch.TabIndex = 9;
             btnSearch.Text = "Search";
             btnSearch.UseVisualStyleBackColor = true;
@@ -180,40 +175,47 @@
             dgvTitles.AllowUserToAddRows = false;
             dgvTitles.AllowUserToDeleteRows = false;
             dgvTitles.AutoGenerateColumns = false;
-            dgvTitles.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             dgvTitles.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dgvTitles.Columns.AddRange(new DataGridViewColumn[] { columnTitle_id, columnTitle, columnPrice });
+            dgvTitles.Columns.AddRange(new DataGridViewColumn[] { columnTitle_id, columnPrice, columnTitle });
             dgvTitles.DataSource = validatorBindingSource;
-            dgvTitles.Location = new Point(11, 102);
-            dgvTitles.Margin = new Padding(2);
+            dgvTitles.Location = new Point(12, 170);
             dgvTitles.MultiSelect = false;
             dgvTitles.Name = "dgvTitles";
             dgvTitles.ReadOnly = true;
             dgvTitles.RowHeadersWidth = 62;
             dgvTitles.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            dgvTitles.Size = new Size(342, 245);
+            dgvTitles.Size = new Size(492, 408);
             dgvTitles.TabIndex = 11;
             // 
             // columnTitle_id
             // 
+            columnTitle_id.DataPropertyName = "TitleId";
             columnTitle_id.HeaderText = "Title ID";
             columnTitle_id.MinimumWidth = 8;
             columnTitle_id.Name = "columnTitle_id";
             columnTitle_id.ReadOnly = true;
-            // 
-            // columnTitle
-            // 
-            columnTitle.HeaderText = "Title";
-            columnTitle.MinimumWidth = 8;
-            columnTitle.Name = "columnTitle";
-            columnTitle.ReadOnly = true;
+            columnTitle_id.Width = 105;
             // 
             // columnPrice
             // 
+            columnPrice.DataPropertyName = "Price";
+            dataGridViewCellStyle1.Format = "C2";
+            dataGridViewCellStyle1.NullValue = "0.00";
+            columnPrice.DefaultCellStyle = dataGridViewCellStyle1;
             columnPrice.HeaderText = "Price";
             columnPrice.MinimumWidth = 8;
             columnPrice.Name = "columnPrice";
             columnPrice.ReadOnly = true;
+            columnPrice.Width = 70;
+            // 
+            // columnTitle
+            // 
+            columnTitle.DataPropertyName = "Title1";
+            columnTitle.HeaderText = "Title";
+            columnTitle.MinimumWidth = 8;
+            columnTitle.Name = "columnTitle";
+            columnTitle.ReadOnly = true;
+            columnTitle.Width = 250;
             // 
             // validatorBindingSource
             // 
@@ -222,42 +224,39 @@
             // lblQuantity
             // 
             lblQuantity.AutoSize = true;
-            lblQuantity.Location = new Point(11, 358);
-            lblQuantity.Margin = new Padding(2, 0, 2, 0);
+            lblQuantity.Location = new Point(16, 597);
             lblQuantity.Name = "lblQuantity";
-            lblQuantity.Size = new Size(144, 15);
+            lblQuantity.Size = new Size(218, 25);
             lblQuantity.TabIndex = 12;
             lblQuantity.Text = "Quantity of Selected Item:";
             // 
             // nudQuantity
             // 
-            nudQuantity.Location = new Point(227, 356);
-            nudQuantity.Margin = new Padding(2);
+            nudQuantity.Location = new Point(324, 593);
             nudQuantity.Maximum = new decimal(new int[] { 1000, 0, 0, 0 });
             nudQuantity.Minimum = new decimal(new int[] { 1, 0, 0, 0 });
             nudQuantity.Name = "nudQuantity";
-            nudQuantity.Size = new Size(126, 23);
+            nudQuantity.Size = new Size(180, 31);
             nudQuantity.TabIndex = 10;
             nudQuantity.Value = new decimal(new int[] { 1, 0, 0, 0 });
             // 
             // btnAddtoCart
             // 
-            btnAddtoCart.Location = new Point(252, 387);
-            btnAddtoCart.Margin = new Padding(2);
+            btnAddtoCart.Location = new Point(360, 645);
             btnAddtoCart.Name = "btnAddtoCart";
-            btnAddtoCart.Size = new Size(101, 23);
+            btnAddtoCart.Size = new Size(144, 38);
             btnAddtoCart.TabIndex = 11;
             btnAddtoCart.Text = "Add to Cart";
             btnAddtoCart.UseVisualStyleBackColor = true;
+            btnAddtoCart.Click += btnAddToCart_Click;
             // 
             // lblShoppingCart
             // 
             lblShoppingCart.AutoSize = true;
             lblShoppingCart.Font = new Font("Segoe UI", 12F);
-            lblShoppingCart.Location = new Point(539, 77);
-            lblShoppingCart.Margin = new Padding(2, 0, 2, 0);
+            lblShoppingCart.Location = new Point(770, 128);
             lblShoppingCart.Name = "lblShoppingCart";
-            lblShoppingCart.Size = new Size(110, 21);
+            lblShoppingCart.Size = new Size(167, 32);
             lblShoppingCart.TabIndex = 15;
             lblShoppingCart.Text = "Shopping Cart";
             // 
@@ -266,45 +265,55 @@
             dgvCart.AllowUserToAddRows = false;
             dgvCart.AllowUserToDeleteRows = false;
             dgvCart.AutoGenerateColumns = false;
+            dgvCart.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             dgvCart.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dgvCart.Columns.AddRange(new DataGridViewColumn[] { columnTitleID, columntitleS, columnQty, columnPriceS, columnDiscount, columnLineTotal });
             dgvCart.DataSource = validatorBindingSource1;
-            dgvCart.Location = new Point(365, 102);
-            dgvCart.Margin = new Padding(2);
+            dgvCart.Location = new Point(521, 170);
             dgvCart.MultiSelect = false;
             dgvCart.Name = "dgvCart";
             dgvCart.ReadOnly = true;
             dgvCart.RowHeadersWidth = 62;
             dgvCart.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            dgvCart.Size = new Size(461, 245);
+            dgvCart.Size = new Size(659, 408);
             dgvCart.TabIndex = 16;
             // 
             // columnTitleID
             // 
+            columnTitleID.AutoSizeMode = DataGridViewAutoSizeColumnMode.None;
+            columnTitleID.DataPropertyName = "TitleId";
+            columnTitleID.FillWeight = 51.136364F;
             columnTitleID.HeaderText = "Title ID";
             columnTitleID.MinimumWidth = 8;
             columnTitleID.Name = "columnTitleID";
             columnTitleID.ReadOnly = true;
-            columnTitleID.Width = 75;
+            columnTitleID.Width = 110;
             // 
             // columntitleS
             // 
+            columntitleS.DataPropertyName = "Title";
+            columntitleS.FillWeight = 114.987183F;
             columntitleS.HeaderText = "Title";
             columntitleS.MinimumWidth = 8;
             columntitleS.Name = "columntitleS";
             columntitleS.ReadOnly = true;
-            columntitleS.Width = 150;
             // 
             // columnQty
             // 
+            columnQty.DataPropertyName = "Quantity";
+            columnQty.FillWeight = 101.850983F;
             columnQty.HeaderText = "Quantity";
             columnQty.MinimumWidth = 8;
             columnQty.Name = "columnQty";
             columnQty.ReadOnly = true;
-            columnQty.Width = 75;
             // 
             // columnPriceS
             // 
+            columnPriceS.DataPropertyName = "Price";
+            dataGridViewCellStyle2.Format = "C2";
+            dataGridViewCellStyle2.NullValue = null;
+            columnPriceS.DefaultCellStyle = dataGridViewCellStyle2;
+            columnPriceS.FillWeight = 110.675179F;
             columnPriceS.HeaderText = "Price";
             columnPriceS.MinimumWidth = 8;
             columnPriceS.Name = "columnPriceS";
@@ -312,6 +321,10 @@
             // 
             // columnDiscount
             // 
+            columnDiscount.DataPropertyName = "Discount";
+            dataGridViewCellStyle3.NullValue = "P0";
+            columnDiscount.DefaultCellStyle = dataGridViewCellStyle3;
+            columnDiscount.FillWeight = 110.675179F;
             columnDiscount.HeaderText = "Discount";
             columnDiscount.MinimumWidth = 8;
             columnDiscount.Name = "columnDiscount";
@@ -319,11 +332,15 @@
             // 
             // columnLineTotal
             // 
+            columnLineTotal.DataPropertyName = "LineTotal";
+            dataGridViewCellStyle4.Format = "C2";
+            dataGridViewCellStyle4.NullValue = null;
+            columnLineTotal.DefaultCellStyle = dataGridViewCellStyle4;
+            columnLineTotal.FillWeight = 110.675179F;
             columnLineTotal.HeaderText = "Line Total";
             columnLineTotal.MinimumWidth = 8;
             columnLineTotal.Name = "columnLineTotal";
             columnLineTotal.ReadOnly = true;
-            columnLineTotal.Width = 150;
             // 
             // validatorBindingSource1
             // 
@@ -331,61 +348,59 @@
             // 
             // btnUpdate
             // 
-            btnUpdate.Location = new Point(365, 356);
-            btnUpdate.Margin = new Padding(2);
+            btnUpdate.Location = new Point(521, 593);
             btnUpdate.Name = "btnUpdate";
-            btnUpdate.Size = new Size(101, 23);
+            btnUpdate.Size = new Size(144, 38);
             btnUpdate.TabIndex = 12;
             btnUpdate.Text = "Update";
             btnUpdate.UseVisualStyleBackColor = true;
+            btnUpdate.Click += btnUpdate_Click;
             // 
             // btnRemoveItem
             // 
-            btnRemoveItem.Location = new Point(484, 356);
-            btnRemoveItem.Margin = new Padding(2);
+            btnRemoveItem.Location = new Point(691, 593);
             btnRemoveItem.Name = "btnRemoveItem";
-            btnRemoveItem.Size = new Size(101, 23);
+            btnRemoveItem.Size = new Size(144, 38);
             btnRemoveItem.TabIndex = 13;
             btnRemoveItem.Text = "Remove Item";
             btnRemoveItem.UseVisualStyleBackColor = true;
+            btnRemoveItem.Click += btnRemoveItem_Click;
             // 
             // btnCommitOrder
             // 
-            btnCommitOrder.Location = new Point(604, 356);
-            btnCommitOrder.Margin = new Padding(2);
+            btnCommitOrder.Location = new Point(863, 593);
             btnCommitOrder.Name = "btnCommitOrder";
-            btnCommitOrder.Size = new Size(101, 23);
+            btnCommitOrder.Size = new Size(144, 38);
             btnCommitOrder.TabIndex = 14;
             btnCommitOrder.Text = "Commit Order";
             btnCommitOrder.UseVisualStyleBackColor = true;
+            btnCommitOrder.Click += btnCommitOrder_Click;
             // 
             // btnCancelOrder
             // 
-            btnCancelOrder.Location = new Point(725, 356);
-            btnCancelOrder.Margin = new Padding(2);
+            btnCancelOrder.Location = new Point(1036, 593);
             btnCancelOrder.Name = "btnCancelOrder";
-            btnCancelOrder.Size = new Size(101, 23);
+            btnCancelOrder.Size = new Size(144, 38);
             btnCancelOrder.TabIndex = 15;
             btnCancelOrder.Text = "Cancel Order";
             btnCancelOrder.UseVisualStyleBackColor = true;
+            btnCancelOrder.Click += btnCancelOrder_Click;
             // 
             // lblSubtotal
             // 
             lblSubtotal.AutoSize = true;
-            lblSubtotal.Location = new Point(363, 390);
-            lblSubtotal.Margin = new Padding(2, 0, 2, 0);
+            lblSubtotal.Location = new Point(519, 650);
             lblSubtotal.Name = "lblSubtotal";
-            lblSubtotal.Size = new Size(54, 15);
+            lblSubtotal.Size = new Size(83, 25);
             lblSubtotal.TabIndex = 21;
             lblSubtotal.Text = "Subtotal:";
             // 
             // lblTax
             // 
             lblTax.AutoSize = true;
-            lblTax.Location = new Point(539, 390);
-            lblTax.Margin = new Padding(2, 0, 2, 0);
+            lblTax.Location = new Point(770, 650);
             lblTax.Name = "lblTax";
-            lblTax.Size = new Size(27, 15);
+            lblTax.Size = new Size(40, 25);
             lblTax.TabIndex = 22;
             lblTax.Text = "Tax:";
             // 
@@ -393,49 +408,57 @@
             // 
             lblTotal.AutoSize = true;
             lblTotal.Font = new Font("Segoe UI", 9F);
-            lblTotal.Location = new Point(680, 390);
-            lblTotal.Margin = new Padding(2, 0, 2, 0);
+            lblTotal.Location = new Point(971, 650);
             lblTotal.Name = "lblTotal";
-            lblTotal.Size = new Size(36, 15);
+            lblTotal.Size = new Size(53, 25);
             lblTotal.TabIndex = 23;
             lblTotal.Text = "Total:";
             // 
             // txtSubtotal
             // 
-            txtSubtotal.Location = new Point(421, 387);
-            txtSubtotal.Margin = new Padding(2);
+            txtSubtotal.Location = new Point(601, 645);
             txtSubtotal.Name = "txtSubtotal";
             txtSubtotal.ReadOnly = true;
-            txtSubtotal.Size = new Size(106, 23);
+            txtSubtotal.Size = new Size(150, 31);
             txtSubtotal.TabIndex = 24;
             txtSubtotal.TextAlign = HorizontalAlignment.Right;
             // 
             // txtTax
             // 
-            txtTax.Location = new Point(570, 387);
-            txtTax.Margin = new Padding(2);
+            txtTax.Location = new Point(814, 645);
             txtTax.Name = "txtTax";
             txtTax.ReadOnly = true;
-            txtTax.Size = new Size(106, 23);
+            txtTax.Size = new Size(150, 31);
             txtTax.TabIndex = 25;
             txtTax.TextAlign = HorizontalAlignment.Right;
             // 
             // txtTotal
             // 
             txtTotal.Font = new Font("Segoe UI", 9F);
-            txtTotal.Location = new Point(720, 387);
-            txtTotal.Margin = new Padding(2);
+            txtTotal.Location = new Point(1029, 645);
             txtTotal.Name = "txtTotal";
             txtTotal.ReadOnly = true;
-            txtTotal.Size = new Size(106, 23);
+            txtTotal.Size = new Size(150, 31);
             txtTotal.TabIndex = 26;
             txtTotal.TextAlign = HorizontalAlignment.Right;
             // 
+            // chkInitialCustomer
+            // 
+            chkInitialCustomer.AutoSize = true;
+            chkInitialCustomer.Location = new Point(816, 43);
+            chkInitialCustomer.Name = "chkInitialCustomer";
+            chkInitialCustomer.Size = new Size(170, 29);
+            chkInitialCustomer.TabIndex = 28;
+            chkInitialCustomer.Text = "Initial Customer?";
+            chkInitialCustomer.UseVisualStyleBackColor = true;
+            chkInitialCustomer.CheckedChanged += chkInitialCustomer_CheckedChanged;
+            // 
             // frmCustomerOrder
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(837, 425);
+            ClientSize = new Size(1196, 708);
+            Controls.Add(chkInitialCustomer);
             Controls.Add(txtTotal);
             Controls.Add(txtTax);
             Controls.Add(txtSubtotal);
@@ -464,7 +487,6 @@
             Controls.Add(lblStore);
             FormBorderStyle = FormBorderStyle.FixedSingle;
             Icon = (Icon)resources.GetObject("$this.Icon");
-            Margin = new Padding(2);
             MaximizeBox = false;
             Name = "frmCustomerOrder";
             StartPosition = FormStartPosition.CenterScreen;
@@ -509,13 +531,14 @@
         private TextBox txtTax;
         private TextBox txtTotal;
         private DataGridViewTextBoxColumn columnTitle_id;
-        private DataGridViewTextBoxColumn columnTitle;
         private DataGridViewTextBoxColumn columnPrice;
+        private DataGridViewTextBoxColumn columnTitle;
         private DataGridViewTextBoxColumn columnTitleID;
         private DataGridViewTextBoxColumn columntitleS;
         private DataGridViewTextBoxColumn columnQty;
         private DataGridViewTextBoxColumn columnPriceS;
         private DataGridViewTextBoxColumn columnDiscount;
         private DataGridViewTextBoxColumn columnLineTotal;
+        private CheckBox chkInitialCustomer;
     }
 }
