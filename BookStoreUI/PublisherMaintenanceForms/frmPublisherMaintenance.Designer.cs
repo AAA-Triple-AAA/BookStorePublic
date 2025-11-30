@@ -57,19 +57,17 @@
             // 
             // txtSearch
             // 
-            txtSearch.Location = new Point(11, 24);
-            txtSearch.Margin = new Padding(2);
+            txtSearch.Location = new Point(16, 40);
             txtSearch.Name = "txtSearch";
             txtSearch.PlaceholderText = "Search";
-            txtSearch.Size = new Size(257, 23);
+            txtSearch.Size = new Size(365, 31);
             txtSearch.TabIndex = 1;
             // 
             // rtbDetails
             // 
             rtbDetails.Location = new Point(0, 0);
-            rtbDetails.Margin = new Padding(2);
             rtbDetails.Name = "rtbDetails";
-            rtbDetails.Size = new Size(254, 342);
+            rtbDetails.Size = new Size(361, 567);
             rtbDetails.TabIndex = 0;
             rtbDetails.Text = "";
             // 
@@ -79,8 +77,7 @@
             // 
             // spcDetails
             // 
-            spcDetails.Location = new Point(-1, 80);
-            spcDetails.Margin = new Padding(2);
+            spcDetails.Location = new Point(-1, 133);
             spcDetails.Name = "spcDetails";
             // 
             // spcDetails.Panel1
@@ -90,9 +87,8 @@
             // spcDetails.Panel2
             // 
             spcDetails.Panel2.Controls.Add(rtbDetails);
-            spcDetails.Size = new Size(828, 340);
-            spcDetails.SplitterDistance = 571;
-            spcDetails.SplitterWidth = 3;
+            spcDetails.Size = new Size(1183, 567);
+            spcDetails.SplitterDistance = 815;
             spcDetails.TabIndex = 28;
             // 
             // dgvPublisher
@@ -105,13 +101,12 @@
             dgvPublisher.DataSource = validatorBindingSource1;
             dgvPublisher.Dock = DockStyle.Fill;
             dgvPublisher.Location = new Point(0, 0);
-            dgvPublisher.Margin = new Padding(2);
             dgvPublisher.MultiSelect = false;
             dgvPublisher.Name = "dgvPublisher";
             dgvPublisher.ReadOnly = true;
             dgvPublisher.RowHeadersWidth = 62;
             dgvPublisher.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            dgvPublisher.Size = new Size(571, 340);
+            dgvPublisher.Size = new Size(815, 567);
             dgvPublisher.TabIndex = 0;
             // 
             // columnPubId
@@ -165,10 +160,9 @@
             // 
             // btnAddPublisher
             // 
-            btnAddPublisher.Location = new Point(11, 437);
-            btnAddPublisher.Margin = new Padding(2);
+            btnAddPublisher.Location = new Point(16, 728);
             btnAddPublisher.Name = "btnAddPublisher";
-            btnAddPublisher.Size = new Size(153, 34);
+            btnAddPublisher.Size = new Size(219, 57);
             btnAddPublisher.TabIndex = 3;
             btnAddPublisher.Text = "Add a New Publisher";
             btnAddPublisher.UseVisualStyleBackColor = true;
@@ -177,19 +171,17 @@
             // lblDetails
             // 
             lblDetails.AutoSize = true;
-            lblDetails.Location = new Point(672, 63);
-            lblDetails.Margin = new Padding(2, 0, 2, 0);
+            lblDetails.Location = new Point(960, 105);
             lblDetails.Name = "lblDetails";
-            lblDetails.Size = new Size(42, 15);
+            lblDetails.Size = new Size(65, 25);
             lblDetails.TabIndex = 25;
             lblDetails.Text = "Details";
             // 
             // btnEditPublisher
             // 
-            btnEditPublisher.Location = new Point(168, 437);
-            btnEditPublisher.Margin = new Padding(2);
+            btnEditPublisher.Location = new Point(240, 728);
             btnEditPublisher.Name = "btnEditPublisher";
-            btnEditPublisher.Size = new Size(153, 34);
+            btnEditPublisher.Size = new Size(219, 57);
             btnEditPublisher.TabIndex = 4;
             btnEditPublisher.Text = "Edit Selected Publisher";
             btnEditPublisher.UseVisualStyleBackColor = true;
@@ -197,10 +189,9 @@
             // 
             // btnSearch
             // 
-            btnSearch.Location = new Point(272, 24);
-            btnSearch.Margin = new Padding(2);
+            btnSearch.Location = new Point(389, 40);
             btnSearch.Name = "btnSearch";
-            btnSearch.Size = new Size(122, 23);
+            btnSearch.Size = new Size(174, 38);
             btnSearch.TabIndex = 2;
             btnSearch.Text = "Search by Publisher";
             btnSearch.UseVisualStyleBackColor = true;
@@ -208,10 +199,9 @@
             // 
             // btnDeletePublisher
             // 
-            btnDeletePublisher.Location = new Point(325, 437);
-            btnDeletePublisher.Margin = new Padding(2);
+            btnDeletePublisher.Location = new Point(464, 728);
             btnDeletePublisher.Name = "btnDeletePublisher";
-            btnDeletePublisher.Size = new Size(153, 34);
+            btnDeletePublisher.Size = new Size(219, 57);
             btnDeletePublisher.TabIndex = 5;
             btnDeletePublisher.Text = "Delete Selected Publisher";
             btnDeletePublisher.UseVisualStyleBackColor = true;
@@ -219,9 +209,9 @@
             // 
             // frmPublisherMaintenance
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(825, 490);
+            ClientSize = new Size(1179, 817);
             Controls.Add(txtSearch);
             Controls.Add(spcDetails);
             Controls.Add(btnAddPublisher);
@@ -231,12 +221,12 @@
             Controls.Add(btnDeletePublisher);
             FormBorderStyle = FormBorderStyle.FixedSingle;
             Icon = (Icon)resources.GetObject("$this.Icon");
-            Margin = new Padding(2);
             MaximizeBox = false;
             MinimizeBox = false;
             Name = "frmPublisherMaintenance";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Publisher Maintenance";
+            Load += frmPublisherMaintenance_Load;
             ((System.ComponentModel.ISupportInitialize)validatorBindingSource1).EndInit();
             spcDetails.Panel1.ResumeLayout(false);
             spcDetails.Panel2.ResumeLayout(false);

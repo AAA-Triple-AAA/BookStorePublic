@@ -37,10 +37,10 @@
             lblCountry = new Label();
             btnSave = new Button();
             tlpPublisher = new TableLayoutPanel();
-            lblState = new Label();
             mtbPubId = new MaskedTextBox();
-            txtCity = new TextBox();
             txtState = new TextBox();
+            txtCity = new TextBox();
+            lblState = new Label();
             tlpPublisher.SuspendLayout();
             SuspendLayout();
             // 
@@ -154,16 +154,6 @@
             tlpPublisher.Size = new Size(469, 412);
             tlpPublisher.TabIndex = 0;
             // 
-            // lblState
-            // 
-            lblState.Anchor = AnchorStyles.Right;
-            lblState.AutoSize = true;
-            lblState.Location = new Point(47, 274);
-            lblState.Name = "lblState";
-            lblState.Size = new Size(51, 25);
-            lblState.TabIndex = 6;
-            lblState.Text = "State";
-            // 
             // mtbPubId
             // 
             mtbPubId.Anchor = AnchorStyles.Left;
@@ -175,15 +165,6 @@
             mtbPubId.Size = new Size(60, 31);
             mtbPubId.TabIndex = 1;
             // 
-            // txtCity
-            // 
-            txtCity.Anchor = AnchorStyles.Left | AnchorStyles.Right;
-            txtCity.Location = new Point(104, 189);
-            txtCity.MaxLength = 20;
-            txtCity.Name = "txtCity";
-            txtCity.Size = new Size(362, 31);
-            txtCity.TabIndex = 5;
-            // 
             // txtState
             // 
             txtState.Anchor = AnchorStyles.Left;
@@ -193,6 +174,25 @@
             txtState.Name = "txtState";
             txtState.Size = new Size(150, 31);
             txtState.TabIndex = 7;
+            // 
+            // txtCity
+            // 
+            txtCity.Anchor = AnchorStyles.Left | AnchorStyles.Right;
+            txtCity.Location = new Point(104, 189);
+            txtCity.MaxLength = 20;
+            txtCity.Name = "txtCity";
+            txtCity.Size = new Size(362, 31);
+            txtCity.TabIndex = 5;
+            // 
+            // lblState
+            // 
+            lblState.Anchor = AnchorStyles.Right;
+            lblState.AutoSize = true;
+            lblState.Location = new Point(47, 274);
+            lblState.Name = "lblState";
+            lblState.Size = new Size(51, 25);
+            lblState.TabIndex = 6;
+            lblState.Text = "State";
             // 
             // frmPublisherDetail
             // 
@@ -211,6 +211,7 @@
             ShowIcon = false;
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Add/Edit Publisher";
+            Load += frmPublisherDetail_Load;
             tlpPublisher.ResumeLayout(false);
             tlpPublisher.PerformLayout();
             ResumeLayout(false);
