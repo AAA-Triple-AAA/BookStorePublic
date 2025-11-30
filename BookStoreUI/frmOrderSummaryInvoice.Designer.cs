@@ -53,7 +53,6 @@
             lblTotal = new Label();
             lblTax = new Label();
             lblSubtotal = new Label();
-            btnPrintExport = new Button();
             btnClose = new Button();
             ((System.ComponentModel.ISupportInitialize)validatorBindingSource).BeginInit();
             ((System.ComponentModel.ISupportInitialize)validatorBindingSource1).BeginInit();
@@ -63,101 +62,91 @@
             // lblOrderNumber
             // 
             lblOrderNumber.AutoSize = true;
-            lblOrderNumber.Location = new Point(4, 14);
-            lblOrderNumber.Margin = new Padding(2, 0, 2, 0);
+            lblOrderNumber.Location = new Point(6, 23);
             lblOrderNumber.Name = "lblOrderNumber";
-            lblOrderNumber.Size = new Size(87, 15);
+            lblOrderNumber.Size = new Size(132, 25);
             lblOrderNumber.TabIndex = 0;
             lblOrderNumber.Text = "Order Number:";
             // 
             // txtOrderNumber
             // 
             txtOrderNumber.BorderStyle = BorderStyle.FixedSingle;
-            txtOrderNumber.Location = new Point(95, 6);
-            txtOrderNumber.Margin = new Padding(2);
+            txtOrderNumber.Location = new Point(144, 23);
             txtOrderNumber.Name = "txtOrderNumber";
             txtOrderNumber.ReadOnly = true;
-            txtOrderNumber.Size = new Size(106, 23);
+            txtOrderNumber.Size = new Size(151, 31);
             txtOrderNumber.TabIndex = 1;
             // 
             // lblStore
             // 
             lblStore.AutoSize = true;
-            lblStore.Location = new Point(54, 41);
-            lblStore.Margin = new Padding(2, 0, 2, 0);
+            lblStore.Location = new Point(77, 68);
             lblStore.Name = "lblStore";
-            lblStore.Size = new Size(37, 15);
+            lblStore.Size = new Size(57, 25);
             lblStore.TabIndex = 2;
             lblStore.Text = "Store:";
             // 
             // txtStore
             // 
             txtStore.BorderStyle = BorderStyle.FixedSingle;
-            txtStore.Location = new Point(95, 33);
-            txtStore.Margin = new Padding(2);
+            txtStore.Location = new Point(144, 68);
             txtStore.Name = "txtStore";
             txtStore.ReadOnly = true;
-            txtStore.Size = new Size(106, 23);
+            txtStore.Size = new Size(151, 31);
             txtStore.TabIndex = 3;
             // 
             // lblEmployee
             // 
             lblEmployee.AutoSize = true;
-            lblEmployee.Location = new Point(29, 68);
-            lblEmployee.Margin = new Padding(2, 0, 2, 0);
+            lblEmployee.Location = new Point(41, 113);
             lblEmployee.Name = "lblEmployee";
-            lblEmployee.Size = new Size(62, 15);
+            lblEmployee.Size = new Size(94, 25);
             lblEmployee.TabIndex = 4;
             lblEmployee.Text = "Employee:";
             // 
             // txtEmployee
             // 
             txtEmployee.BorderStyle = BorderStyle.FixedSingle;
-            txtEmployee.Location = new Point(95, 60);
-            txtEmployee.Margin = new Padding(2);
+            txtEmployee.Location = new Point(144, 113);
             txtEmployee.Name = "txtEmployee";
             txtEmployee.ReadOnly = true;
-            txtEmployee.Size = new Size(106, 23);
+            txtEmployee.Size = new Size(151, 31);
             txtEmployee.TabIndex = 5;
             // 
             // lblCustomer
             // 
             lblCustomer.AutoSize = true;
-            lblCustomer.Location = new Point(29, 95);
-            lblCustomer.Margin = new Padding(2, 0, 2, 0);
+            lblCustomer.Location = new Point(41, 158);
             lblCustomer.Name = "lblCustomer";
-            lblCustomer.Size = new Size(62, 15);
+            lblCustomer.Size = new Size(93, 25);
             lblCustomer.TabIndex = 6;
             lblCustomer.Text = "Customer:";
             // 
             // txtCustomer
             // 
             txtCustomer.BorderStyle = BorderStyle.FixedSingle;
-            txtCustomer.Location = new Point(95, 87);
-            txtCustomer.Margin = new Padding(2);
+            txtCustomer.Location = new Point(144, 158);
             txtCustomer.Name = "txtCustomer";
             txtCustomer.ReadOnly = true;
-            txtCustomer.Size = new Size(106, 23);
+            txtCustomer.Size = new Size(151, 31);
             txtCustomer.TabIndex = 7;
             // 
             // lblOrderDate
             // 
             lblOrderDate.AutoSize = true;
-            lblOrderDate.Location = new Point(24, 122);
-            lblOrderDate.Margin = new Padding(2, 0, 2, 0);
+            lblOrderDate.Location = new Point(34, 203);
             lblOrderDate.Name = "lblOrderDate";
-            lblOrderDate.Size = new Size(67, 15);
+            lblOrderDate.Size = new Size(104, 25);
             lblOrderDate.TabIndex = 8;
             lblOrderDate.Text = "Order Date:";
             // 
             // txtOrderDate
             // 
             txtOrderDate.BorderStyle = BorderStyle.FixedSingle;
-            txtOrderDate.Location = new Point(95, 114);
-            txtOrderDate.Margin = new Padding(2);
+            txtOrderDate.Location = new Point(144, 203);
             txtOrderDate.Name = "txtOrderDate";
             txtOrderDate.ReadOnly = true;
-            txtOrderDate.Size = new Size(106, 23);
+            txtOrderDate.Size = new Size(151, 31);
             txtOrderDate.TabIndex = 9;
             // 
             // validatorBindingSource
@@ -177,14 +166,13 @@
             dgvCart.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dgvCart.Columns.AddRange(new DataGridViewColumn[] { columntitle, columnQty, columnPrice, columnDiscount, columnLineTotal });
             dgvCart.DataSource = validatorBindingSource1;
-            dgvCart.Location = new Point(11, 151);
-            dgvCart.Margin = new Padding(2);
+            dgvCart.Location = new Point(16, 252);
             dgvCart.MultiSelect = false;
             dgvCart.Name = "dgvCart";
             dgvCart.ReadOnly = true;
             dgvCart.RowHeadersWidth = 62;
             dgvCart.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            dgvCart.Size = new Size(548, 216);
+            dgvCart.Size = new Size(783, 360);
             dgvCart.TabIndex = 17;
             // 
             // columntitle
@@ -230,31 +218,28 @@
             // txtTotal
             // 
             txtTotal.Font = new Font("Segoe UI", 9F);
-            txtTotal.Location = new Point(439, 73);
-            txtTotal.Margin = new Padding(2);
+            txtTotal.Location = new Point(627, 122);
             txtTotal.Name = "txtTotal";
             txtTotal.ReadOnly = true;
-            txtTotal.Size = new Size(106, 23);
+            txtTotal.Size = new Size(150, 31);
             txtTotal.TabIndex = 32;
             txtTotal.TextAlign = HorizontalAlignment.Right;
             // 
             // txtTax
             // 
-            txtTax.Location = new Point(316, 73);
-            txtTax.Margin = new Padding(2);
+            txtTax.Location = new Point(451, 122);
             txtTax.Name = "txtTax";
             txtTax.ReadOnly = true;
-            txtTax.Size = new Size(106, 23);
+            txtTax.Size = new Size(150, 31);
             txtTax.TabIndex = 31;
             txtTax.TextAlign = HorizontalAlignment.Right;
             // 
             // txtSubtotal
             // 
-            txtSubtotal.Location = new Point(316, 46);
-            txtSubtotal.Margin = new Padding(2);
+            txtSubtotal.Location = new Point(451, 77);
             txtSubtotal.Name = "txtSubtotal";
             txtSubtotal.ReadOnly = true;
-            txtSubtotal.Size = new Size(106, 23);
+            txtSubtotal.Size = new Size(150, 31);
             txtSubtotal.TabIndex = 30;
             txtSubtotal.TextAlign = HorizontalAlignment.Right;
             // 
@@ -262,61 +247,47 @@
             // 
             lblTotal.AutoSize = true;
             lblTotal.Font = new Font("Segoe UI", 9F);
-            lblTotal.Location = new Point(439, 54);
-            lblTotal.Margin = new Padding(2, 0, 2, 0);
+            lblTotal.Location = new Point(627, 90);
             lblTotal.Name = "lblTotal";
-            lblTotal.Size = new Size(36, 15);
+            lblTotal.Size = new Size(53, 25);
             lblTotal.TabIndex = 29;
             lblTotal.Text = "Total:";
             // 
             // lblTax
             // 
             lblTax.AutoSize = true;
-            lblTax.Location = new Point(280, 76);
-            lblTax.Margin = new Padding(2, 0, 2, 0);
+            lblTax.Location = new Point(400, 127);
             lblTax.Name = "lblTax";
-            lblTax.Size = new Size(27, 15);
+            lblTax.Size = new Size(40, 25);
             lblTax.TabIndex = 28;
             lblTax.Text = "Tax:";
             // 
             // lblSubtotal
             // 
             lblSubtotal.AutoSize = true;
-            lblSubtotal.Location = new Point(253, 49);
-            lblSubtotal.Margin = new Padding(2, 0, 2, 0);
+            lblSubtotal.Location = new Point(361, 82);
             lblSubtotal.Name = "lblSubtotal";
-            lblSubtotal.Size = new Size(54, 15);
+            lblSubtotal.Size = new Size(83, 25);
             lblSubtotal.TabIndex = 27;
             lblSubtotal.Text = "Subtotal:";
             // 
-            // btnPrintExport
-            // 
-            btnPrintExport.Location = new Point(316, 106);
-            btnPrintExport.Margin = new Padding(2);
-            btnPrintExport.Name = "btnPrintExport";
-            btnPrintExport.Size = new Size(106, 31);
-            btnPrintExport.TabIndex = 33;
-            btnPrintExport.Text = "Print/Export";
-            btnPrintExport.UseVisualStyleBackColor = true;
-            // 
             // btnClose
             // 
-            btnClose.Location = new Point(439, 106);
-            btnClose.Margin = new Padding(2);
+            btnClose.Location = new Point(627, 177);
             btnClose.Name = "btnClose";
-            btnClose.Size = new Size(106, 31);
+            btnClose.Size = new Size(151, 52);
             btnClose.TabIndex = 34;
             btnClose.Text = "Close";
             btnClose.UseVisualStyleBackColor = true;
+            btnClose.Click += btnClose_Click;
             // 
             // frmOrderSummaryInvoice
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
             CancelButton = btnClose;
-            ClientSize = new Size(570, 378);
+            ClientSize = new Size(814, 630);
             Controls.Add(btnClose);
-            Controls.Add(btnPrintExport);
             Controls.Add(txtTotal);
             Controls.Add(txtTax);
             Controls.Add(txtSubtotal);
@@ -335,13 +306,13 @@
             Controls.Add(txtOrderNumber);
             Controls.Add(lblOrderNumber);
             FormBorderStyle = FormBorderStyle.FixedDialog;
-            Margin = new Padding(2);
             MaximizeBox = false;
             MinimizeBox = false;
             Name = "frmOrderSummaryInvoice";
             ShowIcon = false;
             StartPosition = FormStartPosition.CenterParent;
             Text = "Order Summary/Invoice";
+            Load += frmOrderSummaryInvoice_Load;
             ((System.ComponentModel.ISupportInitialize)validatorBindingSource).EndInit();
             ((System.ComponentModel.ISupportInitialize)validatorBindingSource1).EndInit();
             ((System.ComponentModel.ISupportInitialize)dgvCart).EndInit();
@@ -375,7 +346,6 @@
         private Label lblTotal;
         private Label lblTax;
         private Label lblSubtotal;
-        private Button btnPrintExport;
         private Button btnClose;
     }
 }
