@@ -54,20 +54,20 @@
             // lblStartDate
             // 
             lblStartDate.AutoSize = true;
-            lblStartDate.Location = new Point(11, 18);
+            lblStartDate.Location = new Point(13, 24);
             lblStartDate.Margin = new Padding(2, 0, 2, 0);
             lblStartDate.Name = "lblStartDate";
-            lblStartDate.Size = new Size(61, 15);
+            lblStartDate.Size = new Size(79, 20);
             lblStartDate.TabIndex = 0;
             lblStartDate.Text = "Start Date:";
             // 
             // lblEndDate
             // 
             lblEndDate.AutoSize = true;
-            lblEndDate.Location = new Point(15, 45);
+            lblEndDate.Location = new Point(17, 60);
             lblEndDate.Margin = new Padding(2, 0, 2, 0);
             lblEndDate.Name = "lblEndDate";
-            lblEndDate.Size = new Size(57, 15);
+            lblEndDate.Size = new Size(73, 20);
             lblEndDate.TabIndex = 1;
             lblEndDate.Text = "End Date:";
             // 
@@ -75,11 +75,11 @@
             // 
             dtpStartDate.CustomFormat = "yyyy/MM/dd";
             dtpStartDate.Format = DateTimePickerFormat.Custom;
-            dtpStartDate.Location = new Point(76, 12);
-            dtpStartDate.Margin = new Padding(2);
+            dtpStartDate.Location = new Point(87, 16);
+            dtpStartDate.Margin = new Padding(2, 3, 2, 3);
             dtpStartDate.MaxDate = new DateTime(2025, 11, 20, 0, 0, 0, 0);
             dtpStartDate.Name = "dtpStartDate";
-            dtpStartDate.Size = new Size(99, 23);
+            dtpStartDate.Size = new Size(113, 27);
             dtpStartDate.TabIndex = 1;
             dtpStartDate.Value = new DateTime(1989, 1, 1, 0, 0, 0, 0);
             // 
@@ -87,20 +87,20 @@
             // 
             dtpEndDate.CustomFormat = "yyyy/MM/dd";
             dtpEndDate.Format = DateTimePickerFormat.Custom;
-            dtpEndDate.Location = new Point(76, 39);
-            dtpEndDate.Margin = new Padding(2);
-            dtpEndDate.MaxDate = new DateTime(2025, 11, 20, 0, 0, 0, 0);
+            dtpEndDate.Location = new Point(87, 52);
+            dtpEndDate.Margin = new Padding(2, 3, 2, 3);
+            dtpEndDate.MaxDate = new DateTime(2030, 1, 1, 0, 0, 0, 0);
             dtpEndDate.Name = "dtpEndDate";
-            dtpEndDate.Size = new Size(99, 23);
+            dtpEndDate.Size = new Size(113, 27);
             dtpEndDate.TabIndex = 2;
             dtpEndDate.Value = new DateTime(2025, 11, 20, 0, 0, 0, 0);
             // 
             // btnGenerateReport
             // 
-            btnGenerateReport.Location = new Point(191, 12);
-            btnGenerateReport.Margin = new Padding(2);
+            btnGenerateReport.Location = new Point(218, 16);
+            btnGenerateReport.Margin = new Padding(2, 3, 2, 3);
             btnGenerateReport.Name = "btnGenerateReport";
-            btnGenerateReport.Size = new Size(79, 50);
+            btnGenerateReport.Size = new Size(90, 67);
             btnGenerateReport.TabIndex = 3;
             btnGenerateReport.Text = "Generate Report";
             btnGenerateReport.UseVisualStyleBackColor = true;
@@ -115,14 +115,14 @@
             dgvSales.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dgvSales.Columns.AddRange(new DataGridViewColumn[] { columnnord_num, columnord_date, columnTitle_id, columnTitle, columnQty, columnTotal_value });
             dgvSales.DataSource = validatorBindingSource;
-            dgvSales.Location = new Point(11, 77);
-            dgvSales.Margin = new Padding(2);
+            dgvSales.Location = new Point(13, 103);
+            dgvSales.Margin = new Padding(2, 3, 2, 3);
             dgvSales.MultiSelect = false;
             dgvSales.Name = "dgvSales";
             dgvSales.ReadOnly = true;
             dgvSales.RowHeadersWidth = 62;
             dgvSales.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            dgvSales.Size = new Size(538, 344);
+            dgvSales.Size = new Size(615, 459);
             dgvSales.TabIndex = 5;
             // 
             // columnnord_num
@@ -183,29 +183,29 @@
             // lblTotalValue
             // 
             lblTotalValue.AutoSize = true;
-            lblTotalValue.Location = new Point(15, 441);
+            lblTotalValue.Location = new Point(17, 588);
             lblTotalValue.Margin = new Padding(2, 0, 2, 0);
             lblTotalValue.Name = "lblTotalValue";
-            lblTotalValue.Size = new Size(157, 15);
+            lblTotalValue.Size = new Size(198, 20);
             lblTotalValue.TabIndex = 6;
             lblTotalValue.Text = "Total Value of Sold Products:";
             // 
             // txtTotalValue
             // 
-            txtTotalValue.Location = new Point(176, 438);
-            txtTotalValue.Margin = new Padding(2);
+            txtTotalValue.Location = new Point(201, 584);
+            txtTotalValue.Margin = new Padding(2, 3, 2, 3);
             txtTotalValue.Name = "txtTotalValue";
             txtTotalValue.ReadOnly = true;
-            txtTotalValue.Size = new Size(71, 23);
+            txtTotalValue.Size = new Size(81, 27);
             txtTotalValue.TabIndex = 7;
             txtTotalValue.TextAlign = HorizontalAlignment.Right;
             // 
             // btnExport
             // 
-            btnExport.Location = new Point(403, 438);
-            btnExport.Margin = new Padding(2);
+            btnExport.Location = new Point(461, 584);
+            btnExport.Margin = new Padding(2, 3, 2, 3);
             btnExport.Name = "btnExport";
-            btnExport.Size = new Size(71, 23);
+            btnExport.Size = new Size(81, 31);
             btnExport.TabIndex = 4;
             btnExport.Text = "Export File";
             btnExport.UseVisualStyleBackColor = true;
@@ -213,20 +213,20 @@
             // 
             // btnClose
             // 
-            btnClose.Location = new Point(478, 438);
-            btnClose.Margin = new Padding(2);
+            btnClose.Location = new Point(546, 584);
+            btnClose.Margin = new Padding(2, 3, 2, 3);
             btnClose.Name = "btnClose";
-            btnClose.Size = new Size(71, 23);
+            btnClose.Size = new Size(81, 31);
             btnClose.TabIndex = 5;
             btnClose.Text = "Close";
             btnClose.UseVisualStyleBackColor = true;
             // 
             // frmSalesReport
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             CancelButton = btnClose;
-            ClientSize = new Size(560, 472);
+            ClientSize = new Size(640, 629);
             Controls.Add(btnClose);
             Controls.Add(btnExport);
             Controls.Add(txtTotalValue);
@@ -238,7 +238,7 @@
             Controls.Add(lblEndDate);
             Controls.Add(lblStartDate);
             FormBorderStyle = FormBorderStyle.FixedSingle;
-            Margin = new Padding(2);
+            Margin = new Padding(2, 3, 2, 3);
             MaximizeBox = false;
             MinimizeBox = false;
             Name = "frmSalesReport";
