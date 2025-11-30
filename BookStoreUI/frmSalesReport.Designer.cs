@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             components = new System.ComponentModel.Container();
+            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
             lblStartDate = new Label();
             lblEndDate = new Label();
             dtpStartDate = new DateTimePicker();
@@ -80,7 +81,7 @@
             dtpStartDate.Name = "dtpStartDate";
             dtpStartDate.Size = new Size(99, 23);
             dtpStartDate.TabIndex = 1;
-            dtpStartDate.Value = new DateTime(2025, 11, 20, 0, 0, 0, 0);
+            dtpStartDate.Value = new DateTime(1989, 1, 1, 0, 0, 0, 0);
             // 
             // dtpEndDate
             // 
@@ -103,6 +104,7 @@
             btnGenerateReport.TabIndex = 3;
             btnGenerateReport.Text = "Generate Report";
             btnGenerateReport.UseVisualStyleBackColor = true;
+            btnGenerateReport.Click += btnGenerateReport_Click;
             // 
             // dgvSales
             // 
@@ -125,6 +127,7 @@
             // 
             // columnnord_num
             // 
+            columnnord_num.DataPropertyName = "OrderNum";
             columnnord_num.HeaderText = "Order Num.";
             columnnord_num.MinimumWidth = 8;
             columnnord_num.Name = "columnnord_num";
@@ -132,6 +135,7 @@
             // 
             // columnord_date
             // 
+            columnord_date.DataPropertyName = "OrderDate";
             columnord_date.HeaderText = "Order Date";
             columnord_date.MinimumWidth = 8;
             columnord_date.Name = "columnord_date";
@@ -139,6 +143,7 @@
             // 
             // columnTitle_id
             // 
+            columnTitle_id.DataPropertyName = "TitleId";
             columnTitle_id.HeaderText = "Title ID";
             columnTitle_id.MinimumWidth = 8;
             columnTitle_id.Name = "columnTitle_id";
@@ -146,6 +151,7 @@
             // 
             // columnTitle
             // 
+            columnTitle.DataPropertyName = "Title";
             columnTitle.HeaderText = "Title";
             columnTitle.MinimumWidth = 8;
             columnTitle.Name = "columnTitle";
@@ -153,6 +159,7 @@
             // 
             // columnQty
             // 
+            columnQty.DataPropertyName = "Qty";
             columnQty.HeaderText = "Quantity";
             columnQty.MinimumWidth = 8;
             columnQty.Name = "columnQty";
@@ -160,6 +167,10 @@
             // 
             // columnTotal_value
             // 
+            columnTotal_value.DataPropertyName = "TotalValue";
+            dataGridViewCellStyle1.Format = "C2";
+            dataGridViewCellStyle1.NullValue = null;
+            columnTotal_value.DefaultCellStyle = dataGridViewCellStyle1;
             columnTotal_value.HeaderText = "Total Value";
             columnTotal_value.MinimumWidth = 8;
             columnTotal_value.Name = "columnTotal_value";
@@ -198,6 +209,7 @@
             btnExport.TabIndex = 4;
             btnExport.Text = "Export File";
             btnExport.UseVisualStyleBackColor = true;
+            btnExport.Click += btnExport_Click;
             // 
             // btnClose
             // 
