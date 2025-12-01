@@ -1,6 +1,7 @@
-﻿using System.Collections.Generic;
+﻿using BookStoreDO.Models.DataLayer;
+using Microsoft.EntityFrameworkCore;
+using System.Collections.Generic;
 using System.Linq;
-using BookStoreDO.Models.DataLayer;
 // To avoid conflict with System.Windows.Forms.VisualStyles.VisualStyleElement.Header.Title
 using TitleEntity = BookStoreDO.Models.DataLayer.Title;
 
@@ -38,6 +39,8 @@ namespace BookStoreDO.DataAccessClasses
         }
         public void UpdateTitle(TitleEntity title)
         {
+            EnsurePublisherAttached(title);
+
             Context.Titles.Update(title);
             Context.SaveChanges();
         }
@@ -49,6 +52,18 @@ namespace BookStoreDO.DataAccessClasses
                 Context.Titles.Remove(title);
                 Context.SaveChanges();
             }
+        }
+
+        private void EnsurePublisherAttached(TitleEntity title)
+        {
+            var publisherNav = title.Pub;
+            if (publisherNav == null) return;
+
+            var tracked = Context.Publishers.Local.FirstOrDefault(p => p.PubId == publisherNav.PubId)
+                          ?? Context.Publishers.Find(publisherNav.PubId);
+
+            if (tracked != null) title.Pub = tracked;
+            else Context.Entry(publisherNav).State = EntityState.Unchanged;
         }
     }
 }
