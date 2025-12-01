@@ -1,4 +1,5 @@
 ﻿using BookStoreDO.Models.DataLayer;
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,14 +10,28 @@ namespace BookStoreDO.DataAccessClasses;
 
 public partial class BookStoreDataAccess
 {
-    public List<Publisher> GetPublishers() => Context.Publishers.ToList();
+    public List<Publisher> GetPublishers()
+           => Context.Publishers
+                     .OrderBy(p => p.PubName)
+                     .ToList();
 
     public Publisher? GetPublisher(string id) => Context.Publishers.Find(id);
 
     public void AddPublisher(Publisher publisher)
     {
-        Context.Publishers.Add(publisher);
-        Context.SaveChanges();
+        try
+        {
+            Context.Publishers.Add(publisher);
+            Context.SaveChanges();
+        }
+        catch (DbUpdateException ex)
+        {
+   
+            System.Diagnostics.Debug.WriteLine(ex);
+
+
+            throw;
+        }
     }
 
     public void UpdatePublisher(Publisher publisher)
@@ -30,4 +45,6 @@ public partial class BookStoreDataAccess
         Context.Publishers.Remove(publisher);
         Context.SaveChanges();
     }
+
+
 }

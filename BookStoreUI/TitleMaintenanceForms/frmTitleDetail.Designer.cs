@@ -34,7 +34,6 @@
             nudRoyalty = new NumericUpDown();
             nudAdvance = new NumericUpDown();
             nudPrice = new NumericUpDown();
-            txtPubId = new TextBox();
             txtTitle = new TextBox();
             lblTitleId = new Label();
             lblTitle = new Label();
@@ -49,6 +48,7 @@
             cboType = new ComboBox();
             lblNotes = new Label();
             dtpPubDate = new DateTimePicker();
+            cboPubId = new ComboBox();
             btnSave = new Button();
             btnCancel = new Button();
             tlpTitle.SuspendLayout();
@@ -69,7 +69,6 @@
             tlpTitle.Controls.Add(nudRoyalty, 1, 6);
             tlpTitle.Controls.Add(nudAdvance, 1, 5);
             tlpTitle.Controls.Add(nudPrice, 1, 4);
-            tlpTitle.Controls.Add(txtPubId, 1, 3);
             tlpTitle.Controls.Add(txtTitle, 1, 1);
             tlpTitle.Controls.Add(lblTitleId, 0, 0);
             tlpTitle.Controls.Add(lblTitle, 0, 1);
@@ -84,6 +83,7 @@
             tlpTitle.Controls.Add(cboType, 1, 2);
             tlpTitle.Controls.Add(lblNotes, 0, 8);
             tlpTitle.Controls.Add(dtpPubDate, 1, 9);
+            tlpTitle.Controls.Add(cboPubId, 1, 3);
             tlpTitle.Dock = DockStyle.Top;
             tlpTitle.Location = new Point(0, 0);
             tlpTitle.Name = "tlpTitle";
@@ -154,16 +154,6 @@
             nudPrice.Size = new Size(180, 31);
             nudPrice.TabIndex = 9;
             nudPrice.ThousandsSeparator = true;
-            // 
-            // txtPubId
-            // 
-            txtPubId.Anchor = AnchorStyles.Left | AnchorStyles.Right;
-            txtPubId.CharacterCasing = CharacterCasing.Upper;
-            txtPubId.Location = new Point(104, 117);
-            txtPubId.MaxLength = 4;
-            txtPubId.Name = "txtPubId";
-            txtPubId.Size = new Size(362, 31);
-            txtPubId.TabIndex = 7;
             // 
             // txtTitle
             // 
@@ -306,6 +296,15 @@
             dtpPubDate.TabIndex = 19;
             dtpPubDate.Value = new DateTime(2025, 11, 19, 0, 0, 0, 0);
             // 
+            // cboPubId
+            // 
+            cboPubId.DropDownStyle = ComboBoxStyle.DropDownList;
+            cboPubId.FormattingEnabled = true;
+            cboPubId.Location = new Point(104, 117);
+            cboPubId.Name = "cboPubId";
+            cboPubId.Size = new Size(362, 33);
+            cboPubId.TabIndex = 20;
+            // 
             // btnSave
             // 
             btnSave.Anchor = AnchorStyles.Bottom;
@@ -345,6 +344,7 @@
             ShowIcon = false;
             StartPosition = FormStartPosition.CenterParent;
             Text = "Add/Edit Title";
+            Load += frmTitleDetail_Load;
             tlpTitle.ResumeLayout(false);
             tlpTitle.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)nudYtdSales).EndInit();
@@ -368,7 +368,6 @@
         private Label lblYtdSales;
         private Label lblNotes;
         private Label lblPubDate;
-        private TextBox txtPubId;
         private TextBox txtTitle;
         private TextBox txtTitleId;
         private ComboBox cboType;
@@ -380,5 +379,6 @@
         private DateTimePicker dtpPubDate;
         private Button btnSave;
         private Button btnCancel;
+        private ComboBox cboPubId;
     }
 }
