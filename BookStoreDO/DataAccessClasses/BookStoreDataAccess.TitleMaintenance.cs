@@ -30,5 +30,25 @@ namespace BookStoreDO.DataAccessClasses
                 .ThenBy(t => t.Title1)
                 .ToList();
         }
+        public TitleEntity? GetTitle(string id) => Context.Titles.Find(id);
+        public void AddTitle(TitleEntity title)
+        {
+            Context.Titles.Add(title);
+            Context.SaveChanges();
+        }
+        public void UpdateTitle(TitleEntity title)
+        {
+            Context.Titles.Update(title);
+            Context.SaveChanges();
+        }
+        public void DeleteTitle(string id)
+        {
+            var title = Context.Titles.Find(id);
+            if (title != null)
+            {
+                Context.Titles.Remove(title);
+                Context.SaveChanges();
+            }
+        }
     }
 }
