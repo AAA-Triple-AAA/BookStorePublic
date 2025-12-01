@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Windows.Forms;
@@ -11,17 +11,14 @@ namespace BookStoreUI
     public partial class frmTitleDetail : Form
     {
         public bool IsAdd = false;
-<<<<<<< Updated upstream
-=======
 
         private readonly BookStoreDataAccess _data = new();
 
-
+        // Lista de publishers usada para llenar el combo
         private List<Publisher> _publishers = new();
 
         public Title? SelectedTitle { get; set; }
 
->>>>>>> Stashed changes
         public frmTitleDetail()
         {
             InitializeComponent();
@@ -107,13 +104,11 @@ namespace BookStoreUI
         }
 
         // ================= LOAD =================
-        private void frmTitleDetail_Load(object sender, EventArgs e)
+        private void frmTitleDetail_Load(object? sender, EventArgs e)
         {
             this.Text = IsAdd ? @"Add Title" : @"Edit Title";
-<<<<<<< Updated upstream
-=======
 
-
+            // Cargar publishers
             _publishers = _data.GetPublishers();
 
             cboPubId.DataSource = _publishers;
@@ -130,14 +125,12 @@ namespace BookStoreUI
                 txtTitle.Text = SelectedTitle.Title1;
                 cboType.SelectedItem = SelectedTitle.Type;
 
-
                 var pub = _publishers
                     .FirstOrDefault(p => p.PubId.Trim() == SelectedTitle.PubId.Trim());
-
                 if (pub != null)
                     cboPubId.SelectedItem = pub;
 
-                nudPrice.Value = SelectedTitle.Price ?? 0.0m;
+                nudPrice.Value   = SelectedTitle.Price   ?? 0.0m;
                 nudAdvance.Value = SelectedTitle.Advance ?? 0.0m;
                 nudRoyalty.Value = SelectedTitle.Royalty ?? 0;
                 nudYtdSales.Value = SelectedTitle.YtdSales ?? 0;
@@ -149,29 +142,17 @@ namespace BookStoreUI
             {
                 dtpPubDate.Value = DateTime.Today;
             }
->>>>>>> Stashed changes
         }
 
         // ================= SAVE =================
-        private void btnSave_Click(object sender, EventArgs e)
+        private void btnSave_Click(object? sender, EventArgs e)
         {
             if (!ValidateInput())
-                return;   
+                return;
 
-<<<<<<< Updated upstream
-
-            MessageBox.Show(
-                "Title information saved successfully.",
-                "Saved",
-                MessageBoxButtons.OK,
-                MessageBoxIcon.Information);
-
-            ClearForm();
-=======
             string titleId = txtTitleId.Text.Trim();
             string title = txtTitle.Text.Trim();
             string type = cboType.SelectedItem?.ToString() ?? "";
-
 
             var selectedPublisher = cboPubId.SelectedItem as Publisher;
             if (selectedPublisher == null)
@@ -231,7 +212,7 @@ namespace BookStoreUI
 
             DialogResult = DialogResult.OK;
             Close();
->>>>>>> Stashed changes
         }
     }
 }
+
