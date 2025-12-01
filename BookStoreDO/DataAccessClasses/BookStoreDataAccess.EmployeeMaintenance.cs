@@ -10,7 +10,7 @@ namespace BookStoreDO.DataAccessClasses;
 
 public partial class BookStoreDataAccess
 {
-    public List<Employee> GetEmployees() => Context.Employees.ToList();
+    public List<Employee> GetEmployees() =>     Context.Employees.ToList();
 
     public Employee? GetEmployee(string id) => Context.Employees.Find(id);
 
