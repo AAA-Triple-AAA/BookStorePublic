@@ -8,16 +8,12 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using BookStoreBO;
-using BookStoreDO.DataAccessClasses;
-using BookStoreDO.Models.DataLayer;
 
 namespace BookStoreUI.StoreMaintenanceForms
 {
     public partial class frmStoreDetail : Form
     {
         public bool IsAdd = false;
-        public Store Store = null;
-        private BookStoreDataAccess _data = new();
 
         public frmStoreDetail()
         {
@@ -36,15 +32,6 @@ namespace BookStoreUI.StoreMaintenanceForms
             mtbStoreId.Focus();
         }
 
-        private bool ValidId(string storeId)
-        {
-            var store = _data.GetStore(storeId);
-
-            if (store == null) return true;
-
-            MessageBox.Show(@"Store ID already taken, please enter a unique ID.");
-            return false;
-        }
 
         private bool ValidateInput()
         {
@@ -91,63 +78,23 @@ namespace BookStoreUI.StoreMaintenanceForms
             return false;
         }
 
-        private void DisplayStoreInformation()
-        {
-            mtbStoreId.Text = Store!.StorId;
-            txtStoreName.Text = Store.StorName;
-            txtStoreAddress.Text = Store.StorAddress;
-            txtCity.Text = Store.City;
-            txtState.Text = Store.State;
-            mtbZip.Text = Store.Zip;
-        }
-
-        private void ApplyChanges()
-        {
-            if (IsAdd) Store = new Store();
-
-            Store!.StorId = mtbStoreId.Text;
-            Store.StorName = txtStoreName.Text;
-            Store.StorAddress = txtStoreAddress.Text;
-            Store.City = txtCity.Text;
-            Store.State = txtState.Text;
-            Store.Zip = mtbZip.Text;
-        }
 
         private void frnStoreDetail_Load(object sender, EventArgs e)
         {
-            if (!IsAdd)
-            {
-                mtbStoreId.Enabled = false;
-                DisplayStoreInformation();
-            }
-
             this.Text = IsAdd ? @"Add Store" : @"Edit Store";
         }
 
         private void btnSave_Click(object sender, EventArgs e)
         {
-            if (!ValidateInput()) return;   
-
-            ApplyChanges();
-
-            if (IsAdd && !ValidId(Store!.StorId)) return;
-
-            if (IsAdd) _data.AddStore(Store);
-            else _data.UpdateStore(Store);
+            if (!ValidateInput())
+                return;   
 
             MessageBox.Show(
-                @"Store information saved successfully.",
-                @"Saved",
+                "Store information saved successfully.",
+                "Saved",
                 MessageBoxButtons.OK,
                 MessageBoxIcon.Information);
 
-            if (!IsAdd)
-            {
-                txtStoreName.Focus();
-                return;
-            }
-
-            mtbStoreId.Focus();
             ClearForm();
         }
     }

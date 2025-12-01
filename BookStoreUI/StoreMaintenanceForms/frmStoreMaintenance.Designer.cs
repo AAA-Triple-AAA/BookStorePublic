@@ -34,11 +34,6 @@
             txtSearch = new TextBox();
             spcDetails = new SplitContainer();
             dgvStore = new DataGridView();
-            columnStorId = new DataGridViewTextBoxColumn();
-            columnStorName = new DataGridViewTextBoxColumn();
-            columnStorAddress = new DataGridViewTextBoxColumn();
-            columnCity = new DataGridViewTextBoxColumn();
-            columnState = new DataGridViewTextBoxColumn();
             validatorBindingSource1 = new BindingSource(components);
             rtbDetails = new RichTextBox();
             btnAddStore = new Button();
@@ -46,6 +41,11 @@
             btnSearch = new Button();
             btnDeleteStore = new Button();
             lblDetails = new Label();
+            columnStorId = new DataGridViewTextBoxColumn();
+            columnStorName = new DataGridViewTextBoxColumn();
+            columnStorAddress = new DataGridViewTextBoxColumn();
+            columnCity = new DataGridViewTextBoxColumn();
+            columnState = new DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)validatorBindingSource).BeginInit();
             ((System.ComponentModel.ISupportInitialize)spcDetails).BeginInit();
             spcDetails.Panel1.SuspendLayout();
@@ -104,52 +104,6 @@
             dgvStore.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             dgvStore.Size = new Size(571, 340);
             dgvStore.TabIndex = 0;
-            dgvStore.SelectionChanged += dgvStore_SelectionChanged;
-            // 
-            // columnStorId
-            // 
-            columnStorId.DataPropertyName = "StorId";
-            columnStorId.HeaderText = "Store ID";
-            columnStorId.MinimumWidth = 8;
-            columnStorId.Name = "columnStorId";
-            columnStorId.ReadOnly = true;
-            columnStorId.Width = 150;
-            // 
-            // columnStorName
-            // 
-            columnStorName.DataPropertyName = "StorName";
-            columnStorName.HeaderText = "Name";
-            columnStorName.MinimumWidth = 8;
-            columnStorName.Name = "columnStorName";
-            columnStorName.ReadOnly = true;
-            columnStorName.Width = 150;
-            // 
-            // columnStorAddress
-            // 
-            columnStorAddress.DataPropertyName = "StorAddress";
-            columnStorAddress.HeaderText = "Address";
-            columnStorAddress.MinimumWidth = 8;
-            columnStorAddress.Name = "columnStorAddress";
-            columnStorAddress.ReadOnly = true;
-            columnStorAddress.Width = 150;
-            // 
-            // columnCity
-            // 
-            columnCity.DataPropertyName = "City";
-            columnCity.HeaderText = "City";
-            columnCity.MinimumWidth = 8;
-            columnCity.Name = "columnCity";
-            columnCity.ReadOnly = true;
-            columnCity.Width = 150;
-            // 
-            // columnState
-            // 
-            columnState.DataPropertyName = "State";
-            columnState.HeaderText = "State";
-            columnState.MinimumWidth = 8;
-            columnState.Name = "columnState";
-            columnState.ReadOnly = true;
-            columnState.Width = 150;
             // 
             // validatorBindingSource1
             // 
@@ -206,7 +160,6 @@
             btnDeleteStore.TabIndex = 5;
             btnDeleteStore.Text = "Delete Selected Store";
             btnDeleteStore.UseVisualStyleBackColor = true;
-            btnDeleteStore.Click += btnDeleteStore_Click;
             // 
             // lblDetails
             // 
@@ -217,6 +170,51 @@
             lblDetails.Size = new Size(42, 15);
             lblDetails.TabIndex = 33;
             lblDetails.Text = "Details";
+            // 
+            // columnStorId
+            // 
+            columnStorId.DataPropertyName = "StorId";
+            columnStorId.HeaderText = "Store ID";
+            columnStorId.MinimumWidth = 8;
+            columnStorId.Name = "columnStorId";
+            columnStorId.ReadOnly = true;
+            columnStorId.Width = 150;
+            // 
+            // columnStorName
+            // 
+            columnStorName.DataPropertyName = "StorName";
+            columnStorName.HeaderText = "Name";
+            columnStorName.MinimumWidth = 8;
+            columnStorName.Name = "columnStorName";
+            columnStorName.ReadOnly = true;
+            columnStorName.Width = 150;
+            // 
+            // columnStorAddress
+            // 
+            columnStorAddress.DataPropertyName = "StorAddress";
+            columnStorAddress.HeaderText = "Address";
+            columnStorAddress.MinimumWidth = 8;
+            columnStorAddress.Name = "columnStorAddress";
+            columnStorAddress.ReadOnly = true;
+            columnStorAddress.Width = 150;
+            // 
+            // columnCity
+            // 
+            columnCity.DataPropertyName = "City";
+            columnCity.HeaderText = "City";
+            columnCity.MinimumWidth = 8;
+            columnCity.Name = "columnCity";
+            columnCity.ReadOnly = true;
+            columnCity.Width = 150;
+            // 
+            // columnState
+            // 
+            columnState.DataPropertyName = "State";
+            columnState.HeaderText = "State";
+            columnState.MinimumWidth = 8;
+            columnState.Name = "columnState";
+            columnState.ReadOnly = true;
+            columnState.Width = 150;
             // 
             // frmStoreMaintenance
             // 
@@ -238,7 +236,6 @@
             Name = "frmStoreMaintenance";
             StartPosition = FormStartPosition.CenterParent;
             Text = "Store Mainenance";
-            Load += frmStoreMaintenance_Load;
             ((System.ComponentModel.ISupportInitialize)validatorBindingSource).EndInit();
             spcDetails.Panel1.ResumeLayout(false);
             spcDetails.Panel2.ResumeLayout(false);
