@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using BookStoreDO.Models.DataLayer;
 using BookStoreBO;
 
 namespace BookStoreUI.StoreMaintenanceForms
@@ -14,7 +15,8 @@ namespace BookStoreUI.StoreMaintenanceForms
     public partial class frmStoreDetail : Form
     {
         public bool IsAdd = false;
-
+        public Store? CurrentStore { get; set; }
+        private readonly StoreManager _storeManager = new StoreManager();
         public frmStoreDetail()
         {
             InitializeComponent();
@@ -82,12 +84,73 @@ namespace BookStoreUI.StoreMaintenanceForms
         private void frnStoreDetail_Load(object sender, EventArgs e)
         {
             this.Text = IsAdd ? @"Add Store" : @"Edit Store";
+
+            if (!IsAdd && CurrentStore != null)
+            {
+                
+                mtbStoreId.Text = CurrentStore.StorId;
+                mtbStoreId.ReadOnly = true; 
+
+                txtStoreName.Text = CurrentStore.StorName;
+                txtStoreAddress.Text = CurrentStore.StorAddress;
+                txtCity.Text = CurrentStore.City;
+                txtState.Text = CurrentStore.State;
+                mtbZip.Text = CurrentStore.Zip;
+
+            }
+            else
+            {
+                // Adding new store
+                ClearForm();
+                mtbStoreId.ReadOnly = false;
+            }
         }
 
         private void btnSave_Click(object sender, EventArgs e)
         {
             if (!ValidateInput())
-                return;   
+                return;
+            string storeId = mtbStoreId.Text;
+            string storeName = txtStoreName.Text.Trim();
+            string storeAddress = txtStoreAddress.Text.Trim();
+            string city = txtCity.Text.Trim();
+            string state = txtState.Text.Trim();
+            string zip = mtbZip.Text;
+
+            if (IsAdd)
+            {
+                // Create a new Store entity
+                var newStore = new Store
+                {
+                    StorId = storeId,
+                    StorName = storeName,
+                    StorAddress = storeAddress,
+                    City = city,
+                    State = state,
+                    Zip = zip
+                };
+
+                _storeManager.AddStore(newStore);
+            }
+            else
+            {
+                if (CurrentStore == null)
+                {
+                    MessageBox.Show("No store loaded to update.", "Error",
+                        MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
+
+                // Update the existing Store entity
+                CurrentStore.StorName = storeName;
+                CurrentStore.StorAddress = storeAddress;
+                CurrentStore.City = city;
+                CurrentStore.State = state;
+                CurrentStore.Zip = zip;
+
+                _storeManager.UpdateStore(CurrentStore);
+            }
+
 
             MessageBox.Show(
                 "Store information saved successfully.",
@@ -96,6 +159,8 @@ namespace BookStoreUI.StoreMaintenanceForms
                 MessageBoxIcon.Information);
 
             ClearForm();
+            this.DialogResult = DialogResult.OK;
+            this.Close();
         }
     }
 }
