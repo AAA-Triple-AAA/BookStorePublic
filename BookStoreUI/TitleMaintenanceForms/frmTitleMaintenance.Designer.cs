@@ -38,14 +38,14 @@
             validatorBindingSource = new BindingSource(components);
             spcDetails = new SplitContainer();
             dgvTitle = new DataGridView();
-            validatorBindingSource1 = new BindingSource(components);
-            rtbDetails = new RichTextBox();
-            txtSearch = new TextBox();
             columnTitleId = new DataGridViewTextBoxColumn();
             columnTitle = new DataGridViewTextBoxColumn();
             columnType = new DataGridViewTextBoxColumn();
             columnPub_id = new DataGridViewTextBoxColumn();
             columnPrice = new DataGridViewTextBoxColumn();
+            validatorBindingSource1 = new BindingSource(components);
+            rtbDetails = new RichTextBox();
+            txtSearch = new TextBox();
             ((System.ComponentModel.ISupportInitialize)validatorBindingSource).BeginInit();
             ((System.ComponentModel.ISupportInitialize)spcDetails).BeginInit();
             spcDetails.Panel1.SuspendLayout();
@@ -64,6 +64,7 @@
             btnDeleteTitle.TabIndex = 5;
             btnDeleteTitle.Text = "Delete Selected Title";
             btnDeleteTitle.UseVisualStyleBackColor = true;
+            btnDeleteTitle.Click += btnDeleteTitle_Click;
             // 
             // btnAddTitle
             // 
@@ -108,10 +109,6 @@
             btnSearch.UseVisualStyleBackColor = true;
             btnSearch.Click += btnSearch_Click;
             // 
-            // validatorBindingSource
-            // 
-            validatorBindingSource.DataSource = typeof(BookStoreBO.Validator);
-            // 
             // spcDetails
             // 
             spcDetails.Location = new Point(-1, 80);
@@ -148,28 +145,6 @@
             dgvTitle.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             dgvTitle.Size = new Size(572, 340);
             dgvTitle.TabIndex = 0;
-            // 
-            // validatorBindingSource1
-            // 
-            validatorBindingSource1.DataSource = typeof(BookStoreBO.Validator);
-            // 
-            // rtbDetails
-            // 
-            rtbDetails.Location = new Point(0, 0);
-            rtbDetails.Margin = new Padding(2);
-            rtbDetails.Name = "rtbDetails";
-            rtbDetails.Size = new Size(254, 342);
-            rtbDetails.TabIndex = 0;
-            rtbDetails.Text = "";
-            // 
-            // txtSearch
-            // 
-            txtSearch.Location = new Point(11, 27);
-            txtSearch.Margin = new Padding(2);
-            txtSearch.Name = "txtSearch";
-            txtSearch.PlaceholderText = "Search";
-            txtSearch.Size = new Size(257, 23);
-            txtSearch.TabIndex = 1;
             // 
             // columnTitleId
             // 
@@ -216,6 +191,24 @@
             columnPrice.ReadOnly = true;
             columnPrice.Width = 150;
             // 
+            // rtbDetails
+            // 
+            rtbDetails.Location = new Point(0, 0);
+            rtbDetails.Margin = new Padding(2);
+            rtbDetails.Name = "rtbDetails";
+            rtbDetails.Size = new Size(254, 342);
+            rtbDetails.TabIndex = 0;
+            rtbDetails.Text = "";
+            // 
+            // txtSearch
+            // 
+            txtSearch.Location = new Point(11, 27);
+            txtSearch.Margin = new Padding(2);
+            txtSearch.Name = "txtSearch";
+            txtSearch.PlaceholderText = "Search";
+            txtSearch.Size = new Size(257, 23);
+            txtSearch.TabIndex = 1;
+            // 
             // frmTitleMaintenance
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -236,6 +229,7 @@
             Name = "frmTitleMaintenance";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Title Maintenance";
+            Load += frmTitleMaintenance_Load;
             ((System.ComponentModel.ISupportInitialize)validatorBindingSource).EndInit();
             spcDetails.Panel1.ResumeLayout(false);
             spcDetails.Panel2.ResumeLayout(false);
