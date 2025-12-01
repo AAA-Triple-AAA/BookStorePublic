@@ -12,7 +12,6 @@ using BookStoreBO;
 using BookStoreDO.DataAccessClasses;
 using BookStoreDO.Models.DataLayer;
 
-
 namespace BookStoreUI.PublisherMaintenanceForms
 {
     public partial class frmPublisherDetail : Form
@@ -21,14 +20,13 @@ namespace BookStoreUI.PublisherMaintenanceForms
         public Publisher? Publisher = null;
 
         private readonly BookStoreDataAccess _data = new();
-         
 
         public frmPublisherDetail()
-
         {
             InitializeComponent();
         }
 
+        // =============== DISPLAY / CLEAR ===============
         private void DisplayPublisherInformation()
         {
             if (Publisher == null) return;
@@ -48,6 +46,8 @@ namespace BookStoreUI.PublisherMaintenanceForms
             txtState.Clear();
             txtCountry.Clear();
         }
+
+        // =============== APPLY CHANGES ===============
         private void ApplyChanges()
         {
             if (IsAdd)
@@ -64,24 +64,22 @@ namespace BookStoreUI.PublisherMaintenanceForms
             Publisher.Country = txtCountry.Text.Trim();
         }
 
+        // =============== VALIDATION ===============
         private bool ValidateInput()
         {
             string errMsg = "";
-
 
             string pubName = txtPubName.Text.Trim();
             string city = txtCity.Text.Trim();
             string state = txtState.Text.Trim();
             string country = txtCountry.Text.Trim();
 
-
+            // Pub ID mask
             errMsg += Validator.IsMaskCompleted(mtbPubId.MaskCompleted, "Publisher ID");
-
 
             if (mtbPubId.MaskCompleted)
             {
                 string pubId = mtbPubId.Text.Trim();
-
 
                 var regex = new Regex(@"^(1756|1622|0877|0736|1389|99[0-9]{2})$");
 
@@ -91,22 +89,21 @@ namespace BookStoreUI.PublisherMaintenanceForms
                 }
             }
 
-
+            // Pub Name
             errMsg += Validator.IsPresent(pubName, "Publisher Name");
             errMsg += Validator.IsWithinLength(pubName, "Publisher Name", 1, 40);
 
-
+            // City
             errMsg += Validator.IsPresent(city, "City");
             errMsg += Validator.IsWithinLength(city, "City", 1, 20);
 
-
+            // State
             errMsg += Validator.IsPresent(state, "State");
             errMsg += Validator.IsWithinLength(state, "State", 2, 2);
 
-
+            // Country
             errMsg += Validator.IsPresent(country, "Country");
             errMsg += Validator.IsWithinLength(country, "Country", 1, 30);
-
 
             if (errMsg == "")
                 return true;
@@ -122,11 +119,10 @@ namespace BookStoreUI.PublisherMaintenanceForms
 
         private bool ValidId(string pubId)
         {
-            
             var existing = _data.GetPublisher(pubId);
 
             if (existing == null)
-                return true;   
+                return true;
 
             MessageBox.Show(
                 "Publisher ID already exists. Please enter a unique ID.",
@@ -137,9 +133,9 @@ namespace BookStoreUI.PublisherMaintenanceForms
             return false;
         }
 
-
-        private void frmPublisherDetail_Load(object sender, EventArgs e)
-        {       
+        // =============== FORM LOAD ===============
+        private void frmPublisherDetail_Load(object? sender, EventArgs e)
+        {
             this.Text = IsAdd ? "Add Publisher" : "Edit Publisher";
 
             if (IsAdd)
@@ -154,9 +150,18 @@ namespace BookStoreUI.PublisherMaintenanceForms
             }
         }
 
-        private void btnSave_Click(object sender, EventArgs e)
+        // =============== SAVE BUTTON ===============
+        private void btnSave_Click(object? sender, EventArgs e)
         {
             if (!ValidateInput())
+                return;
+
+
+            mtbPubId.TextMaskFormat = MaskFormat.IncludeLiterals;
+            string pubId = mtbPubId.Text.Trim();
+
+
+            if (IsAdd && !ValidId(pubId))
                 return;
 
             ApplyChanges();
@@ -178,20 +183,23 @@ namespace BookStoreUI.PublisherMaintenanceForms
                     MessageBoxButtons.OK,
                     MessageBoxIcon.Information);
 
-                // ✔ tell the caller “save succeeded”
                 this.DialogResult = DialogResult.OK;
                 this.Close();
             }
             catch (Exception ex)
             {
+
+                System.Diagnostics.Debug.WriteLine(ex.ToString());
+
+
+                string dbMsg = ex.InnerException?.Message ?? ex.Message;
+
                 MessageBox.Show(
-                    "An error occurred while saving the publisher:\n" + ex.Message,
+                    "An error occurred while saving the publisher:\n" + dbMsg,
                     "Error",
                     MessageBoxButtons.OK,
                     MessageBoxIcon.Error);
             }
         }
-
-
     }
 }
