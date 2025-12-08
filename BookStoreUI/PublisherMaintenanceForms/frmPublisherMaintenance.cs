@@ -24,9 +24,10 @@ namespace BookStoreUI.PublisherMaintenanceForms
         {
             InitializeComponent();
         }
+
         private void LoadPublishers(string? searchTerm = null)
         {
-            var publishers = _data.GetPublishers();  
+            var publishers = _data.GetPublishers();
 
             if (!string.IsNullOrWhiteSpace(searchTerm))
             {
@@ -38,12 +39,38 @@ namespace BookStoreUI.PublisherMaintenanceForms
                         p.PubName.ToLower().Contains(term))
                     .ToList();
             }
-         
+
             dgvPublisher.AutoGenerateColumns = false;
             dgvPublisher.DataSource = publishers;
+            UpdateDetails();
         }
 
-   
+        private void UpdateDetails()
+        {
+            if (dgvPublisher.CurrentRow == null)
+            {
+                rtbDetails.Clear();
+                return;
+            }
+
+            var selected = dgvPublisher.CurrentRow.DataBoundItem as Publisher;
+            if (selected == null)
+            {
+                rtbDetails.Clear();
+                return;
+            }
+
+            var sb = new StringBuilder();
+            sb.AppendLine($"Pub. ID: {selected.PubId}");
+            sb.AppendLine($"Pub. Name: {selected.PubName}");
+            sb.AppendLine($"City: {selected.City}");
+            sb.AppendLine($"State: {selected.State}");
+            sb.AppendLine($"Country: {selected.Country}");
+
+            rtbDetails.Text = sb.ToString();
+        }
+
+
         private void frmPublisherMaintenance_Load(object sender, EventArgs e)
         {
             LoadPublishers();
@@ -59,7 +86,7 @@ namespace BookStoreUI.PublisherMaintenanceForms
 
                 var result = frm.ShowDialog();
 
-             
+
                 if (result == DialogResult.OK)
                 {
                     LoadPublishers();
@@ -130,5 +157,9 @@ namespace BookStoreUI.PublisherMaintenanceForms
             LoadPublishers();
         }
 
+        private void dgvPublisher_SelectionChanged(object sender, EventArgs e)
+        {
+            UpdateDetails();
+        }
     }
 }

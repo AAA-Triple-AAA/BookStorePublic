@@ -21,14 +21,13 @@ namespace BookStoreUI.StoreMaintenanceForms
         {
             InitializeComponent();
         }
+
         private void frmStoreMaintenance_Load(object sender, EventArgs e)
         {
             var stores = _storeManager.GetAllStores();
             dgvStore.AutoGenerateColumns = false;
             dgvStore.DataSource = stores;
         }
-
-
 
         private void btnAddStore_Click(object sender, EventArgs e)
         {
@@ -70,16 +69,12 @@ namespace BookStoreUI.StoreMaintenanceForms
                 string term = txtSearch.Text.Trim();
                 var stores = _storeManager.SearchStores(term);
                 dgvStore.DataSource = stores;
+                UpdateDetails();
             }
             else
             {
                 MessageBox.Show(errMsg);
             }
-        }
-
-        private void dgvStore_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
         }
 
         private void btnDeleteStore_Click(object sender, EventArgs e)
@@ -109,20 +104,32 @@ namespace BookStoreUI.StoreMaintenanceForms
 
         private void dgvStore_SelectionChanged(object sender, EventArgs e)
         {
-            if (dgvStore.CurrentRow?.DataBoundItem is Store s)
-            {
-                rtbDetails.Text =
-                    $"Store ID: {s.StorId}\n" +
-                    $"Name    : {s.StorName}\n" +
-                    $"Address : {s.StorAddress}\n" +
-                    $"City    : {s.City}\n" +
-                    $"State   : {s.State}\n" +
-                    $"Zip     : {s.Zip}";
-            }
-            else
+            UpdateDetails();
+        }
+
+        private void UpdateDetails()
+        {
+            if (dgvStore.CurrentRow == null)
             {
                 rtbDetails.Clear();
+                return;
             }
+
+            var selected = dgvStore.CurrentRow.DataBoundItem as Store;
+            if (selected == null)
+            {
+                rtbDetails.Clear();
+                return;
+            }
+
+            var sb = new StringBuilder();
+            sb.AppendLine($"Store ID: {selected.StorId}");
+            sb.AppendLine($"Name: {selected.StorName}");
+            sb.AppendLine($"City: {selected.City}");
+            sb.AppendLine($"State: {selected.State}");
+            sb.AppendLine($"Zip: {selected.Zip}");
+
+            rtbDetails.Text = sb.ToString();
         }
     }
 }
