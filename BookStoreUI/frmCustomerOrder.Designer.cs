@@ -72,6 +72,7 @@
             txtTax = new TextBox();
             txtTotal = new TextBox();
             chkInitialCustomer = new CheckBox();
+            chkAnother_Employee = new CheckBox();
             ((System.ComponentModel.ISupportInitialize)dgvTitles).BeginInit();
             ((System.ComponentModel.ISupportInitialize)validatorBindingSource).BeginInit();
             ((System.ComponentModel.ISupportInitialize)nudQuantity).BeginInit();
@@ -91,7 +92,7 @@
             // lblEmployee
             // 
             lblEmployee.AutoSize = true;
-            lblEmployee.Location = new Point(206, 15);
+            lblEmployee.Location = new Point(259, 15);
             lblEmployee.Name = "lblEmployee";
             lblEmployee.Size = new Size(94, 25);
             lblEmployee.TabIndex = 2;
@@ -100,7 +101,7 @@
             // lblCustomerName
             // 
             lblCustomerName.AutoSize = true;
-            lblCustomerName.Location = new Point(396, 15);
+            lblCustomerName.Location = new Point(603, 15);
             lblCustomerName.Name = "lblCustomerName";
             lblCustomerName.Size = new Size(145, 25);
             lblCustomerName.TabIndex = 4;
@@ -109,7 +110,7 @@
             // lblOrderDate
             // 
             lblOrderDate.AutoSize = true;
-            lblOrderDate.Location = new Point(589, 15);
+            lblOrderDate.Location = new Point(796, 15);
             lblOrderDate.Name = "lblOrderDate";
             lblOrderDate.Size = new Size(104, 25);
             lblOrderDate.TabIndex = 6;
@@ -121,21 +122,21 @@
             cboStore.FormattingEnabled = true;
             cboStore.Location = new Point(16, 43);
             cboStore.Name = "cboStore";
-            cboStore.Size = new Size(183, 33);
+            cboStore.Size = new Size(243, 33);
             cboStore.TabIndex = 1;
             // 
             // cboEmployee
             // 
             cboEmployee.DropDownStyle = ComboBoxStyle.DropDownList;
             cboEmployee.FormattingEnabled = true;
-            cboEmployee.Location = new Point(206, 43);
+            cboEmployee.Location = new Point(265, 45);
             cboEmployee.Name = "cboEmployee";
-            cboEmployee.Size = new Size(183, 33);
+            cboEmployee.Size = new Size(332, 33);
             cboEmployee.TabIndex = 3;
             // 
             // txtCustomerName
             // 
-            txtCustomerName.Location = new Point(396, 43);
+            txtCustomerName.Location = new Point(603, 43);
             txtCustomerName.MaxLength = 60;
             txtCustomerName.Name = "txtCustomerName";
             txtCustomerName.Size = new Size(183, 31);
@@ -145,12 +146,12 @@
             // 
             dtpOrderDate.CustomFormat = "yyyy/MM/dd";
             dtpOrderDate.Format = DateTimePickerFormat.Custom;
-            dtpOrderDate.Location = new Point(589, 43);
+            dtpOrderDate.Location = new Point(796, 43);
             dtpOrderDate.MaxDate = new DateTime(2030, 1, 1, 0, 0, 0, 0);
             dtpOrderDate.Name = "dtpOrderDate";
             dtpOrderDate.Size = new Size(183, 31);
             dtpOrderDate.TabIndex = 7;
-            dtpOrderDate.Value = new DateTime(2025, 11, 20, 0, 0, 0, 0);
+            dtpOrderDate.Value = new DateTime(2025, 12, 7, 0, 0, 0, 0);
             // 
             // txtSearchTitle
             // 
@@ -175,16 +176,17 @@
             dgvTitles.AllowUserToAddRows = false;
             dgvTitles.AllowUserToDeleteRows = false;
             dgvTitles.AutoGenerateColumns = false;
+            dgvTitles.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.DisplayedCells;
             dgvTitles.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dgvTitles.Columns.AddRange(new DataGridViewColumn[] { columnTitle_id, columnPrice, columnTitle });
             dgvTitles.DataSource = validatorBindingSource;
-            dgvTitles.Location = new Point(12, 170);
+            dgvTitles.Location = new Point(16, 170);
             dgvTitles.MultiSelect = false;
             dgvTitles.Name = "dgvTitles";
             dgvTitles.ReadOnly = true;
             dgvTitles.RowHeadersWidth = 62;
             dgvTitles.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            dgvTitles.Size = new Size(492, 408);
+            dgvTitles.Size = new Size(586, 408);
             dgvTitles.TabIndex = 11;
             // 
             // columnTitle_id
@@ -194,7 +196,7 @@
             columnTitle_id.MinimumWidth = 8;
             columnTitle_id.Name = "columnTitle_id";
             columnTitle_id.ReadOnly = true;
-            columnTitle_id.Width = 105;
+            columnTitle_id.Width = 103;
             // 
             // columnPrice
             // 
@@ -206,7 +208,7 @@
             columnPrice.MinimumWidth = 8;
             columnPrice.Name = "columnPrice";
             columnPrice.ReadOnly = true;
-            columnPrice.Width = 70;
+            columnPrice.Width = 85;
             // 
             // columnTitle
             // 
@@ -215,7 +217,7 @@
             columnTitle.MinimumWidth = 8;
             columnTitle.Name = "columnTitle";
             columnTitle.ReadOnly = true;
-            columnTitle.Width = 250;
+            columnTitle.Width = 80;
             // 
             // validatorBindingSource
             // 
@@ -254,7 +256,7 @@
             // 
             lblShoppingCart.AutoSize = true;
             lblShoppingCart.Font = new Font("Segoe UI", 12F);
-            lblShoppingCart.Location = new Point(770, 128);
+            lblShoppingCart.Location = new Point(952, 122);
             lblShoppingCart.Name = "lblShoppingCart";
             lblShoppingCart.Size = new Size(167, 32);
             lblShoppingCart.TabIndex = 15;
@@ -265,29 +267,28 @@
             dgvCart.AllowUserToAddRows = false;
             dgvCart.AllowUserToDeleteRows = false;
             dgvCart.AutoGenerateColumns = false;
-            dgvCart.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            dgvCart.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.DisplayedCells;
             dgvCart.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dgvCart.Columns.AddRange(new DataGridViewColumn[] { columnTitleID, columntitleS, columnQty, columnPriceS, columnDiscount, columnLineTotal });
             dgvCart.DataSource = validatorBindingSource1;
-            dgvCart.Location = new Point(521, 170);
+            dgvCart.Location = new Point(612, 170);
             dgvCart.MultiSelect = false;
             dgvCart.Name = "dgvCart";
             dgvCart.ReadOnly = true;
             dgvCart.RowHeadersWidth = 62;
             dgvCart.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            dgvCart.Size = new Size(659, 408);
+            dgvCart.Size = new Size(854, 408);
             dgvCart.TabIndex = 16;
             // 
             // columnTitleID
             // 
-            columnTitleID.AutoSizeMode = DataGridViewAutoSizeColumnMode.None;
             columnTitleID.DataPropertyName = "TitleId";
             columnTitleID.FillWeight = 51.136364F;
             columnTitleID.HeaderText = "Title ID";
             columnTitleID.MinimumWidth = 8;
             columnTitleID.Name = "columnTitleID";
             columnTitleID.ReadOnly = true;
-            columnTitleID.Width = 110;
+            columnTitleID.Width = 103;
             // 
             // columntitleS
             // 
@@ -297,6 +298,7 @@
             columntitleS.MinimumWidth = 8;
             columntitleS.Name = "columntitleS";
             columntitleS.ReadOnly = true;
+            columntitleS.Width = 80;
             // 
             // columnQty
             // 
@@ -306,6 +308,7 @@
             columnQty.MinimumWidth = 8;
             columnQty.Name = "columnQty";
             columnQty.ReadOnly = true;
+            columnQty.Width = 116;
             // 
             // columnPriceS
             // 
@@ -318,6 +321,7 @@
             columnPriceS.MinimumWidth = 8;
             columnPriceS.Name = "columnPriceS";
             columnPriceS.ReadOnly = true;
+            columnPriceS.Width = 85;
             // 
             // columnDiscount
             // 
@@ -329,6 +333,7 @@
             columnDiscount.MinimumWidth = 8;
             columnDiscount.Name = "columnDiscount";
             columnDiscount.ReadOnly = true;
+            columnDiscount.Width = 118;
             // 
             // columnLineTotal
             // 
@@ -341,6 +346,7 @@
             columnLineTotal.MinimumWidth = 8;
             columnLineTotal.Name = "columnLineTotal";
             columnLineTotal.ReadOnly = true;
+            columnLineTotal.Width = 121;
             // 
             // validatorBindingSource1
             // 
@@ -348,7 +354,7 @@
             // 
             // btnUpdate
             // 
-            btnUpdate.Location = new Point(521, 593);
+            btnUpdate.Location = new Point(689, 593);
             btnUpdate.Name = "btnUpdate";
             btnUpdate.Size = new Size(144, 38);
             btnUpdate.TabIndex = 12;
@@ -358,7 +364,7 @@
             // 
             // btnRemoveItem
             // 
-            btnRemoveItem.Location = new Point(691, 593);
+            btnRemoveItem.Location = new Point(899, 590);
             btnRemoveItem.Name = "btnRemoveItem";
             btnRemoveItem.Size = new Size(144, 38);
             btnRemoveItem.TabIndex = 13;
@@ -368,7 +374,7 @@
             // 
             // btnCommitOrder
             // 
-            btnCommitOrder.Location = new Point(863, 593);
+            btnCommitOrder.Location = new Point(1084, 593);
             btnCommitOrder.Name = "btnCommitOrder";
             btnCommitOrder.Size = new Size(144, 38);
             btnCommitOrder.TabIndex = 14;
@@ -378,7 +384,7 @@
             // 
             // btnCancelOrder
             // 
-            btnCancelOrder.Location = new Point(1036, 593);
+            btnCancelOrder.Location = new Point(1276, 593);
             btnCancelOrder.Name = "btnCancelOrder";
             btnCancelOrder.Size = new Size(144, 38);
             btnCancelOrder.TabIndex = 15;
@@ -389,7 +395,7 @@
             // lblSubtotal
             // 
             lblSubtotal.AutoSize = true;
-            lblSubtotal.Location = new Point(519, 650);
+            lblSubtotal.Location = new Point(714, 652);
             lblSubtotal.Name = "lblSubtotal";
             lblSubtotal.Size = new Size(83, 25);
             lblSubtotal.TabIndex = 21;
@@ -398,7 +404,7 @@
             // lblTax
             // 
             lblTax.AutoSize = true;
-            lblTax.Location = new Point(770, 650);
+            lblTax.Location = new Point(965, 652);
             lblTax.Name = "lblTax";
             lblTax.Size = new Size(40, 25);
             lblTax.TabIndex = 22;
@@ -408,7 +414,7 @@
             // 
             lblTotal.AutoSize = true;
             lblTotal.Font = new Font("Segoe UI", 9F);
-            lblTotal.Location = new Point(971, 650);
+            lblTotal.Location = new Point(1166, 652);
             lblTotal.Name = "lblTotal";
             lblTotal.Size = new Size(53, 25);
             lblTotal.TabIndex = 23;
@@ -416,7 +422,7 @@
             // 
             // txtSubtotal
             // 
-            txtSubtotal.Location = new Point(601, 645);
+            txtSubtotal.Location = new Point(796, 647);
             txtSubtotal.Name = "txtSubtotal";
             txtSubtotal.ReadOnly = true;
             txtSubtotal.Size = new Size(150, 31);
@@ -425,7 +431,7 @@
             // 
             // txtTax
             // 
-            txtTax.Location = new Point(814, 645);
+            txtTax.Location = new Point(1009, 647);
             txtTax.Name = "txtTax";
             txtTax.ReadOnly = true;
             txtTax.Size = new Size(150, 31);
@@ -435,7 +441,7 @@
             // txtTotal
             // 
             txtTotal.Font = new Font("Segoe UI", 9F);
-            txtTotal.Location = new Point(1029, 645);
+            txtTotal.Location = new Point(1224, 647);
             txtTotal.Name = "txtTotal";
             txtTotal.ReadOnly = true;
             txtTotal.Size = new Size(150, 31);
@@ -445,7 +451,7 @@
             // chkInitialCustomer
             // 
             chkInitialCustomer.AutoSize = true;
-            chkInitialCustomer.Location = new Point(816, 43);
+            chkInitialCustomer.Location = new Point(1023, 43);
             chkInitialCustomer.Name = "chkInitialCustomer";
             chkInitialCustomer.Size = new Size(170, 29);
             chkInitialCustomer.TabIndex = 28;
@@ -453,11 +459,22 @@
             chkInitialCustomer.UseVisualStyleBackColor = true;
             chkInitialCustomer.CheckedChanged += chkInitialCustomer_CheckedChanged;
             // 
+            // chkAnother_Employee
+            // 
+            chkAnother_Employee.AutoSize = true;
+            chkAnother_Employee.Location = new Point(265, 90);
+            chkAnother_Employee.Name = "chkAnother_Employee";
+            chkAnother_Employee.Size = new Size(193, 29);
+            chkAnother_Employee.TabIndex = 29;
+            chkAnother_Employee.Text = "Another Employee?";
+            chkAnother_Employee.UseVisualStyleBackColor = true;
+            // 
             // frmCustomerOrder
             // 
             AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1196, 708);
+            ClientSize = new Size(1478, 708);
+            Controls.Add(chkAnother_Employee);
             Controls.Add(chkInitialCustomer);
             Controls.Add(txtTotal);
             Controls.Add(txtTax);
@@ -530,6 +547,7 @@
         private TextBox txtSubtotal;
         private TextBox txtTax;
         private TextBox txtTotal;
+        private CheckBox chkInitialCustomer;
         private DataGridViewTextBoxColumn columnTitle_id;
         private DataGridViewTextBoxColumn columnPrice;
         private DataGridViewTextBoxColumn columnTitle;
@@ -539,6 +557,6 @@
         private DataGridViewTextBoxColumn columnPriceS;
         private DataGridViewTextBoxColumn columnDiscount;
         private DataGridViewTextBoxColumn columnLineTotal;
-        private CheckBox chkInitialCustomer;
+        private CheckBox chkAnother_Employee;
     }
 }

@@ -294,7 +294,7 @@
             dtpPubDate.Name = "dtpPubDate";
             dtpPubDate.Size = new Size(178, 31);
             dtpPubDate.TabIndex = 19;
-            dtpPubDate.Value = new DateTime(2025, 11, 19, 0, 0, 0, 0);
+            dtpPubDate.Value = new DateTime(2025, 12, 7, 16, 35, 12, 0);
             // 
             // cboPubId
             // 

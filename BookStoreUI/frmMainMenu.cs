@@ -2,22 +2,21 @@
 using BookStoreUI.PublisherMaintenanceForms;
 using BookStoreUI.StoreMaintenanceForms;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
+using BookStoreDO.Models.DataLayer;   //  for Employee
 
 namespace BookStoreUI
 {
     public partial class frmMainMenu : Form
     {
-        public frmMainMenu()
+        //  We save the employee who logged in
+        private readonly Employee _loggedInEmployee;
+
+        //  The main menu NOW receives the employee in the constructor
+        public frmMainMenu(Employee loggedInEmployee)
         {
             InitializeComponent();
+            _loggedInEmployee = loggedInEmployee ?? throw new ArgumentNullException(nameof(loggedInEmployee));
         }
 
         private void btnExit_Click(object sender, EventArgs e)
@@ -75,10 +74,13 @@ namespace BookStoreUI
 
         private void btnCustomerOrder_Click(object sender, EventArgs e)
         {
-            frmCustomerOrder frm = new();
-            this.Hide();
-            frm.ShowDialog();
-            this.Show();
+            //  THIS is where we use the employee who logged in
+            using (var frm = new frmCustomerOrder(_loggedInEmployee))
+            {
+                this.Hide();
+                frm.ShowDialog();
+                this.Show();
+            }
         }
     }
 }

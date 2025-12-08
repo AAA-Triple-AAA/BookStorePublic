@@ -1,13 +1,10 @@
 ﻿using BookStoreDO.DataAccessClasses;
 using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
 using System.Globalization;
+using System.IO;
 using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace BookStoreUI
@@ -16,10 +13,55 @@ namespace BookStoreUI
     {
         private readonly BookStoreDataAccess _data = new();
 
+        // number of days back for the default range
+        private const int DefaultDaysBack = 30;
+
         public frmSalesReport()
         {
             InitializeComponent();
+
+            // attach events
+            this.Load += frmSalesReport_Load;
+            chkCustom.CheckedChanged += chkCustom_CheckedChanged;
         }
+
+        // ================== INIT / DATES ==================
+
+        private void frmSalesReport_Load(object? sender, EventArgs e)
+        {
+            // By default: range of the last 30 days and no custom mode
+            chkCustom.Checked = false;
+            ApplyDefaultDates();
+            ToggleDatePickers(false);
+        }
+
+        private void ApplyDefaultDates()
+        {
+            dtpEndDate.Value = DateTime.Today;
+            dtpStartDate.Value = DateTime.Today.AddDays(-DefaultDaysBack);
+        }
+
+        private void ToggleDatePickers(bool enabled)
+        {
+            dtpStartDate.Enabled = enabled;
+            dtpEndDate.Enabled = enabled;
+        }
+
+        private void chkCustom_CheckedChanged(object? sender, EventArgs e)
+        {
+            bool custom = chkCustom.Checked;
+
+            // Enable/disable the pickers
+            ToggleDatePickers(custom);
+
+            // If we stop using custom settings, we revert to the default range.
+            if (!custom)
+            {
+                ApplyDefaultDates();
+            }
+        }
+
+        // ================== REPORT LOGIC ==================
 
         public List<SalesReportItemDTO> GetSalesReport(DateTime start, DateTime end)
             => _data.GetReports(start, end);
@@ -41,7 +83,8 @@ namespace BookStoreUI
         {
             if (dgvSales.Rows.Count == 0)
             {
-                MessageBox.Show(@"There is no data to export.", @"Export", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show(@"There is no data to export.", @"Export",
+                    MessageBoxButtons.OK, MessageBoxIcon.Information);
                 return;
             }
 
@@ -114,13 +157,16 @@ namespace BookStoreUI
                 }
 
                 // Write UTF8 with BOM for Excel compatibility
-                File.WriteAllText(dlg.FileName, sb.ToString(), new UTF8Encoding(encoderShouldEmitUTF8Identifier: true));
+                File.WriteAllText(dlg.FileName, sb.ToString(),
+                    new UTF8Encoding(encoderShouldEmitUTF8Identifier: true));
 
-                MessageBox.Show($"Exported {dgvSales.Rows.Count} rows to:\n{dlg.FileName}", @"Export Successful", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show($"Exported {dgvSales.Rows.Count} rows to:\n{dlg.FileName}",
+                    @"Export Successful", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             catch (Exception ex)
             {
-                MessageBox.Show($"Export failed:\n{ex.Message}", @"Export Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show($"Export failed:\n{ex.Message}",
+                    @"Export Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -130,12 +176,12 @@ namespace BookStoreUI
                 return string.Empty;
 
             // If string contains quote, comma, or newline, wrap in quotes and escape quotes by doubling them.
-            var needsQuotes = s.Contains(',') || s.Contains('"') || s.Contains('\n') || s.Contains('\r');
+            var needsQuotes = s.Contains(',') || s.Contains('"') ||
+                              s.Contains('\n') || s.Contains('\r');
 
             if (!needsQuotes) return s;
             var escaped = s.Replace("\"", "\"\"");
             return $"\"{escaped}\"";
-
         }
     }
 }
