@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             components = new System.ComponentModel.Container();
-            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
             lblStartDate = new Label();
             lblEndDate = new Label();
             dtpStartDate = new DateTimePicker();
@@ -47,6 +47,7 @@
             txtTotalValue = new TextBox();
             btnExport = new Button();
             btnClose = new Button();
+            chkCustom = new CheckBox();
             ((System.ComponentModel.ISupportInitialize)dgvSales).BeginInit();
             ((System.ComponentModel.ISupportInitialize)validatorBindingSource).BeginInit();
             SuspendLayout();
@@ -54,20 +55,20 @@
             // lblStartDate
             // 
             lblStartDate.AutoSize = true;
-            lblStartDate.Location = new Point(13, 24);
+            lblStartDate.Location = new Point(16, 30);
             lblStartDate.Margin = new Padding(2, 0, 2, 0);
             lblStartDate.Name = "lblStartDate";
-            lblStartDate.Size = new Size(79, 20);
+            lblStartDate.Size = new Size(94, 25);
             lblStartDate.TabIndex = 0;
             lblStartDate.Text = "Start Date:";
             // 
             // lblEndDate
             // 
             lblEndDate.AutoSize = true;
-            lblEndDate.Location = new Point(17, 60);
+            lblEndDate.Location = new Point(21, 75);
             lblEndDate.Margin = new Padding(2, 0, 2, 0);
             lblEndDate.Name = "lblEndDate";
-            lblEndDate.Size = new Size(73, 20);
+            lblEndDate.Size = new Size(88, 25);
             lblEndDate.TabIndex = 1;
             lblEndDate.Text = "End Date:";
             // 
@@ -75,11 +76,11 @@
             // 
             dtpStartDate.CustomFormat = "yyyy/MM/dd";
             dtpStartDate.Format = DateTimePickerFormat.Custom;
-            dtpStartDate.Location = new Point(87, 16);
-            dtpStartDate.Margin = new Padding(2, 3, 2, 3);
-            dtpStartDate.MaxDate = new DateTime(2025, 11, 20, 0, 0, 0, 0);
+            dtpStartDate.Location = new Point(113, 30);
+            dtpStartDate.Margin = new Padding(2, 4, 2, 4);
+            dtpStartDate.MaxDate = new DateTime(2025, 12, 7, 0, 0, 0, 0);
             dtpStartDate.Name = "dtpStartDate";
-            dtpStartDate.Size = new Size(113, 27);
+            dtpStartDate.Size = new Size(140, 31);
             dtpStartDate.TabIndex = 1;
             dtpStartDate.Value = new DateTime(1989, 1, 1, 0, 0, 0, 0);
             // 
@@ -87,20 +88,20 @@
             // 
             dtpEndDate.CustomFormat = "yyyy/MM/dd";
             dtpEndDate.Format = DateTimePickerFormat.Custom;
-            dtpEndDate.Location = new Point(87, 52);
-            dtpEndDate.Margin = new Padding(2, 3, 2, 3);
+            dtpEndDate.Location = new Point(113, 73);
+            dtpEndDate.Margin = new Padding(2, 4, 2, 4);
             dtpEndDate.MaxDate = new DateTime(2030, 1, 1, 0, 0, 0, 0);
             dtpEndDate.Name = "dtpEndDate";
-            dtpEndDate.Size = new Size(113, 27);
+            dtpEndDate.Size = new Size(140, 31);
             dtpEndDate.TabIndex = 2;
-            dtpEndDate.Value = new DateTime(2025, 11, 20, 0, 0, 0, 0);
+            dtpEndDate.Value = new DateTime(2025, 12, 7, 0, 0, 0, 0);
             // 
             // btnGenerateReport
             // 
-            btnGenerateReport.Location = new Point(218, 16);
-            btnGenerateReport.Margin = new Padding(2, 3, 2, 3);
+            btnGenerateReport.Location = new Point(483, 20);
+            btnGenerateReport.Margin = new Padding(2, 4, 2, 4);
             btnGenerateReport.Name = "btnGenerateReport";
-            btnGenerateReport.Size = new Size(90, 67);
+            btnGenerateReport.Size = new Size(112, 84);
             btnGenerateReport.TabIndex = 3;
             btnGenerateReport.Text = "Generate Report";
             btnGenerateReport.UseVisualStyleBackColor = true;
@@ -111,18 +112,18 @@
             dgvSales.AllowUserToAddRows = false;
             dgvSales.AllowUserToDeleteRows = false;
             dgvSales.AutoGenerateColumns = false;
-            dgvSales.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            dgvSales.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.DisplayedCells;
             dgvSales.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dgvSales.Columns.AddRange(new DataGridViewColumn[] { columnnord_num, columnord_date, columnTitle_id, columnTitle, columnQty, columnTotal_value });
             dgvSales.DataSource = validatorBindingSource;
-            dgvSales.Location = new Point(13, 103);
-            dgvSales.Margin = new Padding(2, 3, 2, 3);
+            dgvSales.Location = new Point(16, 129);
+            dgvSales.Margin = new Padding(2, 4, 2, 4);
             dgvSales.MultiSelect = false;
             dgvSales.Name = "dgvSales";
             dgvSales.ReadOnly = true;
             dgvSales.RowHeadersWidth = 62;
             dgvSales.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            dgvSales.Size = new Size(615, 459);
+            dgvSales.Size = new Size(769, 574);
             dgvSales.TabIndex = 5;
             // 
             // columnnord_num
@@ -132,6 +133,7 @@
             columnnord_num.MinimumWidth = 8;
             columnnord_num.Name = "columnnord_num";
             columnnord_num.ReadOnly = true;
+            columnnord_num.Width = 142;
             // 
             // columnord_date
             // 
@@ -140,6 +142,7 @@
             columnord_date.MinimumWidth = 8;
             columnord_date.Name = "columnord_date";
             columnord_date.ReadOnly = true;
+            columnord_date.Width = 136;
             // 
             // columnTitle_id
             // 
@@ -148,6 +151,7 @@
             columnTitle_id.MinimumWidth = 8;
             columnTitle_id.Name = "columnTitle_id";
             columnTitle_id.ReadOnly = true;
+            columnTitle_id.Width = 103;
             // 
             // columnTitle
             // 
@@ -156,6 +160,7 @@
             columnTitle.MinimumWidth = 8;
             columnTitle.Name = "columnTitle";
             columnTitle.ReadOnly = true;
+            columnTitle.Width = 80;
             // 
             // columnQty
             // 
@@ -164,17 +169,19 @@
             columnQty.MinimumWidth = 8;
             columnQty.Name = "columnQty";
             columnQty.ReadOnly = true;
+            columnQty.Width = 116;
             // 
             // columnTotal_value
             // 
             columnTotal_value.DataPropertyName = "TotalValue";
-            dataGridViewCellStyle1.Format = "C2";
-            dataGridViewCellStyle1.NullValue = null;
-            columnTotal_value.DefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle2.Format = "C2";
+            dataGridViewCellStyle2.NullValue = null;
+            columnTotal_value.DefaultCellStyle = dataGridViewCellStyle2;
             columnTotal_value.HeaderText = "Total Value";
             columnTotal_value.MinimumWidth = 8;
             columnTotal_value.Name = "columnTotal_value";
             columnTotal_value.ReadOnly = true;
+            columnTotal_value.Width = 132;
             // 
             // validatorBindingSource
             // 
@@ -183,29 +190,29 @@
             // lblTotalValue
             // 
             lblTotalValue.AutoSize = true;
-            lblTotalValue.Location = new Point(17, 588);
+            lblTotalValue.Location = new Point(21, 735);
             lblTotalValue.Margin = new Padding(2, 0, 2, 0);
             lblTotalValue.Name = "lblTotalValue";
-            lblTotalValue.Size = new Size(198, 20);
+            lblTotalValue.Size = new Size(238, 25);
             lblTotalValue.TabIndex = 6;
             lblTotalValue.Text = "Total Value of Sold Products:";
             // 
             // txtTotalValue
             // 
-            txtTotalValue.Location = new Point(201, 584);
-            txtTotalValue.Margin = new Padding(2, 3, 2, 3);
+            txtTotalValue.Location = new Point(251, 730);
+            txtTotalValue.Margin = new Padding(2, 4, 2, 4);
             txtTotalValue.Name = "txtTotalValue";
             txtTotalValue.ReadOnly = true;
-            txtTotalValue.Size = new Size(81, 27);
+            txtTotalValue.Size = new Size(100, 31);
             txtTotalValue.TabIndex = 7;
             txtTotalValue.TextAlign = HorizontalAlignment.Right;
             // 
             // btnExport
             // 
-            btnExport.Location = new Point(461, 584);
-            btnExport.Margin = new Padding(2, 3, 2, 3);
+            btnExport.Location = new Point(576, 730);
+            btnExport.Margin = new Padding(2, 4, 2, 4);
             btnExport.Name = "btnExport";
-            btnExport.Size = new Size(81, 31);
+            btnExport.Size = new Size(101, 39);
             btnExport.TabIndex = 4;
             btnExport.Text = "Export File";
             btnExport.UseVisualStyleBackColor = true;
@@ -213,20 +220,31 @@
             // 
             // btnClose
             // 
-            btnClose.Location = new Point(546, 584);
-            btnClose.Margin = new Padding(2, 3, 2, 3);
+            btnClose.Location = new Point(682, 730);
+            btnClose.Margin = new Padding(2, 4, 2, 4);
             btnClose.Name = "btnClose";
-            btnClose.Size = new Size(81, 31);
+            btnClose.Size = new Size(101, 39);
             btnClose.TabIndex = 5;
             btnClose.Text = "Close";
             btnClose.UseVisualStyleBackColor = true;
             // 
+            // chkCustom
+            // 
+            chkCustom.AutoSize = true;
+            chkCustom.Location = new Point(307, 49);
+            chkCustom.Name = "chkCustom";
+            chkCustom.Size = new Size(150, 29);
+            chkCustom.TabIndex = 8;
+            chkCustom.Text = "Custom Date?";
+            chkCustom.UseVisualStyleBackColor = true;
+            // 
             // frmSalesReport
             // 
-            AutoScaleDimensions = new SizeF(8F, 20F);
+            AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
             CancelButton = btnClose;
-            ClientSize = new Size(640, 629);
+            ClientSize = new Size(800, 786);
+            Controls.Add(chkCustom);
             Controls.Add(btnClose);
             Controls.Add(btnExport);
             Controls.Add(txtTotalValue);
@@ -238,7 +256,7 @@
             Controls.Add(lblEndDate);
             Controls.Add(lblStartDate);
             FormBorderStyle = FormBorderStyle.FixedSingle;
-            Margin = new Padding(2, 3, 2, 3);
+            Margin = new Padding(2, 4, 2, 4);
             MaximizeBox = false;
             MinimizeBox = false;
             Name = "frmSalesReport";
@@ -270,5 +288,6 @@
         private DataGridViewTextBoxColumn columnTitle;
         private DataGridViewTextBoxColumn columnQty;
         private DataGridViewTextBoxColumn columnTotal_value;
+        private CheckBox chkCustom;
     }
 }

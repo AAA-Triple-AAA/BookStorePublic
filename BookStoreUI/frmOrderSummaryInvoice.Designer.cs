@@ -74,7 +74,7 @@
             txtOrderNumber.Location = new Point(144, 23);
             txtOrderNumber.Name = "txtOrderNumber";
             txtOrderNumber.ReadOnly = true;
-            txtOrderNumber.Size = new Size(151, 31);
+            txtOrderNumber.Size = new Size(252, 31);
             txtOrderNumber.TabIndex = 1;
             // 
             // lblStore
@@ -92,7 +92,7 @@
             txtStore.Location = new Point(144, 68);
             txtStore.Name = "txtStore";
             txtStore.ReadOnly = true;
-            txtStore.Size = new Size(151, 31);
+            txtStore.Size = new Size(252, 31);
             txtStore.TabIndex = 3;
             // 
             // lblEmployee
@@ -110,7 +110,7 @@
             txtEmployee.Location = new Point(144, 113);
             txtEmployee.Name = "txtEmployee";
             txtEmployee.ReadOnly = true;
-            txtEmployee.Size = new Size(151, 31);
+            txtEmployee.Size = new Size(252, 31);
             txtEmployee.TabIndex = 5;
             // 
             // lblCustomer
@@ -128,7 +128,7 @@
             txtCustomer.Location = new Point(144, 158);
             txtCustomer.Name = "txtCustomer";
             txtCustomer.ReadOnly = true;
-            txtCustomer.Size = new Size(151, 31);
+            txtCustomer.Size = new Size(252, 31);
             txtCustomer.TabIndex = 7;
             // 
             // lblOrderDate
@@ -146,7 +146,7 @@
             txtOrderDate.Location = new Point(144, 203);
             txtOrderDate.Name = "txtOrderDate";
             txtOrderDate.ReadOnly = true;
-            txtOrderDate.Size = new Size(151, 31);
+            txtOrderDate.Size = new Size(252, 31);
             txtOrderDate.TabIndex = 9;
             // 
             // validatorBindingSource
@@ -162,7 +162,7 @@
             dgvCart.AllowUserToAddRows = false;
             dgvCart.AllowUserToDeleteRows = false;
             dgvCart.AutoGenerateColumns = false;
-            dgvCart.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            dgvCart.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.DisplayedCells;
             dgvCart.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dgvCart.Columns.AddRange(new DataGridViewColumn[] { columntitle, columnQty, columnPrice, columnDiscount, columnLineTotal });
             dgvCart.DataSource = validatorBindingSource1;
@@ -182,6 +182,7 @@
             columntitle.MinimumWidth = 8;
             columntitle.Name = "columntitle";
             columntitle.ReadOnly = true;
+            columntitle.Width = 80;
             // 
             // columnQty
             // 
@@ -190,6 +191,7 @@
             columnQty.MinimumWidth = 8;
             columnQty.Name = "columnQty";
             columnQty.ReadOnly = true;
+            columnQty.Width = 77;
             // 
             // columnPrice
             // 
@@ -198,6 +200,7 @@
             columnPrice.MinimumWidth = 8;
             columnPrice.Name = "columnPrice";
             columnPrice.ReadOnly = true;
+            columnPrice.Width = 122;
             // 
             // columnDiscount
             // 
@@ -206,6 +209,7 @@
             columnDiscount.MinimumWidth = 8;
             columnDiscount.Name = "columnDiscount";
             columnDiscount.ReadOnly = true;
+            columnDiscount.Width = 118;
             // 
             // columnLineTotal
             // 
@@ -214,32 +218,33 @@
             columnLineTotal.MinimumWidth = 8;
             columnLineTotal.Name = "columnLineTotal";
             columnLineTotal.ReadOnly = true;
+            columnLineTotal.Width = 121;
             // 
             // txtTotal
             // 
             txtTotal.Font = new Font("Segoe UI", 9F);
-            txtTotal.Location = new Point(627, 122);
+            txtTotal.Location = new Point(698, 113);
             txtTotal.Name = "txtTotal";
             txtTotal.ReadOnly = true;
-            txtTotal.Size = new Size(150, 31);
+            txtTotal.Size = new Size(101, 31);
             txtTotal.TabIndex = 32;
             txtTotal.TextAlign = HorizontalAlignment.Right;
             // 
             // txtTax
             // 
-            txtTax.Location = new Point(451, 122);
+            txtTax.Location = new Point(531, 114);
             txtTax.Name = "txtTax";
             txtTax.ReadOnly = true;
-            txtTax.Size = new Size(150, 31);
+            txtTax.Size = new Size(111, 31);
             txtTax.TabIndex = 31;
             txtTax.TextAlign = HorizontalAlignment.Right;
             // 
             // txtSubtotal
             // 
-            txtSubtotal.Location = new Point(451, 77);
+            txtSubtotal.Location = new Point(531, 69);
             txtSubtotal.Name = "txtSubtotal";
             txtSubtotal.ReadOnly = true;
-            txtSubtotal.Size = new Size(150, 31);
+            txtSubtotal.Size = new Size(111, 31);
             txtSubtotal.TabIndex = 30;
             txtSubtotal.TextAlign = HorizontalAlignment.Right;
             // 
@@ -247,7 +252,7 @@
             // 
             lblTotal.AutoSize = true;
             lblTotal.Font = new Font("Segoe UI", 9F);
-            lblTotal.Location = new Point(627, 90);
+            lblTotal.Location = new Point(746, 75);
             lblTotal.Name = "lblTotal";
             lblTotal.Size = new Size(53, 25);
             lblTotal.TabIndex = 29;
@@ -256,7 +261,7 @@
             // lblTax
             // 
             lblTax.AutoSize = true;
-            lblTax.Location = new Point(400, 127);
+            lblTax.Location = new Point(484, 120);
             lblTax.Name = "lblTax";
             lblTax.Size = new Size(40, 25);
             lblTax.TabIndex = 28;
@@ -265,7 +270,7 @@
             // lblSubtotal
             // 
             lblSubtotal.AutoSize = true;
-            lblSubtotal.Location = new Point(361, 82);
+            lblSubtotal.Location = new Point(441, 72);
             lblSubtotal.Name = "lblSubtotal";
             lblSubtotal.Size = new Size(83, 25);
             lblSubtotal.TabIndex = 27;
@@ -273,7 +278,7 @@
             // 
             // btnClose
             // 
-            btnClose.Location = new Point(627, 177);
+            btnClose.Location = new Point(649, 168);
             btnClose.Name = "btnClose";
             btnClose.Size = new Size(151, 52);
             btnClose.TabIndex = 34;

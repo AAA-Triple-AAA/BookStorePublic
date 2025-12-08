@@ -14,6 +14,9 @@ namespace BookStoreUI
     {
         private readonly BookStoreDataAccess _data = new();
 
+        // Employee used for login
+        private readonly Employee _loggedInEmployee;
+
         //   Internal model of cart
         private class CartItem
         {
@@ -28,18 +31,22 @@ namespace BookStoreUI
 
         private readonly BindingList<CartItem> _cart = new();
 
-        // Fixed tax (if the teacher changes, adjust here)
         private const decimal TaxRate = 0.07m;
 
-        public frmCustomerOrder()
+        //  NEW: the form now receives the logged-in employee
+        public frmCustomerOrder(Employee loggedInEmployee)
         {
             InitializeComponent();
+
+            _loggedInEmployee = loggedInEmployee ?? throw new ArgumentNullException(nameof(loggedInEmployee));
 
             InitializeCartGrid();
             LoadHeaderData();
             LoadTitles();
-        }
 
+            // event for the "other employee" checkbox
+            chkAnother_Employee.CheckedChanged += chkAnother_Employee_CheckedChanged;
+        }
 
         //  Initializations
         private void InitializeCartGrid()
@@ -60,13 +67,14 @@ namespace BookStoreUI
             cboStore.ValueMember = "StorId";
             cboStore.SelectedIndex = -1;
 
-            // EMPLOYEES
+            // EMPLOYEES: We load all of them, but by default we show the one who logged in.
             var employees = _data.GetEmployees()
                                  .OrderBy(e => e.Lname)
                                  .ThenBy(e => e.Fname)
                                  .Select(e => new
                                  {
-                                     Display = $"{e.Lname}, {e.Fname}",
+                                     //  Now you can see ID + Name
+                                     Display = $"{e.EmpId} - {e.Lname}, {e.Fname}",
                                      Value = e.EmpId,
                                      Employee = e
                                  })
@@ -75,7 +83,23 @@ namespace BookStoreUI
             cboEmployee.DataSource = employees;
             cboEmployee.DisplayMember = "Display";
             cboEmployee.ValueMember = "Value";
-            cboEmployee.SelectedIndex = -1;
+
+
+            // We select the employee who logged in.
+            var empId = _loggedInEmployee.EmpId;
+            if (employees.Any(x => x.Value == empId))
+            {
+                cboEmployee.SelectedValue = empId;
+            }
+            else if (employees.Count > 0)
+            {
+                // fallback just in case
+                cboEmployee.SelectedIndex = 0;
+            }
+
+            // By default: the employee cannot be changed
+            chkAnother_Employee.Checked = false;
+            cboEmployee.Enabled = false;
 
             // ORDER DATE
             dtpOrderDate.Value = DateTime.Today;
@@ -89,6 +113,27 @@ namespace BookStoreUI
 
             dgvTitles.AutoGenerateColumns = false;
             dgvTitles.DataSource = titles;
+        }
+
+        //  NEW: We handle the checkbox change
+        private void chkAnother_Employee_CheckedChanged(object? sender, EventArgs e)
+        {
+            if (chkAnother_Employee.Checked)
+            {
+                // Allow choosing another employee
+                cboEmployee.Enabled = true;
+            }
+            else
+            {
+                // Return to the logged-in employee and disable the combo box.
+                cboEmployee.Enabled = false;
+
+                var empId = _loggedInEmployee.EmpId;
+                if (cboEmployee.Items.Count > 0)
+                {
+                    cboEmployee.SelectedValue = empId;
+                }
+            }
         }
 
         // Header validation
@@ -308,9 +353,7 @@ namespace BookStoreUI
 
             foreach (var item in _cart)
             {
-
                 item.Discount = _data.GetDiscountFor(storId, item.Quantity, isInitialCustomer);
-
             }
 
             dgvCart.Refresh();

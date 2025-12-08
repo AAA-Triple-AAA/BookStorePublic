@@ -142,7 +142,15 @@ namespace BookStoreUI.EmployeeMaintenanceForms
         {
             this.Text = IsAdd ? @"Add Employee" : @"Edit Employee";
 
-            if (!IsAdd && Employee != null)
+            if (IsAdd)
+            {
+                // New employee: clear and set default values
+                ClearForm();
+
+                // Ensure that the Hire Date is today (date only)
+                dtpHireDate.Value = DateTime.Today;
+            }
+            else if (Employee != null)
             {
                 // Do not allow changing the PK while editing
                 txtEmpId.Enabled = false;
@@ -158,9 +166,10 @@ namespace BookStoreUI.EmployeeMaintenanceForms
                 dtpHireDate.Value = Employee.HireDate;
             }
 
-            //  Adjust the Job Level range according to the current Job ID
+            // Adjust the Job Level range according to the current Job ID
             UpdateJobLevelRange();
         }
+
 
         private void btnSave_Click(object sender, EventArgs e)
         {
@@ -173,7 +182,7 @@ namespace BookStoreUI.EmployeeMaintenanceForms
             {
                 if (IsAdd)
                 {
-                    // Verificar que el ID no exista
+                    // Verify that the ID does not exist
                     if (_data.GetEmployee(Employee!.EmpId) != null)
                     {
                         MessageBox.Show(@"Employee ID already taken, please enter a unique ID.");
@@ -208,7 +217,7 @@ namespace BookStoreUI.EmployeeMaintenanceForms
 
         private void ApplyChanges()
         {
-            // Si estamos agregando, o si por alguna razón Employee es null, creamos uno nuevo
+            // If we are adding, or if for some reason Employee is null, we create a new one.
             if (IsAdd || Employee == null)
             {
                 Employee = new Employee();

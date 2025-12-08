@@ -10,7 +10,7 @@ namespace BookStoreUI
     {
         private readonly BookStoreDataAccess _data = new();
 
-        // Optional: in case you want to know later who logged in
+        // In case we want to use it at another time
         public Employee? LoggedInEmployee { get; private set; }
 
         public frmLogin()
@@ -32,7 +32,7 @@ namespace BookStoreUI
                                  .ThenBy(e => e.Fname)
                                  .ToList();
 
-            // Simple version: show only the EmpId
+            // Simple version: show only the EmpId 
             cboEmployee.DataSource = employees;
             cboEmployee.DisplayMember = "EmpId";   // what is seen in the list
             cboEmployee.ValueMember = "EmpId";     // associated value
@@ -59,17 +59,16 @@ namespace BookStoreUI
         {
             if (!ValidateInput()) return;
 
-            // We obtain the selected employee
-            var selectedEmployee = (Employee)cboEmployee.SelectedItem;
-            LoggedInEmployee = selectedEmployee;
+            // We already know that SelectedItem is not null thanks to ValidateInput
+            var selectedEmployee = (Employee)cboEmployee.SelectedItem!;
 
-            // We open the main menu
-            var frm = new frmMainMenu();
-            frm.FormClosed += (s, args) => this.Close(); // When the main program closes, everything closes
+            var frm = new frmMainMenu(selectedEmployee);
+            frm.FormClosed += (s, args) => this.Close();
 
             frm.Show();
             this.Hide();
         }
+
 
         private void btnExit_Click(object sender, EventArgs e)
         {
