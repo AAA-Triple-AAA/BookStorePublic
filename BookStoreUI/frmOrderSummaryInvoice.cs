@@ -42,8 +42,6 @@ namespace BookStoreUI
             dgvCart.Columns["columnDiscount"].DefaultCellStyle.Format = "0.00";
         }
 
-
-
         private void btnClose_Click(object sender, EventArgs e)
         {
             Close();

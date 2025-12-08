@@ -56,13 +56,13 @@ namespace BookStoreUI
             }
 
             var sb = new StringBuilder();
-            sb.AppendLine($"Title ID : {selected.TitleId}");
-            sb.AppendLine($"Title    : {selected.Title1}");
-            sb.AppendLine($"Type     : {selected.Type}");
-            sb.AppendLine($"Pub. ID  : {selected.PubId}");
-            sb.AppendLine($"Price    : {selected.Price?.ToString("C") ?? "N/A"}");
-            sb.AppendLine($"Advance  : {selected.Advance?.ToString("C") ?? "N/A"}");
-            sb.AppendLine($"Royalty  : {selected.Royalty?.ToString() ?? "N/A"}");
+            sb.AppendLine($"Title ID: {selected.TitleId}");
+            sb.AppendLine($"Title: {selected.Title1}");
+            sb.AppendLine($"Type: {selected.Type}");
+            sb.AppendLine($"Pub. ID: {selected.PubId}");
+            sb.AppendLine($"Price: {selected.Price?.ToString("C") ?? "N/A"}");
+            sb.AppendLine($"Advance: {selected.Advance?.ToString("C") ?? "N/A"}");
+            sb.AppendLine($"Royalty: {selected.Royalty?.ToString() ?? "N/A"}");
             sb.AppendLine($"YTD Sales: {selected.YtdSales?.ToString() ?? "N/A"}");
             sb.AppendLine($"Pub. Date: {selected.Pubdate:d}");
 
