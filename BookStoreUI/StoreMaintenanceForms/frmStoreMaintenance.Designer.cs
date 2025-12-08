@@ -104,7 +104,7 @@
             dgvStore.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             dgvStore.Size = new Size(571, 340);
             dgvStore.TabIndex = 0;
-            dgvStore.CellContentClick += dgvStore_CellContentClick;
+            dgvStore.SelectionChanged += dgvStore_SelectionChanged;
             // 
             // columnStore_id
             // 
