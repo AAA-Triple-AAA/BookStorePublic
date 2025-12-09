@@ -45,7 +45,6 @@ namespace BookStoreUI.EmployeeMaintenanceForms
         {
             string errMsg = "";
 
-
             string empId = txtEmpId.Text.Trim();
             string firstName = txtFirstName.Text.Trim();
             string middleInit = txtMidInitial.Text.Trim();
@@ -56,11 +55,10 @@ namespace BookStoreUI.EmployeeMaintenanceForms
 
             DateTime hireDate = dtpHireDate.Value;
 
-
+            // ---------- EMP ID ----------
             errMsg += Validator.IsPresent(empId, "Employee ID");
             if (empId != "")
             {
-
                 var regex = new Regex(
                     @"^[A-Z]{3}[1-9][0-9]{4}[FM]$|^[A-Z]-[A-Z][1-9][0-9]{4}[FM]$");
 
@@ -70,43 +68,40 @@ namespace BookStoreUI.EmployeeMaintenanceForms
                 }
             }
 
-
+            // ---------- NAMES ----------
             errMsg += Validator.IsPresent(firstName, "First Name");
             errMsg += Validator.IsWithinLength(firstName, "First Name", 1, 20);
 
-
             errMsg += Validator.IsWithinLength(middleInit, "Middle Initial", 0, 1);
-
 
             errMsg += Validator.IsPresent(lastName, "Last Name");
             errMsg += Validator.IsWithinLength(lastName, "Last Name", 1, 30);
 
-
+            // ---------- JOB ----------
             if (jobId <= 0)
             {
                 errMsg += "Job ID must be greater than 0.\n";
             }
 
-            //JOB VALIDATION
+            // general range 0–255
             if (jobLevel < 0 || jobLevel > 255)
             {
                 errMsg += "Job Level must be between 0 and 255.\n";
             }
 
             var job = _data.GetJob((short)jobId);
-
             if (job == null)
             {
                 errMsg += $"Job ID {jobId} does not exist in Jobs table.\n";
             }
             else
             {
-                // Special rule: job_id = 1 → level = 10
+                // Job 1 => exact level 10
                 if (job.JobId == 1 && jobLevel != 10)
                 {
                     errMsg += "Job ID 1 expects the job level to be exactly 10.\n";
                 }
-                // For everyone else: level between min and max of that row in JOBS
+                // Other jobs => within min / max
                 else if (job.JobId != 1 &&
                          (jobLevel < job.MinLvl || jobLevel > job.MaxLvl))
                 {
@@ -114,16 +109,26 @@ namespace BookStoreUI.EmployeeMaintenanceForms
                 }
             }
 
-            //----------------------------------------------------------------------------------------------------------
-
+            // ---------- PUBLISHER ----------
             errMsg += Validator.IsMaskCompleted(mtbPubId.MaskCompleted, "Publisher ID");
 
+            if (mtbPubId.MaskCompleted)
+            {
+                mtbPubId.TextMaskFormat = MaskFormat.IncludeLiterals;
+                string pubId = mtbPubId.Text.Trim();
 
+                var pub = _data.GetPublisher(pubId);
+                if (pub == null)
+                {
+                    errMsg += $"Publisher ID {pubId} does not exist in Publishers table.\n";
+                }
+            }
+
+            // ---------- HIRE DATE ----------
             if (hireDate.Date > DateTime.Today)
             {
                 errMsg += "Hire Date cannot be in the future.\n";
             }
-
 
             if (errMsg == "")
                 return true;
@@ -136,6 +141,7 @@ namespace BookStoreUI.EmployeeMaintenanceForms
 
             return false;
         }
+
 
 
         private void frmEmployeeDetail_Load(object sender, EventArgs e)

@@ -14,9 +14,10 @@ namespace BookStoreUI
 
         private readonly BookStoreDataAccess _data = new();
 
-        // Lista de publishers usada para llenar el combo
+        // List of publishers used to populate the combo box
         private List<Publisher> _publishers = new();
 
+        // The title being edited (only used to know what the original title was)
         public Title? SelectedTitle { get; set; }
 
         public frmTitleDetail()
@@ -42,6 +43,13 @@ namespace BookStoreUI
             // Title
             errMsg += Validator.IsPresent(title, "Title");
             errMsg += Validator.IsWithinLength(title, "Title", 1, 80);
+
+            // For ADD, validate that the ID is present.
+            if (IsAdd)
+            {
+                errMsg += Validator.IsPresent(titleId, "Title ID");
+                errMsg += Validator.IsWithinLength(titleId, "Title ID", 1, 6);
+            }
 
             // Type
             errMsg += Validator.IsSelected(cboType.SelectedIndex, "Type");
@@ -108,7 +116,7 @@ namespace BookStoreUI
         {
             this.Text = IsAdd ? @"Add Title" : @"Edit Title";
 
-            // Cargar publishers
+            // Load publishers
             _publishers = _data.GetPublishers();
 
             cboPubId.DataSource = _publishers;
@@ -121,7 +129,10 @@ namespace BookStoreUI
 
             if (!IsAdd && SelectedTitle != null)
             {
+                // We don't want them to change the ID when editing (PK)
                 txtTitleId.Text = SelectedTitle.TitleId;
+                txtTitleId.Enabled = false;
+
                 txtTitle.Text = SelectedTitle.Title1;
                 cboType.SelectedItem = SelectedTitle.Type;
 
@@ -130,7 +141,7 @@ namespace BookStoreUI
                 if (pub != null)
                     cboPubId.SelectedItem = pub;
 
-                nudPrice.Value   = SelectedTitle.Price   ?? 0.0m;
+                nudPrice.Value = SelectedTitle.Price ?? 0.0m;
                 nudAdvance.Value = SelectedTitle.Advance ?? 0.0m;
                 nudRoyalty.Value = SelectedTitle.Royalty ?? 0;
                 nudYtdSales.Value = SelectedTitle.YtdSales ?? 0;
@@ -140,6 +151,8 @@ namespace BookStoreUI
             }
             else
             {
+                // ADD
+                txtTitleId.Enabled = true;
                 dtpPubDate.Value = DateTime.Today;
             }
         }
@@ -150,7 +163,12 @@ namespace BookStoreUI
             if (!ValidateInput())
                 return;
 
-            string titleId = txtTitleId.Text.Trim();
+            // For ADD operations, we use what's in the box.
+            // For EDIT operations, we always use the original ID to avoid changing the primary key.
+            string titleId = IsAdd
+                ? txtTitleId.Text.Trim()
+                : SelectedTitle!.TitleId;
+
             string title = txtTitle.Text.Trim();
             string type = cboType.SelectedItem?.ToString() ?? "";
 
@@ -171,48 +189,43 @@ namespace BookStoreUI
             string notes = txtNotes.Text.Trim();
             DateTime pubDate = dtpPubDate.Value;
 
-            if (IsAdd)
+            // We ALWAYS create a new entity with the current values.
+            var entity = new Title
             {
-                var entity = new Title
-                {
-                    TitleId = titleId,
-                    Title1 = title,
-                    Type = type,
-                    PubId = pubId,
-                    Price = price,
-                    Advance = advance,
-                    Royalty = royalty,
-                    YtdSales = ytdSales,
-                    Notes = string.IsNullOrWhiteSpace(notes) ? null : notes,
-                    Pubdate = pubDate
-                };
+                TitleId = titleId,
+                Title1 = title,
+                Type = type,
+                PubId = pubId,
+                Price = price,
+                Advance = advance,
+                Royalty = royalty,
+                YtdSales = ytdSales,
+                Notes = string.IsNullOrWhiteSpace(notes) ? null : notes,
+                Pubdate = pubDate
+            };
 
-                _data.AddTitle(entity);
-            }
-            else
+            try
             {
-                if (SelectedTitle == null)
+                if (IsAdd)
                 {
-                    MessageBox.Show("No title selected.");
-                    return;
+                    _data.AddTitle(entity);
+                }
+                else
+                {
+                    _data.UpdateTitle(entity);
                 }
 
-                SelectedTitle.Title1 = title;
-                SelectedTitle.Type = type;
-                SelectedTitle.PubId = pubId;
-                SelectedTitle.Price = price;
-                SelectedTitle.Advance = advance;
-                SelectedTitle.Royalty = royalty;
-                SelectedTitle.YtdSales = ytdSales;
-                SelectedTitle.Notes = string.IsNullOrWhiteSpace(notes) ? null : notes;
-                SelectedTitle.Pubdate = pubDate;
-
-                _data.UpdateTitle(SelectedTitle);
+                DialogResult = DialogResult.OK;
+                Close();
             }
-
-            DialogResult = DialogResult.OK;
-            Close();
+            catch (Exception ex)
+            {
+                MessageBox.Show(
+                    "An error occurred while saving the title:\n" + ex.Message,
+                    "Error",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Error);
+            }
         }
     }
 }
-

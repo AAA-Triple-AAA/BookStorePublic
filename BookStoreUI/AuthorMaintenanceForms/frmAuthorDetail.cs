@@ -145,29 +145,36 @@ namespace BookStoreUI.AuthorMaintenanceForms
             // Stop if Adding author with already taken id
             if (IsAdd && !ValidId(Author!.AuId)) return;
 
-            if (IsAdd)
+            try
             {
-                _data.AddAuthor(Author!);
+                if (IsAdd)
+                {
+                    _data.AddAuthor(Author!);
+                }
+                else
+                {
+                    _data.UpdateAuthor(Author!);
+                }
+
+                MessageBox.Show(
+                    @"Author information saved successfully.",
+                    @"Saved",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Information);
+
+                // Very important so that the father finds out and to close the window.
+                this.DialogResult = DialogResult.OK;
+                this.Close();
             }
-            else
+            catch (Exception ex)
             {
-                _data.UpdateAuthor(Author!);
+                MessageBox.Show(
+                    "An error occurred while saving the author:\n" + ex.Message,
+                    "Error",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Error);
             }
-
-            MessageBox.Show(
-                @"Author information saved successfully.",
-                @"Saved",
-                MessageBoxButtons.OK,
-                MessageBoxIcon.Information);
-
-            if (!IsAdd)
-            {
-                txtLastName.Focus();
-                return;
-            }
-
-            mtbAuthorId.Focus();
-            ClearForm();
         }
+
     }
 }
