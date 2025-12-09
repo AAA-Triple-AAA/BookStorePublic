@@ -123,7 +123,8 @@ namespace BookStoreUI.EmployeeMaintenanceForms
 
             try
             {
-                _data.DeleteEmployee(_employee);
+                _data.DeleteEmployee(_employee.EmpId);
+
                 _employee = null;
                 rtbDetails.Clear();
                 LoadData();
@@ -137,6 +138,7 @@ namespace BookStoreUI.EmployeeMaintenanceForms
                     MessageBoxIcon.Error);
             }
         }
+
 
         private void btnSearch_Click(object sender, EventArgs e)
         {

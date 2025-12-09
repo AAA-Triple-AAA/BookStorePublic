@@ -1,12 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
 using System.Text;
 using System.Text.RegularExpressions;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using BookStoreBO;
 using BookStoreDO.DataAccessClasses;
@@ -50,15 +44,20 @@ namespace BookStoreUI.PublisherMaintenanceForms
         // =============== APPLY CHANGES ===============
         private void ApplyChanges()
         {
-            if (IsAdd)
+            if (IsAdd || Publisher == null)
             {
                 Publisher = new Publisher();
             }
 
-            mtbPubId.TextMaskFormat = MaskFormat.IncludeLiterals;
+            // We only use the control value when adding.
+            // In edit mode, we assume that the original PubId does not change.
+            if (IsAdd)
+            {
+                mtbPubId.TextMaskFormat = MaskFormat.IncludeLiterals;
+                Publisher!.PubId = mtbPubId.Text.Trim();
+            }
 
-            Publisher!.PubId = mtbPubId.Text.Trim();
-            Publisher.PubName = txtPubName.Text.Trim();
+            Publisher!.PubName = txtPubName.Text.Trim();
             Publisher.City = txtCity.Text.Trim();
             Publisher.State = txtState.Text.Trim();
             Publisher.Country = txtCountry.Text.Trim();
@@ -74,18 +73,21 @@ namespace BookStoreUI.PublisherMaintenanceForms
             string state = txtState.Text.Trim();
             string country = txtCountry.Text.Trim();
 
-            // Pub ID mask
-            errMsg += Validator.IsMaskCompleted(mtbPubId.MaskCompleted, "Publisher ID");
-
-            if (mtbPubId.MaskCompleted)
+            // We only validate the ID when adding (it cannot be changed during editing).
+            if (IsAdd)
             {
-                string pubId = mtbPubId.Text.Trim();
+                errMsg += Validator.IsMaskCompleted(mtbPubId.MaskCompleted, "Publisher ID");
 
-                var regex = new Regex(@"^(1756|1622|0877|0736|1389|99[0-9]{2})$");
-
-                if (!regex.IsMatch(pubId))
+                if (mtbPubId.MaskCompleted)
                 {
-                    errMsg += "Publisher ID must be 1756, 1622, 0877, 0736, 1389, or start with 99.\n";
+                    string pubId = mtbPubId.Text.Trim();
+
+                    var regex = new Regex(@"^(1756|1622|0877|0736|1389|99[0-9]{2})$");
+
+                    if (!regex.IsMatch(pubId))
+                    {
+                        errMsg += "Publisher ID must be 1756, 1622, 0877, 0736, 1389, or start with 99.\n";
+                    }
                 }
             }
 
@@ -140,11 +142,15 @@ namespace BookStoreUI.PublisherMaintenanceForms
 
             if (IsAdd)
             {
+                // Add → Editable ID
+                mtbPubId.Enabled = true;
                 ClearForm();
                 mtbPubId.Focus();
             }
             else
             {
+                // Edit → ID is read-only
+                mtbPubId.Enabled = false;
                 DisplayPublisherInformation();
                 txtPubName.Focus();
             }
@@ -156,13 +162,17 @@ namespace BookStoreUI.PublisherMaintenanceForms
             if (!ValidateInput())
                 return;
 
+            string pubId = "";
 
-            mtbPubId.TextMaskFormat = MaskFormat.IncludeLiterals;
-            string pubId = mtbPubId.Text.Trim();
+            if (IsAdd)
+            {
+                mtbPubId.TextMaskFormat = MaskFormat.IncludeLiterals;
+                pubId = mtbPubId.Text.Trim();
 
-
-            if (IsAdd && !ValidId(pubId))
-                return;
+                // We only check for duplicates when adding.
+                if (!ValidId(pubId))
+                    return;
+            }
 
             ApplyChanges();
 
@@ -188,9 +198,7 @@ namespace BookStoreUI.PublisherMaintenanceForms
             }
             catch (Exception ex)
             {
-
                 System.Diagnostics.Debug.WriteLine(ex.ToString());
-
 
                 string dbMsg = ex.InnerException?.Message ?? ex.Message;
 

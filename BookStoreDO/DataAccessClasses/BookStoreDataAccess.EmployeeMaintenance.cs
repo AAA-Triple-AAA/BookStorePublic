@@ -1,16 +1,13 @@
 ﻿using BookStoreDO.Models.DataLayer;
 using Microsoft.EntityFrameworkCore;
-using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace BookStoreDO.DataAccessClasses;
 
 public partial class BookStoreDataAccess
 {
-    public List<Employee> GetEmployees() =>     Context.Employees.ToList();
+    public List<Employee> GetEmployees() => Context.Employees.ToList();
 
     public Employee? GetEmployee(string id) => Context.Employees.Find(id);
 
@@ -29,13 +26,27 @@ public partial class BookStoreDataAccess
         Context.SaveChanges();
     }
 
-    public void DeleteEmployee(Employee employee)
+    public void DeleteEmployee(string empId)
     {
-        Context.Employees.Remove(employee);
+        Context.ChangeTracker.Clear();
+
+        var emp = Context.Employees.Find(empId);
+        if (emp == null)
+        {
+            return;
+        }
+
+        Context.Employees.Remove(emp);
         Context.SaveChanges();
     }
+    /*
+    public void DeleteEmployee(Employee employee)
+    {
+        if (employee == null) throw new ArgumentNullException(nameof(employee));
+        DeleteEmployee(employee.EmpId);
+    }*/
 
-    //To validate employee I need job database
+    // -------- Jobs / helpers --------
     public Job? GetJob(short jobId) => Context.Jobs.Find(jobId);
     public List<Job> GetJobs() => Context.Jobs.ToList();
 

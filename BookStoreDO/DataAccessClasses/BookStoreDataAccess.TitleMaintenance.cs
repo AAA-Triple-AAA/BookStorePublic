@@ -9,12 +9,27 @@ namespace BookStoreDO.DataAccessClasses
 {
     public partial class BookStoreDataAccess
     {
+        // ================= TITLES =================
 
-        public List<TitleEntity> GetTitles() => Context.Titles.ToList();
+        public List<TitleEntity> GetTitles()
+        {
+            // Very important: we clear the ChangeTracker to avoid using old objects.
+            Context.ChangeTracker.Clear();
+
+            return Context.Titles
+                          .AsNoTracking()          // We won't track them again.
+                          .OrderBy(t => t.Title1)  // Optional, so that they appear in order
+                          .ToList();
+        }
 
         public List<TitleEntity> SearchTitles(string searchText)
         {
-            var query = Context.Titles.AsQueryable();
+            // Same as above: we clear the context before querying.
+            Context.ChangeTracker.Clear();
+
+            var query = Context.Titles
+                               .AsNoTracking()
+                               .AsQueryable();
 
             if (!string.IsNullOrWhiteSpace(searchText))
             {
@@ -25,18 +40,20 @@ namespace BookStoreDO.DataAccessClasses
                     title.Title1.ToLower().Contains(searchText));
             }
 
-            // Those that match best first, then by alphabetical title
             return query
                 .OrderByDescending(t => t.Title1.ToLower().Contains(searchText))
                 .ThenBy(t => t.Title1)
                 .ToList();
         }
+
         public TitleEntity? GetTitle(string id) => Context.Titles.Find(id);
+
         public void AddTitle(TitleEntity title)
         {
             Context.Titles.Add(title);
             Context.SaveChanges();
         }
+
         public void UpdateTitle(TitleEntity title)
         {
             EnsurePublisherAttached(title);
@@ -44,6 +61,7 @@ namespace BookStoreDO.DataAccessClasses
             Context.Titles.Update(title);
             Context.SaveChanges();
         }
+
         public void DeleteTitle(string id)
         {
             var title = Context.Titles.Find(id);

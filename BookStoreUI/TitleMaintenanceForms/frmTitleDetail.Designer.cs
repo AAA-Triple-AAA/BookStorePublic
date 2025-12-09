@@ -107,7 +107,7 @@
             txtNotes.Anchor = AnchorStyles.Left | AnchorStyles.Right;
             txtNotes.CharacterCasing = CharacterCasing.Upper;
             txtNotes.Location = new Point(104, 308);
-            txtNotes.MaxLength = 4;
+            txtNotes.MaxLength = 1000;
             txtNotes.Multiline = true;
             txtNotes.Name = "txtNotes";
             txtNotes.ScrollBars = ScrollBars.Vertical;
