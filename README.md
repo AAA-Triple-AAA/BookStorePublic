@@ -41,7 +41,7 @@ The project follows a layered architecture to maintain a clear separation of con
 ### Setup Instructions
 1. **Clone the repository**:
    ```bash
-   git clone [https://github.com/AAA-Triple-AAA/BookStore.git](https://github.com/AAA-Triple-AAA/BookStore.git)
+   git clone https://github.com/AAA-Triple-AAA/BookStore.git
    ```
 2. Configure Database:
    - Move or copy BookStore.MDF from the `Resources/Database/` folder into `./BookStoreUI/bin/Debug/net8.0-windows.`
